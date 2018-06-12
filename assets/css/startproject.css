@@ -1,0 +1,231 @@
+﻿ul.nav-tabs li:nth-child(even) {
+    width: 9%;
+}
+
+
+ul.nav-tabs li:nth-child(odd) {
+    width: 18%;
+}
+
+
+#project-details li.not-clickable a {
+    cursor:not-allowed !important;
+}
+
+.nav-tabs > li > a {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    padding: 10px 0px;
+}
+
+
+    .nav-tabs > li > a:hover {
+        border-color: transparent !important;
+        box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        -webkit-box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        -moz-box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        -o-box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        border-radius: 10px 10px 0 0;
+        height: 128px;
+        background: rgb(252, 252, 252);
+        /*margin: 0px;
+        border: 0px;*/
+    }
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav-tabs {
+    border-color: transparent !important;
+    /*-webkit-box-shadow: 0 3px 6px -5px #000000;
+    -moz-box-shadow: 0 3px 6px -5px #000000;
+    box-shadow: 0 3px 6px -5px #000000;*/
+    height: 119px;
+    margin-bottom: 2px;
+    background: #ffffff;
+}
+
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+        cursor: default;
+        border: 0px;
+        border-bottom-color: transparent;
+        box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        -webkit-box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        -moz-box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        -o-box-shadow: inset -2px 21px 65px -21px #C9C9C9 !important;
+        text-transform: capitalize;
+        color: #4AD4FF;
+        border-radius: 15px 15px 0 0;
+        height: 128px;
+        margin: 0;
+        background: rgb(252, 252, 252);
+            z-index: 9;
+    }
+
+.gathImg {
+    width: 70px;
+    height: 70px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+
+.storyImg {
+    width: 70px;
+    height: initial !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+
+
+.finalImg {
+    width: 70px;
+    height: initial !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+
+
+.arcImg {
+    width: 70px;
+    height: initial !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.arr {
+    position: absolute;
+    margin: 0;
+    margin-top: 40px;
+    right: 0;
+    height: 12px !important;
+    z-index: 0;
+}
+
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+        background: #ffffff;
+}
+
+.tab-pane {
+    text-align: left;
+    height: 100% !important;
+}
+
+.slider1 .reqDiv {
+    padding: 10px;
+}
+
+.sptitle {
+    font-size: 22px;
+    font-family: 'Lato_Light';
+    color: #4d4d4f;
+    letter-spacing: 1px;
+}
+
+.spname {
+    font-size: 18px;
+    font-family: 'Lato_Light';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.qBox {
+    background: #e0eaf0;
+    text-align: left;
+    padding: 20px 40px;
+}
+
+    .qBox p {
+        font-style: italic;
+        color: #6d6e70;
+        font-size: 16px;
+    }
+
+    .qBox textarea {
+        width: 100%;
+        margin-top: 15px;
+        background: white;
+        padding: 20px;
+        resize: none;
+        font-size: 13px;
+        padding-top: 10px;
+    }
+
+    .qBox span {
+        font-style: italic;
+        font-size: 12px;
+    }
+
+.radio label {
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: 0px;
+}
+
+.radio.radio-inline {
+    margin-top: 7px !important;
+    margin-bottom: 7px;
+}
+
+
+.infoTypeImg {
+    width: 100px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+}
+
+.infoTypeThum {
+    text-align: center;
+    padding: 10px;
+}
+
+.cent {
+    text-align: center;
+}
+
+
+.infoTypeThum.active img {
+    border: 2px solid #00C3FF;
+}
+
+.infoTypeImg {
+    cursor: pointer;
+}
+
+div.layouts .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 10px;
+    height: 10px;
+}
+
+.laydesc {
+    height: 80px;
+    overflow: auto;
+}
+
+.layouts {
+    display: none;
+}
+
+#lay1 {
+    display: block;
+}
+
+input[type="button"]:disabled {
+    background: white !important;
+    color: #686868;
+    border-color: gray;
+}

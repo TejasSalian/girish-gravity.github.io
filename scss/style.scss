@@ -1,0 +1,20 @@
+// Author: Girish S
+// Company: Gravity Consulting
+// Date Init: DD-MM-YYYY
+// Date Build: DD-MM-YYYY
+
+@import "variables";
+@import "definitions";
+@import "overrides";
+@import "functions";
+@import "mixins";
+
+.meter-box{
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin-top: calc(50vh - 150px);
+  path{
+    cursor: pointer;
+  }
+}

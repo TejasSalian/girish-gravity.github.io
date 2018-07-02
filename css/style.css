@@ -1,0 +1,9 @@
+.meter-box {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin-top: calc(50vh - 150px); }
+  .meter-box path {
+    cursor: pointer; }
+
+/*# sourceMappingURL=style.css.map */

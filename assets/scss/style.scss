@@ -62,20 +62,20 @@ body{
     height: 50vh;
     float: left;
     &.delay-1{
-      -webkit-animation-delay: 0.1s;
-      animation-delay: 0.1s;
+      // -webkit-animation-delay: 0.1s;
+      // animation-delay: 0.1s;
     }
     &.delay-2{
-      -webkit-animation-delay: 0.2s;
-      animation-delay: 0.2s;
+      // -webkit-animation-delay: 0.2s;
+      // animation-delay: 0.2s;
     }
     &.delay-3{
-      -webkit-animation-delay: 0.3s;
-      animation-delay: 0.3s;
+      // -webkit-animation-delay: 0.3s;
+      // animation-delay: 0.3s;
     }
     &.delay-4{
-      -webkit-animation-delay: 0.4s;
-      animation-delay: 0.4s;
+      // -webkit-animation-delay: 0.4s;
+      // animation-delay: 0.4s;
     }
     .tree{
       max-width: 575px;

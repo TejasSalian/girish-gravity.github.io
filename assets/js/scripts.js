@@ -5,8 +5,8 @@ $('#invitation').carousel({
   ride      : false,
   wrap      : false
 })
+$('.question .nav-link').on('click', () => $('.question').css({'margin-left': '10%'}));
 $(document).ready( function() {
-  $('.nav-link').on('click', () => $('.question').css({'margin-left': '10%'}));
   var bodyElement = document.getElementsByTagName('body')[0];
   if (bodyElement.addEventListener)
   {
@@ -44,15 +44,30 @@ function changePage(delta) {
     }, 500);
   }
 }
-$('#invitation').on('slide.bs.carousel', function (event) {
-  // reflect in Navbar
-  $('.nav-item.active').removeClass('active');
-  $('.nav-item')[event.to].classList.add('active');
-  // Remove Toys from desk
-  $('.theme .slideInDown').removeClass('slideInDown').addClass('slideOutUp');
-  $('.theme .slideInUp').removeClass('slideInUp').addClass('slideOutDown');
+// slide Move Completed
+$('#invitation').on('slid.bs.carousel	', function (event) {
+  // clear open tabs, we left them
+  if (event.from == 0) {
+    $('.question').removeAttr('style');
+    $('.question .active').removeClass('active show');
+    $('.answer .active').removeClass('active show');
+  }
+  // New Page? Animate new Toys
   setTimeout(function () {
     $('.theme .slideOutUp').removeClass('slideOutUp').addClass('slideInDown');
     $('.theme .slideOutDown').removeClass('slideOutDown').addClass('slideInUp');
-  }, 500);
+  }, 100);
+});
+
+// Slide is going to move
+$('#invitation').on('slide.bs.carousel', function (event) {
+
+  // reflect in Navbar
+  $('.nav-item.active').removeClass('active');
+  $('.nav-item')[event.to].classList.add('active');
+
+  // Remove Toys from desk
+  $('.theme .slideInDown').removeClass('slideInDown').addClass('slideOutUp');
+  $('.theme .slideInUp').removeClass('slideInUp').addClass('slideOutDown');
+  // Add New Toys
 });

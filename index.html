@@ -1,116 +1,104 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Hackathon</title>
-</head>
-<body>
-  <nav class="navbar fixed-bottom">
-    <div class="flex-fill flex-column">
-      <ul class="sponsor-by">
-        <li>
-          <a class="navbar-brand" href="http://gravityilabs.com">
-            <img src="assets/images/gravity-logo.png" alt="GravityiLabs Logo">
-          </a>
-        </li>
-        <li>
-          <a class="navbar-brand" href="https://microsoft.com">
-            <img src="assets/images/microsoft-logo.png" alt="Microsoft Logo">
-          </a>
-        </li>
-      </ul>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>GravityiLabs</title>
+    <style type="text/css">
+      .preloader, .preloader > div{
+        z-index: 4;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: white;
+      }
+      .preloader-img{
+        height: 80px;
+        width: 80px;
+        margin-top: calc(50vh - 40px);
+      }
+      .video-block{
+        z-index: 0
+      }
+      .fix{
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: transparent;
+      }
+      .audio-control{
+        margin-top: 20px;
+        margin-right: 20px;
+        float: right;
+      }
+      .audio-control img{
+        width: 30px;
+        height: 30px;
+      }
+      .video-block video{
+        max-width: 100%;
+        max-height: 100vh;
+      }
+      .skip{
+        z-index: 3;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        padding-bottom: 5vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="d-flex justify-content-center">
+        <img class="preloader-img" src="loading.svg" alt="">
+      </div>
     </div>
-    <div class="flex-fill">
-      <ul class="navbar-nav flex-row justify-content-center">
-        <li class="nav-item active">
-          <a class="nav-link" data-target="#invitation" data-slide-to="0">EVENT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-target="#invitation" data-slide-to="1">AGENDA</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-target="#invitation" data-slide-to="2">RSVP</a>
-        </li>
-      </ul>
+    <div class="fix">
+      <div class="d-block">
+        <a href="index.html" class="btn btn-default audio-control" id="unmute">
+          <img src="muted.svg" alt="">
+        </a>
+      </div>
     </div>
-  </nav>
-  <div class="theme">
-    <div class="top-left animated slideInDown delay-1">
-      <img class="tree" src="assets/images/event-and-organisers/tree.png" alt="">
-    </div>
-    <div class="top-right animated slideInDown delay-2">
-      <img class="mac-book" src="assets/images/event-and-organisers/mac-book.png" alt="">
-    </div>
-    <div class="bottom-left animated slideInUp delay-4">
-      <img class="plane" src="assets/images/event-and-organisers/plane.png" alt="">
-    </div>
-    <div class="bottom-right animated slideInUp">
-      <img class="coffee" src="assets/images/event-and-organisers/coffee-cup.png" alt="">
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div id="invitation" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="viewport event">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 animated fadeIn titles">
-                    <h2>Welcome to</h2>
-                    <h1>Hackathon</h1>
-                  </div>
-                </div>
-                <div class="row what-tabs animated fadeIn">
-                  <div class="question">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                      <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><strong>What</strong> is this Hackathon about?</a>
-                      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><strong>Why</strong> should i care?</a>
-                      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><strong>How</strong> is the event like on the day?</a>
-                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><strong>Where</strong> and when is it happening?</a>
-                    </div>
-                  </div>
-                  <div class="col-6 answer">
-                    <div class="tab-content" id="v-pills-tabContent">
-                      <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                        <p>This Hackathon is about helping enterprise leaders discover innovating approaches to solving complex problems through digital transformation.</p>
-                      </div>
-                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <p>Because digital workflow allows consistent and reliable tracking for projects, maximises team efficiency, and unlocks potentials in process during initiation, design, prototype, testing, and launch.</p>
-                      </div>
-                      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                        <p>Workshop includes one-day of learning and applying rapid prototyping with real world APS cases, opportunity to network with people from other departments and technology industrial leaders.</p>
-                      </div>
-                      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        <p class="text-center"><strong>14th Sep</strong><br>10:00 am - 19:00 pm<br>@<br>Microsoft Office, Barton</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="viewport">
-              as
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="viewport">
-              as
-            </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center video-block">
+          <video muted loop preload="auto" id="video">
+            <source src="videos/gravity-innovation-labs.mp4" type="video/mp4">
+            <source src="videos/gravity-innovation-labs.ogv" type="video/ogg">
+            <source src="videos/gravity-innovation-labs.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="col-12 skip text-center">
+          <a href="index.html" class="btn btn-outline-primary">Continue Gravity Consulting</a>
         </div>
       </div>
     </div>
-  </div>
-  <script src="assets/js/jquery-3.3.1.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="assets/js/scripts.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.preloader').css({'display':'none'});
+        var video = $('#video');
+        video.get(0).play();
+        $('#unmute').on('click', function (event) {
+          event.preventDefault();
+          if( video.prop('muted') ) {
+            $('#unmute img').attr('src', 'unmuted.svg');
+            video.prop('muted', false);
+          }else {
+            $('#unmute img').attr('src', 'muted.svg');
+            video.prop('muted', true);
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

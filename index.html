@@ -94,6 +94,7 @@
         }, 2000);
         $('#unmute').on('click', function (event) {
           event.preventDefault();
+          video.get(0).play();
           if( video.prop('muted') ) {
             $('#unmute img').attr('src', 'unmuted.svg');
             video.prop('muted', false);

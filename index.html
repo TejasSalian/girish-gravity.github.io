@@ -76,7 +76,7 @@
           </video>
         </div>
         <div class="col-12 skip text-center">
-          <a href="index.html" class="btn btn-outline-primary">Continue Gravity Consulting</a>
+          <a href="http://google.com" class="btn btn-outline-primary" id="go-home">Continue Gravity Consulting</a>
         </div>
       </div>
     </div>
@@ -106,6 +106,9 @@
           event.preventDefault();
           video.get(0).play();
         });
+        setTimeout(function(){
+	    	window.location.replace('http://www.gravityconsulting.com.au/');
+        }, 40000);
       });
     </script>
   </body>

@@ -76,7 +76,8 @@
           </video>
         </div>
         <div class="col-12 skip text-center">
-          <a href="http://google.com" class="btn btn-outline-primary" id="go-home">Continue Gravity Consulting</a>
+        	<a href="http://google.com" class="btn btn-link" id="go-home">Continue to the current website</a>
+	    	<h6 id="sec"><small>auto redirect in <span>40</span>s</small></h6>
         </div>
       </div>
     </div>
@@ -109,6 +110,15 @@
         setTimeout(function(){
 	    	window.location.replace('http://www.gravityconsulting.com.au/');
         }, 40000);
+        var time = 40;
+        setInterval(function(){
+        	time--;
+	    	if (time > 0) {
+	    		$('#sec span').text(time);
+	    	}else if(time === 0){
+	    		$('#sec').html('<small><span>redirecting..</span></small>');
+	    	}
+        }, 1000);
       });
     </script>
   </body>

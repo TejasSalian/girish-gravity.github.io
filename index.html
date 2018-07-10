@@ -56,7 +56,7 @@
   <body>
     <div class="preloader">
       <div class="d-flex justify-content-center">
-        <img class="preloader-img" src="loading.svg" alt="">
+        <img class="preloader-img" src="loading.gif" alt="">
       </div>
     </div>
     <div class="fix">
@@ -119,6 +119,7 @@
 	    		$('#sec').html('<small><span>redirecting..</span></small>');
 	    	}
         }, 1000);
+        document.cookie = "haveVisitedBefore=Yes; expires=Thu, 1 Sept 2018 12:00:00 UTC; path=/";
       });
     </script>
   </body>

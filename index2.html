@@ -69,11 +69,13 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 d-flex justify-content-center video-block">
-          <video playsinline muted autoplay loop preload="auto" id="video">
-            <source src="videos/gravity-innovation-labs.mp4" type="video/mp4">
-            <source src="videos/gravity-innovation-labs.ogv" type="video/ogg; codecs=theora, vorbis">
-            <source src="videos/gravity-innovation-labs.webm" type="video/webm; codecs=vp8, vorbis">
-          </video>
+          <div id="preview" class="col-12">
+            <video playsinline muted autoplay loop preload="auto" id="video">
+              <source src="videos/gravity-innovation-labs.mp4" type="video/mp4">
+              <source src="videos/gravity-innovation-labs.ogv" type="video/ogg; codecs=theora, vorbis">
+              <source src="videos/gravity-innovation-labs.webm" type="video/webm; codecs=vp8, vorbis">
+            </video>
+          </div>
         </div>
         <div class="col-12 skip text-center">
         	<a href="http://www.gravityconsulting.com.au/" class="btn btn-link" id="go-home">Continue to the current website</a>
@@ -87,26 +89,32 @@
     <script type="text/javascript">
       $(document).ready(function () {
         $('.preloader').css({'display':'none'});
-        var video = $('#video');
-        video.get(0).play();
-        setTimeout(function(){
-          $('#play').trigger('click');
-        }, 2000);
-        $('#unmute').on('click', function (event) {
-          event.preventDefault();
+
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (iOS) {
+          $('#preview').html('<img src="backup.gif" style="width: 100%;">');
+        }else{
+          $('#sec').html('<video playsinline muted autoplay loop preload="auto" id="video"><source src="videos/gravity-innovation-labs.mp4" type="video/mp4"><source src="videos/gravity-innovation-labs.ogv" type="video/ogg; codecs=theora, vorbis"><source src="videos/gravity-innovation-labs.webm" type="video/webm; codecs=vp8, vorbis"></video>');
+
+          var video = $('#video');
           video.get(0).play();
-          if( video.prop('muted') ) {
-            $('#unmute img').attr('src', 'unmuted.svg');
-            video.prop('muted', false);
-          }else {
-            $('#unmute img').attr('src', 'muted.svg');
-            video.prop('muted', true);
-          }
-        });
-        $('#play').on('click', function (event) {
-          event.preventDefault();
-          video.get(0).play();
-        });
+          $('#unmute').on('click', function (event) {
+            event.preventDefault();
+            video.get(0).play();
+            if( video.prop('muted') ) {
+              $('#unmute img').attr('src', 'unmuted.svg');
+              video.prop('muted', false);
+            }else {
+              $('#unmute img').attr('src', 'muted.svg');
+              video.prop('muted', true);
+            }
+          });
+          $('#play').on('click', function (event) {
+            event.preventDefault();
+            video.get(0).play();
+          });
+        }
+
         setTimeout(function(){
 	    	window.location.replace('http://www.gravityconsulting.com.au/');
         }, 40000);
@@ -121,6 +129,7 @@
         }, 1000);
         document.cookie = "haveVisitedBefore=Yes; expires=Thu, 1 Sept 2018 12:00:00 UTC; path=/";
       });
+
     </script>
   </body>
 </html>

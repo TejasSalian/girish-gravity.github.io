@@ -1,126 +1,199 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <title>GravityiLabs</title>
-    <style type="text/css">
-      .preloader, .preloader > div{
-        z-index: 4;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        background-color: white;
-      }
-      .preloader-img{
-        height: 80px;
-        width: 80px;
-        margin-top: calc(50vh - 40px);
-      }
-      .video-block{
-        z-index: 0
-      }
-      .fix{
-        z-index: 1;
-        display: block;
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        background-color: transparent;
-      }
-      .audio-control{
-        margin-top: 20px;
-        margin-right: 20px;
-        float: right;
-      }
-      .audio-control img{
-        width: 30px;
-        height: 30px;
-      }
-      .video-block video{
-        max-width: 100%;
-        max-height: 100vh;
-      }
-      .skip{
-        z-index: 3;
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        padding-bottom: 5vh;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="preloader">
-      <div class="d-flex justify-content-center">
-        <img class="preloader-img" src="loading.svg" alt="">
-      </div>
+    <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Hackathon</title>
+</head>
+<body>
+  <nav class="navbar fixed-bottom">
+    <div class="flex-fill flex-column">
+      <ul class="sponsor-by">
+        <li>
+          <a class="navbar-brand" href="http://gravityilabs.com">
+            <img src="assets/images/gravity-logo.png" alt="GravityiLabs Logo">
+          </a>
+        </li>
+        <li>
+          <a class="navbar-brand" href="https://microsoft.com">
+            <img src="assets/images/microsoft-logo.png" alt="Microsoft Logo">
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="fix">
-      <div class="d-block">
-        <a href="index.html" class="btn btn-default audio-control" id="unmute">
-          <img src="muted.svg" alt="">
-        </a>
-      </div>
+    <div class="flex-fill">
+      <ul class="navbar-nav flex-row justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" data-target="#invitation" data-slide-to="0">EVENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="#invitation" data-slide-to="1">AGENDA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="#invitation" data-slide-to="2">RSVP</a>
+        </li>
+      </ul>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center video-block">
-          <video playsinline muted autoplay loop preload="auto" id="video">
-            <source src="videos/gravity-innovation-labs.mp4" type="video/mp4">
-            <source src="videos/gravity-innovation-labs.ogv" type="video/ogg; codecs=theora, vorbis">
-            <source src="videos/gravity-innovation-labs.webm" type="video/webm; codecs=vp8, vorbis">
-          </video>
+  </nav>
+  <div class="theme">
+    <div class="top-left animated slideInDown">
+      <img class="tree" src="assets/images/event-and-organisers/tree.png" alt="">
+    </div>
+    <div class="top-right animated slideInDown">
+      <img class="mac-book" src="assets/images/event-and-organisers/mac-book.png" alt="">
+    </div>
+    <div class="bottom-left animated slideInUp">
+      <img class="plane" src="assets/images/event-and-organisers/plane.png" alt="">
+    </div>
+    <div class="bottom-right animated slideInUp">
+      <img class="coffee" src="assets/images/event-and-organisers/coffee-cup.png" alt="">
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="invitation" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="viewport event">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 animated fadeIn titles">
+                    <h2>Welcome to</h2>
+                    <h1>Hackathon</h1>
+                  </div>
+                </div>
+                <div class="row what-tabs animated fadeIn">
+                  <div class="question">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><strong>What</strong> is this Hackathon about?</a>
+                      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><strong>Why</strong> should i care?</a>
+                      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><strong>How</strong> is the event like on the day?</a>
+                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><strong>Where</strong> and when is it happening?</a>
+                    </div>
+                  </div>
+                  <div class="col-6 answer">
+                    <div class="tab-content" id="v-pills-tabContent">
+                      <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <p>This Hackathon is about helping enterprise leaders discover innovating approaches to solving complex problems through digital transformation.</p>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <p>Because digital workflow allows consistent and reliable tracking for projects, maximises team efficiency, and unlocks potentials in process during initiation, design, prototype, testing, and launch.</p>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <p>Workshop includes one-day of learning and applying rapid prototyping with real world APS cases, opportunity to network with people from other departments and technology industrial leaders.</p>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <p class="text-center"><strong>14th Sep</strong><br>10:00 am - 19:00 pm<br>@<br>Microsoft Office, Barton</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="viewport">
+              <div class="container-fluid agenda">
+                <div class="row mt-5">
+                  <div class="col-4 text-right">
+                    <h1 class="animated fadeIn title">Agenda</h1>
+                  </div>
+                  <div class="col-4 view-changers">
+                    <a href="#">
+                      <img class="animated fadeIn list-view" src="assets/images/agenda/list-view.png" alt="List View">
+                    </a>
+                    <a href="#">
+                      <img class="animated fadeIn circular-view"  src="assets/images/agenda/circular-view.png" alt="Circular View">
+                    </a>
+                  </div>
+                </div>
+                <div class="row agenda-content">
+                  <div class="col-3 offset-1">
+                    <p class="animated fadeIn">**Notes**<br>Once this page is present, the clock will automatically starts a carousel effect for every 6 seconds, showing the exact same thing in the next few art boards. Once user starts hovering and clicking one of these, the automatic motion stops and the clock only listens to user’s command.</p>
+                  </div>
+                  <div class="col-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 462 462">
+                      <defs>
+                        <style>
+                        .cls-1{fill:none;}
+                        .cls-2{clip-path:url(#clip-path);}
+                        .cls-4{fill:#d6f9dd;animation-delay: 0.88s; animation-timing-function: ease-in;}
+                        .cls-5{fill:#f0f3bd;animation-delay: 0.88s; animation-timing-function: ease-in;}
+                        .cls-6{fill:#02c39a;animation-delay: 0.85s; animation-timing-function: ease-in;}
+                        .cls-7{fill:#00a896;animation-delay: 0.75s; animation-timing-function: ease-in;}
+                        .cls-8{fill:#028090;animation-delay: 0.6s; animation-timing-function: ease-in;}
+                        .cls-3{fill:#05668d;animation-delay: 0.4s; animation-timing-function: ease-in;}
+                        .cls-10,.cls-11,.cls-9{isolation:isolate;}
+                        .cls-9{font-size:24px; animation-delay: 1.3s; animation-timing-function: ease-in;}
+                        .cls-11{font-size:20px; text-align: center;}
+                        .cls-12{letter-spacing:-0.06em;}
+                        .cls-13{letter-spacing:-0.02em;}
+                        </style>
+                        <clipPath id="clip-path">
+                          <path class="cls-1" d="M377.67,145.82l-13.87,8a162.21,162.21,0,0,1,0,149.75l13.87,8a178.21,178.21,0,0,0,0-165.76ZM227.12,390.54v16A177.05,177.05,0,0,0,303,386.24l-8-13.87A161.22,161.22,0,0,1,227.12,390.54Zm80-25.16,8,13.87a179,179,0,0,0,55.54-55.55l-13.87-8A162.81,162.81,0,0,1,307.12,365.38ZM356.8,141.7l13.87-8A177.84,177.84,0,0,0,227.12,50.85v16A161.87,161.87,0,0,1,356.8,141.7Zm-314.68,87a178,178,0,0,0,171,177.85v-16a162,162,0,0,1,0-323.68v-16A178,178,0,0,0,42.12,228.7Z"/>
+                        </clipPath>
+                      </defs>
+                      <title>SVG</title>
+                      <g id="Layer_2" data-name="Layer 2">
+                        <g id="Plan">
+                          <g id="SVG">
+                            <rect id="ViewPort" class="cls-1" width="462" height="462"/>
+                            <g id="Clock">
+                              <g id="Dial">
+                                <g class="cls-2">
+                                  <path class="animated fadeIn cls-3" d="M220,229.06,59.48,136.37c34.09-59,92.35-92.69,160.54-92.69Z"/>
+                                  <path class="animated fadeIn cls-1" d="M220,229.06,127.33,389.59C38.67,338.4,8.33,225,59.48,136.37h0Z"/>
+                                  <path class="animated fadeIn cls-4" d="M220,229.06V414.43c-34.09,0-63.16-7.79-92.69-24.84Z"/>
+                                  <path class="animated fadeIn cls-5" d="M220,229.06,312.7,389.6c-29.52,17-58.59,24.84-92.69,24.84Z"/>
+                                  <path class="animated fadeIn cls-6" d="M220,229.06,380.55,321.7c-17,29.52-38.33,50.8-67.85,67.85Z"/>
+                                  <path class="animated fadeIn cls-7" d="M220,229.06l160.54-92.69c34.09,59,34.09,126.32,0,185.37Z"/>
+                                  <path class="animated fadeIn cls-8" d="M220,229.06V43.7c68.18,0,126.44,33.64,160.54,92.69Z"/>
+                                </g>
+                              </g>
+                              <g id="Numbers">
+                                <text class="animated fadeIn cls-9" transform="translate(209.1 37.56)">12</text>
+                                <text class="animated fadeIn cls-9" transform="translate(106.59 62.56)">11</text>
+                                <text class="animated fadeIn cls-9" transform="translate(33.98 127.56)">10</text>
+                                <text class="animated fadeIn cls-9" transform="translate(107.18 411.56)">7</text>
+                                <text class="animated fadeIn cls-9" transform="translate(212.94 438.56)">6</text>
+                                <text class="animated fadeIn cls-9" transform="translate(311.46 411.56)">5</text>
+                                <text class="animated fadeIn cls-9" transform="translate(382.32 336.56)">4</text>
+                                <text class="animated fadeIn cls-9" transform="translate(414.48 232.56)">3</text>
+                                <text class="animated fadeIn cls-9" transform="translate(383.44 127.56)">2</text>
+                                <text class="animated fadeIn cls-9" transform="translate(313.92 62.56)">1</text>
+                              </g>
+                            </g>
+                            <!-- <g id="InnerText" class="cls-10">
+                              <text class="cls-11" transform="translate(170.95 185)">14th Sep</text>
+                              <text class="cls-11" transform="translate(131.79 221)">10AM - 19 PM</text>
+                              <text class="cls-11" transform="translate(127.08 293)">Microsoft Office</tspan>
+                              </text>
+                            </g> -->
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="viewport">
+              as
+            </div>
+          </div>
         </div>
-        <div class="col-12 skip text-center">
-        	<a href="http://www.gravityconsulting.com.au/" class="btn btn-link" id="go-home">Continue to the current website</a>
-	    	<h6 id="sec"><small>auto redirect in <span>40</span>s</small></h6>
-        </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('.preloader').css({'display':'none'});
-        var video = $('#video');
-        video.get(0).play();
-        setTimeout(function(){
-          $('#play').trigger('click');
-        }, 2000);
-        $('#unmute').on('click', function (event) {
-          event.preventDefault();
-          video.get(0).play();
-          if( video.prop('muted') ) {
-            $('#unmute img').attr('src', 'unmuted.svg');
-            video.prop('muted', false);
-          }else {
-            $('#unmute img').attr('src', 'muted.svg');
-            video.prop('muted', true);
-          }
-        });
-        $('#play').on('click', function (event) {
-          event.preventDefault();
-          video.get(0).play();
-        });
-        setTimeout(function(){
-	    	window.location.replace('http://www.gravityconsulting.com.au/');
-        }, 40000);
-        var time = 40;
-        setInterval(function(){
-        	time--;
-	    	if (time > 0) {
-	    		$('#sec span').text(time);
-	    	}else if(time === 0){
-	    		$('#sec').html('<small><span>redirecting..</span></small>');
-	    	}
-        }, 1000);
-        document.cookie = "haveVisitedBefore=Yes; expires=Thu, 1 Sept 2018 12:00:00 UTC; path=/";
-      });
-    </script>
-  </body>
+  </div>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/scripts.js"></script>
+</body>
 </html>

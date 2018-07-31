@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Montserrat:300,400,600|Rajdhani');
+@import "overrides";
+
 body{
   background: rgba(239,226,201,1);
   background-image: url('../images/body-bg.png');
@@ -67,7 +69,10 @@ body{
     height: 50vh;
     float: left;
     .tree{
-      max-width: 575px;
+      max-width: 70%;
+      @media screen and (min-width: 1480px){
+        max-width: 75%;
+      }
     }
     .mac-book{
       max-width: 120%;
@@ -75,10 +80,20 @@ body{
     .plane{
       max-width: 275px;
       margin-left: 60px;
+      @media screen and (min-width: 1480px){
+        max-width: 340px;
+        margin-left: 80px;
+        margin-top: 30px;
+      }
     }
     .coffee{
-      max-width: 355px;
+      max-width: 50%;
       margin-right: 50px;
+      @media screen and (min-width: 1480px){
+        max-width: 50%;
+        margin-right: 100px;
+        margin-top: -32px;
+      }
     }
     .plant{
       max-width: 65%;
@@ -95,6 +110,78 @@ body{
       max-width: 25%;
       margin-right: 10%;
       margin-top: 20%;
+    }
+    .idea-plant{
+      max-width: 82%;
+    }
+    .drawing{
+      max-width: 75%;
+    }
+    .idea-tab{
+      max-width: 52%;
+      margin-top: -55px;
+    }
+    .tomato{
+      max-width: 16%;
+      margin-top: 7%;
+      margin-left: 8%;
+    }
+    .pizza{
+      max-width: 55%;
+    }
+    .pepper{
+      max-width: 23%;
+      margin-left: 12%;
+    }
+    .sketches{
+      max-width: 45%;
+    }
+    .design-plant{
+      max-width: 48%;
+    }
+    .keyboard{
+      max-width: 58%;
+      margin-top: -16%;
+    }
+    .ipad{
+      max-width: 34%;
+    }
+    .usb-drive{
+      max-width: 15%;
+      margin-right: 22%;
+      margin-top: 10%;
+    }
+    .presentation-plant{
+      max-width: 41%;
+      margin-top: 15%;
+    }
+    .eye-glasses{
+      max-width: 35%;
+      @media screen and (min-width: 1480px){
+        max-width: 38%;
+        margin-top: 4vh;
+        margin-left: 3%;
+      }
+    }
+    .dinner-herb{
+      max-width: 38%;
+      margin-top: 27%;
+      margin-left: 27%;
+      @media screen and (min-width: 1480px){
+        max-width: 47%;
+        margin-top: 22%;
+        margin-left: 16%;
+      }
+    }
+    .cutlery{
+      max-width: 41%;
+      margin-top: -25%;
+      margin-right: 10%;
+      @media screen and (min-width: 1480px){
+        max-width: 34%;
+        margin-top: -20%;
+        margin-right: 5%;
+      }
     }
     .rsvp-plant{
       max-width: 38%;
@@ -127,6 +214,9 @@ body{
     text-align: center;
     margin-top: 10vh;
     animation-delay: 0.4s;
+    @media screen and (min-width: 1480px){
+      margin-top: 15vh;
+    }
     h2{
       margin-left: -280px;
       font-family: 'Dancing Script', cursive;
@@ -140,6 +230,9 @@ body{
   .what-tabs{
     margin-top: 3vh;
     animation-delay: 0.4s;
+    @media screen and (min-width: 1480px){
+      margin-top: 6vh;
+    }
   }
   .question{
     flex: 0 0 34%;
@@ -170,14 +263,18 @@ body{
   .answer{
     flex: 0 0 40%;
     max-width: 40%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
     .tab-pane{
       animation-delay: 0.5s;
       transition-delay: 0.4s;
-      margin-top: 30px;
       p{
         font-size: 22px;
         line-height: 1.5;
-        padding-top: 45px;
+        margin: 0;
         strong{
           font-size: 32px;
         }
@@ -186,15 +283,21 @@ body{
   }
 }
 .agenda{
+  @media screen and (min-width: 1480px){
+    margin-top: 10vh;
+  }
   .title{
     font-size: 60px;
     font-weight: 100;
-    animation-delay: 1.7s;
+    animation-delay: 1.9s;
   }
   .view-changers{
     a{
       display: block;
       float: left;
+      transition: all;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.5s;
       &:hover{
         text-decoration: none;
       }
@@ -210,16 +313,28 @@ body{
       }
     }
   }
-  .agenda-content{
+  .agenda-pie{
     margin-top: 12vh;
     p{
       animation-delay: 2.3s;
       font-size: 18px;
       text-align: justify;
     }
+    #notes{
+      @media screen and (min-width: 1480px){
+        margin-top: 10px;
+        line-height: 2;
+      }
+    }
+    .offset-1dot5{
+      margin-left: 12%;
+    }
     svg{
-      width: 60%;
+      width: 65%;
       margin-top: -130px;
+      margin-left: 50px;
+      position: relative;
+      z-index: 3;
       .cls-2{
         path{
           opacity: 0.3;
@@ -227,6 +342,9 @@ body{
           transition: opacity;
           transition-timing-function: ease-in-out;
           transition-duration: 0.3s;
+          &.active{
+            opacity: 1;
+          }
         }
       }
       #Numbers{
@@ -236,8 +354,130 @@ body{
           transition: opacity;
           transition-timing-function: ease-in-out;
           transition-duration: 0.3s;
+          &.active{
+            opacity: 1;
+          }
         }
       }
+    }
+    .dial-data{
+      @extend svg;
+      height: 100px;
+      width: 65%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      color: black;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      align-self: center;
+      justify-content: center;
+      animation-delay: 2s;
+      .timed-info{
+        display: none;
+        &.active{
+          display: block;
+        }
+        p{
+          text-align: center;
+          font-size: 24px;
+          strong{
+            font-size: 36px;
+          }
+        }
+      }
+    }
+    .dial-info{
+      z-index: 2;
+      position: relative;
+      width: 150px;
+      animation-delay: 0.5s;
+      margin-top: -273px;
+      margin-left: -50px;
+      @media screen and (min-width: 1480px){
+        margin-top: -368px;
+        margin-left: 0px;
+      }
+      p{
+        animation-delay: 0.5s;
+        display: none;
+        text-align: center;
+        font-size: 22px;
+        span{
+          font-size: inherit;
+          font-family: Rajdhani;
+        }
+        &.active{
+          display: block;
+        }
+      }
+    }
+  }
+  .agenda-list{
+    @media screen and (min-width: 1480px){
+      margin-top: 5vh;
+    }
+    .agenda-timeline{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      animation-delay: 0.3s;
+      li{
+        margin: 18px 0px;
+        cursor: pointer;
+        &.active{
+          color: #028090;
+        }
+      }
+      h5{
+        margin: 0;
+        margin-top: 5px;
+        text-align: center;
+        width: 100%;
+        font-family: Rajdhani;
+        font-weight: normal;
+        font-size: 20px;
+        color: inherit;
+        transition: color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.5s;
+      }
+      p{
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        color: inherit;
+        transition: color;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.5s;
+      }
+      .timeline-title{
+        display: flex;
+          p{
+            text-align: left;
+          }
+      }
+    }
+    .open-timeline-data{
+      p{
+        display: none;
+        &.active{
+          display: block;
+        }
+      }
+    }
+    p{
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      font-size: 20px;
+      color: inherit;
+      transition: color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 0.5s;
     }
   }
 }

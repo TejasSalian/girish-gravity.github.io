@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Assets_class"
+   data-name="Assets class"
+   viewBox="0 0 53.039999 53.040001"
+   version="1.1"
+   sodipodi:docname="transport_e.svg"
+   inkscape:version="0.92.1 r15371"
+   width="53.040001"
+   height="53.040001">
+  <metadata
+     id="metadata5336">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Artboard 281</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview5334"
+     showgrid="false"
+     inkscape:zoom="8.9730986"
+     inkscape:cx="20.350701"
+     inkscape:cy="41.610359"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer5"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs5299">
+    <style
+       id="style5297">.cls-1{fill:#f1563f;}.cls-2{fill:#fff;}.cls-3{font-size:13px;fill:#e1bebb;font-family:Helvetica, Helvetica;}.cls-4{letter-spacing:-0.04em;}.cls-5{letter-spacing:0em;}.cls-6{letter-spacing:0.02em;}.cls-7{letter-spacing:0em;}</style>
+    <style
+       id="style5963">.cls-1{isolation:isolate;}.cls-2{opacity:0.7;mix-blend-mode:multiply;}.cls-3,.cls-5{fill:#fff;}.cls-4{fill:#009887;}.cls-5{font-size:13px;font-family:Helvetica-Bold, Helvetica Bold;font-weight:700;}.cls-6{letter-spacing:-0.04em;}.cls-7{letter-spacing:0em;}.cls-8{letter-spacing:0.02em;}.cls-9{letter-spacing:0em;}</style>
+  </defs>
+  <title
+     id="title5301">Artboard 281</title>
+  <g
+     id="g5937"
+     transform="translate(-15.73,-2)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 1"
+     transform="translate(-15.73,-2)">
+    <g
+       id="g5950">
+      <circle
+         class="cls-1"
+         cx="42.23"
+         cy="25.5"
+         r="14.5"
+         id="circle5303"
+         style="isolation:isolate;fill:#f1563f" />
+      <circle
+         class="cls-1"
+         cx="42.23"
+         cy="25.5"
+         r="13.33"
+         id="circle5305"
+         style="isolation:isolate;fill:#f1563f" />
+      <path
+         class="cls-2"
+         d="m 39.89,18.16 -9.22,10.78 c -0.18,0.23 0.25,0.61 0.43,0.84 a 0.39,0.39 0 0 0 0.65,0 l 9,-11.62 z"
+         id="path5307"
+         inkscape:connector-curvature="0"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+      <path
+         class="cls-2"
+         d="m 54.42,28.78 -9.1,-10.62 h -0.87 l 8.89,11.46 a 0.41,0.41 0 0 0 0.33,0.17 0.41,0.41 0 0 0 0.32,-0.17 c 0.18,-0.23 0.61,-0.61 0.43,-0.84"
+         id="path5309"
+         inkscape:connector-curvature="0"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+      <polygon
+         class="cls-2"
+         points="47.41,22.95 37.88,22.95 38.79,21.86 46.5,21.86 "
+         id="polygon5311"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+      <polygon
+         class="cls-2"
+         points="45.6,20.78 39.69,20.78 40.25,20.1 45.04,20.1 "
+         id="polygon5313"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+      <polygon
+         class="cls-2"
+         points="41.08,18.87 40.7,19.32 44.58,19.32 44.22,18.87 "
+         id="polygon5315"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+      <polygon
+         class="cls-2"
+         points="49.69,26.22 35.6,26.22 36.95,24.61 48.34,24.61 "
+         id="polygon5317"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+      <polygon
+         class="cls-2"
+         points="52.69,30.04 32.6,30.04 34.52,27.74 50.77,27.74 "
+         id="polygon5319"
+         style="opacity:0.7;mix-blend-mode:multiply;fill:#ffffff" />
+    </g>
+    <g
+       style="display:inline;isolation:isolate"
+       id="g6080">
+      <path
+         style="fill:#ffffff"
+         inkscape:connector-curvature="0"
+         class="cls-3"
+         d="m 39.89,18.16 -9.22,10.78 c -0.18,0.23 0.25,0.61 0.43,0.84 a 0.39,0.39 0 0 0 0.65,0 l 9,-11.62 z"
+         id="path6066" />
+      <path
+         style="fill:#ffffff"
+         inkscape:connector-curvature="0"
+         class="cls-3"
+         d="m 54.42,28.78 -9.1,-10.62 h -0.87 l 8.89,11.46 a 0.41,0.41 0 0 0 0.33,0.17 0.41,0.41 0 0 0 0.32,-0.17 c 0.18,-0.23 0.61,-0.61 0.43,-0.84"
+         id="path6068" />
+      <polygon
+         style="fill:#ffffff"
+         class="cls-3"
+         points="46.5,21.86 47.41,22.95 37.88,22.95 38.79,21.86 "
+         id="polygon6070" />
+      <polygon
+         style="fill:#ffffff"
+         class="cls-3"
+         points="45.04,20.1 45.6,20.78 39.69,20.78 40.25,20.1 "
+         id="polygon6072" />
+      <polygon
+         style="fill:#ffffff"
+         class="cls-3"
+         points="44.22,18.87 41.08,18.87 40.7,19.32 44.58,19.32 "
+         id="polygon6074" />
+      <polygon
+         style="fill:#ffffff"
+         class="cls-3"
+         points="48.34,24.61 49.69,26.22 35.6,26.22 36.95,24.61 "
+         id="polygon6076" />
+      <polygon
+         style="fill:#ffffff"
+         class="cls-3"
+         points="50.77,27.74 52.69,30.04 32.6,30.04 34.52,27.74 "
+         id="polygon6078" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer7"
+     inkscape:label="Layer 2"
+     style="display:inline"
+     transform="translate(-15.73,-2)">
+    <g
+       id="g6004"
+       class="cls-1"
+       style="isolation:isolate"
+       transform="translate(-16.139163,-44.220837)" />
+  </g>
+</svg>

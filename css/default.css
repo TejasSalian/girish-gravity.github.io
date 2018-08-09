@@ -1,0 +1,18 @@
+.chart-container {
+	width:  80%;
+	height: 480px;
+	margin: 0 auto;
+}
+
+.pie-chart-container {
+	position: relative;
+	width : 120px;
+	height : 120px;
+	float : left;
+	top: -25px;
+}
+
+/*#pie-chartcanvas-1{*/
+	/*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.39);*/
+	/*display: none;*/
+/*}*/

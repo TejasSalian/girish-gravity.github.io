@@ -1,0 +1,604 @@
+{
+"frames": {
+	"Wind Mill0201.png": {
+		"frame": {"x":1322, "y":1138, "w":111, "h":162},
+		"spriteSourceSize": {"x":23,"y":24,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0202.png": {
+		"frame": {"x":1322, "y":974, "w":112, "h":163},
+		"spriteSourceSize": {"x":22,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0203.png": {
+		"frame": {"x":1322, "y":810, "w":113, "h":163},
+		"spriteSourceSize": {"x":21,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0204.png": {
+		"frame": {"x":1207, "y":326, "w":114, "h":164},
+		"spriteSourceSize": {"x":20,"y":22,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0205.png": {
+		"frame": {"x":1206, "y":1314, "w":114, "h":164},
+		"spriteSourceSize": {"x":20,"y":22,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0206.png": {
+		"frame": {"x":1206, "y":658, "w":115, "h":165},
+		"spriteSourceSize": {"x":19,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0207.png": {
+		"frame": {"x":1089, "y":1156, "w":116, "h":166},
+		"spriteSourceSize": {"x":18,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0208.png": {
+		"frame": {"x":1089, "y":989, "w":116, "h":166},
+		"spriteSourceSize": {"x":18,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0209.png": {
+		"frame": {"x":971, "y":665, "w":117, "h":166},
+		"spriteSourceSize": {"x":17,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0210.png": {
+		"frame": {"x":971, "y":832, "w":117, "h":167},
+		"spriteSourceSize": {"x":17,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0211.png": {
+		"frame": {"x":852, "y":337, "w":118, "h":167},
+		"spriteSourceSize": {"x":16,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0212.png": {
+		"frame": {"x":733, "y":337, "w":118, "h":167},
+		"spriteSourceSize": {"x":16,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0213.png": {
+		"frame": {"x":612, "y":509, "w":119, "h":168},
+		"spriteSourceSize": {"x":15,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0214.png": {
+		"frame": {"x":732, "y":509, "w":119, "h":168},
+		"spriteSourceSize": {"x":15,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0215.png": {
+		"frame": {"x":612, "y":340, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0216.png": {
+		"frame": {"x":612, "y":0, "w":120, "h":169},
+		"spriteSourceSize": {"x":14,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0217.png": {
+		"frame": {"x":612, "y":170, "w":120, "h":169},
+		"spriteSourceSize": {"x":14,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0218.png": {
+		"frame": {"x":246, "y":1190, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0219.png": {
+		"frame": {"x":490, "y":510, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0220.png": {
+		"frame": {"x":490, "y":170, "w":121, "h":170},
+		"spriteSourceSize": {"x":13,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0221.png": {
+		"frame": {"x":368, "y":170, "w":121, "h":170},
+		"spriteSourceSize": {"x":13,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0222.png": {
+		"frame": {"x":246, "y":509, "w":121, "h":170},
+		"spriteSourceSize": {"x":13,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0223.png": {
+		"frame": {"x":0, "y":170, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0224.png": {
+		"frame": {"x":0, "y":850, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0225.png": {
+		"frame": {"x":0, "y":1021, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0226.png": {
+		"frame": {"x":0, "y":1192, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0227.png": {
+		"frame": {"x":123, "y":0, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0228.png": {
+		"frame": {"x":123, "y":511, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0229.png": {
+		"frame": {"x":0, "y":0, "w":122, "h":169},
+		"spriteSourceSize": {"x":12,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0230.png": {
+		"frame": {"x":123, "y":171, "w":122, "h":169},
+		"spriteSourceSize": {"x":12,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0231.png": {
+		"frame": {"x":0, "y":680, "w":122, "h":169},
+		"spriteSourceSize": {"x":12,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0232.png": {
+		"frame": {"x":0, "y":510, "w":122, "h":169},
+		"spriteSourceSize": {"x":12,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0233.png": {
+		"frame": {"x":0, "y":341, "w":122, "h":168},
+		"spriteSourceSize": {"x":12,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0234.png": {
+		"frame": {"x":490, "y":341, "w":121, "h":168},
+		"spriteSourceSize": {"x":13,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0235.png": {
+		"frame": {"x":368, "y":509, "w":121, "h":168},
+		"spriteSourceSize": {"x":13,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0236.png": {
+		"frame": {"x":368, "y":341, "w":121, "h":167},
+		"spriteSourceSize": {"x":13,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0237.png": {
+		"frame": {"x":611, "y":680, "w":120, "h":167},
+		"spriteSourceSize": {"x":14,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0238.png": {
+		"frame": {"x":611, "y":1017, "w":120, "h":166},
+		"spriteSourceSize": {"x":14,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0239.png": {
+		"frame": {"x":611, "y":1184, "w":120, "h":166},
+		"spriteSourceSize": {"x":14,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0240.png": {
+		"frame": {"x":732, "y":678, "w":119, "h":165},
+		"spriteSourceSize": {"x":15,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0241.png": {
+		"frame": {"x":732, "y":844, "w":119, "h":165},
+		"spriteSourceSize": {"x":15,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0242.png": {
+		"frame": {"x":852, "y":505, "w":118, "h":165},
+		"spriteSourceSize": {"x":16,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0243.png": {
+		"frame": {"x":852, "y":671, "w":118, "h":164},
+		"spriteSourceSize": {"x":16,"y":22,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0244.png": {
+		"frame": {"x":972, "y":166, "w":117, "h":163},
+		"spriteSourceSize": {"x":17,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0245.png": {
+		"frame": {"x":971, "y":334, "w":117, "h":163},
+		"spriteSourceSize": {"x":17,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0246.png": {
+		"frame": {"x":1089, "y":826, "w":116, "h":162},
+		"spriteSourceSize": {"x":18,"y":24,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0247.png": {
+		"frame": {"x":1206, "y":1152, "w":115, "h":161},
+		"spriteSourceSize": {"x":19,"y":25,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0248.png": {
+		"frame": {"x":1206, "y":496, "w":115, "h":161},
+		"spriteSourceSize": {"x":19,"y":25,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0249.png": {
+		"frame": {"x":1089, "y":1323, "w":114, "h":160},
+		"spriteSourceSize": {"x":20,"y":26,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0250.png": {
+		"frame": {"x":1322, "y":648, "w":113, "h":161},
+		"spriteSourceSize": {"x":21,"y":25,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0251.png": {
+		"frame": {"x":1322, "y":323, "w":113, "h":161},
+		"spriteSourceSize": {"x":21,"y":25,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0252.png": {
+		"frame": {"x":1322, "y":485, "w":113, "h":162},
+		"spriteSourceSize": {"x":21,"y":24,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0253.png": {
+		"frame": {"x":1321, "y":1314, "w":114, "h":162},
+		"spriteSourceSize": {"x":20,"y":24,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0254.png": {
+		"frame": {"x":1206, "y":824, "w":115, "h":163},
+		"spriteSourceSize": {"x":19,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0255.png": {
+		"frame": {"x":1090, "y":164, "w":116, "h":164},
+		"spriteSourceSize": {"x":18,"y":22,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0256.png": {
+		"frame": {"x":1089, "y":496, "w":116, "h":164},
+		"spriteSourceSize": {"x":18,"y":22,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0257.png": {
+		"frame": {"x":971, "y":1166, "w":117, "h":165},
+		"spriteSourceSize": {"x":17,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0258.png": {
+		"frame": {"x":972, "y":0, "w":117, "h":165},
+		"spriteSourceSize": {"x":17,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0259.png": {
+		"frame": {"x":971, "y":498, "w":117, "h":166},
+		"spriteSourceSize": {"x":17,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0260.png": {
+		"frame": {"x":853, "y":167, "w":118, "h":166},
+		"spriteSourceSize": {"x":16,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0261.png": {
+		"frame": {"x":852, "y":1170, "w":118, "h":167},
+		"spriteSourceSize": {"x":16,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0262.png": {
+		"frame": {"x":732, "y":1178, "w":119, "h":167},
+		"spriteSourceSize": {"x":15,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0263.png": {
+		"frame": {"x":733, "y":0, "w":119, "h":168},
+		"spriteSourceSize": {"x":15,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0264.png": {
+		"frame": {"x":491, "y":0, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0265.png": {
+		"frame": {"x":490, "y":1018, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0266.png": {
+		"frame": {"x":490, "y":849, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0267.png": {
+		"frame": {"x":369, "y":0, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0268.png": {
+		"frame": {"x":246, "y":1020, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0269.png": {
+		"frame": {"x":368, "y":1189, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0270.png": {
+		"frame": {"x":368, "y":1019, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0271.png": {
+		"frame": {"x":368, "y":849, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0272.png": {
+		"frame": {"x":368, "y":678, "w":121, "h":170},
+		"spriteSourceSize": {"x":13,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0273.png": {
+		"frame": {"x":123, "y":682, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0274.png": {
+		"frame": {"x":123, "y":853, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0275.png": {
+		"frame": {"x":123, "y":1024, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0276.png": {
+		"frame": {"x":123, "y":1195, "w":122, "h":170},
+		"spriteSourceSize": {"x":12,"y":16,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0277.png": {
+		"frame": {"x":246, "y":0, "w":122, "h":169},
+		"spriteSourceSize": {"x":12,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0278.png": {
+		"frame": {"x":123, "y":341, "w":122, "h":169},
+		"spriteSourceSize": {"x":12,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0279.png": {
+		"frame": {"x":246, "y":680, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0280.png": {
+		"frame": {"x":246, "y":850, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0281.png": {
+		"frame": {"x":246, "y":339, "w":121, "h":169},
+		"spriteSourceSize": {"x":13,"y":17,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0282.png": {
+		"frame": {"x":246, "y":170, "w":121, "h":168},
+		"spriteSourceSize": {"x":13,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0283.png": {
+		"frame": {"x":611, "y":848, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0284.png": {
+		"frame": {"x":490, "y":1187, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0285.png": {
+		"frame": {"x":490, "y":680, "w":120, "h":168},
+		"spriteSourceSize": {"x":14,"y":18,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0286.png": {
+		"frame": {"x":733, "y":169, "w":119, "h":167},
+		"spriteSourceSize": {"x":15,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0287.png": {
+		"frame": {"x":732, "y":1010, "w":119, "h":167},
+		"spriteSourceSize": {"x":15,"y":19,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0288.png": {
+		"frame": {"x":852, "y":836, "w":118, "h":166},
+		"spriteSourceSize": {"x":16,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0289.png": {
+		"frame": {"x":852, "y":1003, "w":118, "h":166},
+		"spriteSourceSize": {"x":16,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0290.png": {
+		"frame": {"x":853, "y":0, "w":118, "h":166},
+		"spriteSourceSize": {"x":16,"y":20,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0291.png": {
+		"frame": {"x":971, "y":1000, "w":117, "h":165},
+		"spriteSourceSize": {"x":17,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0292.png": {
+		"frame": {"x":1089, "y":330, "w":117, "h":165},
+		"spriteSourceSize": {"x":17,"y":21,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0293.png": {
+		"frame": {"x":1089, "y":661, "w":116, "h":164},
+		"spriteSourceSize": {"x":18,"y":22,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0294.png": {
+		"frame": {"x":1090, "y":0, "w":116, "h":163},
+		"spriteSourceSize": {"x":18,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0295.png": {
+		"frame": {"x":1206, "y":988, "w":115, "h":163},
+		"spriteSourceSize": {"x":19,"y":23,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0296.png": {
+		"frame": {"x":1207, "y":0, "w":114, "h":162},
+		"spriteSourceSize": {"x":20,"y":24,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0297.png": {
+		"frame": {"x":1207, "y":163, "w":114, "h":162},
+		"spriteSourceSize": {"x":20,"y":24,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0298.png": {
+		"frame": {"x":1322, "y":0, "w":113, "h":161},
+		"spriteSourceSize": {"x":21,"y":25,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	},
+	"Wind Mill0299.png": {
+		"frame": {"x":1322, "y":162, "w":113, "h":160},
+		"spriteSourceSize": {"x":21,"y":26,"w":161,"h":203},
+		"trimmed":true,
+		"sourceSize": {"w":161,"h":203}
+	}
+
+},
+"meta": {
+	"image": "windmill2.png",
+	"size": {"w": 1436, "h": 1484},
+	"scale": "1"
+}
+}

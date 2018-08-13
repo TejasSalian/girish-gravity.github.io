@@ -1,515 +1,439 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infrastructure Pipeline</title>
-
-    <!-- 	<script type="text/javascript" src="js/bootstrap.min.js"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="css/default.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Hackathon</title>
 </head>
 <body>
-
-<section class="header">
-    <div class="container">
-        <img src="images/u18.png">
+  <nav class="navbar fixed-bottom">
+    <div class="flex-fill flex-column">
+      <ul class="sponsor-by">
+        <li>
+          <a class="navbar-brand" href="http://gravityilabs.com">
+            <img src="assets/images/gravity-logo-min.png" alt="GravityiLabs Logo">
+          </a>
+        </li>
+        <li>
+          <a class="navbar-brand" href="https://microsoft.com">
+            <img src="assets/images/microsoft-logo-min.png" alt="Microsoft Logo">
+          </a>
+        </li>
+      </ul>
     </div>
-</section>
-
-
-<section class="appSection">
-    <div class="container">
-        <div class="infoSection">
-
-            <img id="skip" src="images/skip.png">
-            <!-- <object id="skip"  type="image/svg+xml" data="images/skip.svg">
-                Your browser does not support SVG
-            </object> -->
-
-            <object type="image/svg+xml" data="images/infobg6.svg">
-                Your browser does not support SVG
-            </object>
-            <div id="gif1Content">
-                <img id="gif1" src="images/u77.gif">
-            </div>
-            <div id="gif2Content">
-                <img id="gif2" src="images/u79.gif">
-            </div>
-            <div id="gif3Content">
-                <img id="gif3" src="images/u81.gif">
-            </div>
-
-            <!-- assetClass -->
-            <img id="infoImg1" src="images/Tag_asset.svg">
-            <img id="infoHov1" src="images/Bubble_asset.svg">
-
-            <img id="infoImg2" src="images/Tag_planning.svg">
-            <img id="infoHov2" src="images/Bubble_planning.svg">
-
-            <img id="infoImg3" src="images/Tag_invest.svg">
-            <img id="infoHov3" src="images/Bubble_invest.svg">
-
-            <img id="infoImg4" src="images/Tag_delivery.svg">
-            <img id="infoHov4" src="images/Bubble_delivery.svg">
-
-            <img id="backToStart" src="images/backBtn.svg">
-
-            <img id="explore" src="images/exploreBtn.svg">
-
-            <!-- object id="explore"  type="image/svg+xml" data="images/explore.svg">
-                Your browser does not support SVG
-            </object> -->
-        </div>
-
-
-        <div id="canvasContainer"></div>
-        <div class="scene1_Text">
-            <object type="image/svg+xml" data="images/scene1_Text_update1.svg">
-                Your browser does not support SVG
-            </object>
-            <!-- <img class="scene1_Text" src="images/u16.png"> -->
-            <object type="image/svg+xml" data="images/scene1_Text2_update1.svg">
-                Your browser does not support SVG
-            </object>
-        </div>
-        <div class="leftColumn">
-            <div class="asset">
-                <button class="assetClearBtn">Clear all</button>
-                <ul class="btnColumn">
-                    <li>
-                        <button type="button" class="btn" id="crossgovbtn" value="Cross-Government"></button>
-                        <label class="assetBtnLabel" id="crossgovbtnLbl">Cross-government</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="transportbtn" value="Transport"></button>
-                        <label class="assetBtnLabel" id="transportbtnLbl">Transport</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="energybtn" value="Energy"></button>
-                        <label class="assetBtnLabel" id="energybtnLbl">Energy</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="waterbtn" value="Water"></button>
-                        <label class="assetBtnLabel" id="waterbtnLbl">Water</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="healthbtn" value="Health"></button>
-                        <label class="assetBtnLabel" id="healthbtnLbl">Health</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="edubtn" value="Education and Training"></button>
-                        <label class="assetBtnLabel" id="edubtnLbl">Education and training</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="digitalbtn" value="Digital"></button>
-                        <label class="assetBtnLabel" id="digitalbtnLbl">Digital</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="justbtn" value="Justice and public safety"></button>
-                        <label class="assetBtnLabel" id="justbtnLbl">Justice and public safety</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="artsbtn" value="Arts, culture and recreation"></button>
-                        <label class="assetBtnLabel" id="artsbtnLbl">Arts, culture and recreation</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="socialbtn" value="Social Housing"></button>
-                        <label class="assetBtnLabel" id="socialbtnLbl">Social housing</label>
-                    </li>
-                </ul>
-            </div>
-            <div class="region">
-                <button class="regionClearBtn">Clear all</button>
-                <ul class="regionList">
-                    <li><input id="c1" class="regionCheckBox" type="checkbox"><label class="regionLabel"
-                                                                                     for="c1">Cairns</label></li>
-                    <li><input id="c10" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c10">Townsville</label>
-                    </li>
-                    <li><input id="c3" class="regionCheckBox" type="checkbox"><label class="regionLabel"
-                                                                                     for="c3">Mackay</label></li>
-                    <li><input id="c4" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c4">Fitzroy</label>
-                    </li>
-                    <li><input id="c5" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c5">Wide
-                        Bay</label></li>
-                    <li><input id="c6" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c6">Sunshine
-                        Coast</label></li>
-                    <li><input id="c7" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c7">Greater
-                        Brisbane</label></li>
-                    <li><input id="c8" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c8">Gold
-                        Coast</label></li>
-                    <li><input id="c2" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c2">Toowoomba</label>
-                    </li>
-                    <li><input id="c9" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c9">Darling
-                        Downs</label></li>
-                    <li><input id="c11" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c11">Remote
-                        Queensland</label></li>
-                    <li><input id="c12" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c12">Multi-region</label>
-                    </li>
-                    <li><input id="c13" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c13">Statewide</label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class='heading'>
-            <h5>Queensland Infrastructure Pipeline</h5>
-            <div class="form-group">
-                <label for="q_year" class="d-none">Financial Year</label>
-                <select class="form-control" id="q_year">
-                    <option value="2017">2017 - 2018</option>
-                    <option value="2018">2018 - 2019</option>
-                </select>
-            </div>
-        </div>
-        <div class="year-wise">
-            <div class="year-data">
-                <div class="hlPanelHeader"><span>2017-18</span> DELIVERY HIGHLIGHTS</div>
-                <div class="floatPanelData">
-                    <div class="capitalbudget">Capital budget: <span class="floatData">$458.6M</span></div>
-                    <div class="jobssupported">Jobs supported: <span class="floatData">224</span></div>
-                    <div class="totalprojects">Total projects: <span class="floatData">550</span></div>
-                    <div class="programs">Total programs: <span class="floatData">990</span></div>
-                    <div class="grants">Total grants: <span class="floatData">287</span></div>
-
-                    <div class="regBudget">Regional Budget<br/><span>$214M</span></div>
-                    <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div>
-                </div>
-            </div>
-            <div class="year-span">
-                <h6>2018-19</h6>
-            </div>
-            <div class="year-anim" id="animation_container">
-                <canvas id="canvas" width="249" height="310"
-                        style="position: absolute; display: block; background-color:rgba(153, 153, 153, 0.00);"></canvas>
-                <div id="dom_overlay_container"
-                     style="pointer-events:none; overflow:hidden; width:249px; height:310px; position: absolute; left: 0px; top: 0px; display: block;">
-                </div>
-
-            </div>
-            <ul>
-                <li><img src="images/BG2018.png" alt=""></li>
-            </ul>
-            </div>
-
-            <div class="dropFloatPanel">
-
-            </div>
-
-            <div class="highlightPanel">
-                <!--
-                                <div class="floatDropDown">
-
-                                    <div class="chart-container">
-                                        <div class="pie-chart-container">
-                                            <canvas id="pie-chartcanvas-1"></canvas>
-                                            <span style="position:absolute; left: 25px;">Asset Class</span>
-                                        </div>
-
-                                        <div class="pie-chart-container">
-                                            <canvas id="pie-chartcanvas-2"></canvas>
-                                            <span style="position:absolute; left: 20px;">Region Class</span>
-                                        </div>
-                                    </div>
-                                </div>
-                -->
-                <div class="highlightPanelmask">
-                    <div class="hlPanelHeader"><span>2017-18</span> DELIVERY HIGHLIGHTS</div>
-
-                    <div class="floatPanelData">
-                        <div class="capitalbudget">Capital budget: <span class="floatData">$458.6M</span></div>
-                        <div class="jobssupported">Jobs supported: <span class="floatData">224</span></div>
-                        <div class="totalprojects">Total projects: <span class="floatData">550</span></div>
-                        <div class="programs">Total programs: <span class="floatData">990</span></div>
-                        <div class="grants">Total grants: <span class="floatData">287</span></div>
-
-                        <div class="regBudget">Regional Budget<br/><span>$214M</span></div>
-                        <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="scrollIndicator">
-                <img src="images/agif_u352.gif" style="left:500px;">
-            </div>
-            <div class="scrollIndicatorUp">
-                <img src="images/upBtn.gif" style="left:500px;">
-            </div>
-            <div id="projects" class="projects"></div>
-
-            <div id="projectPanel" class="projectPanel">
-                <!-- <div id="projectHeader"><h5>SIP PROJECTS</h5></div> -->
-                <div id="closeProject" class="closeProject"></div>
-                <div class="backBtn"></div>
-
-                <div id="projectHeader">
-                    <h5>State Infrastructure Plan Projects</h5>
-                    <span>(Showing only construction projects)</span>
-                </div>
-                <div id="proposalHeader"><h5>State Infrastructure Plan Proposals</h5></div>
-
-
-                <div id="dummyDiv"></div>
-                <div class="projectInfoPanel">
-                    <div class="projectInfoSidePanel">
-                        <div class="backBtn"></div>
-                        <div id="closeProject2" class="closeProject2"></div>
-
-
-                    </div>
-                </div> <!-- projectInfoPanel-->
-
-                <div class="mainPanel">
-                    <div class="projectTableBackground"></div>
-
-                    <div class="projectInfo">
-                        <div id="projectInfo_top">
-                            <div class="pI_header">HEADER</div>
-                            <div class="pI_subHeader">SUB HEADER</div>
-                            <div class="pI_tag">TAG</div>
-                        </div>
-                        <div id="projectInfo_bottom">
-                            <div class="pI_leftPanel">
-                                <div class="pI_capitalType">Capital type:<span class="floatData"></span></div>
-                                <div class="pI_contractType">Contract type:<span class="floatData"></span></div>
-                                <div class="pI_estmDate">Estimated completion date:<span class="floatData"></span></div>
-                                <hr class="style-two">
-                                <div class="pI_currentStatus">Current status:<span class="floatData"></span></div>
-                                <div class="pI_currentStage">Current stage:<span class="floatData"></span></div>
-                                <div class="pI_nextMilestone">Next stage:<span class="floatData"></span></div>
-                                <div class="pI_startDate">Next stage (Start date):<span class="floatData"></span></div>
-                                <!-- <div class="pI_endDate">Next stage (End date):<span class="floatData"></span></div> -->
-                            </div>
-                            <div class="pI_rightPanel">
-                                <div class="pI_budget">2017-18 budget:<span class="floatData"></span></div>
-                                <div class="pI_estmCost">Total estimated cost:<span class="floatData"></span></div>
-
-                                <div class="pI_postFunding">Post 2017-18 funding:<span class="floatData"></span></div>
-                                <div class="pI_fundContributors">Funding contributors:
-                                    <div class="floatData"></div>
-                                </div>
-                            </div>
-                            <div class="pI_sipPanel">
-                                <div>
-                                    <div class="pI_currentStage2"><p>Current stage:</p></div>
-                                    <p class="pI_currentStage2Data"></p>
-                                </div>
-                                <div>
-                                    <div class="pI_sipStatus"><p>SIP status:</p></div>
-                                    <p class="pI_sipStatusData"></p>
-                                </div>
-                            </div>
-                            <div class="pI_regionDetails">
-                                <span>Region:</span>
-                                <div class="pI_regionName">REGION DETAILS</div>
-                                <img class="pI_LocationImg" src="images/LocationPointer.svg">
-                                <img class="pI_regionImg">
-
-                            </div>
-                            <div class="pI_assetClassDetails">
-                                <span>Asset class:</span>
-                                <img class="pI_assetImg">
-                                <div class="pI_assetName"></div>
-                                <div class="pI_leadAgency">Lead agency: <span></span></div>
-                                <!-- <div class="pI_stateFund">State Infrastructure Fund: <span></span></div> -->
-                            </div>
-                            <div class="pI_proposalDetails">
-                                <div class="pI_pipeLineSource"><p>Pipeline source:</p>
-                                    <div class="floatData"></div>
-                                </div>
-                                <!-- <div class="pI_currentStage2">Current stage: <span class="floatData"></span></div> -->
-                                <!-- <div class="pI_valueRange">Value range: <span class="floatData"></span></div> -->
-                                <div class="pI_leadAgency2">Lead agency: <span class="floatData"></span></div>
-                            </div>
-
-                            <div class="pI_webInfo">
-                                <!-- <img src="images/web_ico.png"> -->
-                                Project web address:
-                                <div class="pI_website">WEBSITE INFO</div>
-                            </div>
-                            <div class="pI_bottom">
-                                Note: Go to <a target="_blank" href="https://www.forgov.qld.gov.au/procurement">www.forgov.qld.gov.au/procurement</a>
-                                to search for current QG tender opportunities
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="innerProjectPanel">
-                        <input type="search" id="search"
-                               placeholder="Search Projects by name, contract type, region etc..."/>
-                    </div>
-                    <div class="projectListDiv">
-                        <div class="container">
-                            <table id="dataTable" class="dataTable">
-                                <thead>
-                                <tr>
-                                    <th class="h_overviewlst"></th>
-                                    <th class="h_linelst"></th>
-                                    <th class="column1 h_projectlst">
-                                        <div class='sortbtn'></div>
-                                        <span>PROJECTS</span></th>
-                                    <th class="column1 h_valuelst">
-                                        <div class='sortbtn'></div>
-                                        VALUE
-                                    </th>
-                                    <th class="column1 h_stagelst">
-                                        <div class='sortbtn'></div>
-                                        STAGE
-                                    </th>
-                                    <th class="column1 h_assetclasslst">
-                                        <div class='sortbtn'></div>
-                                        ASSET CLASS
-                                    </th>
-                                    <th class="column1 h_regionlst">
-                                        <div class='sortbtn'></div>
-                                        REGION
-                                    </th>
-                                </tr>
-                                </thead>
-                            </table>
-                        </div><!--container-->
-                    </div><!--projectListDiv-->
-                </div> <!-- mainPanel-->
-            </div> <!-- projectPanel -->
-
-            <button class="helpbtn"></button>
-
-            <!--            <div class="clipPanel"></div>-->
-
-            <section class="helpInfoBG"></section>
-            <div class="helpPanel">
-                <div class="helpPanelClose"></div>
-                <div class="slides">
-                    <h4>Overview Page Help</h4>
-                    <p>This page is the primary navigation page for the Queensland Infrastructure Pipeline. Visitors can
-                        narrow their search for information using the Asset Class and Regions options on the left. Click
-                        on
-                        the bubbles in the pipeline to view more detailed information about each proposal and
-                        project.</p>
-                    <img src="	images/u77.gif">
-                </div>
-                <div class="slides">
-                    <h4>List Page Help</h4>
-                    <p>This page lists the proposals and projects for the Asset Classes and Regions selected on the
-                        Overview
-                        page. Visitors can sort this list by a number of attributes, search the list for specific
-                        projects,
-                        and select a project to view.</p>
-                    <img src="images/u79.gif">
-                </div>
-                <div class="slides">
-                    <h4>Details Page Help</h4>
-                    <p>Selecting a project to view from the list takes you to this detailed project information page.
-                        Use
-                        the list on the left of the screen to switch between different projects.</p>
-                    <img src="images/u81.gif">
-                </div>
-                <button class="leftSliderbtn" onclick="plusDivs(-1)"></button>
-                <button class="rightSliderbtn" onclick="plusDivs(1)"></button>
-            </div>
-        </div> <!-- container -->
-
-
-</section><!-- appSection -->
-
-
-<!-- </section> -->
-
-<section class="footer">
-    <div class="container">
-        <img src="images/u34.png">
+    <div class="flex-fill">
+      <ul class="navbar-nav flex-row justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" data-target="#invitation" data-slide-to="0">EVENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="#invitation" data-slide-to="1">AGENDA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-target="#invitation" data-slide-to="2">RSVP</a>
+        </li>
+      </ul>
     </div>
-</section>
-
-
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<!-- <script type="text/javascript" scr="js/Chart.js"></script> -->
-<script src="js/Chart.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
-<script type="text/javascript" src="js/scripts.js"></script>
-<script type="text/javascript" src="js/phaser.min.js"></script>
-<script type="text/javascript" src="js/pie.js"></script>
-<script type="text/javascript" src="js/app/state-manager.js"></script>
-<script type="text/javascript" src="js/app/scene-boot.js"></script>
-<script type="text/javascript" src="js/app/scene-preload.js"></script>
-<script type="text/javascript" src="js/app/scene-cube.js"></script>
-<script type="text/javascript" src="js/app/scene-main.js"></script>
-
-<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="js/folder_anim.js"></script>
-<script>
-    var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-
-    function init() {
-        canvas = document.getElementById("canvas");
-        anim_container = document.getElementById("animation_container");
-        dom_overlay_container = document.getElementById("dom_overlay_container");
-        var comp = AdobeAn.getComposition("EFF8F1559E2CD64080419C02B1227422");
-        var lib = comp.getLibrary();
-        handleComplete({}, comp);
-    }
-
-    function handleComplete(evt, comp) {
-        //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-        var lib = comp.getLibrary();
-        var ss = comp.getSpriteSheet();
-        exportRoot = new lib.DILGP_Interactiveweb_LandscapeforAnimation_09082018_HTML5Canvas();
-        stage = new lib.Stage(canvas);
-        //Registers the "tick" event listener.
-        fnStartAnimation = function () {
-            stage.addChild(exportRoot);
-            createjs.Ticker.setFPS(lib.properties.fps);
-            createjs.Ticker.addEventListener("tick", stage);
-        }
-
-        //Code to support hidpi screens and responsive scaling.
-        function makeResponsive(isResp, respDim, isScale, scaleType) {
-            var lastW, lastH, lastS = 1;
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            function resizeCanvas() {
-                var w = lib.properties.width, h = lib.properties.height;
-                var iw = window.innerWidth, ih = window.innerHeight;
-                var pRatio = window.devicePixelRatio || 1, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
-                if (isResp) {
-                    if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
-                        sRatio = lastS;
-                    }
-                    else if (!isScale) {
-                        if (iw < w || ih < h)
-                            sRatio = Math.min(xRatio, yRatio);
-                    }
-                    else if (scaleType == 1) {
-                        sRatio = Math.min(xRatio, yRatio);
-                    }
-                    else if (scaleType == 2) {
-                        sRatio = Math.max(xRatio, yRatio);
-                    }
-                }
-                canvas.width = w * pRatio * sRatio;
-                canvas.height = h * pRatio * sRatio;
-                canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
-                canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
-                stage.scaleX = pRatio * sRatio;
-                stage.scaleY = pRatio * sRatio;
-                lastW = iw;
-                lastH = ih;
-                lastS = sRatio;
-                stage.tickOnUpdate = false;
-                stage.update();
-                stage.tickOnUpdate = true;
-            }
-        }
-
-        makeResponsive(false, 'both', false, 1);
-        AdobeAn.compositionLoaded(lib.properties.id);
-        fnStartAnimation();
-    }
-</script>
+  </nav>
+  <div class="theme">
+    <div class="top-left animated slideInDown">
+      <img class="tree" src="assets/images/event-and-organisers/tree-min.png" alt="">
+    </div>
+    <div class="top-right animated slideInDown">
+      <img class="mac-book" src="assets/images/event-and-organisers/mac-book-min.png" alt="">
+    </div>
+    <div class="bottom-left animated slideInUp">
+      <img class="plane" src="assets/images/event-and-organisers/plane-min.png" alt="">
+    </div>
+    <div class="bottom-right animated slideInUp">
+      <img class="coffee" src="assets/images/event-and-organisers/coffee-cup-min.png" alt="">
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="invitation" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="viewport event">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 animated fadeIn titles">
+                    <h2>Welcome to</h2>
+                    <h1>Hackathon</h1>
+                  </div>
+                </div>
+                <div class="row what-tabs animated fadeIn">
+                  <div class="question">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><strong>What</strong> is this Hackathon about?</a>
+                      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><strong>Why</strong> should i care?</a>
+                      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><strong>How</strong> is the event like on the day?</a>
+                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><strong>Where</strong> and when is it happening?</a>
+                    </div>
+                  </div>
+                  <div class="col-6 answer">
+                    <div class="tab-content" id="v-pills-tabContent">
+                      <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <p>This Hackathon is about helping enterprise leaders discover innovating approaches to solving complex problems through digital transformation.</p>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <p>Because digital workflow allows consistent and reliable tracking for projects, maximises team efficiency, and unlocks potentials in process during initiation, design, prototype, testing, and launch.</p>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <p>Workshop includes one-day of learning and applying rapid prototyping with real world APS cases, opportunity to network with people from other departments and technology industrial leaders.</p>
+                      </div>
+                      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <p class="text-center"><strong>14th Sep</strong><br>10:00 am - 19:00 pm<br>@<br>Microsoft Office, Barton</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="viewport">
+              <div class="container-fluid agenda">
+                <div class="row mt-5">
+                  <div class="col-4 text-right">
+                    <h1 class="animated fadeIn title">Agenda</h1>
+                  </div>
+                  <div class="col-4 view-changers">
+                    <a href="#" style="opacity:0.5;">
+                      <img class="animated fadeIn list-view" src="assets/images/agenda/list-view-min.png" alt="List View">
+                    </a>
+                    <a href="#">
+                      <img class="animated fadeIn circular-view"  src="assets/images/agenda/circular-view-min.png" alt="Circular View">
+                    </a>
+                  </div>
+                </div>
+                <div class="row agenda-pie">
+                  <div class="col-3 offset-1dot5">
+                    <p id="notes" class="animated fadeIn">**Notes**<br>Once this page is present, the clock will automatically starts a carousel effect for every 6 seconds, showing the exact same thing in the next few art boards. Once user starts hovering and clicking one of these, the automatic motion stops and the clock only listens to user’s command.</p>
+                  </div>
+                  <div class="col-7" id="svg-parent">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 462 462">
+                      <defs>
+                        <style>
+                        .cls-1{fill:none;}
+                        .cls-2{clip-path:url(#clip-path);}
+                        .cls-4{fill:#d6f9dd;animation-delay: 0.88s; animation-timing-function: ease-in;}
+                        .cls-5{fill:#f0f3bd;animation-delay: 0.88s; animation-timing-function: ease-in;}
+                        .cls-6{fill:#02c39a;animation-delay: 0.85s; animation-timing-function: ease-in;}
+                        .cls-7{fill:#00a896;animation-delay: 0.75s; animation-timing-function: ease-in;}
+                        .cls-8{fill:#028090;animation-delay: 0.6s; animation-timing-function: ease-in;}
+                        .cls-3{fill:#05668d;animation-delay: 0.4s; animation-timing-function: ease-in;}
+                        .cls-10,.cls-11,.cls-9{isolation:isolate;}
+                        .cls-9{font-size:24px; animation-delay: 1.3s; animation-timing-function: ease-in;}
+                        .cls-11{font-size:20px; text-align: center;}
+                        .cls-12{letter-spacing:-0.06em;}
+                        .cls-13{letter-spacing:-0.02em;}
+                        </style>
+                        <clipPath id="clip-path">
+                          <path class="cls-1" d="M377.67,145.82l-13.87,8a162.21,162.21,0,0,1,0,149.75l13.87,8a178.21,178.21,0,0,0,0-165.76ZM227.12,390.54v16A177.05,177.05,0,0,0,303,386.24l-8-13.87A161.22,161.22,0,0,1,227.12,390.54Zm80-25.16,8,13.87a179,179,0,0,0,55.54-55.55l-13.87-8A162.81,162.81,0,0,1,307.12,365.38ZM356.8,141.7l13.87-8A177.84,177.84,0,0,0,227.12,50.85v16A161.87,161.87,0,0,1,356.8,141.7Zm-314.68,87a178,178,0,0,0,171,177.85v-16a162,162,0,0,1,0-323.68v-16A178,178,0,0,0,42.12,228.7Z"/>
+                        </clipPath>
+                      </defs>
+                      <g id="Layer_2" data-name="Layer 2">
+                        <g id="Plan">
+                          <g id="SVG">
+                            <rect id="ViewPort" class="cls-1" width="462" height="462"/>
+                            <g id="Clock">
+                              <g id="Dial">
+                                <g class="cls-2">
+                                  <path class="animated fadeIn cls-3 timespan" start-at="10" d="M220,229.06,59.48,136.37c34.09-59,92.35-92.69,160.54-92.69Z"/>
+                                  <path class="animated fadeIn cls-8 timespan" start-at="12" d="M220,229.06V43.7c68.18,0,126.44,33.64,160.54,92.69Z"/>
+                                  <path class="animated fadeIn cls-7 timespan" start-at="2" d="M220,229.06l160.54-92.69c34.09,59,34.09,126.32,0,185.37Z"/>
+                                  <path class="animated fadeIn cls-6 timespan" start-at="4" d="M220,229.06,380.55,321.7c-17,29.52-38.33,50.8-67.85,67.85Z"/>
+                                  <path class="animated fadeIn cls-5 timespan" start-at="5" d="M220,229.06,312.7,389.6c-29.52,17-58.59,24.84-92.69,24.84Z"/>
+                                  <path class="animated fadeIn cls-4 timespan" start-at="6" d="M220,229.06V414.43c-34.09,0-63.16-7.79-92.69-24.84Z"/>
+                                  <path class="animated fadeIn cls-1 timespan" start-at="7" d="M220,229.06,127.33,389.59C38.67,338.4,8.33,225,59.48,136.37h0Z"/>
+                                </g>
+                              </g>
+                              <g id="Numbers">
+                                <text class="animated fadeIn cls-9" time="10" transform="translate(33.98 127.56)">10</text>
+                                <text class="animated fadeIn cls-9" time="11" transform="translate(106.59 62.56)">11</text>
+                                <text class="animated fadeIn cls-9" time="12" transform="translate(209.1 37.56)">12</text>
+                                <text class="animated fadeIn cls-9" time="1" transform="translate(313.92 62.56)">1</text>
+                                <text class="animated fadeIn cls-9" time="2" transform="translate(383.44 127.56)">2</text>
+                                <text class="animated fadeIn cls-9" time="3" transform="translate(414.48 232.56)">3</text>
+                                <text class="animated fadeIn cls-9" time="4" transform="translate(382.32 336.56)">4</text>
+                                <text class="animated fadeIn cls-9" time="5" transform="translate(311.46 411.56)">5</text>
+                                <text class="animated fadeIn cls-9" time="6" transform="translate(212.94 438.56)">6</text>
+                                <text class="animated fadeIn cls-9" time="7" transform="translate(107.18 411.56)">7</text>
+                              </g>
+                            </g>
+                            <!-- <g id="InnerText" class="cls-10">
+                              <text class="cls-11" transform="translate(170.95 185)">14th Sep</text>
+                              <text class="cls-11" transform="translate(131.79 221)">10AM - 19 PM</text>
+                              <text class="cls-11" transform="translate(127.08 293)">Microsoft Office</tspan>
+                              </text>
+                            </g> -->
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                    <div class="dial-data animated fadeIn">
+                      <div class="timed-info active" start-at="0" page-active="true">
+                        <p><strong>14th Sep</strong><br>10 AM - 19 PM<br>@<br>Microsoft Office,<br>Barton</p>
+                      </div>
+                      <div class="timed-info" start-at="10">
+                        <p>Opening and<br>keynotes<br>description</p>
+                      </div>
+                      <div class="timed-info" start-at="12" >
+                        <p>Ideat and<br>design I<br>description</p>
+                      </div>
+                      <div class="timed-info" start-at="2" >
+                        <p>Lunch and<br>networking<br>description</p>
+                      </div>
+                      <div class="timed-info" start-at="4" >
+                        <p>Design II and<br>wireframing<br>description</p>
+                      </div>
+                      <div class="timed-info" start-at="5" >
+                        <p>Presentation<br>description</p>
+                      </div>
+                      <div class="timed-info" start-at="6" >
+                        <p>Dinner,<br>awards and<br>networking<br>description</p>
+                      </div>
+                    </div>
+                    <div class="dial-info">
+                      <p class="animated fadeIn" start-at="10">Opening and<br>keynotes<br><br><span>10 am - 12 am</span></p>
+                      <p class="animated fadeIn" start-at="12">Ideat and<br> design I<br><br><span>12 am - 2 pm</span></p>
+                      <p class="animated fadeIn" start-at="2">Lunch and<br>networking<br><br><span>2 pm - 4 pm</span></p>
+                      <p class="animated fadeIn" start-at="4">Deisgn II and<br>wireframing<br><br><span>4 pm - 5 pm</span></p>
+                      <p class="animated fadeIn" start-at="5">Presentation<br><br><span>5 pm - 6 pm</span></p>
+                      <p class="animated fadeIn" start-at="6">Dinner, awards<br>and networking<br><br><span>6 pm - 7 pm</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row agenda-list d-none">
+                  <div class="col-7 offset-3">
+                    <div class="row">
+                      <div class="col-7">
+                        <ul class="agenda-timeline animated fadeIn">
+                          <li class="active" start-at="10">
+                            <div class="row">
+                              <div class="col-5">
+                                <p>10:00</p>
+                                <h5>10 am - 12 pm</h5>
+                              </div>
+                              <div class="col-7 timeline-title align-items-center">
+                                <p>Opening Keynotes</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li start-at="12">
+                            <div class="row">
+                              <div class="col-5">
+                                <p>12:00</p>
+                                <h5>12 pm - 2 pm</h5>
+                              </div>
+                              <div class="col-7 timeline-title align-items-center">
+                                <p>Ideate &amp; Design I</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li start-at="2">
+                            <div class="row">
+                              <div class="col-5">
+                                <p>2:00</p>
+                                <h5>2 pm - 4 pm</h5>
+                              </div>
+                              <div class="col-7 timeline-title align-items-center">
+                                <p>Lunch &amp; Networking</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li start-at="4">
+                            <div class="row">
+                              <div class="col-5">
+                                <p>4:00</p>
+                                <h5>4 pm - 5 pm</h5>
+                              </div>
+                              <div class="col-7 timeline-title align-items-center">
+                                <p>Design II &amp; Wireframing</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li start-at="5">
+                            <div class="row">
+                              <div class="col-5">
+                                <p>5:00</p>
+                                <h5>5 pm - 6 pm</h5>
+                              </div>
+                              <div class="col-7 timeline-title align-items-center">
+                                <p>Presentation</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li start-at="6">
+                            <div class="row">
+                              <div class="col-5">
+                                <p>6:00</p>
+                                <h5>6 pm - 7 pm</h5>
+                              </div>
+                              <div class="col-7 timeline-title align-items-center">
+                                <p>Dinner, Awards &amp; Networking</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="col-5 d-flex align-items-center open-timeline-data animated fadeIn">
+                        <p class="active" start-at="10">Opening and keynotes description</p>
+                        <p start-at="12">Ideat and design I description</p>
+                        <p start-at="2">Lunch and networking description</p>
+                        <p start-at="4">Design II and wireframing description</p>
+                        <p start-at="5">Presentation description</p>
+                        <p start-at="6">Dinner, awards and networking description</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="viewport rsvp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 animated fadeIn titles">
+                    <h1>RSVP</h1>
+                  </div>
+                </div>
+                <div class="row rsvp-tabs animated fadeIn">
+                  <div class="question">
+                    <div class="nav flex-column nav-pills" id="rsvp-tab" role="tablist" aria-orientation="vertical">
+                      <a class="nav-link" id="rsvp-accept-tab" data-toggle="pill" href="#rsvp-accept" role="tab" aria-controls="rsvp-accept" aria-selected="true"><strong>ACCEPT</strong> with pleasure</a>
+                      <a class="nav-link" id="rsvp-delegate-tab" data-toggle="pill" href="#rsvp-delegate" role="tab" aria-controls="rsvp-delegate" aria-selected="false"><strong>DELEGATE</strong>  to someone else</a>
+                      <a class="nav-link" id="rsvp-decline-tab" data-toggle="pill" href="#rsvp-decline" role="tab" aria-controls="rsvp-decline" aria-selected="false"><strong>DECLINE</strong> with regret</a>
+                    </div>
+                  </div>
+                  <div class="col-6 answer">
+                    <div class="tab-content" id="rsvp-tabContent">
+                      <div class="tab-pane fade" id="rsvp-accept" role="tabpanel" aria-labelledby="rsvp-accept-tab">
+                        <h4>YOUR INFORMATION</h4>
+                        <form class="" action="" method="post">
+                          <div class="row">
+                            <div class="col-12">
+                              <h5>Name</h5>
+                            </div>
+                            <div class="col-6">
+                              <input type="text" name="fname" value="" placeholder="First Name" autocomplete="name">
+                            </div>
+                            <div class="col-6">
+                              <input type="text" name="lname" value="" placeholder="Last Name" autocomplete="">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <h5>Email</h5>
+                            </div>
+                            <div class="col-12">
+                              <input type="text" name="email" value="" placeholder="someone@domain.com" autocomplete="email">
+                            </div>
+                          </div>
+                          <div id="guest-data"></div>
+                          <div class="row">
+                            <div class="col-12 text-center">
+                              <button type="button" class="add-guest" id="add-guest" name="button">+ ADD GUEST?</button>
+                            </div>
+                            <div class="col-12 text-center">
+                              <button type="submit" class="rsvp-now" id="rsvp-accept-btn" name="button">RSVP NOW</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane fade" id="rsvp-delegate" role="tabpanel" aria-labelledby="rsvp-delegate-tab">
+                        <h4>DELEGATE TO</h4>
+                        <form class="" action="" method="post">
+                          <div class="row">
+                            <div class="col-12">
+                              <h5>Name</h5>
+                            </div>
+                            <div class="col-6">
+                              <input type="text" name="fname" value="" placeholder="First Name" autocomplete="off">
+                            </div>
+                            <div class="col-6">
+                              <input type="text" name="lname" value="" placeholder="Last Name" autocomplete="off">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12">
+                              <h5>Email</h5>
+                            </div>
+                            <div class="col-12">
+                              <input type="text" name="email" value="" placeholder="someone@domain.com" autocomplete="off">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text-center">
+                              <button type="submit" class="rsvp-now" id="sent-delegation" name="button">Send Delegation</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="tab-pane fade" id="rsvp-decline" role="tabpanel" aria-labelledby="rsvp-messages-tab">
+                        <h4>SORRY TO HEAR THAT</h4>
+                        <form class="" action="" method="post">
+                          <div class="row">
+                            <div class="col-12">
+                              <span>Could tou tell us reasons so that we can improve nect time?</span>
+                              <h5>Choose any that apply</h5>
+                            </div>
+                            <div class="col-6">
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">Time Clash</label>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Not interested</label>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio3">Not relevant</label>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio4">Too far</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-3">
+                            <div class="col-12">
+                              <input type="text" name="email" value="" placeholder="Other reasons..." autocomplete="off">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text-center">
+                              <button type="submit" class="rsvp-now" id="decline-btn" name="button">Send and Decline</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/scripts.js"></script>
 </body>
 </html>

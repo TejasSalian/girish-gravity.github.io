@@ -226,6 +226,7 @@ $(document).ready(function() {
 });
 $('#go-rsvp').on('click', ()=> {
   sessionStorage.setItem('rsvpRedirect','true');
-  var url = String(window.location);
-  window.location = url.slice(0, -10) + '/invitation.html';
+  // var url = String(window.location);
+  // window.location = url.slice(0, -10) + '/invitation.html';
+  window.location = 'https://girish-gravity.github.io//invitation.html';
 });

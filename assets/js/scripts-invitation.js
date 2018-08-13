@@ -444,12 +444,9 @@ $('#rsvp-accept-btn').on('click', ()=> {
 
 $(document).ready(function() {
   if (sessionStorage.getItem('rsvpRedirect') === String('true')) {
-    // $('.toast').removeClass('fadeOut').addClass('fadeIn d-flex');
     $('#invitation').carousel(2);
-    // setTimeout(function () {
-    //   sessionStorage.setItem('rsvpRedirect','');
-    //   $('#invitation').carousel(2);
-    //   $('.toast').removeClass('fadeIn').addClass('fadeOut');
-    // }, 3000);
+    setTimeout(function () {
+      $('#rsvp-accept-tab').trigger('click');
+    }, 500);
   }
 });

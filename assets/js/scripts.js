@@ -410,7 +410,23 @@ $('#invitation').on('slide.bs.carousel', function (event) {
   // Add New Toys
 });
 
-var guestDataTemplate = '<div class="row"><div class="col-12"><h5>GUEST INFO</h5></div><div class="col-6"><input type="text" name="guest-fname" value="" placeholder="First Name" autocomplete="name"></div><div class="col-6"><input type="text" name="guest-lname" value="" placeholder="Last Name" autocomplete=""></div><div class="col-12"><input type="text" name="guest-email" value="" placeholder="someone@domain.com" autocomplete=""></div></div>';
+var guestDataTemplate = '<div class="row">'+
+                          '<div class="col-12">'+
+                              '<h5>GUEST INFO</h5>'+
+                          '</div>'+
+                          '<div class="col-6">'+
+                            '<input type="text" name="guest1-fname" value="" placeholder="First Name" autocomplete="name">'+
+                          '</div>'+
+                          '<div class="col-6">'+
+                            '<input type="text" name="guest1-lname" value="" placeholder="Last Name" autocomplete="">'+
+                          '</div>'+
+                          '<div class="col-6">'+
+                            '<input type="text" name="guest2-fname" value="" placeholder="First Name" autocomplete="name">'+
+                          '</div>'+
+                          '<div class="col-6">'+
+                            '<input type="text" name="guest2-lname" value="" placeholder="Last Name" autocomplete="">'+
+                          '</div>'+
+                        '</div>';
 
 var acceptRsvpMessage = '<p>Thank you for registering RSVP, we have sent a confirmation and an agenda to the email you provided. We look forward to seeing you on the day.</p>';
 

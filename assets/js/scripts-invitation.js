@@ -445,6 +445,7 @@ $('#rsvp-accept-btn').on('click', ()=> {
 $(document).ready(function() {
   if (sessionStorage.getItem('rsvpRedirect') === String('true')) {
     $('#invitation').carousel(2);
+    sessionStorage.setItem('rsvpRedirect','');
     setTimeout(function () {
       $('#rsvp-accept-tab').trigger('click');
     }, 500);

@@ -159,6 +159,10 @@ body.invitation {
     .theme .bottom-left .idea-tab, .theme .bottom-right .idea-tab {
       max-width: 52%;
       margin-top: -55px; }
+      @media screen and (min-width: 1480px) {
+        .theme .top-left .idea-tab, .theme .top-right .idea-tab,
+        .theme .bottom-left .idea-tab, .theme .bottom-right .idea-tab {
+          margin-top: 0%; } }
     .theme .top-left .tomato, .theme .top-right .tomato,
     .theme .bottom-left .tomato, .theme .bottom-right .tomato {
       max-width: 16%;
@@ -617,19 +621,5 @@ body.invitation {
   margin-top: 16px;
   color: white;
   background-color: #3251b6; }
-
-.toast {
-  display: none;
-  justify-content: center; }
-  .toast span {
-    position: absolute;
-    bottom: 13.5vh;
-    margin: 5px;
-    border-radius: 30px;
-    padding: 6px 28px;
-    color: white;
-    background-color: #00000073;
-    box-shadow: 0 0px 18px #00000040;
-    z-index: 10; }
 
 /*# sourceMappingURL=style.css.map */

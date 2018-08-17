@@ -1168,13 +1168,14 @@ input[type=checkbox]:not(old):checked + label {
     z-index: 22;
     height: 582px;
     width: calc(100% - 186px);
-    overflow-y: scroll;
+    overflow-y: hidden;
     background-color: white;
     position: relative;
     float: right;
     margin-right: -16px;
     margin-top: 48px;
     display: none;
+    overflow-x:  hidden;
 }
 
 .year-wise ul {
@@ -1196,6 +1197,9 @@ input[type=checkbox]:not(old):checked + label {
 .year-wise ul > li > img {
     width: calc(100%);
     float: right;
+    margin:  0;
+    padding:  0;
+    margin-bottom:  -14px;
 }
 
 .year-data {

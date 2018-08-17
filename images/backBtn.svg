@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="41.3mm"
+   height="16.9mm"
+   version="1.1"
+   viewBox="0 0 41.3 16.9"
+   id="svg4518"
+   sodipodi:docname="backBtn.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata4524">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4522" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview4520"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="12.756458"
+     inkscape:cx="29.992262"
+     inkscape:cy="38.899088"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g4514">
+    <sodipodi:guide
+       position="8.8877132,8.741051"
+       orientation="1,0"
+       id="guide4526"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.16592903,8.5453453"
+       orientation="0,1"
+       id="guide4528"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     transform="translate(-86 -167)"
+     id="g4516">
+    <g
+       transform="translate(0,-6.0400001)"
+       id="g4514">
+      <rect
+         x="86"
+         y="173"
+         width="41.299999"
+         height="16.9"
+         rx="0"
+         ry="0"
+         style="fill:#eef8fc;fill-opacity:0.6;paint-order:markers stroke fill"
+         id="rect4504" />
+      <circle
+         transform="scale(-1,1)"
+         cx="-94.965935"
+         cy="181.39301"
+         r="7.9400001"
+         style="fill:#0f664d;paint-order:markers stroke fill"
+         id="circle4506" />
+      <path
+         d="m 93.912591,178.24159 a 0.75,0.75 0 0 1 0.522,1.29 l -1.04,1.04 h 4.84 a 0.75,0.75 0 1 1 0,1.5 h -4.84 l 1.04,1.04 a 0.75,0.75 0 1 1 -1.06,1.06 l -2.21,-2.21 a 0.75,0.75 0 0 1 -0.333,-0.567 0.75,0.75 0 0 1 0,-0.002 0.75,0.75 0 0 1 0.158,-0.53 0.75,0.75 0 0 1 0.152,-0.148 l 2.24,-2.24 a 0.75,0.75 0 0 1 0.539,-0.226 z"
+         dominant-baseline="auto"
+         style="color:#000000;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;dominant-baseline:auto;white-space:normal;shape-padding:0;isolation:auto;mix-blend-mode:normal;solid-color:#000000;fill:#ffffff;color-rendering:auto;image-rendering:auto;shape-rendering:auto"
+         id="path4508"
+         inkscape:connector-curvature="0" />
+      <text
+         x="105.51206"
+         y="183.68275"
+         font-size="10.6px"
+         letter-spacing="0px"
+         word-spacing="0px"
+         style="font-size:10.60000038px;line-height:1.25;font-family:Playlist;letter-spacing:0px;word-spacing:0px;fill:#35404a;fill-opacity:0.98000004;stroke-width:0.26499999"
+         xml:space="preserve"
+         id="text4512"><tspan
+           x="105.51206"
+           y="183.68275"
+           font-size="5.64px"
+           id="tspan4510"
+           style="font-size:5.63999987px;font-family:Roboto;fill:#35404a;fill-opacity:0.98000004;stroke-width:0.26499999">Back</tspan></text>
+    </g>
+  </g>
+</svg>

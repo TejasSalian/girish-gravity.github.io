@@ -1,0 +1,31 @@
+[{
+    "Project": "132kV Double Circuit Feeder Palmwoods - West Maroochydore",
+    "Stage": "DELIVERY",
+    "SubStage": "",
+    "Value": 78848072.3538,
+    "OpportunityFlag": "",
+    "Capital": "Construction project",
+    "Completion": "NA",
+    "ContractType": "",
+    "Region": "Sunshine Coast",
+    "SubRegion": "",
+    "LeadAgency": "Energy Queensland",
+    "AssetClass": "Energy",
+    "ProjectId": 4844
+  },
+  {
+    "Project": "50 megawatt hydro-electric power station at the Burdekin Falls dam",
+    "Stage": "PLANNING",
+    "SubStage": "Business Case",
+    "Value": 0,
+    "OpportunityFlag": "",
+    "Capital": "",
+    "Completion": "NA",
+    "ContractType": "",
+    "Region": "Townsville",
+    "SubRegion": "",
+    "LeadAgency": "Department of Natural Resources, Mines and Energy",
+    "AssetClass": "Energy",
+    "ProjectId": 5230
+  }
+]

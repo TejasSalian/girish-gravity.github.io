@@ -1,0 +1,55 @@
+{
+"frames": {
+	"g13903.png": {
+		"frame": {"x":162, "y":150, "w":156, "h":152},
+		"spriteSourceSize": {"x":0,"y":0,"w":156,"h":152},
+		"sourceSize": {"w":156,"h":152}
+	},
+	"g146659.png": {
+		"frame": {"x":273, "y":303, "w":76, "h":66},
+		"spriteSourceSize": {"x":0,"y":0,"w":76,"h":66},
+		"sourceSize": {"w":76,"h":66}
+	},
+	"g148523.png": {
+		"frame": {"x":0, "y":150, "w":161, "h":170},
+		"spriteSourceSize": {"x":0,"y":0,"w":161,"h":170},
+		"sourceSize": {"w":161,"h":170}
+	},
+	"g148939.png": {
+		"frame": {"x":319, "y":112, "w":93, "h":120},
+		"spriteSourceSize": {"x":0,"y":0,"w":93,"h":120},
+		"sourceSize": {"w":93,"h":120}
+	},
+	"g150945.png": {
+		"frame": {"x":0, "y":321, "w":91, "h":65},
+		"spriteSourceSize": {"x":0,"y":0,"w":91,"h":65},
+		"sourceSize": {"w":91,"h":65}
+	},
+	"g151622.png": {
+		"frame": {"x":0, "y":0, "w":262, "h":149},
+		"spriteSourceSize": {"x":0,"y":0,"w":262,"h":149},
+		"sourceSize": {"w":262,"h":149}
+	},
+	"g151998.png": {
+		"frame": {"x":350, "y":233, "w":57, "h":107},
+		"spriteSourceSize": {"x":0,"y":0,"w":57,"h":107},
+		"sourceSize": {"w":57,"h":107}
+	},
+	"g152121.png": {
+		"frame": {"x":263, "y":0, "w":97, "h":111},
+		"spriteSourceSize": {"x":0,"y":0,"w":97,"h":111},
+		"sourceSize": {"w":97,"h":111}
+	},
+	"g152124.png": {
+		"frame": {"x":162, "y":303, "w":110, "h":108},
+		"spriteSourceSize": {"x":0,"y":0,"w":110,"h":108},
+		"sourceSize": {"w":110,"h":108}
+	}
+
+},
+"meta": {
+	"image": "citySprites.png",
+	"size": {"w": 413, "h": 412},
+	"scale": "1"
+}
+}

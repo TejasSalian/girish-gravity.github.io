@@ -1,0 +1,430 @@
+{
+"frames": {
+	"Tick01.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick02.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick03.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick04.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick05.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick06.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick07.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick08.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick09.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick10.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick11.png": {
+		"frame": {"x":192, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick12.png": {
+		"frame": {"x":160, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick13.png": {
+		"frame": {"x":160, "y":148, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick14.png": {
+		"frame": {"x":160, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick15.png": {
+		"frame": {"x":160, "y":74, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick16.png": {
+		"frame": {"x":160, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick17.png": {
+		"frame": {"x":160, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick18.png": {
+		"frame": {"x":128, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick19.png": {
+		"frame": {"x":128, "y":148, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick20.png": {
+		"frame": {"x":128, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick21.png": {
+		"frame": {"x":128, "y":74, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick22.png": {
+		"frame": {"x":128, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick23.png": {
+		"frame": {"x":128, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick24.png": {
+		"frame": {"x":96, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick25.png": {
+		"frame": {"x":96, "y":148, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick26.png": {
+		"frame": {"x":96, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick27.png": {
+		"frame": {"x":96, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick28.png": {
+		"frame": {"x":96, "y":74, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick29.png": {
+		"frame": {"x":96, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick30.png": {
+		"frame": {"x":192, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick31.png": {
+		"frame": {"x":64, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick32.png": {
+		"frame": {"x":64, "y":148, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick33.png": {
+		"frame": {"x":64, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick34.png": {
+		"frame": {"x":64, "y":74, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick35.png": {
+		"frame": {"x":64, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick36.png": {
+		"frame": {"x":64, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick37.png": {
+		"frame": {"x":32, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick38.png": {
+		"frame": {"x":32, "y":148, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick39.png": {
+		"frame": {"x":32, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick40.png": {
+		"frame": {"x":32, "y":74, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick41.png": {
+		"frame": {"x":32, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick42.png": {
+		"frame": {"x":32, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick43.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick44.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick45.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick46.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick47.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick48.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick49.png": {
+		"frame": {"x":0, "y":185, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick50.png": {
+		"frame": {"x":0, "y":148, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick51.png": {
+		"frame": {"x":0, "y":111, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick52.png": {
+		"frame": {"x":0, "y":74, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick53.png": {
+		"frame": {"x":0, "y":37, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick54.png": {
+		"frame": {"x":0, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick55.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick56.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick57.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick58.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick59.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick60.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick61.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick62.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick63.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick64.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick65.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick66.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick67.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick68.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick69.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	},
+	"Tick70.png": {
+		"frame": {"x":96, "y":0, "w":31, "h":36},
+		"spriteSourceSize": {"x":2,"y":3,"w":35,"h":40},
+		"trimmed": true,
+		"sourceSize": {"w":35,"h":40}
+	}
+
+},
+"meta": {
+	"image": "tick.png",
+	"size": {"w": 224, "h": 222},
+	"scale": "1"
+}
+}

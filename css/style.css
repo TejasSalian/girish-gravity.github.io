@@ -1184,6 +1184,7 @@ input[type=checkbox]:not(old):checked + label {
     display: block;
     margin: 0;
     padding: 0;
+    margin-top: -25px;
 }
 
 .year-wise ul > li {
@@ -1235,7 +1236,7 @@ input[type=checkbox]:not(old):checked + label {
     height: 310px;
     position: absolute;
     margin-left: 257px;
-    margin-top: 227px;
+    margin-top: 203px;
 }
 
 .scrollIndicatorUp {
@@ -2053,18 +2054,23 @@ hr.style-two {
 }
 
 .clickables li:nth-child(2) {
-    left: 140px;
-    top: 60px;
+    left: 144px;
+    top: 43px;
 }
 
 .clickables li:nth-child(3) {
-    left: 236px;
-    top: 79px;
+    left: 240px;
+    top: 60px;
 }
 
 .clickables li:nth-child(4) {
-    left: 324px;
-    top: 92px;
+    left: 332px;
+    top: 75px;
+}
+
+.clickables li:nth-child(5) {
+    left: 630px;
+    top: 402px;
 }
 
 .clickables > ul > li {

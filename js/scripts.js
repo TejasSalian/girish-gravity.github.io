@@ -217,7 +217,6 @@ function openProjectPanel(bubble) {
   slideIndex = 2;
   click = true;
   if (click) {
-    initSort();
     $(".innerProjectPanel").show();
     $(".projectListDiv").show();
 
@@ -257,7 +256,6 @@ function openProposalPanel(bubble) {
   // console.log(stageValue);
   click = true;
   if (click) {
-    initSort();
     $(".innerProjectPanel").show();
     $(".projectListDiv").show();
 
@@ -293,9 +291,6 @@ $(function() {
   $(".projects").click(function() {
     // debugger
     if (click) {
-
-      // console.log("AHA");
-      initSort();
 
       $(".innerProjectPanel").show();
       $(".projectListDiv").show();
@@ -780,7 +775,7 @@ function jsonLoader() {
       if (val.Stage == "Strategic Assessment") {
         dataValue = val.ProjectId + ',StrategicAssessment';
       }
-      // items.push("<a>");
+      items.push("<a>");
       items.push("<tr class='pp_unselected' data-value=" + dataValue + ">");
       items.push("<td class='overviewlst'></td>");
       items.push("<td class='linelst'>" + "<div class='circle'></div>" + "</td>");
@@ -808,26 +803,23 @@ function jsonLoader() {
       // console.log(val.Stage);
       items.push("<td class='assetclasslst'>" + val.AssetClass + "</td>");
       items.push("<td class='regionlst'>" + val.Region + "</td>");
-      items.push("</tr>");
 
       getRegionCount(val.Region);
       getAssetCount(val.AssetClass);
 
-    });
-    let tbody = '';
-    for (i of items) {
-      tbody += i;
-    }
-    $('<tbody/>', {
-      html: tbody
-    }).appendTo($(".dataTable"));
-    // console.log(items);
 
+    });
+
+    $('<tbody/>', {
+      html: items.join("")
+    }).appendTo($(".dataTable"));
     $('.stagelst').show();
     $('.valuelst').show();
     $('.regionlst').show();
     $('.assetclasslst').show();
 
+    $("#dataTable").trigger("update");
+    initSort();
   });
 
 
@@ -1599,6 +1591,46 @@ $(".floatDropPanel").on('click', function() {
   }
 });
 
+function proposalCounter() {
+  var jsonData, newConcept = 0, newStrategy = 0, newEvaluation = 0, newBusiness = 0, newDelivery = 0, newOther = 0;
+  //   $.ajax({
+  //   method: "GET",
+  //   url: "test.js",
+  //   dataType: "script"
+  // });
+
+  $.ajax({
+    url: url1_temp,
+    beforeSend: function( xhr ) {
+      xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+    }
+  }).done(function( data ) {
+    $.each(data, function(key, val) {
+      switch (val.Stage) {
+        case 'Concept'.toUpperCase():
+          newConcept += 1;
+          break;
+        case 'Strategic Assessment'.toUpperCase():
+          newStrategy += 1;
+          break;
+        case 'Preliminary Evaluation'.toUpperCase():
+          newEvaluation += 1;
+          break;
+        case 'Business Case'.toUpperCase():
+          newBusiness += 1;
+          break;
+        case 'Delivery'.toUpperCase():
+          newDelivery += 1;
+          break;
+        default:
+          newOther += 1;
+      }
+
+    })
+  });
+  return {newConcept : newConcept, newStrategy : newStrategy, newEvaluation : newEvaluation, newBusiness : newBusiness, newDelivery : newDelivery, newOther : newOther}
+}
+
 
 $('#q_year').on('change', function() {
   if (this.value === String('2017')) {
@@ -1610,28 +1642,27 @@ $('#q_year').on('change', function() {
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_1_2018.Json';
     $(".dataTable tbody").remove();
     jsonLoader();
-    // $(".dataTable").tablesorter();
   } else if (this.value === String('2018')) {
+
     $('.year-wise').css({
       'display': 'block'
     });
-    // url1_temp = '../data/old/ProjectMetaData_1_2018.Json';
-    // url2_temp = '../data/old/ProjectDetailedData_1_2018.Json';
-    // url3_temp = '../data/old/ProjectYearlyDetailedData_1_2018.Json';
-
-    url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
+    // url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
     url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
+    url1_temp = '../data/old/ProjectMetaData_1_2018.Json';
+    // url2_temp = '../data/old/ProjectDetailedData_1_2018.Json';
+    // url3_temp = '../data/old/ProjectYearlyDetailedData_1_2018.Json';
+    var reply = proposalCounter();
+    if (reply) {
+      $("#new-concept").text(reply.newConcept);
+      $("#new-strategy").text(reply.newStrategy);
+      $("#new-evaluation").text(reply.newEvaluation);
+      $("#new-business").text(reply.newBusiness);
+      $("#new-delivery").text(reply.newDelivery);
+    }
     $(".dataTable tbody").remove();
     jsonLoader();
-    initSort();
-    // $(".dataTable").tablesorter();
-    var resort = true,
-        callback = function() {
-
-        };
-      $(".dataTable").trigger("updateAll", [ resort, callback ]);
-
     init();
   }
 });

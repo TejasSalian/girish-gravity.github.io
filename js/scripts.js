@@ -744,6 +744,7 @@ function firstLetterCaps(string_data) {
   return string_data.charAt(0).toUpperCase() + string_data.substr(1).toLowerCase();
 }
 
+var g_data;
 
 function jsonLoader() {
   regionCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -764,6 +765,7 @@ function jsonLoader() {
     // $.getJSON(jsonUrlFormatter(url1), function(data) {
     $.getJSON(url1_temp, function(data) {
       jsonData = data;
+      g_data = data;
     })
   ).then(function() {
     // MAIN STUFF
@@ -835,7 +837,7 @@ $(".dataoption").on('change', function() {
   $('.milestonelst').hide();
   $('.agencylst').hide();
   $('.assetclasslst').hide();
-  console.log(this.value);
+  // console.log(this.value);
   switch (this.value) {
     case 'stagelst':
       $('.stagelst').show();
@@ -1591,78 +1593,77 @@ $(".floatDropPanel").on('click', function() {
   }
 });
 
-function proposalCounter() {
-  var jsonData, newConcept = 0, newStrategy = 0, newEvaluation = 0, newBusiness = 0, newDelivery = 0, newOther = 0;
-  //   $.ajax({
-  //   method: "GET",
-  //   url: "test.js",
-  //   dataType: "script"
-  // });
-
-  $.ajax({
-    url: url1_temp,
-    beforeSend: function( xhr ) {
-      xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
-    }
-  }).done(function( data ) {
-    $.each(data, function(key, val) {
-      switch (val.Stage) {
-        case 'Concept'.toUpperCase():
-          newConcept += 1;
-          break;
-        case 'Strategic Assessment'.toUpperCase():
-          newStrategy += 1;
-          break;
-        case 'Preliminary Evaluation'.toUpperCase():
-          newEvaluation += 1;
-          break;
-        case 'Business Case'.toUpperCase():
-          newBusiness += 1;
-          break;
-        case 'Delivery'.toUpperCase():
-          newDelivery += 1;
-          break;
-        default:
-          newOther += 1;
-      }
-
-    })
-  });
-  return {newConcept : newConcept, newStrategy : newStrategy, newEvaluation : newEvaluation, newBusiness : newBusiness, newDelivery : newDelivery, newOther : newOther}
-}
-
 
 $('#q_year').on('change', function() {
   if (this.value === String('2017')) {
     $('.year-wise').css({
-      'display': 'none'
+      'display': 'block'
     });
+    $('#year-span').text('2017-18');
+    $('.year-span h6').text('2017-18');
     url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData_1_2018.Json';
     url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_1_2018.Json';
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_1_2018.Json';
     $(".dataTable tbody").remove();
     jsonLoader();
+    setTimeout(function(){ g_countProposals(); }, 1500);
   } else if (this.value === String('2018')) {
-
     $('.year-wise').css({
       'display': 'block'
     });
-    // url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
+    $('#year-span').text('2018-19');
+    $('.year-span h6').text('2018-19');
+    url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
     url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
-    url1_temp = '../data/old/ProjectMetaData_1_2018.Json';
-    // url2_temp = '../data/old/ProjectDetailedData_1_2018.Json';
-    // url3_temp = '../data/old/ProjectYearlyDetailedData_1_2018.Json';
-    var reply = proposalCounter();
-    if (reply) {
-      $("#new-concept").text(reply.newConcept);
-      $("#new-strategy").text(reply.newStrategy);
-      $("#new-evaluation").text(reply.newEvaluation);
-      $("#new-business").text(reply.newBusiness);
-      $("#new-delivery").text(reply.newDelivery);
-    }
     $(".dataTable tbody").remove();
     jsonLoader();
     init();
+    setTimeout(function(){ g_countProposals(); }, 500);
   }
 });
+
+
+$('#skip').click(function () {
+  $('#q_year').val('2018');
+  $('.year-wise').css({
+    'display': 'block'
+  });
+  $('.leftColumn').css({
+    'display': 'block'
+  });
+  url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
+  url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
+  url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
+  $(".dataTable tbody").remove();
+  jsonLoader();
+  init();
+  setTimeout(function(){ g_countProposals(); }, 500);
+})
+
+function g_countProposals() {
+  var g_conceptCount = 0,  g_strategicCount = 0,  g_preliminaryCount = 0,  g_businessCount = 0,  g_investmentCount = 0,  g_deliveryCount = 0;
+  for (item of g_data) {
+    if (String('Concept') === String(item.SubStage)) {
+      g_conceptCount += 1;
+    }else if (String('Strategic Assessment') === String(item.SubStage)) {
+      g_strategicCount += 1;
+    }else if (String('Preliminary Evaluation') === String(item.SubStage)) {
+      g_preliminaryCount += 1;
+    }else if (String('Business Case') === String(item.SubStage)) {
+      g_businessCount += 1;
+    }else if (String('Investment Decision') === String(item.SubStage)) {
+      g_investmentCount += 1;
+    }
+  }
+  for (item of g_data) {
+    if (String('DELIVERY') === item.Stage) {
+      g_deliveryCount += 1;
+    }
+  }
+  $("#new-concept").text(g_conceptCount);
+  $("#new-strategy").text(g_strategicCount);
+  $("#new-evaluation").text(g_preliminaryCount);
+  $("#new-business").text(g_businessCount);
+  $("#new-delivery").text(g_deliveryCount);
+}

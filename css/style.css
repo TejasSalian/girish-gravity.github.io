@@ -836,6 +836,10 @@ thead, tbody {
     text-align: center
 }
 
+.dataTable td, .dataTable th:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
 .dataTable tbody {
     height: 438px;
     overflow-y: scroll;
@@ -924,6 +928,7 @@ thead, tbody {
 .valuelst {
     padding-left: 0;
     width: 13%;
+    min-width:13%;
 }
 
 .h_stagelst, .stagelst {
@@ -2086,6 +2091,11 @@ hr.style-two {
 
 .clickables > ul > li {
     position: absolute;
+}
+
+.clickables > ul > li > a {
+    display: inline-block;
+    cursor: pointer;
 }
 
 .clickables > ul > li span {

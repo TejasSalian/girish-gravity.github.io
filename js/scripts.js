@@ -186,17 +186,17 @@ var activeFilters = [];
 
 function updateStage() {
   stageArray = [];
-  var idVal = stageValue.toUpperCase();
+  var idVal = String(stageValue).toUpperCase();
   // console.log(idVal);
   $('tbody tr').each(function() {
     // GET STAGE COLUMN AND CHECK IF ITS PARENT WILL BE ACTIVE OR NOT
-    if ((stageValue != '') && ($(this).children('td')[4].innerHTML.toUpperCase().indexOf(idVal.toUpperCase()) > -1)) {
+    if (String($(this).children('td:nth-child(5)').text()).toUpperCase().indexOf(idVal) != -1 ) {
       // if ((stageValue != '') && ($(this).text().toUpperCase().indexOf(idVal.toUpperCase()) > -1)) {
-      $(this).addClass('activeStage');
+      $(this).addClass('activeStage').removeClass('displayNone');
       stageArray.push($(this));
     } else {
       // console.log("INHERE");
-      $(this).removeClass('activeStage');
+      $(this).removeClass('activeStage').addClass('displayNone');
       // $(this).addClass('displayNone');
     }
   });
@@ -218,33 +218,31 @@ function openProjectPanel(bubble) {
   click = true;
   if (click) {
     $(".innerProjectPanel").show();
-    $(".projectListDiv").show();
+      $(".projectListDiv").show();
 
-    // $("#projectPanel").toggle('right');
-    $("#projectPanel").toggle();
-    $("#projectPanel").css('width', function() {
-      return $(this).offset().width;
-    }).animate({
-      "width": "1050px",
-      "left": "206px",
-      "z-index": "22"
-    }, "slow");
+      $("#projectPanel").toggle();
+      $("#projectPanel").css('width', function() {
+        return $(this).offset().width;
+      }).animate({
+        "width": "1050px",
+        "left": "206px"
+      }, "slow");
+      // debugger
 
-    // $("#projectHeader").css('width', function(){
-    //  return $(this).offset().width;
-    // }).animate({"width":"1050px","left":"206px"}, "slow");
-    $(".h_projectlst div").html("<div class='sortbtn'></div>PROJECTS");
-    // $(".h_valuelst").text('VALUE');
-    $(".h_valuelst div").html("<div class='sortbtn'></div>VALUE");
-    $("#canvasContainer").css('overflow-y', 'hidden');
+      // $(".h_projectlst div span").text('PROJECTS');
+      $(".h_projectlst div").html("<div class='sortbtn'></div>PROJECTS / PROPOSALS");
+      // $(".h_valuelst").text('VALUE');
+      $(".h_valuelst div").html("<div class='sortbtn'></div>VALUE / TYPE");
 
-    click = false;
-    $(".closeProject").show();
-    // $("#dummyDiv").show();
-    $(".heading h5").fadeOut();
-    $("#projectHeader").fadeIn();
-    $("#projectHeader span").show();
-    headerType = 1;
+      $("#canvasContainer").css('overflow-y', 'hidden');
+
+      click = false;
+      $(".closeProject").show();
+      // $("#dummyDiv").show();
+      $(".heading h5").fadeOut();
+      $("#projectHeader").fadeIn();
+      $("#projectHeader span").hide();
+      headerType = 1;
 
     updateStage();
   }
@@ -765,7 +763,6 @@ function jsonLoader() {
     // $.getJSON(jsonUrlFormatter(url1), function(data) {
     $.getJSON(url1_temp, function(data) {
       jsonData = data;
-      g_data = data;
     })
   ).then(function() {
     // MAIN STUFF
@@ -1646,30 +1643,44 @@ $('#skip').click(function () {
 })
 
 function g_countProposals() {
-  var g_conceptCount = 0,  g_strategicCount = 0,  g_preliminaryCount = 0,  g_businessCount = 0,  g_investmentCount = 0,  g_deliveryCount = 0;
-  for (item of g_data) {
-    if (String('Concept') === String(item.SubStage)) {
-      g_conceptCount += 1;
-    }else if (String('Strategic Assessment') === String(item.SubStage)) {
-      g_strategicCount += 1;
-    }else if (String('Preliminary Evaluation') === String(item.SubStage)) {
-      g_preliminaryCount += 1;
-    }else if (String('Business Case') === String(item.SubStage)) {
-      g_businessCount += 1;
-    }else if (String('Investment Decision') === String(item.SubStage)) {
-      g_investmentCount += 1;
+  $.when(
+    $.ajaxSetup({
+      crossDomain: true,
+      beforeSend: function(xhr) {
+        if (xhr.overrideMimeType) {
+          xhr.overrideMimeType("application/json");
+        }
+      }
+    }),
+    $.getJSON(url1_temp, function(data) {
+      g_data = data;
+    })
+  ).then(function(){
+    var g_conceptCount = 0,  g_strategicCount = 0,  g_preliminaryCount = 0,  g_businessCount = 0,  g_investmentCount = 0,  g_deliveryCount = 0;
+    for (item of g_data) {
+      if (String('Concept') === String(item.SubStage)) {
+        g_conceptCount += 1;
+      }else if (String('Strategic Assessment') === String(item.SubStage)) {
+        g_strategicCount += 1;
+      }else if (String('Preliminary Evaluation') === String(item.SubStage)) {
+        g_preliminaryCount += 1;
+      }else if (String('Business Case') === String(item.SubStage)) {
+        g_businessCount += 1;
+      }else if (String('Investment Decision') === String(item.SubStage)) {
+        g_investmentCount += 1;
+      }
     }
-  }
-  for (item of g_data) {
-    if (String('DELIVERY') === item.Stage) {
-      g_deliveryCount += 1;
+    for (item of g_data) {
+      if (String('DELIVERY') === item.Stage) {
+        g_deliveryCount += 1;
+      }
     }
-  }
-  $("#new-concept").text(g_conceptCount);
-  $("#new-strategy").text(g_strategicCount);
-  $("#new-evaluation").text(g_preliminaryCount);
-  $("#new-business").text(g_businessCount);
-  $("#new-delivery").text(g_deliveryCount);
+    $("#new-concept").text(g_conceptCount);
+    $("#new-strategy").text(g_strategicCount);
+    $("#new-evaluation").text(g_preliminaryCount);
+    $("#new-business").text(g_businessCount);
+    $("#new-delivery").text(g_deliveryCount);
+  });
 }
 
 function summaryLoader(currentYear) {
@@ -1691,3 +1702,20 @@ function summaryLoader(currentYear) {
     $(".grants .floatData").text('90');
   }
 }
+$('.clickables > ul > li > a').click(function() {
+  let bubble = $(this).attr('bubble');
+  openProjectPanel(bubble);
+  $(".closeProject").css({'display' : 'block'});
+
+  stageArray = [];
+  let g_idVal = String(bubble).toUpperCase();
+  $('tbody tr').each(function() {
+    if (String($(this).children('td:nth-child(5)').text()).toUpperCase().indexOf(g_idVal) != -1 ) {
+      $(this).addClass('activeStage').removeClass('displayNone');
+      stageArray.push($(this));
+    } else {
+      $(this).removeClass('activeStage').addClass('displayNone');
+    }
+  });
+  filterFunction(true);
+})

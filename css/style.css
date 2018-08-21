@@ -832,6 +832,10 @@ thead, tbody {
     border: none;
 }
 
+.dataTable td, .dataTable th {
+    text-align: center
+}
+
 .dataTable tbody {
     height: 438px;
     overflow-y: scroll;
@@ -889,7 +893,7 @@ thead, tbody {
 }
 
 .h_overviewlst, .overviewlst {
-    width: 60px;
+    width: 15px;
 }
 
 /*.h_linelst,*/
@@ -899,8 +903,8 @@ thead, tbody {
 }
 
 .h_projectlst {
-    padding-left: 20px;
-    width: 190px;
+    padding-left: 8px;
+    width: 170px;
 }
 
 .h_valuelst:focus, .h_stagelst:focus, .h_assetclasslst:focus, .h_regionlst:focus, .h_projectlst:focus {
@@ -909,7 +913,7 @@ thead, tbody {
 
 .projectlst {
     width: 190px;
-    padding: 10px 0px 10px 20px;
+    padding: 10px 0px 10px 10px;
 }
 
 .h_valuelst {
@@ -918,22 +922,22 @@ thead, tbody {
 }
 
 .valuelst {
-    padding-left: 15px;
-    width: 18%;
+    padding-left: 0;
+    width: 13%;
 }
 
 .h_stagelst, .stagelst {
-    width: 20%;
+    width: 12%;
 }
 
 .h_assetclasslst, .assetclasslst {
-    padding-left: 40px;
-    width: 18%;
+    padding-left: 1px;
+    width: 14%;
 }
 
 .h_regionlst, .regionlst {
-    padding-left: 40px;
-    width: 150px;
+    padding-left: 0px;
+    width: 138px;
 }
 
 /* .statuslst  {
@@ -1089,6 +1093,11 @@ input[type=checkbox]:not(old):checked + label {
     border: 0;
     cursor: pointer;
     margin-right: 3px;
+    margin-left: -9px;
+}
+
+.sortbtn.approch {
+    margin-left: 32px;
 }
 
 .sortbtnAsc {
@@ -1100,6 +1109,7 @@ input[type=checkbox]:not(old):checked + label {
     border: 0;
     cursor: pointer;
     margin-right: 3px;
+    margin-left: -24px;
 }
 
 .sortbtnDesc {
@@ -1175,7 +1185,7 @@ input[type=checkbox]:not(old):checked + label {
     margin-right: -16px;
     margin-top: 48px;
     display: none;
-    overflow-x:  hidden;
+    overflow-x: hidden;
 }
 
 .year-wise ul {
@@ -1198,9 +1208,9 @@ input[type=checkbox]:not(old):checked + label {
 .year-wise ul > li > img {
     width: calc(100%);
     float: right;
-    margin:  0;
-    padding:  0;
-    margin-bottom:  -14px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -14px;
 }
 
 .year-data {
@@ -2077,17 +2087,19 @@ hr.style-two {
 .clickables > ul > li {
     position: absolute;
 }
+
 .clickables > ul > li span {
-  position: relative;
-  left: -2px;
-  top: -72px;
-  color: black;
-  font-weight: 600;
-  font-size: 10px;
-  text-align: center;
-  width: 100px;
-  display: block;
+    position: relative;
+    left: -2px;
+    top: -72px;
+    color: black;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    width: 100px;
+    display: block;
 }
+
 .clickables > ul > li span >strong {
-  font-size: 18px;
+    font-size: 18px;
 }

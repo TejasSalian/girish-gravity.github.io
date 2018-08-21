@@ -777,7 +777,6 @@ function jsonLoader() {
       if (val.Stage == "Strategic Assessment") {
         dataValue = val.ProjectId + ',StrategicAssessment';
       }
-      items.push("<a>");
       items.push("<tr class='pp_unselected' data-value=" + dataValue + ">");
       items.push("<td class='overviewlst'></td>");
       items.push("<td class='linelst'>" + "<div class='circle'></div>" + "</td>");
@@ -805,6 +804,9 @@ function jsonLoader() {
       // console.log(val.Stage);
       items.push("<td class='assetclasslst'>" + val.AssetClass + "</td>");
       items.push("<td class='regionlst'>" + val.Region + "</td>");
+      items.push("<td>NA</td>");
+      items.push("<td>NA</td>");
+      items.push("</tr>");
 
       getRegionCount(val.Region);
       getAssetCount(val.AssetClass);
@@ -1606,7 +1608,8 @@ $('#q_year').on('change', function() {
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_1_2018.Json';
     $(".dataTable tbody").remove();
     jsonLoader();
-    setTimeout(function(){ g_countProposals(); }, 1500);
+    summaryLoader(2017);
+    g_countProposals();
   } else if (this.value === String('2018')) {
     $('.year-wise').css({
       'display': 'block'
@@ -1618,8 +1621,8 @@ $('#q_year').on('change', function() {
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
     $(".dataTable tbody").remove();
     jsonLoader();
-    init();
-    setTimeout(function(){ g_countProposals(); }, 500);
+    summaryLoader(2018);
+    g_countProposals();
   }
 });
 
@@ -1638,7 +1641,8 @@ $('#skip').click(function () {
   $(".dataTable tbody").remove();
   jsonLoader();
   init();
-  setTimeout(function(){ g_countProposals(); }, 500);
+  summaryLoader(2018);
+  g_countProposals();
 })
 
 function g_countProposals() {
@@ -1666,4 +1670,24 @@ function g_countProposals() {
   $("#new-evaluation").text(g_preliminaryCount);
   $("#new-business").text(g_businessCount);
   $("#new-delivery").text(g_deliveryCount);
+}
+
+function summaryLoader(currentYear) {
+  if (currentYear === 2018) {
+    $(".seqBudget span").text('$5.986B');
+    $(".regBudget span").text('$5.597B');
+    $(".capitalbudget .floatData").text('$11.583B');
+    $(".jobssupported .floatData").text('33,000');
+    $(".totalprojects .floatData").text('394');
+    $(".programs .floatData").text('213');
+    $(".grants .floatData").text('101');
+  }else if (currentYear === 2017) {
+    $(".seqBudget span").text('$5.359B');
+    $(".regBudget span").text('$4.811B');
+    $(".capitalbudget .floatData").text('$10.17B');
+    $(".jobssupported .floatData").text('29,000');
+    $(".totalprojects .floatData").text('427');
+    $(".programs .floatData").text('226');
+    $(".grants .floatData").text('90');
+  }
 }

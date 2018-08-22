@@ -768,6 +768,7 @@ function jsonLoader() {
     $.each(jsonData, function(key, val) {
       // console.log("KEY:"+key+" VALUE:"+val["Next Milestone"]);
       var dataValue = val.ProjectId + ',' + val.Stage;
+      let valueType;
       if (val.Stage == "Strategic Assessment") {
         dataValue = val.ProjectId + ',StrategicAssessment';
       }
@@ -775,15 +776,14 @@ function jsonLoader() {
       items.push("<td class='overviewlst'></td>");
       items.push("<td class='linelst'>" + "<div class='circle'></div>" + "</td>");
       items.push("<td class='projectlst'>" + val.Project + "</td>");
-      // items.push("<td class='valuelst'>"+formatValue(val.Value)+"</td>");
+      if (val.OpportunityFlag) {
+        valueType = val.OpportunityFlag;
+      }else {
+        valueType = 'N/A';
+      }
       if (val.Stage.toUpperCase() == 'Planning'.toUpperCase()) {
-        // if(val.OpportunityFlag == true) {
-        items.push("<td class='valuelst'>" + val.OpportunityFlag + "</td>");
-        // }
-        // else
-        // {
-        //     items.push("<td class='valuelst'>"+"Consultation"+"</td>");
-        // }
+        // items.push("<td class='valuelst'>" + val.OpportunityFlag + "</td>");
+        items.push("<td class='valuelst'>" + valueType + "</td>");
         items.push("<td class='stagelst'>" + firstLetterCaps(val.Stage) + " - " + firstLetterCaps(val.SubStage) + "</td>");
         getCount(val.SubStage);
       } else {
@@ -1630,6 +1630,8 @@ $('#skip').click(function () {
     'display': 'block'
   });
   loadScene3();
+  $('#year-span').text('2018-19');
+  $('.year-span h6').text('2018-19');
   url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
   url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
   url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';

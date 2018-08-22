@@ -930,7 +930,7 @@ thead, tbody {
 }
 
 .valuelst {
-    padding-left: 0;
+    padding-left: 15px;
     width: 13%;
     min-width: 13%;
 }
@@ -2140,6 +2140,73 @@ hr.style-two {
 
 .clickables>ul>li span>strong {
     font-size: 18px;
+}
+
+.tag-names ul {
+    list-style: none;
+    z-index: 999;
+    position: relative;
+}
+
+.tag-names ul > li {
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 0.8;
+    color: white;
+}
+
+.tag-names ul > li:nth-child(1) {
+    top: 180px;
+    left: 46px;
+    width: 100px;
+}
+
+.tag-names ul > li:nth-child(2) {
+    top: 189px;
+    left: 128px;
+    width: 130px;
+    transform: scale(0.98);
+}
+
+.tag-names ul > li:nth-child(3) {
+    top: 202px;
+    left: 225px;
+    width: 130px;
+    transform: scale(0.98);
+}
+
+.tag-names ul > li:nth-child(4) {
+    top: 216px;
+    left: 338px;
+    width: 87px;
+    transform: scale(0.98);
+}
+
+.tag-names ul > li:nth-child(5) {
+    top: 144px;
+    left: 441px;
+    width: 109px;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.tag-names ul > li:nth-child(6) {
+    bottom: -480px;
+    left: 105px;
+    width: 134px;
+    font-size: 17px;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.tag-names ul > li:nth-child(7) {
+    bottom: -521px;
+    left: 584px;
+    width: 109px;
+    font-size: 17px;
+    text-transform: uppercase;
 }
 
 .landingSection {

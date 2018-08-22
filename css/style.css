@@ -124,7 +124,7 @@ body, html {
     height: 65px;
     width: 1256px;
     text-align: center;
-    display: none;
+    display: block;
 }
 
 .heading h5 {
@@ -528,7 +528,7 @@ input[type="checkbox"]:checked + label:after {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
-input:checked + label {
+input:checked+label {
     background: red;
 }
 
@@ -550,7 +550,7 @@ input:checked + label {
     /* Needed for initial hidden state */
 }
 
-#drawer > div {
+#drawer>div {
     /*height: 100%;*/
     border-left: 2px solid white;
     float: left;
@@ -567,7 +567,7 @@ input:checked + label {
     top: 0px;
     cursor: pointer;
     z-index: 21;
-    display: none;
+    display: block;
 }
 
 .projectPanel {
@@ -928,7 +928,7 @@ thead, tbody {
 .valuelst {
     padding-left: 0;
     width: 13%;
-    min-width:13%;
+    min-width: 13%;
 }
 
 .h_stagelst, .stagelst {
@@ -989,7 +989,7 @@ input[type=checkbox]:not(old) {
     opacity: 0;
 }
 
-input[type=checkbox]:not(old) + label {
+input[type=checkbox]:not(old)+label {
     display: inline-block;
     /*margin-left  : -28px;*/
     /*padding-left : 150px;*/
@@ -997,7 +997,7 @@ input[type=checkbox]:not(old) + label {
     /*line-height  : 15px;*/
 }
 
-input[type=checkbox]:not(old):checked + label {
+input[type=checkbox]:not(old):checked+label {
     background-position: 150px -15px;
 }
 
@@ -1010,7 +1010,7 @@ input[type=checkbox]:not(old):checked + label {
     left: 300px;
     z-index: 100;
     /*background-color: black;*/
-    display: none;
+    display: inline-block;
 }
 
 .helpbtn:before {
@@ -1202,7 +1202,7 @@ input[type=checkbox]:not(old):checked + label {
     margin-top: -25px;
 }
 
-.year-wise ul > li {
+.year-wise ul>li {
     width: 100%;
     height: inherit;
     display: block;
@@ -1210,7 +1210,7 @@ input[type=checkbox]:not(old):checked + label {
     padding: 0;
 }
 
-.year-wise ul > li > img {
+.year-wise ul>li>img {
     width: calc(100%);
     float: right;
     margin: 0;
@@ -2067,38 +2067,46 @@ hr.style-two {
 /*color: #6A0032;*/
 .clickables li:nth-child(1) {
     left: 50px;
+    top: 20px;
 }
 
 .clickables li:nth-child(2) {
     left: 144px;
-    top: 43px;
+    top: 36px;
 }
 
 .clickables li:nth-child(3) {
-    left: 240px;
-    top: 60px;
+    left: 242px;
+    top: 52px;
 }
 
 .clickables li:nth-child(4) {
-    left: 332px;
-    top: 75px;
+    left: 334px;
+    top: 66px;
 }
 
 .clickables li:nth-child(5) {
-    left: 630px;
-    top: 402px;
+    left: 622px;
+    top: 394px;
 }
 
-.clickables > ul > li {
+.clickables>ul>li {
     position: absolute;
 }
 
-.clickables > ul > li > a {
+.clickables>ul>li>a {
     display: inline-block;
     cursor: pointer;
+    transition: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
 }
 
-.clickables > ul > li span {
+.clickables>ul>li>a:hover {
+    transform: scale(1.1);
+}
+
+.clickables>ul>li span {
     position: relative;
     left: -2px;
     top: -72px;
@@ -2110,6 +2118,76 @@ hr.style-two {
     display: block;
 }
 
-.clickables > ul > li span >strong {
+.clickables>ul>li span>strong {
     font-size: 18px;
+}
+
+.landingSection {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.cube-container {
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+    text-align: center;
+}
+
+.cube-container img {
+    padding-top: 330px;
+    /* width: 136px;
+height: 229px; */
+    /* background: url('../images/cubeBtn2.png'); */
+    cursor: pointer;
+    -webkit-animation: mymove 5s infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: mymove 3s infinite;
+    position: relative;
+    left: -15px;
+}
+
+@-webkit-keyframes mymove {
+    0% {
+        left: -15px;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: -15px;
+    }
+}
+
+@keyframes mymove {
+    0% {
+        left: -15px;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: -15px;
+    }
+}
+
+#mainView {
+    display: none;
+}
+
+.CubeAnim {
+    background-color: white;
+    position: relative;
+    z-index: 999;
+    display: none;
+}
+
+.CubeAnim video {
+    display: block;
+    width: 100%;
 }

@@ -1492,7 +1492,6 @@ $(".scrollIndicatorUp").click(function(event) {
 /////////////////////// FOOTER POSITION/////////////
 
 function isVisible() {
-  // $(function () {
   if ((".infoSection:visible").length !== 0) {
     $(".footer").css('top', '1346px');
   } else {
@@ -1503,21 +1502,20 @@ function isVisible() {
 ///////////
 
 function loadScene3() {
-  $(".infoSection").hide(function() {
-    $(".footer").css('top', '0px');
-  });
-  $(".helpbtn").show();
-  //  loadPieChart();
-
-  game.state.start('scene-preload');
+  // $(".infoSection").hide(function() {
+  //   $(".footer").css('top', '0px');
+  // });
+  // $(".helpbtn").show();
+  // //  loadPieChart();
+  //
+  // game.state.start('scene-preload');
+  $('#mainView').show();
+  $('.infoSection').hide();
+  $('.landingSection').hide();
 }
 
-
-$("#skip").click(function() {
-  loadScene3();
-});
 $("#explore").click(function() {
-  loadScene3();
+  $("#skip").trigger('click');
 });
 
 function loadScene1() {
@@ -1529,9 +1527,9 @@ function loadScene1() {
   game.state.start('scene-boot');
 }
 
-$("#backToStart").click(function() {
-  loadScene1();
-});
+// $("#backToStart").click(function() {
+//   loadScene1();
+// });
 
 ///////////
 $("#infoImg1").on('mouseover', function() {
@@ -1626,12 +1624,14 @@ $('#q_year').on('change', function() {
 
 $('#skip').click(function () {
   $('#q_year').val('2018');
+  $(".footer").removeAttr('style');
   $('.year-wise').css({
     'display': 'block'
   });
   $('.leftColumn').css({
     'display': 'block'
   });
+  loadScene3();
   url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
   url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
   url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
@@ -1702,6 +1702,7 @@ function summaryLoader(currentYear) {
     $(".grants .floatData").text('90');
   }
 }
+
 $('.clickables > ul > li > a').click(function() {
   let bubble = $(this).attr('bubble');
   openProjectPanel(bubble);
@@ -1718,4 +1719,35 @@ $('.clickables > ul > li > a').click(function() {
     }
   });
   filterFunction(true);
-})
+});
+
+$("#backToStart").click(function() {
+  $('.CubeAnim').hide();
+  $('.landingSection').removeAttr('style');
+  loadScene1();
+});
+
+$(".CubeAnim video").contextmenu(function (e) {
+  e.preventDefault();
+});
+
+$("#cube-img").click(function () {
+  // load video
+  $('.CubeAnim').show();
+  $('.landingSection').hide();
+  $('#CubeAnim').get(0).play();
+});
+
+// Animation Finished
+document.getElementById('CubeAnim')
+        .addEventListener('ended', CubeAnimFinished,false);
+function CubeAnimFinished() {
+  $('.CubeAnim').hide();
+  $(".infoSection").css({'display':'block'});
+  isVisible();
+}
+
+$(document).ready(function() {
+  $(".infoSection").css({'display':'none'});
+  $(".footer").removeAttr('style');
+});

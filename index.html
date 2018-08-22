@@ -14,16 +14,34 @@
     <link href="css/default.css" rel="stylesheet">
 </head>
 <body>
-
 <section class="header">
-    <div class="container">
-        <img src="images/u18.png">
-    </div>
+  <div class="container">
+    <img src="images/u18.png">
+  </div>
 </section>
-
-
 <section class="appSection">
     <div class="container">
+      <div class="row CubeAnim">
+        <video muted poster="videos/CubeAnim.png" id="CubeAnim">
+          <source src="videos/CubeAnim.mp4" type="video/mp4">
+          <source src="videos/CubeAnim.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="landingSection">
+        <!-- <div id="canvasContainer"></div> -->
+        <div class="scene1_Text">
+            <object type="image/svg+xml" data="images/scene1_Text_update1.svg">
+                Your browser does not support SVG
+            </object>
+            <!-- <img class="scene1_Text" src="images/u16.png"> -->
+            <object type="image/svg+xml" data="images/scene1_Text2_update1.svg">
+                Your browser does not support SVG
+            </object>
+        </div>
+        <div class="cube-container">
+          <img id="cube-img" src="images/loading-cube.png" alt="">
+        </div>
+      </div>
         <div class="infoSection">
 
             <img id="skip" src="images/skip.png">
@@ -65,110 +83,159 @@
                 Your browser does not support SVG
             </object> -->
         </div>
-
-
-        <div id="canvasContainer"></div>
-        <div class="scene1_Text">
-            <object type="image/svg+xml" data="images/scene1_Text_update1.svg">
-                Your browser does not support SVG
-            </object>
-            <!-- <img class="scene1_Text" src="images/u16.png"> -->
-            <object type="image/svg+xml" data="images/scene1_Text2_update1.svg">
-                Your browser does not support SVG
-            </object>
-        </div>
-        <div class="leftColumn">
+        <div id="mainView">
+          <div class="leftColumn">
             <div class="asset">
-                <button class="assetClearBtn">Clear all</button>
-                <ul class="btnColumn">
-                    <li>
-                        <button type="button" class="btn" id="crossgovbtn" value="Cross-Government"></button>
-                        <label class="assetBtnLabel" id="crossgovbtnLbl">Cross-government</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="transportbtn" value="Transport"></button>
-                        <label class="assetBtnLabel" id="transportbtnLbl">Transport</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="energybtn" value="Energy"></button>
-                        <label class="assetBtnLabel" id="energybtnLbl">Energy</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="waterbtn" value="Water"></button>
-                        <label class="assetBtnLabel" id="waterbtnLbl">Water</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="healthbtn" value="Health"></button>
-                        <label class="assetBtnLabel" id="healthbtnLbl">Health</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="edubtn" value="Education and Training"></button>
-                        <label class="assetBtnLabel" id="edubtnLbl">Education and training</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="digitalbtn" value="Digital"></button>
-                        <label class="assetBtnLabel" id="digitalbtnLbl">Digital</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="justbtn" value="Justice and public safety"></button>
-                        <label class="assetBtnLabel" id="justbtnLbl">Justice and public safety</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="artsbtn" value="Arts, culture and recreation"></button>
-                        <label class="assetBtnLabel" id="artsbtnLbl">Arts, culture and recreation</label>
-                    </li>
-                    <li>
-                        <button type="button" class="btn" id="socialbtn" value="Social Housing"></button>
-                        <label class="assetBtnLabel" id="socialbtnLbl">Social housing</label>
-                    </li>
-                </ul>
+              <button class="assetClearBtn">Clear all</button>
+              <ul class="btnColumn">
+                <li>
+                  <button type="button" class="btn" id="crossgovbtn" value="Cross-Government"></button>
+                  <label class="assetBtnLabel" id="crossgovbtnLbl">Cross-government</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="transportbtn" value="Transport"></button>
+                  <label class="assetBtnLabel" id="transportbtnLbl">Transport</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="energybtn" value="Energy"></button>
+                  <label class="assetBtnLabel" id="energybtnLbl">Energy</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="waterbtn" value="Water"></button>
+                  <label class="assetBtnLabel" id="waterbtnLbl">Water</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="healthbtn" value="Health"></button>
+                  <label class="assetBtnLabel" id="healthbtnLbl">Health</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="edubtn" value="Education and Training"></button>
+                  <label class="assetBtnLabel" id="edubtnLbl">Education and training</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="digitalbtn" value="Digital"></button>
+                  <label class="assetBtnLabel" id="digitalbtnLbl">Digital</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="justbtn" value="Justice and public safety"></button>
+                  <label class="assetBtnLabel" id="justbtnLbl">Justice and public safety</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="artsbtn" value="Arts, culture and recreation"></button>
+                  <label class="assetBtnLabel" id="artsbtnLbl">Arts, culture and recreation</label>
+                </li>
+                <li>
+                  <button type="button" class="btn" id="socialbtn" value="Social Housing"></button>
+                  <label class="assetBtnLabel" id="socialbtnLbl">Social housing</label>
+                </li>
+              </ul>
             </div>
             <div class="region">
-                <button class="regionClearBtn">Clear all</button>
-                <ul class="regionList">
-                    <li><input id="c1" class="regionCheckBox" type="checkbox"><label class="regionLabel"
-                                                                                     for="c1">Cairns</label></li>
-                    <li><input id="c10" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c10">Townsville</label>
-                    </li>
-                    <li><input id="c3" class="regionCheckBox" type="checkbox"><label class="regionLabel"
-                                                                                     for="c3">Mackay</label></li>
+              <button class="regionClearBtn">Clear all</button>
+              <ul class="regionList">
+                <li><input id="c1" class="regionCheckBox" type="checkbox"><label class="regionLabel"
+                  for="c1">Cairns</label></li>
+                  <li><input id="c10" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c10">Townsville</label>
+                  </li>
+                  <li><input id="c3" class="regionCheckBox" type="checkbox"><label class="regionLabel"
+                    for="c3">Mackay</label></li>
                     <li><input id="c4" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c4">Fitzroy</label>
                     </li>
                     <li><input id="c5" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c5">Wide
-                        Bay</label></li>
-                    <li><input id="c6" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c6">Sunshine
+                      Bay</label></li>
+                      <li><input id="c6" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c6">Sunshine
                         Coast</label></li>
-                    <li><input id="c7" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c7">Greater
-                        Brisbane</label></li>
-                    <li><input id="c8" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c8">Gold
-                        Coast</label></li>
-                    <li><input id="c2" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c2">Toowoomba</label>
-                    </li>
-                    <li><input id="c9" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c9">Darling
-                        Downs</label></li>
-                    <li><input id="c11" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c11">Remote
-                        Queensland</label></li>
-                    <li><input id="c12" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c12">Multi-region</label>
-                    </li>
-                    <li><input id="c13" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c13">Statewide</label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class='heading'>
-            <h5>Queensland Infrastructure Pipeline</h5>
-            <div class="form-group">
-                <label for="q_year" class="d-none">Financial Year</label>
-                <select class="form-control" id="q_year">
-                    <option value="2017">2017 - 2018</option>
-                    <option value="2018">2018 - 2019</option>
-                </select>
-            </div>
-        </div>
-        <div class="year-wise">
-            <div class="year-data">
-                <div class="hlPanelHeader"><span id="year-span">2017-18</span> DELIVERY HIGHLIGHTS</div>
-                <div class="floatPanelData">
+                        <li><input id="c7" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c7">Greater
+                          Brisbane</label></li>
+                          <li><input id="c8" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c8">Gold
+                            Coast</label></li>
+                            <li><input id="c2" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c2">Toowoomba</label>
+                            </li>
+                            <li><input id="c9" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c9">Darling
+                              Downs</label></li>
+                              <li><input id="c11" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c11">Remote
+                                Queensland</label></li>
+                                <li><input id="c12" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c12">Multi-region</label>
+                                </li>
+                                <li><input id="c13" class="regionCheckBox" type="checkbox"><label class="regionLabel" for="c13">Statewide</label>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class='heading'>
+                            <h5>Queensland Infrastructure Pipeline</h5>
+                            <div class="form-group">
+                              <label for="q_year" class="d-none">Financial Year</label>
+                              <select class="form-control" id="q_year">
+                                <option value="2017">2017 - 2018</option>
+                                <option value="2018">2018 - 2019</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="year-wise">
+                            <div class="year-data">
+                              <div class="hlPanelHeader"><span id="year-span">2017-18</span> DELIVERY HIGHLIGHTS</div>
+                              <div class="floatPanelData">
+                                <div class="capitalbudget">Capital budget: <span class="floatData">$458.6M</span></div>
+                                <div class="jobssupported">Jobs supported: <span class="floatData">224</span></div>
+                                <div class="totalprojects">Total projects: <span class="floatData">550</span></div>
+                                <div class="programs">Total programs: <span class="floatData">990</span></div>
+                                <div class="grants">Total grants: <span class="floatData">287</span></div>
+
+                                <div class="regBudget">Regional Budget<br/><span>$214M</span></div>
+                                <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div>
+                              </div>
+                            </div>
+                            <div class="year-span">
+                              <h6>2018-19</h6>
+                            </div>
+                            <div class="clickables">
+                              <ul>
+                                <li><a bubble="CONCEPT"><img src="images/u210.png" alt=""><span><strong id="new-concept">0</strong><br>Proposals</span></a></li>
+                                <li><a bubble="STRATEGIC"><img src="images/u210.png" alt=""><span><strong id="new-strategy">0</strong><br>Proposals</span></a></li>
+                                <li><a bubble="EVALUATION"><img src="images/u210.png" alt=""><span><strong id="new-evaluation">0</strong><br>Proposals</span></a></li>
+                                <li><a bubble="BUSINESS"><img src="images/u210.png" alt=""><span><strong id="new-business">0</strong><br>Proposals</span></a></li>
+                                <li><a bubble="DELIVERY"><img src="images/u210.png" alt=""><span><strong id="new-delivery">0</strong><br>Projects</span></a></li>
+                              </ul>
+                            </div>
+                            <div class="year-anim" id="animation_container">
+                              <canvas id="canvas" width="249" height="310"
+                              style="position: absolute; display: block; background-color:rgba(153, 153, 153, 0.00);"></canvas>
+                              <div id="dom_overlay_container"
+                              style="pointer-events:none; overflow:hidden; width:249px; height:310px; position: absolute; left: 0px; top: 0px; display: block;">
+                            </div>
+
+                          </div>
+                          <ul>
+                            <li><img src="images/BG2018.png" alt=""></li>
+                          </ul>
+                        </div>
+
+                        <div class="dropFloatPanel">
+
+                        </div>
+
+                        <div class="highlightPanel">
+                          <!--
+                          <div class="floatDropDown">
+
+                          <div class="chart-container">
+                          <div class="pie-chart-container">
+                          <canvas id="pie-chartcanvas-1"></canvas>
+                          <span style="position:absolute; left: 25px;">Asset Class</span>
+                        </div>
+
+                        <div class="pie-chart-container">
+                        <canvas id="pie-chartcanvas-2"></canvas>
+                        <span style="position:absolute; left: 20px;">Region Class</span>
+                      </div>
+                    </div>
+                  </div>
+                -->
+                <div class="highlightPanelmask">
+                  <div class="hlPanelHeader"><span>2017-18</span> DELIVERY HIGHLIGHTS</div>
+
+                  <div class="floatPanelData">
                     <div class="capitalbudget">Capital budget: <span class="floatData">$458.6M</span></div>
                     <div class="jobssupported">Jobs supported: <span class="floatData">224</span></div>
                     <div class="totalprojects">Total projects: <span class="floatData">550</span></div>
@@ -177,257 +244,198 @@
 
                     <div class="regBudget">Regional Budget<br/><span>$214M</span></div>
                     <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div>
-                </div>
-            </div>
-            <div class="year-span">
-                <h6>2018-19</h6>
-            </div>
-            <div class="clickables">
-              <ul>
-                <li><a bubble="CONCEPT"><img src="images/u210.png" alt=""><span><strong id="new-concept">0</strong><br>Proposals</span></a></li>
-                <li><a bubble="STRATEGIC"><img src="images/u210.png" alt=""><span><strong id="new-strategy">0</strong><br>Proposals</span></a></li>
-                <li><a bubble="EVALUATION"><img src="images/u210.png" alt=""><span><strong id="new-evaluation">0</strong><br>Proposals</span></a></li>
-                <li><a bubble="BUSINESS"><img src="images/u210.png" alt=""><span><strong id="new-business">0</strong><br>Proposals</span></a></li>
-                <li><a bubble="DELIVERY"><img src="images/u210.png" alt=""><span><strong id="new-delivery">0</strong><br>Projects</span></a></li>
-              </ul>
-            </div>
-            <div class="year-anim" id="animation_container">
-                <canvas id="canvas" width="249" height="310"
-                        style="position: absolute; display: block; background-color:rgba(153, 153, 153, 0.00);"></canvas>
-                <div id="dom_overlay_container"
-                     style="pointer-events:none; overflow:hidden; width:249px; height:310px; position: absolute; left: 0px; top: 0px; display: block;">
+                  </div>
                 </div>
 
-            </div>
-            <ul>
-                <li><img src="images/BG2018.png" alt=""></li>
-            </ul>
-        </div>
+              </div>
 
-            <div class="dropFloatPanel">
-
-            </div>
-
-            <div class="highlightPanel">
-                <!--
-                                <div class="floatDropDown">
-
-                                    <div class="chart-container">
-                                        <div class="pie-chart-container">
-                                            <canvas id="pie-chartcanvas-1"></canvas>
-                                            <span style="position:absolute; left: 25px;">Asset Class</span>
-                                        </div>
-
-                                        <div class="pie-chart-container">
-                                            <canvas id="pie-chartcanvas-2"></canvas>
-                                            <span style="position:absolute; left: 20px;">Region Class</span>
-                                        </div>
-                                    </div>
-                                </div>
-                -->
-                <div class="highlightPanelmask">
-                    <div class="hlPanelHeader"><span>2017-18</span> DELIVERY HIGHLIGHTS</div>
-
-                    <div class="floatPanelData">
-                        <div class="capitalbudget">Capital budget: <span class="floatData">$458.6M</span></div>
-                        <div class="jobssupported">Jobs supported: <span class="floatData">224</span></div>
-                        <div class="totalprojects">Total projects: <span class="floatData">550</span></div>
-                        <div class="programs">Total programs: <span class="floatData">990</span></div>
-                        <div class="grants">Total grants: <span class="floatData">287</span></div>
-
-                        <div class="regBudget">Regional Budget<br/><span>$214M</span></div>
-                        <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="scrollIndicator">
+              <div class="scrollIndicator">
                 <img src="images/agif_u352.gif" style="left:500px;">
-            </div>
-            <div class="scrollIndicatorUp">
+              </div>
+              <div class="scrollIndicatorUp">
                 <img src="images/upBtn.gif" style="left:500px;">
-            </div>
-            <div id="projects" class="projects"></div>
+              </div>
+              <div id="projects" class="projects"></div>
 
-            <div id="projectPanel" class="projectPanel">
+              <div id="projectPanel" class="projectPanel">
                 <!-- <div id="projectHeader"><h5>SIP PROJECTS</h5></div> -->
                 <div id="closeProject" class="closeProject"></div>
                 <div class="backBtn"></div>
 
                 <div id="projectHeader">
-                    <h5>State Infrastructure Plan Projects</h5>
-                    <span>(Showing only construction projects)</span>
+                  <h5>State Infrastructure Plan Projects</h5>
+                  <span>(Showing only construction projects)</span>
                 </div>
                 <div id="proposalHeader"><h5>State Infrastructure Plan Proposals</h5></div>
 
 
                 <div id="dummyDiv"></div>
                 <div class="projectInfoPanel">
-                    <div class="projectInfoSidePanel">
-                        <div class="backBtn"></div>
-                        <div id="closeProject2" class="closeProject2"></div>
+                  <div class="projectInfoSidePanel">
+                    <div class="backBtn"></div>
+                    <div id="closeProject2" class="closeProject2"></div>
 
 
-                    </div>
+                  </div>
                 </div> <!-- projectInfoPanel-->
 
                 <div class="mainPanel">
-                    <div class="projectTableBackground"></div>
+                  <div class="projectTableBackground"></div>
 
-                    <div class="projectInfo">
-                        <div id="projectInfo_top">
-                            <div class="pI_header">HEADER</div>
-                            <div class="pI_subHeader">SUB HEADER</div>
-                            <div class="pI_tag">TAG</div>
-                        </div>
-                        <div id="projectInfo_bottom">
-                            <div class="pI_leftPanel">
-                                <div class="pI_capitalType">Capital type:<span class="floatData"></span></div>
-                                <div class="pI_contractType">Contract type:<span class="floatData"></span></div>
-                                <div class="pI_estmDate">Estimated completion date:<span class="floatData"></span></div>
-                                <hr class="style-two">
-                                <div class="pI_currentStatus">Current status:<span class="floatData"></span></div>
-                                <div class="pI_currentStage">Current stage:<span class="floatData"></span></div>
-                                <div class="pI_nextMilestone">Next stage:<span class="floatData"></span></div>
-                                <div class="pI_startDate">Next stage (Start date):<span class="floatData"></span></div>
-                                <!-- <div class="pI_endDate">Next stage (End date):<span class="floatData"></span></div> -->
-                            </div>
-                            <div class="pI_rightPanel">
-                                <div class="pI_budget">2017-18 budget:<span class="floatData"></span></div>
-                                <div class="pI_estmCost">Total estimated cost:<span class="floatData"></span></div>
-
-                                <div class="pI_postFunding">Post 2017-18 funding:<span class="floatData"></span></div>
-                                <div class="pI_fundContributors">Funding contributors:
-                                    <div class="floatData"></div>
-                                </div>
-                            </div>
-                            <div class="pI_sipPanel">
-                                <div>
-                                    <div class="pI_currentStage2"><p>Current stage:</p></div>
-                                    <p class="pI_currentStage2Data"></p>
-                                </div>
-                                <div>
-                                    <div class="pI_sipStatus"><p>SIP status:</p></div>
-                                    <p class="pI_sipStatusData"></p>
-                                </div>
-                            </div>
-                            <div class="pI_regionDetails">
-                                <span>Region:</span>
-                                <div class="pI_regionName">REGION DETAILS</div>
-                                <img class="pI_LocationImg" src="images/LocationPointer.svg">
-                                <img class="pI_regionImg">
-
-                            </div>
-                            <div class="pI_assetClassDetails">
-                                <span>Asset class:</span>
-                                <img class="pI_assetImg">
-                                <div class="pI_assetName"></div>
-                                <div class="pI_leadAgency">Lead agency: <span></span></div>
-                                <!-- <div class="pI_stateFund">State Infrastructure Fund: <span></span></div> -->
-                            </div>
-                            <div class="pI_proposalDetails">
-                                <div class="pI_pipeLineSource"><p>Pipeline source:</p>
-                                    <div class="floatData"></div>
-                                </div>
-                                <!-- <div class="pI_currentStage2">Current stage: <span class="floatData"></span></div> -->
-                                <!-- <div class="pI_valueRange">Value range: <span class="floatData"></span></div> -->
-                                <div class="pI_leadAgency2">Lead agency: <span class="floatData"></span></div>
-                            </div>
-
-                            <div class="pI_webInfo">
-                                <!-- <img src="images/web_ico.png"> -->
-                                Project web address:
-                                <div class="pI_website">WEBSITE INFO</div>
-                            </div>
-                            <div class="pI_bottom">
-                                Note: Go to <a target="_blank" href="https://www.forgov.qld.gov.au/procurement">www.forgov.qld.gov.au/procurement</a>
-                                to search for current QG tender opportunities
-                            </div>
-                        </div>
+                  <div class="projectInfo">
+                    <div id="projectInfo_top">
+                      <div class="pI_header">HEADER</div>
+                      <div class="pI_subHeader">SUB HEADER</div>
+                      <div class="pI_tag">TAG</div>
                     </div>
+                    <div id="projectInfo_bottom">
+                      <div class="pI_leftPanel">
+                        <div class="pI_capitalType">Capital type:<span class="floatData"></span></div>
+                        <div class="pI_contractType">Contract type:<span class="floatData"></span></div>
+                        <div class="pI_estmDate">Estimated completion date:<span class="floatData"></span></div>
+                        <hr class="style-two">
+                        <div class="pI_currentStatus">Current status:<span class="floatData"></span></div>
+                        <div class="pI_currentStage">Current stage:<span class="floatData"></span></div>
+                        <div class="pI_nextMilestone">Next stage:<span class="floatData"></span></div>
+                        <div class="pI_startDate">Next stage (Start date):<span class="floatData"></span></div>
+                        <!-- <div class="pI_endDate">Next stage (End date):<span class="floatData"></span></div> -->
+                      </div>
+                      <div class="pI_rightPanel">
+                        <div class="pI_budget">2017-18 budget:<span class="floatData"></span></div>
+                        <div class="pI_estmCost">Total estimated cost:<span class="floatData"></span></div>
 
-                    <div class="innerProjectPanel">
-                        <input type="search" id="search"
-                               placeholder="Search Projects by name, contract type, region etc..."/>
+                        <div class="pI_postFunding">Post 2017-18 funding:<span class="floatData"></span></div>
+                        <div class="pI_fundContributors">Funding contributors:
+                          <div class="floatData"></div>
+                        </div>
+                      </div>
+                      <div class="pI_sipPanel">
+                        <div>
+                          <div class="pI_currentStage2"><p>Current stage:</p></div>
+                          <p class="pI_currentStage2Data"></p>
+                        </div>
+                        <div>
+                          <div class="pI_sipStatus"><p>SIP status:</p></div>
+                          <p class="pI_sipStatusData"></p>
+                        </div>
+                      </div>
+                      <div class="pI_regionDetails">
+                        <span>Region:</span>
+                        <div class="pI_regionName">REGION DETAILS</div>
+                        <img class="pI_LocationImg" src="images/LocationPointer.svg">
+                        <img class="pI_regionImg">
+
+                      </div>
+                      <div class="pI_assetClassDetails">
+                        <span>Asset class:</span>
+                        <img class="pI_assetImg">
+                        <div class="pI_assetName"></div>
+                        <div class="pI_leadAgency">Lead agency: <span></span></div>
+                        <!-- <div class="pI_stateFund">State Infrastructure Fund: <span></span></div> -->
+                      </div>
+                      <div class="pI_proposalDetails">
+                        <div class="pI_pipeLineSource"><p>Pipeline source:</p>
+                          <div class="floatData"></div>
+                        </div>
+                        <!-- <div class="pI_currentStage2">Current stage: <span class="floatData"></span></div> -->
+                        <!-- <div class="pI_valueRange">Value range: <span class="floatData"></span></div> -->
+                        <div class="pI_leadAgency2">Lead agency: <span class="floatData"></span></div>
+                      </div>
+
+                      <div class="pI_webInfo">
+                        <!-- <img src="images/web_ico.png"> -->
+                        Project web address:
+                        <div class="pI_website">WEBSITE INFO</div>
+                      </div>
+                      <div class="pI_bottom">
+                        Note: Go to <a target="_blank" href="https://www.forgov.qld.gov.au/procurement">www.forgov.qld.gov.au/procurement</a>
+                        to search for current QG tender opportunities
+                      </div>
                     </div>
-                    <div class="projectListDiv">
-                        <div class="container">
-                            <table id="dataTable" class="dataTable">
-                                <thead>
-                                <tr>
-                                    <th class="h_overviewlst"></th>
-                                    <th class="h_linelst"></th>
-                                    <th class="column1 h_projectlst">
-                                        <div class='sortbtn'></div>
-                                        <span>PROJECTS</span></th>
-                                    <th class="column1 h_valuelst">
-                                        <div class='sortbtn'></div>
-                                        VALUE
-                                    </th>
-                                    <th class="column1 h_stagelst">
-                                        <div class='sortbtn'></div>
-                                        STAGE
-                                    </th>
-                                    <th class="column1 h_assetclasslst">
-                                        <div class='sortbtn'></div>
-                                        ASSET CLASS
-                                    </th>
-                                    <th class="column1 h_regionlst">
-                                        <div class='sortbtn'></div>
-                                        REGION
-                                    </th>
-                                    <th class="column1">
-                                        <div class='sortbtn'></div>
-                                        CATEGORY
-                                    </th>
-                                    <th class="column1">
-                                        <div class='sortbtn approch'></div>
-                                        APPROCH TO<br>MARKET
-                                    </th>
-                                </tr>
-                                </thead>
-                            </table>
-                        </div><!--container-->
+                  </div>
+
+                  <div class="innerProjectPanel">
+                    <input type="search" id="search"
+                    placeholder="Search Projects by name, contract type, region etc..."/>
+                  </div>
+                  <div class="projectListDiv">
+                    <div class="container">
+                      <table id="dataTable" class="dataTable">
+                        <thead>
+                          <tr>
+                            <th class="h_overviewlst"></th>
+                            <th class="h_linelst"></th>
+                            <th class="column1 h_projectlst">
+                              <div class='sortbtn'></div>
+                              <span>PROJECTS</span></th>
+                              <th class="column1 h_valuelst">
+                                <div class='sortbtn'></div>
+                                VALUE
+                              </th>
+                              <th class="column1 h_stagelst">
+                                <div class='sortbtn'></div>
+                                STAGE
+                              </th>
+                              <th class="column1 h_assetclasslst">
+                                <div class='sortbtn'></div>
+                                ASSET CLASS
+                              </th>
+                              <th class="column1 h_regionlst">
+                                <div class='sortbtn'></div>
+                                REGION
+                              </th>
+                              <th class="column1">
+                                <div class='sortbtn'></div>
+                                CATEGORY
+                              </th>
+                              <th class="column1">
+                                <div class='sortbtn approch'></div>
+                                APPROCH TO<br>MARKET
+                              </th>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div><!--container-->
                     </div><!--projectListDiv-->
-                </div> <!-- mainPanel-->
-            </div> <!-- projectPanel -->
+                  </div> <!-- mainPanel-->
+                </div> <!-- projectPanel -->
 
-            <button class="helpbtn"></button>
+                <button class="helpbtn"></button>
 
-            <!--            <div class="clipPanel"></div>-->
+                <!--            <div class="clipPanel"></div>-->
 
-            <section class="helpInfoBG"></section>
-            <div class="helpPanel">
-                <div class="helpPanelClose"></div>
-                <div class="slides">
+                <section class="helpInfoBG"></section>
+                <div class="helpPanel">
+                  <div class="helpPanelClose"></div>
+                  <div class="slides">
                     <h4>Overview Page Help</h4>
                     <p>This page is the primary navigation page for the Queensland Infrastructure Pipeline. Visitors can
-                        narrow their search for information using the Asset Class and Regions options on the left. Click
-                        on
-                        the bubbles in the pipeline to view more detailed information about each proposal and
-                        project.</p>
-                    <img src="	images/u77.gif">
-                </div>
-                <div class="slides">
-                    <h4>List Page Help</h4>
-                    <p>This page lists the proposals and projects for the Asset Classes and Regions selected on the
+                      narrow their search for information using the Asset Class and Regions options on the left. Click
+                      on
+                      the bubbles in the pipeline to view more detailed information about each proposal and
+                      project.</p>
+                      <img src="	images/u77.gif">
+                    </div>
+                    <div class="slides">
+                      <h4>List Page Help</h4>
+                      <p>This page lists the proposals and projects for the Asset Classes and Regions selected on the
                         Overview
                         page. Visitors can sort this list by a number of attributes, search the list for specific
                         projects,
                         and select a project to view.</p>
-                    <img src="images/u79.gif">
-                </div>
-                <div class="slides">
-                    <h4>Details Page Help</h4>
-                    <p>Selecting a project to view from the list takes you to this detailed project information page.
-                        Use
-                        the list on the left of the screen to switch between different projects.</p>
-                    <img src="images/u81.gif">
-                </div>
-                <button class="leftSliderbtn" onclick="plusDivs(-1)"></button>
-                <button class="rightSliderbtn" onclick="plusDivs(1)"></button>
-            </div>
+                        <img src="images/u79.gif">
+                      </div>
+                      <div class="slides">
+                        <h4>Details Page Help</h4>
+                        <p>Selecting a project to view from the list takes you to this detailed project information page.
+                          Use
+                          the list on the left of the screen to switch between different projects.</p>
+                          <img src="images/u81.gif">
+                        </div>
+                        <button class="leftSliderbtn" onclick="plusDivs(-1)"></button>
+                        <button class="rightSliderbtn" onclick="plusDivs(1)"></button>
+                      </div>
+              </div>
         </div> <!-- container -->
 
 
@@ -444,17 +452,10 @@
 
 
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<!-- <script type="text/javascript" scr="js/Chart.js"></script> -->
 <script src="js/Chart.js"></script>
 <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-<script type="text/javascript" src="js/phaser.min.js"></script>
 <script type="text/javascript" src="js/pie.js"></script>
-<script type="text/javascript" src="js/app/state-manager.js"></script>
-<script type="text/javascript" src="js/app/scene-boot.js"></script>
-<script type="text/javascript" src="js/app/scene-preload.js"></script>
-<script type="text/javascript" src="js/app/scene-cube.js"></script>
-<script type="text/javascript" src="js/app/scene-main.js"></script>
 
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="js/folder_anim.js"></script>

@@ -832,8 +832,12 @@ thead, tbody {
     border: none;
 }
 
-.dataTable td, .dataTable th {
-    text-align: center
+.approchcell {
+    padding-left: 40px !important;
+}
+
+.approchcell .sortbtn.approch {
+    margin-left: -13px !important;
 }
 
 .dataTable td, .dataTable th:focus {
@@ -907,7 +911,7 @@ thead, tbody {
 }
 
 .h_projectlst {
-    padding-left: 8px;
+    padding-left: 26px;
     width: 170px;
 }
 
@@ -921,7 +925,7 @@ thead, tbody {
 }
 
 .h_valuelst {
-    padding-left: 30px;
+    padding-left: 17px;
     width: 18%;
 }
 
@@ -932,7 +936,11 @@ thead, tbody {
 }
 
 .h_stagelst, .stagelst {
-    width: 12%;
+    width: 13%;
+}
+
+.h_stagelst .tablesorter-header-inner {
+    margin-left: -28px;
 }
 
 .h_assetclasslst, .assetclasslst {
@@ -940,9 +948,21 @@ thead, tbody {
     width: 14%;
 }
 
+.h_assetclasslst .tablesorter-header-inner {
+    margin-left: -38px;
+}
+
+.h_regionlst .tablesorter-header-inner {
+    margin-left: -19px;
+}
+
 .h_regionlst, .regionlst {
     padding-left: 0px;
     width: 138px;
+}
+
+.categorycell .tablesorter-header-inner {
+    margin-left: -20px;
 }
 
 /* .statuslst  {

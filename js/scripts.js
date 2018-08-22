@@ -83,11 +83,8 @@ var headerType = 0;
 $('.btn').click(function() {
   $(this).toggleClass('active');
   $(this).next('label').toggleClass('active');
-  // $('#hidden1', this).toggle(); // p00f
-  // $('#hidden2', this).toggle(); // p00f
   if ($(this).hasClass('active')) {
     var idVal = $(this).val();
-    // console.log(idVal);
     $('tbody tr').each(function() {
       if ($(this).text().toLowerCase().indexOf(idVal.toLowerCase()) > -1) {
         $(this).addClass('active');
@@ -101,7 +98,6 @@ $('.btn').click(function() {
       }
     });
   }
-
   updateAssetArray();
   filterFunction(true);
 });
@@ -574,8 +570,9 @@ function filterFunction(stageUpdate) {
 
   });
   if (stageUpdate == true) {
-    updateText();
+    // updateText();
   }
+  g_countProposals();
 }
 ///////////// HEADER HOVER DROPDOWN ///////////////////////
 $('.assetDropdown').hover(function() {
@@ -801,8 +798,8 @@ function jsonLoader() {
       // console.log(val.Stage);
       items.push("<td class='assetclasslst'>" + val.AssetClass + "</td>");
       items.push("<td class='regionlst'>" + val.Region + "</td>");
-      items.push("<td>NA</td>");
-      items.push("<td>NA</td>");
+      items.push("<td >NA</td>");
+      items.push("<td >NA</td>");
       items.push("</tr>");
 
       getRegionCount(val.Region);
@@ -1604,7 +1601,8 @@ $('#q_year').on('change', function() {
     $(".dataTable tbody").remove();
     jsonLoader();
     summaryLoader(2017);
-    g_countProposals();
+    g_getData();
+
   } else if (this.value === String('2018')) {
     $('.year-wise').css({
       'display': 'block'
@@ -1617,7 +1615,7 @@ $('#q_year').on('change', function() {
     $(".dataTable tbody").remove();
     jsonLoader();
     summaryLoader(2018);
-    g_countProposals();
+    g_getData();
   }
 });
 
@@ -1639,10 +1637,10 @@ $('#skip').click(function () {
   jsonLoader();
   init();
   summaryLoader(2018);
-  g_countProposals();
+  g_getData();
 })
 
-function g_countProposals() {
+function g_getData() {
   $.when(
     $.ajaxSetup({
       crossDomain: true,
@@ -1655,32 +1653,86 @@ function g_countProposals() {
     $.getJSON(url1_temp, function(data) {
       g_data = data;
     })
-  ).then(function(){
-    var g_conceptCount = 0,  g_strategicCount = 0,  g_preliminaryCount = 0,  g_businessCount = 0,  g_investmentCount = 0,  g_deliveryCount = 0;
-    for (item of g_data) {
-      if (String('Concept') === String(item.SubStage)) {
-        g_conceptCount += 1;
-      }else if (String('Strategic Assessment') === String(item.SubStage)) {
-        g_strategicCount += 1;
-      }else if (String('Preliminary Evaluation') === String(item.SubStage)) {
+  ).then(function() {
+    let g_concept          = String('Concept').toUpperCase(),
+        g_strategic        = String('Strategic Assessment').toUpperCase(),
+        g_preliminary      = String('Preliminary Evaluation').toUpperCase(),
+        g_business         = String('Business Case').toUpperCase(),
+        g_investment       = String('Investment Decision').toUpperCase(),
+        g_delivery         = String('DELIVERY').toUpperCase();
+
+    let g_conceptCount     = 0,
+        g_strategicCount   = 0,
+        g_preliminaryCount = 0,
+        g_businessCount    = 0,
+        g_investmentCount  = 0,
+        g_deliveryCount    = 0;
+
+    $('tbody tr').each(function() {
+      let cellTextUcase      = String($(this).children('td:nth-child(5)').text()).toUpperCase();
+
+      if (cellTextUcase.indexOf(g_concept) != -1 ) {
+        g_conceptCount     += 1;
+      }else if (cellTextUcase.indexOf(g_strategic) != -1 ) {
+        g_strategicCount   += 1;
+      }else if (cellTextUcase.indexOf(g_preliminary) != -1 ) {
         g_preliminaryCount += 1;
-      }else if (String('Business Case') === String(item.SubStage)) {
-        g_businessCount += 1;
-      }else if (String('Investment Decision') === String(item.SubStage)) {
-        g_investmentCount += 1;
+      }else if (cellTextUcase.indexOf(g_business) != -1 ) {
+        g_businessCount    += 1;
+      }else if (cellTextUcase.indexOf(g_investment) != -1 ) {
+        g_investmentCount  += 1;
+      }else if (cellTextUcase.indexOf(g_delivery) != -1 ) {
+        g_deliveryCount    += 1;
       }
-    }
-    for (item of g_data) {
-      if (String('DELIVERY') === item.Stage) {
-        g_deliveryCount += 1;
-      }
-    }
+    });
+
     $("#new-concept").text(g_conceptCount);
     $("#new-strategy").text(g_strategicCount);
     $("#new-evaluation").text(g_preliminaryCount);
     $("#new-business").text(g_businessCount);
     $("#new-delivery").text(g_deliveryCount);
   });
+}
+
+function g_countProposals() {
+
+  let g_concept          = String('Concept').toUpperCase(),
+      g_strategic        = String('Strategic Assessment').toUpperCase(),
+      g_preliminary      = String('Preliminary Evaluation').toUpperCase(),
+      g_business         = String('Business Case').toUpperCase(),
+      g_investment       = String('Investment Decision').toUpperCase(),
+      g_delivery         = String('DELIVERY').toUpperCase();
+
+  let g_conceptCount     = 0,
+      g_strategicCount   = 0,
+      g_preliminaryCount = 0,
+      g_businessCount    = 0,
+      g_investmentCount  = 0,
+      g_deliveryCount    = 0;
+
+  $('tbody tr').not('.displayNone').each(function() {
+    let cellTextUcase      = String($(this).children('td:nth-child(5)').text()).toUpperCase();
+
+    if (cellTextUcase.indexOf(g_concept) != -1 ) {
+      g_conceptCount     += 1;
+    }else if (cellTextUcase.indexOf(g_strategic) != -1 ) {
+      g_strategicCount   += 1;
+    }else if (cellTextUcase.indexOf(g_preliminary) != -1 ) {
+      g_preliminaryCount += 1;
+    }else if (cellTextUcase.indexOf(g_business) != -1 ) {
+      g_businessCount    += 1;
+    }else if (cellTextUcase.indexOf(g_investment) != -1 ) {
+      g_investmentCount  += 1;
+    }else if (cellTextUcase.indexOf(g_delivery) != -1 ) {
+      g_deliveryCount    += 1;
+    }
+  });
+
+  $("#new-concept").text(g_conceptCount);
+  $("#new-strategy").text(g_strategicCount);
+  $("#new-evaluation").text(g_preliminaryCount);
+  $("#new-business").text(g_businessCount);
+  $("#new-delivery").text(g_deliveryCount);
 }
 
 function summaryLoader(currentYear) {
@@ -1732,7 +1784,6 @@ $(".CubeAnim video").contextmenu(function (e) {
 });
 
 $("#cube-img").click(function () {
-  // load video
   $('.CubeAnim').show();
   $('.landingSection').hide();
   $('#CubeAnim').get(0).play();

@@ -154,6 +154,11 @@ $('.regionCheckBox').change(function() {
   }
   updateRegionArray();
   filterFunction(true);
+  if ($('tbody tr').not('.displayNone').length == 0) {
+    $('.noResult').show();
+  }else {
+    $('.noResult').hide();
+  }
 });
 
 function updateRegionArray() {
@@ -340,12 +345,16 @@ $(function() {
         $(".stagelst").show();
         $(".assetclasslst").show();
         $(".regionlst").show();
+        $(".categorylst").show();
+        $(".approchlst").show();
 
         $(".h_overviewlst").show();
         $(".h_valuelst").show();
         $(".h_stagelst").show();
         $(".h_assetclasslst").show();
         $(".h_regionlst").show();
+        $(".categorycell").show();
+        $(".approchcell").show();
 
         $("#search").css({
           'width': '500px'
@@ -389,6 +398,8 @@ $(function() {
       stageArray = [];
       headerType = 0;
       updateStage();
+      activeFilters = [];
+      console.log(activeFilters);
     }
   });
 });
@@ -487,6 +498,11 @@ $('#search').on('keypress keyup', function() {
     }
     // }
   });
+  if ($('tbody tr').not('.displayNone').length == 0) {
+    $('.noResult').show();
+  }else {
+    $('.noResult').hide();
+  }
 });
 
 
@@ -798,8 +814,8 @@ function jsonLoader() {
       // console.log(val.Stage);
       items.push("<td class='assetclasslst'>" + val.AssetClass + "</td>");
       items.push("<td class='regionlst'>" + val.Region + "</td>");
-      items.push("<td >NA</td>");
-      items.push("<td >NA</td>");
+      items.push("<td class='categorylst'>NA</td>");
+      items.push("<td class='approchlst'>NA</td>");
       items.push("</tr>");
 
       getRegionCount(val.Region);
@@ -889,6 +905,11 @@ $(".regionClearBtn").click(function() {
   });
   updateRegionArray();
   filterFunction(true);
+  if ($('tbody tr').not('.displayNone').length == 0) {
+    $('.noResult').show();
+  }else {
+    $('.noResult').hide();
+  }
 });
 /////////////////////////////// CLEAR REGION BUTTON /////////////////////
 $(".assetClearBtn").click(function() {
@@ -909,6 +930,11 @@ $(".assetClearBtn").click(function() {
   });
   updateAssetArray();
   filterFunction(true);
+  if ($('tbody tr').not('.displayNone').length == 0) {
+    $('.noResult').show();
+  }else {
+    $('.noResult').hide();
+  }
 });
 ////////////////////////////HELP BACKGROUND////////////////////////////
 
@@ -1344,7 +1370,7 @@ $(".dataTable").on('click', "tbody tr", function() {
 
   $(".dataTable").animate({
     'width': '214px',
-    'left': '-20px',
+    'left': '-30px',
   });
   $(".dataTable").css({
     'color': '#fff',
@@ -1371,12 +1397,17 @@ $(".dataTable").on('click', "tbody tr", function() {
   $(".stagelst").hide();
   $(".assetclasslst").hide();
   $(".regionlst").hide();
+  $(".categorylst").hide();
+  $(".approchlst").hide();
+
 
   $(".h_overviewlst").hide();
   $(".h_valuelst").hide();
   $(".h_stagelst").hide();
   $(".h_assetclasslst").hide();
   $(".h_regionlst").hide();
+  $(".categorycell").hide();
+  $(".approchcell").hide();
 
   $("#search").css({
     'width': '180px'
@@ -1411,12 +1442,16 @@ $('.backBtn').click(function() {
   $(".stagelst").show();
   $(".assetclasslst").show();
   $(".regionlst").show();
+  $(".categorylst").show();
+  $(".approchlst").show();
 
   $(".h_overviewlst").show();
   $(".h_valuelst").show();
   $(".h_stagelst").show();
   $(".h_assetclasslst").show();
   $(".h_regionlst").show();
+  $(".categorycell").show();
+  $(".approchcell").show();
 
   slideIndex = 2;
   $(".backBtn").hide();
@@ -1455,6 +1490,9 @@ $('.backBtn').click(function() {
     'background': '#797979'
   });
 
+  $(".projectPanel").animate({
+      'width': '1100px'
+    });
 });
 
 
@@ -1499,13 +1537,6 @@ function isVisible() {
 ///////////
 
 function loadScene3() {
-  // $(".infoSection").hide(function() {
-  //   $(".footer").css('top', '0px');
-  // });
-  // $(".helpbtn").show();
-  // //  loadPieChart();
-  //
-  // game.state.start('scene-preload');
   $('#mainView').show();
   $('.infoSection').hide();
   $('.landingSection').hide();
@@ -1595,6 +1626,7 @@ $('#q_year').on('change', function() {
     });
     $('#year-span').text('2017-18');
     $('.year-span h6').text('2017-18');
+    $('.gyearRange').text('2017-18');
     url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData_1_2018.Json';
     url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_1_2018.Json';
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_1_2018.Json';
@@ -1609,6 +1641,7 @@ $('#q_year').on('change', function() {
     });
     $('#year-span').text('2018-19');
     $('.year-span h6').text('2018-19');
+    $('.gyearRange').text('2018-19');
     url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
     url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
     url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
@@ -1632,6 +1665,7 @@ $('#skip').click(function () {
   loadScene3();
   $('#year-span').text('2018-19');
   $('.year-span h6').text('2018-19');
+  $('.gyearRange').text('2018-19');
   url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
   url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
   url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
@@ -1785,7 +1819,7 @@ $(".CubeAnim video").contextmenu(function (e) {
   e.preventDefault();
 });
 
-$("#cube-img").click(function () {
+$("#cube-img").on('click',function () {
   $('.CubeAnim').show();
   $('.landingSection').hide();
   $('#CubeAnim').get(0).play();

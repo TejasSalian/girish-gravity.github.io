@@ -185,7 +185,8 @@ body, html {
     font-weight: 900;
     font-size: 13px;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 0px;
+    padding-bottom: 3px;
 }
 
 .btn {
@@ -845,7 +846,7 @@ thead, tbody {
 }
 
 .dataTable tbody {
-    height: 438px;
+    height: 420px;
     overflow-y: scroll;
     overflow-x: hidden;
     padding-left: 10px;
@@ -920,7 +921,7 @@ thead, tbody {
 }
 
 .projectlst {
-    width: 190px;
+    width: 178px;
     padding: 10px 0px 10px 10px;
 }
 
@@ -931,7 +932,7 @@ thead, tbody {
 
 .valuelst {
     padding-left: 15px;
-    width: 13%;
+    width: 14%;
     min-width: 13%;
 }
 
@@ -1583,8 +1584,9 @@ input[type=checkbox]:not(old):checked+label {
     /*	left: 20px;
         top: 30px;*/
     /*text-align: right;*/
-    padding-left: 16px;
+    padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 4px;
     width: 50%;
 }
 
@@ -1594,29 +1596,29 @@ input[type=checkbox]:not(old):checked+label {
     top: 50px;
     text-align: right;*/
     padding-left: 10px;
-    padding-top: 0px;
+    padding-top: 2px;
     width: 50%;
 }
 
 .totalprojects {
     position: relative;
-    top: -30px;
-    padding-left: 170px;
+    top: -36px;
+    padding-left: 178px;
     width: 50%;
 }
 
 .programs {
     position: relative;
-    padding-left: 160px;
+    padding-left: 178px;
     top: -30px;
     width: 50%;
 }
 
 .grants {
     position: relative;
-    top: -30px;
-    padding-left: 179px;
-    width: 50%
+    top: -25px;
+    padding-left: 178px;
+    width: 50%;
 }
 
 .floatPanelData {
@@ -1628,6 +1630,7 @@ input[type=checkbox]:not(old):checked+label {
 .floatData a, .floatData a:focus, .floatData {
     color: #6A0032;
     font-weight: 600;
+    max-width: 250px;
 }
 
 .floatDropPanel {
@@ -2025,10 +2028,10 @@ hr.style-two {
 .regBudget {
     background: url("../images/Circle.svg") no-repeat;
     position: absolute;
-    top: 116px;
+    top: 126px;
     left: 50px;
-    width: 75px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     text-align: center;
     color: #fff;
     padding-top: 16px;
@@ -2037,10 +2040,10 @@ hr.style-two {
 .seqBudget {
     background: url("../images/Circle.svg") no-repeat;
     position: absolute;
-    top: 116px;
+    top: 126px;
     left: 190px;
-    width: 75px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     text-align: center;
     color: #fff;
     padding-top: 14px;
@@ -2151,10 +2154,11 @@ hr.style-two {
 .tag-names ul > li {
     position: absolute;
     text-align: center;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
-    line-height: 0.8;
+    line-height: 1;
     color: white;
+    text-transform: capitalize;
 }
 
 .tag-names ul > li:nth-child(1) {
@@ -2164,48 +2168,51 @@ hr.style-two {
 }
 
 .tag-names ul > li:nth-child(2) {
-    top: 189px;
+    top: 188px;
     left: 128px;
     width: 130px;
     transform: scale(0.98);
 }
 
 .tag-names ul > li:nth-child(3) {
-    top: 202px;
+    top: 201px;
     left: 225px;
     width: 130px;
     transform: scale(0.98);
 }
 
 .tag-names ul > li:nth-child(4) {
-    top: 216px;
+    top: 215px;
     left: 338px;
     width: 87px;
     transform: scale(0.98);
 }
 
 .tag-names ul > li:nth-child(5) {
-    top: 144px;
-    left: 441px;
+    top: 143px;
+    left: 442px;
     width: 109px;
-    font-size: 17px;
+    font-size: 18px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .tag-names ul > li:nth-child(6) {
-    bottom: -480px;
+    bottom: -482px;
     left: 105px;
     width: 134px;
     font-size: 17px;
     text-transform: uppercase;
-    line-height: 1.1;
+    line-height: 1.2;
+    letter-spacing: 1px;
 }
 
 .tag-names ul > li:nth-child(7) {
-    bottom: -521px;
+    bottom: -524px;
     left: 584px;
     width: 109px;
-    font-size: 17px;
+    font-size: 18px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
@@ -2277,4 +2284,27 @@ height: 229px; */
 .CubeAnim video {
     display: block;
     width: 100%;
+}
+
+.gyearRange {
+    display: inline-block;
+}
+
+.noResult {
+    position: absolute;
+    display: block;
+    margin-top: -42vh;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    font-size: 26px;
+    color: #c0c3c5;
+    font-weight: lighter;
+    margin-left: -9%;
+    display: none;
+}
+
+* {
+    font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    src: url('../fonts/meta-normal.ttf') format('truetype'), url('../fonts/MetaBold.ttf') format('truetype') !important;
 }

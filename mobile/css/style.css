@@ -14,7 +14,7 @@ body:after{
  content: url("../images/IP_sc4_conceptBtn1.svg")
         url("../images/IP_sc4_strategicBtn1.svg")
         url("../images/IP_sc4_prelimBtn1_1.svg")
-        url("../images/IP_sc4_businessBtn1.svg") 
+        url("../images/IP_sc4_businessBtn1.svg")
         url(../images/IP_sc4_investBtn1.svg)
         url("../images/IP_sc4_deliveryBtn1.svg")
         url("../images/IP_sc4_crossBtn1.svg")
@@ -29,7 +29,7 @@ body:after{
         url("../images/IP_sc4_artBtn1.svg")
         url("../images/IP_sc4_remoteBtn1.svg")
         url("../images/IP_sc4_cairnsBtn1.svg")
-        url("../images/IP_sc4_townsvilleBtn1.svg") 
+        url("../images/IP_sc4_townsvilleBtn1.svg")
         url("../images/IP_sc4_mackayBtn1.svg")
         url("../images/IP_sc4_fitzroyBtn1.svg")
         url("../images/IP_sc4_wideBayBtn1.svg")
@@ -48,7 +48,7 @@ body:after{
 /*	max-height: 1920px;*/
 /*	background: #fff;*/
 /*    padding-top: 177.77%;*/
-    overflow: hidden;  
+    overflow: hidden;
     height: 110vh;
 }
 .header {
@@ -489,13 +489,13 @@ body:after{
 }
 
 .fp_btn1{
-    
+
 }
 .fp_btn2{
-    
+
 }
 .fp_btn3{
-    
+
 }
 
 .mb_filterPage_header{
@@ -625,7 +625,7 @@ body:after{
 
 }
 .mb_filterPage_slide1{
-    position: absolute;    
+    position: absolute;
     left: 0;
     display: none;
 }
@@ -1258,7 +1258,7 @@ body:after{
     right: 40px;
     height: 50px;
     width: 50px;
-    
+
     border-radius: 10px;
 
     opacity: 1;
@@ -1380,7 +1380,7 @@ body:after{
     position: absolute;
     left: 100%;
     width: 100%;
-    top: 0;    
+    top: 0;
 }
 .mb_projectInfoPage_header{
 /*
@@ -1455,7 +1455,7 @@ body:after{
 }
 .pI_estmCost {
     text-align: center;
-    display: block;    
+    display: block;
 }
 .pI_estmCost span{
     color: #39c6bc;
@@ -1463,7 +1463,7 @@ body:after{
 
 .pI_postFunding{
     text-align: center;
-    display: block;   
+    display: block;
     margin: auto;
     width: 100%;
 /*    height: 100px;*/
@@ -1492,7 +1492,7 @@ body:after{
     text-align: center;
     color: #fff;
     font-family:"Montserrat-Light";
-    font-size: .8rem; 
+    font-size: .8rem;
     /*box-shadow: 0px 10px 5px #888888;*/
     /*box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
     box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.4);
@@ -1512,7 +1512,7 @@ body:after{
 /*
 .pI_fundContributors span{
     text-align: center;
-    display: block;   
+    display: block;
     border-radius: 50px;
     background: #d9fdfa;
     margin: auto;
@@ -1682,7 +1682,7 @@ body:after{
     text-indent: 45px;
 /*    text-align: */
 /*
-    
+
     padding: 0px 0px 0px 50px;
     top: -10px;
     left: 0px;
@@ -1699,15 +1699,15 @@ body:after{
     font-size: 1.0rem;
 }
 
-.dataTables_filter input:-moz-placeholder { 
+.dataTables_filter input:-moz-placeholder {
     font-size: 1.0rem;
 }
 
-.dataTables_filter input::-moz-placeholder {  
+.dataTables_filter input::-moz-placeholder {
     font-size: 1.0rem;
 }
 
-.dataTables_filter input:-ms-input-placeholder {  
+.dataTables_filter input:-ms-input-placeholder {
     font-size: 1.0rem;
 }
 
@@ -1726,7 +1726,7 @@ table.dataTable thead .sorting_asc {
     background-image: none;
 }
 table.dataTable thead th, table.dataTable thead td {
-     border-bottom: none; 
+     border-bottom: none;
 }
 
 table.dataTable tbody th, table.dataTable tbody td {
@@ -1771,3 +1771,23 @@ table.dataTable tbody th, table.dataTable tbody td {
     width: 100%;
 }
 */
+#yearSpan{
+	width: 94%;
+	min-height: 36px;
+	padding: 8px;
+	font-weight:  600;
+	color: #4c4c4e;
+	background-color: transparent;
+	border:  0;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+#yearSpan option{
+	width: 94% !important;
+	max-width: 94% !important;
+	min-width: 94% !important;
+	padding-right: 0 !important;
+}
+.yearSpan{
+	display: inline-block;
+}

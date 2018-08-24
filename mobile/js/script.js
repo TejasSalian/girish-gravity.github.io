@@ -1,12 +1,104 @@
 /*global $,jQuery,console*/
 
-var url1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData';
-var url2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData';
-var url3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData';
+var url2017_1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData_12_2017.Json';
+var url2017_2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_12_2017.Json';
+var url2017_3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_12_2017.Json';
 
-var url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData_12_2017.Json';
-var url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_12_2017.Json';
-var url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_12_2017.Json';
+var url2018_1 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
+var url2018_2 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
+var url2018_3 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
+
+var url1_temp = url2018_1;
+var url2_temp = url2018_2;
+var url3_temp = url2018_3;
+
+$('#yearSpan').on('change', function() {
+  if (this.value === String('2017')) {
+    url1_temp = url2017_1;
+    url2_temp = url2017_2;
+    url3_temp = url2017_3;
+    $('.yearSpan').text('2017-2018');
+    tableUpdater();
+  }else if (this.value === String('2018')) {
+    url1_temp = url2018_1;
+    url2_temp = url2018_2;
+    url3_temp = url2018_3;
+    $('.yearSpan').text('2018-2019');
+    tableUpdater();
+  }
+});
+
+function tableUpdater() {
+  var data, tableHtml = '';
+  $('#dataTable tbody').html(tableHtml);
+  $.when(
+    $.ajaxSetup({
+      crossDomain: true,
+      beforeSend: function(xhr) {
+        if (xhr.overrideMimeType) {
+          xhr.overrideMimeType("application/json");
+        }
+      }
+    }),
+    $.getJSON(url1_temp, function(res) {
+      data = res;
+    })
+  ).then(function () {
+    $.each(data, function(key, item){
+      tableHtml +='<tr data-value="' +item.ProjectId + ',' + item.Stage + '" role="row">'+
+                    '<td class="folderClass sorting_1"></td>' +
+                    '<td class=" projectlst">' + item.Project + '</td>'+
+                    '<td class=" miniHeader">'+
+                      '<span>' + valueTypeFn(item) + '</span>'+
+                      '<span>STAGE</span>'+
+                      '<span>ASSET CLASS</span>'+
+                      '<span>REGION</span>'+
+                    '</td>'+
+                    '<td class=" valuelst">'+ valuelstFn(item) +'</td>'+
+                    '<td class=" stagelst">'+ stagelstFn(item) +'</td>'+
+                    '<td class=" assetclasslst">' + item.AssetClass + '</td>'+
+                    '<td class=" regionlst">' + item.Region + '</td>'+
+                    '<td class=" hr_line"><hr></td>'+
+                   '</tr>';
+    });
+    $('#dataTable tbody').html(tableHtml);
+  });
+}
+
+function valueTypeFn(data) {
+  if (data.Stage.toUpperCase() == "PLANNING".toUpperCase()) {
+    return String('TYPE');
+  }else {
+    return String('VALUE');
+  }
+}
+
+function valuelstFn(data) {
+  if(data.Stage.toUpperCase() == "PLANNING".toUpperCase())
+  {
+      if(data.OpportunityFlag == true)
+      {
+          return "Future opportunity";
+      }
+      else
+      {
+          return "Consultation";
+      }
+  }
+  else
+  {
+      return formatValue(data.Value);
+  }
+}
+
+function stagelstFn(data) {
+  if(data.Stage.toUpperCase() == "PLANNING".toUpperCase()) {
+      return data.SubStage;
+  }
+  else{
+      return firstLetterCaps(data.Stage);
+  }
+}
 
 var subHeaderClickedBool = false;
 
@@ -34,7 +126,7 @@ function filterCounter() {
     filter_stage = [];
     filter_asset = [];
     filter_region = [];
-    
+
     $(".mb_filterPage_slide1 .ul_1 li").each(function () {
         if ($(this).children('button').hasClass('selected')) {
             f_counter += 1;
@@ -66,7 +158,7 @@ function filterCounter() {
     } else {
         $(".mb_projectPage_counter").show().text(f_counter);
     }
-  
+
 }
 
 function fadeSubTitle(indexNum) {
@@ -136,7 +228,7 @@ function helpPage1() {
     $(".mb_helpPage_4").animate({
         left: '100%'
     }, 'normal', 'linear');
-    
+
      $(".mb_helpPage_subTitle_line").animate({
         'opacity':1
     });
@@ -188,7 +280,7 @@ function helpPage2() {
     $(".mb_helpPage_4").animate({
         left: '100%'
     }, 'normal', 'linear');
-    
+
      $(".mb_helpPage_subTitle_line").animate({
         'opacity':1
     });
@@ -240,7 +332,7 @@ function helpPage3() {
     $(".mb_helpPage_4").animate({
         left: '100%'
     }, 'normal', 'linear');
-    
+
      $(".mb_helpPage_subTitle_line").animate({
         'opacity':1
     });
@@ -299,29 +391,29 @@ function helpPage4() {
      $(".mb_helpPage_carouselButtonsParent").animate({
         'opacity':1
     });
-    
+
     $(".mb_caoursel5_btn").animate({
         'opacity':'0'
     }).fadeOut();
      $(".swipeArea").slideDown();
         $(".mb_helpPage_arrowParent").animate({
-           'left':'0%' 
+           'left':'0%'
         },'normal','linear').show();
         $(".mb_helpPage_subTitle").animate({
-           'left':'0%' 
+           'left':'0%'
         },'normal','linear').show();
         $(".mb_helpPage_subTitle_line").animate({
-           'left':'0%' 
+           'left':'0%'
         },'normal','linear').show();
         $(".mb_helpPage_subTitle_text").animate({
-           'left':'0%' 
+           'left':'0%'
         },'normal','linear').show();
         $(".mb_helpPage_carouselButtonsParent").animate({
-           'left':'00%' 
+           'left':'00%'
         },'normal','linear').show();
         $(".mb_helpPage_btn").show();
 
-    
+
 }
 
 function helpPage5() {
@@ -369,23 +461,23 @@ function helpPage5() {
         'opacity':0
     });
 
-    
+
     $(".mb_helpPage_arrowParent").animate({
-       'left':'-100%' 
+       'left':'-100%'
     },'normal','linear').hide();
     $(".mb_helpPage_subTitle").animate({
-       'left':'-100%' 
+       'left':'-100%'
     },'normal','linear').hide();
     $(".mb_helpPage_subTitle_line").animate({
-       'left':'-100%' 
+       'left':'-100%'
     },'normal','linear').hide();
     $(".mb_helpPage_subTitle_text").animate({
-       'left':'-100%' 
+       'left':'-100%'
     },'normal','linear').hide();
     $(".mb_helpPage_carouselButtonsParent").animate({
-       'left':'-100%' 
+       'left':'-100%'
     },'normal','linear').hide();
-   
+
     $(".mb_helpPage_btn").hide();
     $(".swipeArea").slideUp();
 
@@ -394,7 +486,7 @@ function helpPage5() {
             'opacity':'1'
         });
     });
-    
+
 }
 
 function sliderFinder(indexNum) {
@@ -529,7 +621,7 @@ function sortListBy() {
                 $('.dataTable').DataTable().order([4, 'desc']).draw(); // STAGE high to low
                 break;
             case 3:
-                $('.dataTable').DataTable().order([3, 'asc']).draw(); // VALUE 
+                $('.dataTable').DataTable().order([3, 'asc']).draw(); // VALUE
                 break;
             case 4:
                 $('.dataTable').DataTable().order([6, 'asc']).draw(); // REGION
@@ -613,10 +705,10 @@ function jsonUrlFormatter(url) {
     url = url + '_' + (date.getMonth()+1).toString() + '_' + date.getFullYear().toString() + '.Json';
     return url;
 }
-
+var table;
 function tableInit() {
     'use strict';
-    var table = $('#dataTable').DataTable({
+    table = $('#dataTable').DataTable({
         "scrollCollapse": true,
         "scrollY":950,
         "scroller": true,
@@ -662,7 +754,7 @@ function tableInit() {
                 else
                 {
                     return formatValue(data.Value);
-                }    
+                }
             } },
             // { className: "stagelst", "data": "Stage" },
             { className: "stagelst", "data": null, "render": function(data, type, row) {
@@ -694,24 +786,24 @@ function tableInit() {
     $('.dataTable thead').hide();
 
 //    table.ajax.reload( null, false );
-        
+
 }
 
 function insertSortButton(){
     'use strict';
     $(".dataTables_filter label").append('<button class="mb_projectPage_sortBtn"></button>');
     $(".dataTables_filter label").append('<button class="close"></button>');
-    
+
     $(".mb_projectPage_sortBtn").bind('click touchstart', function (e) {
         'use strict';
         $(".mb_projectPage_sortBg").fadeIn();
         e.preventDefault();
     });
-    
+
     $(".dataTables_filter input").bind('click touchstart', function (e) {
         'use strict';
         e.preventDefault();
-        
+
         $(".close").css({"z-index":"6"}).fadeIn(100);
         $(".mb_projectPage_sortBtn").animate({
             width: "0px"
@@ -726,21 +818,21 @@ function insertSortButton(){
             "-webkit-border-bottom-right-radius": "50px"
         }).focus();
     });
-    
+
     $(".close").bind('click touchstart', function (e) {
         'use strict';
         e.preventDefault();
 
-        
+
         setTimeout(function() {
             $(".dataTables_filter input").focus();
         },0);
-        
+
         $(this).css({
             "z-index":"0",
             "display":"none"
         });
-        
+
         $(".mb_projectPage_sortBtn").show().animate({
             width: "35%",
             display: "block"
@@ -755,15 +847,15 @@ function insertSortButton(){
 
         $('.dataTable').DataTable().search('').draw();
         dataRowCount();
-        
+
     });
 
-    
+
 //    $(".dataTables_filter").
-    
+
     var element = $('.dataTables_filter').detach();
     $('.mb_projectPage_searchSort').append(element);
-//    
+//
 //    dataTables_scroll
     $(".dataTables_scrollBody").bind('scroll', function () {
         'use strict';
@@ -793,12 +885,12 @@ function insertSortButton(){
             $(".mb_projectPage_hiliteParent").slideDown();
 
         }
-        
+
     });
 
 //
 
-    
+
     $(".dataTable").on('click', "tbody tr", function () {
         'use strict';
         goTo($(".mb_projectPage"), $(".mb_projectInfoPage"), false);
@@ -812,12 +904,12 @@ function insertSortButton(){
             "height": "110vh"
         });
     });
-    
+
     $(".dataTables_filter").on('keypress keyup','input',function() {
         filterAndCount();
     });
 
-    
+
 }
 
 function columnCount(colNum,arr) {
@@ -863,7 +955,7 @@ $(document).ready(function () {
     tableInit();
     loadAnnualInfo();
 
-//    
+//
 //    $('body').click(function () {
 //    document.activeElement.blur();
 //    });
@@ -871,7 +963,7 @@ $(document).ready(function () {
 //    $('input').click(function (event) {
 //        event.stopPropagation();
 //    });
-//    
+//
 });
 
 $(document).on('touchstart click', '#mb_introPage_cubeBtn', function(){
@@ -902,14 +994,14 @@ $(".mb_introPage_InitiativeBtn").click(function () {
 
 function dataRowCount(){
     'use_strict';
-    
+
 //    console.log($('.dataTable').DataTable().page.info().page);
     $(".mb_projectPage_dataCount").text('(' + $('.dataTable').DataTable().page.info().recordsDisplay + ')');
 }
 
 
 function filterAndCount() {
-    
+
     $('.dataTable').DataTable().column(4).search(
           filter_stage.join('|'),
           true,
@@ -930,7 +1022,7 @@ function filterAndCount() {
           false,
           true
     ).draw();
-    
+
     dataRowCount();
 }
 
@@ -943,7 +1035,7 @@ $(".mb_filterPage_done_btn").click(function () {
         "-webkit-clip-path":" circle(0px at 70px 60px)",
         "transition": "0.5s",
         "-webkit-transition": "0.5s"
-        
+
     },function() {
         $(this).hide(100);
     });
@@ -1142,7 +1234,7 @@ $(".mb_filterPage_regions_btn").click(function () {
 function loadProjectInfo(id, stageName) {
 
     'use strict';
-    
+
     // console.log(id);
     // console.log(stageName);
 
@@ -1164,7 +1256,7 @@ function loadProjectInfo(id, stageName) {
         $(".mb_projectInfoPage_data").css({'top':'0px'});
 //        $(".pI_header").text(jsonData[id].Header);
         $(".pI_proposalHeader").removeClass("hideShadow");
-        if(stageName.toUpperCase() == 'Delivery'.toUpperCase()) 
+        if(stageName.toUpperCase() == 'Delivery'.toUpperCase())
         {
             $(".mb_projectInfoPage_data_top").show();
             $(".pI_bottom").show();
@@ -1192,7 +1284,7 @@ function loadProjectInfo(id, stageName) {
             $(".pI_postFunding span").text(formatValue(jsonData[id].PostFunding));
             $(".pI_fundContributors span").text(jsonData[id].FundingContributors);
 
-                       
+
             // $("").text(jsonData[id].RegionImg);
             $(".pI_regionName span").text(jsonData[id].RegionName);
             // $(".pI_regionImg").attr('src', jsonData[id].RegionImg);
@@ -1255,7 +1347,7 @@ function loadProjectInfo(id, stageName) {
             // $(".pI_pipelineSource span").text(jsonData[id].PipelineSource);
             // $(".pI_pipeLineSource span").text(pipelinesourceText);
             var pipelinesourceText = [];
-            $.each(jsonData[id].PipelineSource, function(index, value) {    
+            $.each(jsonData[id].PipelineSource, function(index, value) {
                 pipelinesourceText.push('<a target="_blank" href="' +jsonData[id].PipelineSource[index].Value+'">'+ jsonData[id].PipelineSource[index].Key+'</a><br>');
             });
 
@@ -1275,8 +1367,8 @@ function loadProjectInfo(id, stageName) {
             // $(".pI_valueRange span").text(jsonData[id].ValueRange);
             $(".pI_leadAgency span").text(jsonData[id].LeadAgency);
             $(".pI_leadAgency").css({'padding-bottom':'200px'});
-           
-            
+
+
             // $(".pI_stateFund span").text(jsonData[id].StateFund);
         }
 
@@ -1421,29 +1513,11 @@ function loadAnnualInfo(){
                     break;
                 case "TotalGrants":
                     $(".grantss").text(jsonData[index].Value);
-                    break;    
+                    break;
             }
         });
     });
 }
-//dataTables_scroll
-//$(".mb_projectPage_datalist").scroll(function () {
-//    'use strict';
-////    console.log($('.dataTable').DataTable().page.info());
-//    var scroll = $(".mb_projectPage_datalist").scrollTop();
-//    if (scroll >= 100) {
-//        $(".mb_projectPage_hiliteParent").slideUp();
-//        $(".mb_projectPage_datalist").css({
-//            height: "70vh"
-//        });
-//    }
-//    if (scroll < 100) {
-//        $(".mb_projectPage_hiliteParent").slideDown();
-//        $(".mb_projectPage_datalist").css({
-//            height: "70vh"
-//        });
-//    }
-//});
 
 $(".mb_projectInfoPage_close_btn").click(function () {
     'use strict';
@@ -1457,7 +1531,7 @@ $(".mb_projectInfoPage_close_btn").click(function () {
         "height": "90vh"
     });
     $(".pI_proposalHeader").addClass("hideShadow");
-    
+
 });
 
 
@@ -1466,9 +1540,3 @@ $(".sortSelectorBtn").click(function () {
     sortListBy();
     $(".mb_projectPage_sortBg").fadeOut();
 });
-//$(".mb_projectPage_sortBg").click(function(e){
-//    e.stopPropagation();
-//    $(".mb_projectPage_sortBg").fadeOut();
-//});
-//});
-

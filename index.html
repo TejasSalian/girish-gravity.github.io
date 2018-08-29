@@ -163,27 +163,27 @@
                             </div>
                           </div>
                           <div class='heading'>
-                            <h5>Queensland Infrastructure Pipeline</h5>
+                            <h5>State Infrastructure Plan Part B<br>State Infrastructure Pipeline</h5>
                             <div class="form-group">
                               <label for="q_year" class="d-none">Financial Year</label>
                               <select class="form-control" id="q_year">
-                                <option value="2017">2017 - 2018</option>
+                                <!-- <option value="2017">2017 - 2018</option> -->
                                 <option value="2018">2018 - 2019</option>
                               </select>
                             </div>
                           </div>
                           <div class="year-wise">
                             <div class="year-data">
-                              <div class="hlPanelHeader"><span id="year-span">2017-18</span> DELIVERY HIGHLIGHTS</div>
+                              <div class="hlPanelHeader"><span id="year-span">2018-19</span>Highlights</div>
                               <div class="floatPanelData">
-                                <div class="capitalbudget">Capital budget: <span class="floatData">$458.6M</span></div>
-                                <div class="jobssupported">Jobs supported: <span class="floatData">224</span></div>
-                                <div class="totalprojects">Total projects: <span class="floatData">550</span></div>
-                                <div class="programs">Total programs: <span class="floatData">990</span></div>
-                                <div class="grants">Total grants: <span class="floatData">287</span></div>
+                                <div class="capitalbudget">Capital budget: <span class="floatData">$11.56B</span></div>
+                                <div class="jobssupported">Jobs supported: <span class="floatData">33,000</span></div>
+                                <div class="totalprojects">Proposals in Planning: <span class="floatData">394</span></div>
+                                <div class="programs">Total programs: <span class="floatData">213</span></div>
+                                <div class="grants">Total grants: <span class="floatData">101</span></div>
 
-                                <div class="regBudget">Regional Budget<br/><span>$214M</span></div>
-                                <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div>
+                                <!-- <div class="regBudget">Regional Budget<br/><span>$214M</span></div> -->
+                                <!-- <div class="seqBudget">SEQ<br/>Budget<br/><span>$244.6M</span></div> -->
                               </div>
                             </div>
                             <div class="year-span">
@@ -191,11 +191,36 @@
                             </div>
                             <div class="clickables">
                               <ul>
-                                <li><a bubble="CONCEPT"><img src="images/u210.png" alt=""><span><strong id="new-concept">0</strong><br>Proposals</span></a></li>
-                                <li><a bubble="STRATEGIC"><img src="images/u210.png" alt=""><span><strong id="new-strategy">0</strong><br>Proposals</span></a></li>
-                                <li><a bubble="EVALUATION"><img src="images/u210.png" alt=""><span><strong id="new-evaluation">0</strong><br>Proposals</span></a></li>
-                                <li><a bubble="BUSINESS"><img src="images/u210.png" alt=""><span><strong id="new-business">0</strong><br>Proposals</span></a></li>
-                                <li><a bubble="DELIVERY"><img src="images/u210.png" alt=""><span><strong id="new-delivery">0</strong><br>Projects</span></a></li>
+                                <li>
+                                  <a bubble="CONCEPT" project-list="proposal">
+                                    <img src="images/u210.png" alt="">
+                                    <span><strong id="new-concept">0</strong><br>Proposals</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a bubble="STRATEGIC" project-list="proposal">
+                                    <img src="images/u210.png" alt="">
+                                    <span><strong id="new-strategy">0</strong><br>Proposals</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a bubble="EVALUATION" project-list="proposal">
+                                    <img src="images/u210.png" alt="">
+                                    <span><strong id="new-evaluation">0</strong><br>Proposals</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a bubble="BUSINESS" project-list="proposal">
+                                    <img src="images/u210.png" alt="">
+                                    <span><strong id="new-business">0</strong><br>Proposals</span>
+                                  </a>
+                                </li>
+                                <li>
+                                  <a bubble="DELIVERY">
+                                    <img src="images/u210.png" alt="">
+                                    <span><strong id="new-delivery">0</strong><br>Projects</span>
+                                  </a>
+                                </li>
                               </ul>
                             </div>
                             <div class="tag-names">
@@ -204,9 +229,18 @@
                                 <li>Strategic<br>Assessment</li>
                                 <li>preliminary<br>evaluation</li>
                                 <li>Business<br>Case</li>
-                                <li>Planning</li>
-                                <li>Investment<br>Decision</li>
-                                <li>Delivery</li>
+                                <li class="filter-board" filter-as='planning'>
+                                  <span data-toggle="tooltip" data-placement="bottom"
+                                      title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">Planning</span>
+                                </li>
+                                <li class="filter-board">
+                                  <span data-toggle="tooltip" data-placement="top"
+                                    title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">Investment<br>Decision</span>
+                                </li>
+                                <li class="filter-board" filter-as='delivery'>
+                                  <span data-toggle="tooltip" data-placement="top"
+                                    title="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">Delivery</span>
+                                </li>
                               </ul>
                             </div>
                             <div class="year-anim" id="animation_container">
@@ -274,7 +308,7 @@
                 <div class="backBtn"></div>
 
                 <div id="projectHeader">
-                  <h5>State Infrastructure Plan Projects</h5>
+                  <h5>State Infrastructure Plan <div id="projectHeaderName">Construction Projects</div></h5>
                   <span>(Showing only construction projects)</span>
                 </div>
                 <div id="proposalHeader"><h5>State Infrastructure Plan Proposals</h5></div>
@@ -381,7 +415,7 @@
                               <span>PROJECTS</span></th>
                               <th class="column1 h_valuelst">
                                 <div class='sortbtn'></div>
-                                VALUE
+                                TOTAL ESTIMATED COST
                               </th>
                               <th class="column1 h_stagelst">
                                 <div class='sortbtn'></div>
@@ -389,19 +423,15 @@
                               </th>
                               <th class="column1 h_assetclasslst">
                                 <div class='sortbtn'></div>
-                                ASSET CLASS
+                                INFRASTRUCTURE CLASS
                               </th>
                               <th class="column1 h_regionlst">
                                 <div class='sortbtn'></div>
                                 REGION
                               </th>
-                              <th class="column1 categorycell">
-                                <div class='sortbtn'></div>
-                                CATEGORY
-                              </th>
-                              <th class="column1 approchcell">
-                                <div class='sortbtn approch'></div>
-                                APPROCH TO<br>MARKET
+                              <th class="column1 agencycell">
+                                <div class='sortbtn agency'></div>
+                                AGENCY
                               </th>
                             </tr>
                           </thead>
@@ -470,6 +500,7 @@
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script src="js/Chart.js"></script>
 <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="js/tooltips.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 <script type="text/javascript" src="js/pie.js"></script>
 

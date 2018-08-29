@@ -1,12 +1,14 @@
 /*global $,jQuery*/
 
-var url1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData';
-var url2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData';
-var url3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData';
+// var url1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData';
+// var url2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData';
+// var url3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData';
 
-var url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData_1_2018.Json';
-var url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_1_2018.Json';
-var url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_1_2018.Json';
+// var url1_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData_1_2018.Json';
+// var url2_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_1_2018.Json';
+// var url3_temp = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_1_2018.Json';
+
+var url1_temp, url2_temp, url3_temp;
 
 var yearglobal = 0;
 $(document).ready(function() {
@@ -231,9 +233,9 @@ function openProjectPanel(bubble) {
       // debugger
 
       // $(".h_projectlst div span").text('PROJECTS');
-      $(".h_projectlst div").html("<div class='sortbtn'></div>PROJECTS / PROPOSALS");
+      // $(".h_projectlst div").html("<div class='sortbtn'></div>PROJECTS");
       // $(".h_valuelst").text('VALUE');
-      $(".h_valuelst div").html("<div class='sortbtn'></div>VALUE / TYPE");
+      $(".h_valuelst div").html("<div class='sortbtn'></div>TOTAL ESTIMATED COST");
 
       $("#canvasContainer").css('overflow-y', 'hidden');
 
@@ -304,9 +306,9 @@ $(function() {
       // debugger
 
       // $(".h_projectlst div span").text('PROJECTS');
-      $(".h_projectlst div").html("<div class='sortbtn'></div>PROJECTS / PROPOSALS");
+      // $(".h_projectlst div").html("<div class='sortbtn'></div>PROJECTS");
       // $(".h_valuelst").text('VALUE');
-      $(".h_valuelst div").html("<div class='sortbtn'></div>VALUE / TYPE");
+      $(".h_valuelst div").html("<div class='sortbtn'></div>TOTAL ESTIMATED COST");
 
       $("#canvasContainer").css('overflow-y', 'hidden');
 
@@ -345,16 +347,14 @@ $(function() {
         $(".stagelst").show();
         $(".assetclasslst").show();
         $(".regionlst").show();
-        $(".categorylst").show();
-        $(".approchlst").show();
+        $(".agencylst").show();
 
         $(".h_overviewlst").show();
         $(".h_valuelst").show();
         $(".h_stagelst").show();
         $(".h_assetclasslst").show();
         $(".h_regionlst").show();
-        $(".categorycell").show();
-        $(".approchcell").show();
+        $(".agencycell").show();
 
         $("#search").css({
           'width': '500px'
@@ -399,8 +399,12 @@ $(function() {
       headerType = 0;
       updateStage();
       activeFilters = [];
-      console.log(activeFilters);
+      // console.log(activeFilters);
     }
+    $("#projectHeaderName").text('Construction Projects');
+    $('tbody tr').each(function() { $(this).children('td:nth-child(4)').css({'display':'table-cell'}); });
+    sessionStorage.setItem('proposalActive', '');
+    $('.dataTable').removeClass('proposalActive');
   });
 });
 
@@ -464,28 +468,26 @@ $('#search').on('keypress keyup', function() {
   filterActive();
   $('tbody tr').each(function() {
 
-    // if($(this).text().toLowerCase().indexOf(value) > -1)
-    // {
-
-    if ((activeFilters.length == 0) && ($(this).text().toLowerCase().indexOf(value) > -1)) {
+    let searchText = String($(this).text() + ' '+ $(this).children('td:nth-child(5)').attr('stage')).toLowerCase();
+    if ((activeFilters.length == 0) && (searchText.indexOf(value) > -1)) {
       $(this).removeClass('displayNone');
     } else {
       if (activeFilters.length == 1) {
-        if ($(this).hasClass(activeFilters[0]) && ($(this).text().toLowerCase().indexOf(value) > -1)) {
+        if ($(this).hasClass(activeFilters[0]) && (searchText.indexOf(value) > -1)) {
           $(this).removeClass('displayNone');
         } else {
           $(this).addClass('displayNone');
         }
       } else {
         if (activeFilters.length == 2) {
-          if (($(this).hasClass(activeFilters[0])) && ($(this).hasClass(activeFilters[1])) && ($(this).text().toLowerCase().indexOf(value) > -1)) {
+          if (($(this).hasClass(activeFilters[0])) && ($(this).hasClass(activeFilters[1])) && (searchText.indexOf(value) > -1)) {
             $(this).removeClass('displayNone');
           } else {
             $(this).addClass('displayNone');
           }
         } else {
           if (activeFilters.length == 3) {
-            if (($(this).hasClass(activeFilters[0])) && ($(this).hasClass(activeFilters[1])) && ($(this).hasClass(activeFilters[2])) && ($(this).text().toLowerCase().indexOf(value) > -1)) {
+            if (($(this).hasClass(activeFilters[0])) && ($(this).hasClass(activeFilters[1])) && ($(this).hasClass(activeFilters[2])) && (searchText.indexOf(value) > -1)) {
               $(this).removeClass('displayNone');
             } else {
               $(this).addClass('displayNone');
@@ -726,22 +728,7 @@ function formatValue(value) {
   if (value == 0 || value == null) {
     return '$' + 0;
   } else {
-    //   if(value > 999 && value <= 999999){
-    //       return '$'+(value/1000).toFixed(2) + 'K';
-    //   }
-    //   else {
-    // if(value > 999999 && value <= 999999999) {
     return '$' + (value / 1000000).toFixed(2) + 'M';
-    // }
-    //    		else {
-    //                if(value > 999999999){
-    //                    return '$'+(value/1000000000000).toFixed(2) + 'B';
-    //                }
-    //                else{
-    //                    return '$'+value;
-    //                }
-    //    		}
-    //        }
   }
 }
 
@@ -800,12 +787,12 @@ function jsonLoader() {
       if (val.Stage.toUpperCase() == 'Planning'.toUpperCase()) {
         // items.push("<td class='valuelst'>" + val.OpportunityFlag + "</td>");
         items.push("<td class='valuelst'>" + valueType + "</td>");
-        items.push("<td class='stagelst'>" + firstLetterCaps(val.Stage) + " - " + firstLetterCaps(val.SubStage) + "</td>");
+        items.push("<td class='stagelst' stage='" + firstLetterCaps(val.Stage) + "'>" + firstLetterCaps(val.SubStage) + "</td>");
         getCount(val.SubStage);
       } else {
         items.push("<td class='valuelst'>" + formatValue(val.Value) + "</td>");
         if (val.Stage.toUpperCase() == 'Delivery'.toUpperCase()) {
-          items.push("<td class='stagelst'>" + firstLetterCaps(val.Stage) + " - " + firstLetterCaps(val.SubStage) + "</td>");
+          items.push("<td class='stagelst' stage='" + firstLetterCaps(val.Stage) + "'>" + firstLetterCaps(val.SubStage) + "</td>");
         } else {
           items.push("<td class='stagelst'>" + firstLetterCaps(val.Stage) + "</td>");
         }
@@ -814,8 +801,7 @@ function jsonLoader() {
       // console.log(val.Stage);
       items.push("<td class='assetclasslst'>" + val.AssetClass + "</td>");
       items.push("<td class='regionlst'>" + val.Region + "</td>");
-      items.push("<td class='categorylst'>NA</td>");
-      items.push("<td class='approchlst'>NA</td>");
+      items.push("<td class='agencylst'>NA</td>");
       items.push("</tr>");
 
       getRegionCount(val.Region);
@@ -1397,8 +1383,7 @@ $(".dataTable").on('click', "tbody tr", function() {
   $(".stagelst").hide();
   $(".assetclasslst").hide();
   $(".regionlst").hide();
-  $(".categorylst").hide();
-  $(".approchlst").hide();
+  $(".agencylst").hide();
 
 
   $(".h_overviewlst").hide();
@@ -1406,8 +1391,7 @@ $(".dataTable").on('click', "tbody tr", function() {
   $(".h_stagelst").hide();
   $(".h_assetclasslst").hide();
   $(".h_regionlst").hide();
-  $(".categorycell").hide();
-  $(".approchcell").hide();
+  $(".agencycell").hide();
 
   $("#search").css({
     'width': '180px'
@@ -1442,16 +1426,21 @@ $('.backBtn').click(function() {
   $(".stagelst").show();
   $(".assetclasslst").show();
   $(".regionlst").show();
-  $(".categorylst").show();
-  $(".approchlst").show();
+  $(".agencylst").show();
 
   $(".h_overviewlst").show();
-  $(".h_valuelst").show();
   $(".h_stagelst").show();
   $(".h_assetclasslst").show();
   $(".h_regionlst").show();
-  $(".categorycell").show();
-  $(".approchcell").show();
+  $(".agencycell").show();
+
+  if (sessionStorage.getItem('proposalActive') === String('true')) {
+    $(".h_valuelst").hide();
+    $('tbody tr').each(function() { $(this).children('td:nth-child(4)').addClass('displayNone'); });
+  }else {
+    $(".h_valuelst").show();
+    $('tbody tr').each(function() { $(this).children('td:nth-child(4)').removeClass('displayNone'); });
+  }
 
   slideIndex = 2;
   $(".backBtn").hide();
@@ -1705,7 +1694,9 @@ function g_getData() {
         g_deliveryCount    = 0;
 
     $('tbody tr').each(function() {
-      let cellTextUcase      = String($(this).children('td:nth-child(5)').text()).toUpperCase();
+
+      let context = $(this).children('td:nth-child(5)');
+      let cellTextUcase      = String(context.attr('stage') + ' - ' + context.text()).toUpperCase();
 
       if (cellTextUcase.indexOf(g_concept) != -1 ) {
         g_conceptCount     += 1;
@@ -1747,7 +1738,8 @@ function g_countProposals() {
       g_deliveryCount    = 0;
 
   $('tbody tr').not('.displayNone').each(function() {
-    let cellTextUcase      = String($(this).children('td:nth-child(5)').text()).toUpperCase();
+    let context = $(this).children('td:nth-child(5)');
+    let cellTextUcase      = String(context.attr('stage') + ' - ' + context.text()).toUpperCase();
 
     if (cellTextUcase.indexOf(g_concept) != -1 ) {
       g_conceptCount     += 1;
@@ -1773,16 +1765,16 @@ function g_countProposals() {
 
 function summaryLoader(currentYear) {
   if (currentYear === 2018) {
-    $(".seqBudget span").text('$5.986B');
-    $(".regBudget span").text('$5.597B');
-    $(".capitalbudget .floatData").text('$11.583B');
-    $(".jobssupported .floatData").text('33,000');
+    // $(".seqBudget span").text('$5.986B');
+    // $(".regBudget span").text('$5.597B');
+    $(".capitalbudget .floatData").text('$11.56B');
+    $(".jobssupported .floatData").text('38,000');
     $(".totalprojects .floatData").text('394');
     $(".programs .floatData").text('213');
     $(".grants .floatData").text('101');
   }else if (currentYear === 2017) {
-    $(".seqBudget span").text('$5.359B');
-    $(".regBudget span").text('$4.811B');
+    // $(".seqBudget span").text('$5.359B');
+    // $(".regBudget span").text('$4.811B');
     $(".capitalbudget .floatData").text('$10.17B');
     $(".jobssupported .floatData").text('29,000');
     $(".totalprojects .floatData").text('427');
@@ -1799,7 +1791,27 @@ $('.clickables > ul > li > a').click(function() {
   stageArray = [];
   let g_idVal = String(bubble).toUpperCase();
   $('tbody tr').each(function() {
-    if (String($(this).children('td:nth-child(5)').text()).toUpperCase().indexOf(g_idVal) != -1 ) {
+    let context = $(this).children('td:nth-child(5)');
+    if (String(context.attr('stage') + ' - ' + context.text()).toUpperCase().indexOf(g_idVal) != -1 ) {
+      $(this).addClass('activeStage').removeClass('displayNone');
+      stageArray.push($(this));
+    } else {
+      $(this).removeClass('activeStage').addClass('displayNone');
+    }
+  });
+  filterFunction(true);
+});
+
+$('.filter-board').click(function() {
+  let filterAs = $(this).attr('filter-as');
+  openProjectPanel(filterAs);
+  $(".closeProject").css({'display' : 'block'});
+
+  stageArray = [];
+  let g_idVal = String(filterAs).toUpperCase();
+  $('tbody tr').each(function() {
+    let context = $(this).children('td:nth-child(5)');
+    if (String(context.attr('stage') + ' - ' + context.text()).toUpperCase().indexOf(g_idVal) != -1 ) {
       $(this).addClass('activeStage').removeClass('displayNone');
       stageArray.push($(this));
     } else {
@@ -1837,4 +1849,13 @@ function CubeAnimFinished() {
 $(document).ready(function() {
   $(".infoSection").css({'display':'none'});
   $(".footer").removeAttr('style');
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
+$('[project-list="proposal"]').click(function () {
+  $("#projectHeaderName").text('Proposals');
+  $(".h_valuelst").hide();
+  $('tbody tr').each(function() { $(this).children('td:nth-child(4)').css({'display':'none'}); });
+  sessionStorage.setItem('proposalActive', 'true');
+  $('.dataTable').addClass('proposalActive');
 });

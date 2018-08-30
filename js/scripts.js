@@ -786,24 +786,22 @@ function jsonLoader() {
       }
       if (val.Stage.toUpperCase() == 'Planning'.toUpperCase()) {
         // items.push("<td class='valuelst'>" + val.OpportunityFlag + "</td>");
-        items.push("<td class='stagelst' stage='" + firstLetterCaps(val.Stage) + "'>" + firstLetterCaps(val.SubStage) + "</td>");
         items.push("<td class='valuelst'>" + valueType + "</td>");
+        items.push("<td class='stagelst' stage='" + firstLetterCaps(val.Stage) + "'>" + firstLetterCaps(val.SubStage) + "</td>");
         getCount(val.SubStage);
       } else {
+        items.push("<td class='valuelst'>" + formatValue(val.Value) + "</td>");
         if (val.Stage.toUpperCase() == 'Delivery'.toUpperCase()) {
           items.push("<td class='stagelst' stage='" + firstLetterCaps(val.Stage) + "'>" + firstLetterCaps(val.SubStage) + "</td>");
         } else {
           items.push("<td class='stagelst'>" + firstLetterCaps(val.Stage) + "</td>");
         }
-        items.push("<td class='valuelst'>" + formatValue(val.Value) + "</td>");
         getCount(val.Stage);
       }
       // console.log(val.Stage);
       items.push("<td class='assetclasslst'>" + val.AssetClass + "</td>");
-      items.push("<td class='agencylst'>NA</td>");
       items.push("<td class='regionlst'>" + val.Region + "</td>");
-      items.push("<td class='expenditurelst'>NA</td>");
-      items.push("<td class='fundinglst'>NA</td>");
+      items.push("<td class='agencylst'>NA</td>");
       items.push("</tr>");
 
       getRegionCount(val.Region);

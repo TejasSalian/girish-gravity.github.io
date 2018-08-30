@@ -1,0 +1,56 @@
+body {
+  background-color: #03A9F4; }
+
+.table-holder {
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 20px 0px #00000059; }
+  .table-holder .page-item.active .page-link {
+    background-color: #03A9F4;
+    border-color: #03A9F4; }
+  .table-holder .page-link {
+    color: #03A9F4; }
+
+.dataTables_filter input {
+  border-radius: 3px;
+  padding: 0 15px; }
+
+.table-hover tbody tr:hover,
+.table-striped tbody tr:nth-of-type(odd):hover,
+.table-striped tbody tr:nth-of-type(even):hover {
+  background-color: rgba(0, 176, 255, 0.85);
+  color: white;
+  border-color: #03A9F4; }
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(3, 169, 244, 0.02); }
+
+div.dataTables_wrapper div.dataTables_length select {
+  min-width: 100px;
+  border-radius: 3px;
+  padding: 0 15px;
+  margin: 0 6px; }
+
+.div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 15px; }
+
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc {
+  background: transparent; }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0px;
+  margin-left: 0px;
+  border: 0px; }
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border: 0px;
+    box-shadow: none; }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: transparent;
+  background: transparent;
+  color: inherit; }
+
+/*# sourceMappingURL=style.css.map */

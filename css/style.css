@@ -931,8 +931,8 @@ thead, tbody {
 }
 
 .h_valuelst {
-    padding-left: 41px;
-    width: 18%;
+    padding-left: 28px;
+    width: 14%;
 }
 
 .valuelst {
@@ -942,17 +942,22 @@ thead, tbody {
 }
 
 .h_stagelst, .stagelst {
-    width: 16%;
+    width: 11%;
     padding-left: 25px;
 }
 
 .h_stagelst .tablesorter-header-inner {
-    margin-left: -12px;
+    margin-left: 26px;
 }
 
 .h_assetclasslst, .assetclasslst {
     padding-left: 13px;
-    width: 16%;
+    width: 10%;
+}
+
+.agencycell {
+    padding-left: 19px;
+    width: 11%;
 }
 
 .h_assetclasslst .tablesorter-header-inner {
@@ -960,12 +965,12 @@ thead, tbody {
 }
 
 .h_regionlst .tablesorter-header-inner {
-    margin-left: -44px;
+    margin-left: 16px;
 }
 
 .h_regionlst, .regionlst {
-    padding-left: 36px;
-    width: 138px;
+    padding-left: 0px;
+    width: 12%;
 }
 
 .categorycell .tablesorter-header-inner {

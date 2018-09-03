@@ -21,18 +21,7 @@ body{
     padding: 0 15px;
   }
 }
-.table-hover tbody tr,
-.table-striped tbody tr:nth-of-type(odd),
-.table-striped tbody tr:nth-of-type(even) {
-    &:hover{
-      background-color: rgba(0, 176, 255, 0.85);
-      color: white;
-      border-color: #03A9F4;
-    }
-}
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(3, 169, 244, 0.02);
-}
+
 div.dataTables_wrapper div.dataTables_length select {
     min-width: 100px;
     border-radius: 3px;
@@ -60,4 +49,127 @@ table.dataTable thead .sorting_asc{
   background-color: transparent;
   background: transparent;
   color: inherit;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  border: 0;
+}
+
+#projects{
+  transition: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  .pProjects{
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .pStage{
+    min-width: 130px;
+    max-width: 130px;
+  }
+  .pInfrastructure{
+    min-width: 140px;
+    max-width: 140px;
+  }
+  .pAgency{
+    min-width: 70px;
+    max-width: 70px;
+  }
+  .pRegion{
+    min-width: 100px;
+    max-width: 100px;
+  }
+  .pTCost{
+    min-width: 130px;
+    max-width: 130px;
+  }
+  .pExpenditure{
+    min-width: 130px;
+    max-width: 130px;
+  }
+  .pFundingS1{
+    min-width: 70px;
+    max-width: 70px;
+  }
+  .pFundingS2{
+    min-width: 70px;
+    max-width: 70px;
+  }
+  .pFundingS3{
+    min-width: 100px;
+    max-width: 100px;
+  }
+  .pFundingS4{
+    min-width: 70px;
+    max-width: 70px;
+  }
+}
+.tablePannel{
+  width: 0px;
+  height: 950px;
+  top: 0px;
+  right: -15px;
+  float: right;
+  position: relative;
+  z-index: 1;
+  background-color: #009688;
+  display: flex;
+  animation: fillTablePanel;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-delay: 1.5s;
+}
+@keyframes fillTablePanel{
+  0%{
+    width: 0px;
+    height: 950px;
+    top: 0px;
+    right: -15px;
+    border-radius: 100% 0% 0% 100%;
+    background-color: #009688;
+  }
+  75%{
+    width: 1104px;
+    height: 950px;
+    top: 0px;
+    right: -15px;
+    border-radius: 0% 0% 0% 0%;
+    background-color: #009688;
+  }
+  100%{
+    width: 1104px;
+    height: 950px;
+    top: 0px;
+    right: -15px;
+    border-radius: 0% 0% 0% 0%;
+    background-color: #ffffff;
+  }
+}
+@keyframes emptyTablePanel{
+  100%{
+    width: 0px;
+    height: 1200px;
+    top: 0px;
+    right: -15px;
+    border-radius: 100% 0% 0% 100%;
+    background-color: #009688;
+  }
+  75%{
+    width: 1104px;
+    height: 1200px;
+    top: 0px;
+    right: -15px;
+    border-radius: 0% 0% 0% 0%;
+    background-color: #009688;
+  }
+  0%{
+    width: 1104px;
+    height: 1200px;
+    top: 0px;
+    right: -15px;
+    border-radius: 0% 0% 0% 0%;
+    background-color: #ffffff;
+  }
 }

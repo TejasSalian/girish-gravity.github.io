@@ -1,87 +1,288 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome-5.3.1-all.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <title>Data Table</title>
+    <title>new DilGP</title>
   </head>
   <body>
 
-    <div class="container">
+    <nav class="container-fluid brand-primary-blue">
       <div class="row">
-        <div class="col-12 mt-5 mb-2">
-          <button type="button" class="btn btn-secondary" name="table-loader" id="table-loader">Load Table</button>
-          <select class="" id="year-select" name="">
-            <option value="2018">2018-19</option>
-            <option value="2017">2017-18</option>
-            <option value="2016">2016-17</option>
-          </select>
-          <button type="button" class="btn btn-secondary" name="table-minimize" id="table-minimize" data-column="0">toggle</button>
-        </div>
-        <div class="col-12 mt-4 mb-3 table-holder">
+        <div class="container">
           <div class="row">
-            <div class="col-11">
-              <table id="projects" class="table table-responsive table-striped table-bordered">
-                <thead>
-                  <tr>
-                    <th rowspan="2" colspan="1">Project</th>
-                    <th rowspan="2" colspan="1">Stage</th>
-                    <th rowspan="2" colspan="1">Infrastructure Class</th>
-                    <th rowspan="2" colspan="1">Agency</th>
-                    <th rowspan="2" colspan="1">Region</th>
-                    <th rowspan="2" colspan="1">Total estimated cost</th>
-                    <th rowspan="2" colspan="1">Expenditure to June 2018</th>
-                    <th rowspan="1" colspan="4" class="text-center">Funding</th>
-                  </tr>
-                  <tr>
-                    <th>2018-19</th>
-                    <th>2019-20</th>
-                    <th>2020-21 to 2021-22</th>
-                    <th>Beyond</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-                <tfoot>
-                  <tr>
-                    <th rowspan="2" colspan="1">Project</th>
-                    <th rowspan="2" colspan="1">Stage</th>
-                    <th rowspan="2" colspan="1">Infrastructure Class</th>
-                    <th rowspan="2" colspan="1">Agency</th>
-                    <th rowspan="2" colspan="1">Region</th>
-                    <th rowspan="2" colspan="1">Total estimated cost</th>
-                    <th rowspan="2" colspan="1">Expenditure to June 2018</th>
-                    <th>2018-19</th>
-                    <th>2019-20</th>
-                    <th>2020-21 to 2021-22</th>
-                    <th>Beyond</th>
-                  </tr>
-                  <tr>
-                    <th rowspan="1" colspan="4" class="text-center">Funding</th>
-                  </tr>
-                </tfoot>
-            </table>
+            <div class="col-12">
+              <img src="assets/images/nav.png" alt="">
             </div>
-            <div class="col-1" style="background-color: #009688;">
-              <div class="tablePannel"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container dilgp-animation-canvas">
+      <div class="row explore d-flex">
+        <div class="col-12">
+          <h1>State Infrastructure Plan</h1>
+          <h2>Welcome to the interactive Queensland Infrastructure Pipeline</h2>
+          <div class="row">
+            <div class="explore-btn"></div>
+          </div>
+          <p>The pipeline supports a coordinated and integrated approach to planning, prioritizing, funding and delivering infrastructure in Queensland.</p>
+        </div>
+      </div>
+      <div class="row video d-none">
+        <div class="col-12">
+          <video id="CubeAnim" muted poster="assets/videos/CubeAnim.png">
+            <source src="assets/videos/CubeAnim.mp4" type="video/mp4">
+            <source src="assets/videos/CubeAnim.webm" type="video/webm">
+          </video>
+        </div>
+      </div>
+      <div class="row intro d-none">
+        <header class="col-12 text-right">
+          <button type="button" class="btn btn-outline-info skip">Skip <i class="fas fa-angle-double-right"></i></button>
+        </header>
+        <div class="col-12">
+          <object type="image/svg+xml" data="assets/images/introduction-infographics.svg"></object>
+        </div>
+        <div class="col-12 footer-control">
+          <div class="row">
+            <div class="col-6">
+              <div class="go-back">
+                <button type="button" class="btn btn-info"><i class="fas fa-arrow-left"></i></button>
+                <span>Back</span>
+              </div>
+            </div>
+            <div class="col-6 text-right">
+              <div class="go-forward">
+                <span>Explore</span>
+                <button type="button" class="btn btn-info"><i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row intractive-portal d-none">
+        <aside>
+          <div class="col-12 asset-class">
+            <div class="row">
+              <header class="col-12">
+                <h5>Asset Class</h5>
+                <span id="clear-assets-filter" class="d-none"><i class="far fa-trash-alt"></i></span>
+              </header>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/cross_e.svg" alt="">
+                    <span></span>
+                    <h6>Cross Government</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/transport_e.svg" alt="">
+                    <span></span>
+                    <h6>Transport</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/energy_e.svg" alt="">
+                    <span></span>
+                    <h6>Energy</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/water_e.svg" alt="">
+                    <span></span>
+                    <h6>Water</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/health_e.svg" alt="">
+                    <span></span>
+                    <h6>Health</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/education_e.svg" alt="">
+                    <span></span>
+                    <h6>Education and Training</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/digital_e.svg" alt="">
+                    <span></span>
+                    <h6>Digital</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/justice_e.svg" alt="">
+                    <span></span>
+                    <h6>Justice and Public Safety</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/arts_e.svg" alt="">
+                    <span></span>
+                    <h6>Arts, Culture and Recreation</h6>
+                  </div>
+                  <div class="col-6 filters">
+                    <img src="assets/images/asset-class/social_e.svg" alt="">
+                    <span></span>
+                    <h6>Social Housing</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 regions">
+            <div class="row">
+              <header class="col-12">
+                <h5>Regions</h5>
+                <span id="clear-regions-filter" class="d-none"><i class="far fa-trash-alt"></i></span>
+              </header>
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12 filters">
+                    <button type="button" name="">Cairns</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Townsville</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Mackay</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Fitzroy</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Wide Bay</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Sunshine Coast</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Greater Brisbane</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Gold Coast</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Toowoomba</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Darling Downs</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Remote Queensland</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Multi-region</button>
+                  </div>
+                  <div class="col-12 filters">
+                    <button type="button" name="">Statewide</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="intractive-canvas">
+          <img src="assets/images/BG2018.old.png" alt="">
+          <div class="year-anim" id="animation_container">
+            <canvas id="canvas" width="249" height="310" style="position: absolute; display: block; background-color:rgba(153, 153, 153, 0.00);"></canvas>
+            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:249px; height:310px; position: absolute; left: 0px; top: 0px; display: block;">
+            </div>
+          </div>
+
+        </div>
+        <div class="project-details-btn">
+          <div class="name-slip align-self-center fadeIn animated">all<br><br>initiatives</div>
+        </div>
+        <div class="project-details d-none">
+          <div class="tablePannel">
+            <div class="tablePannelContent d-none">
+              <header class="col-12 fadeIn animation-target">
+                <div class="row pt-2 pb-2">
+                  <div class="col-10">
+                    <h4 class="fadeIn animated">State Infrastructure Plan Construction Projects</h4>
+                  </div>
+                  <div class="col-2 text-right fadeIn animated ">
+                    <button type="button" class="btn btn-outline-primary" name=""><i class="fas fa-arrow-right"></i></button>
+                    <button type="button" class="btn btn-outline-danger tablePannel-close" name=""><i class="fas fa-times"></i></button>
+                  </div>
+                </div>
+              </header>
+              <div class="col-12 tableView mt-3 pt-4">
+                <div class="form-group">
+                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" name="" value="">
+                </div>
+                <table id="projects" class="fadeIn animated table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th rowspan="2" colspan="1">Project</th>
+                      <th rowspan="2" colspan="1">Stage</th>
+                      <th rowspan="2" colspan="1">Infrastructure Class</th>
+                      <th rowspan="2" colspan="1">Agency</th>
+                      <th rowspan="2" colspan="1">Region</th>
+                      <th rowspan="2" colspan="1">Total estimated cost</th>
+                      <th rowspan="2" colspan="1">Expenditure to June 2018</th>
+                      <th rowspan="1" colspan="4" class="text-center">Funding</th>
+                    </tr>
+                    <tr>
+                      <th>2018-19</th>
+                      <th>2019-20</th>
+                      <th>2020-21 to 2021-22</th>
+                      <th>Beyond</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tfoot>
+                    <tr>
+                      <th rowspan="2" colspan="1">Project</th>
+                      <th rowspan="2" colspan="1">Stage</th>
+                      <th rowspan="2" colspan="1">Infrastructure Class</th>
+                      <th rowspan="2" colspan="1">Agency</th>
+                      <th rowspan="2" colspan="1">Region</th>
+                      <th rowspan="2" colspan="1">Total estimated cost</th>
+                      <th rowspan="2" colspan="1">Expenditure to June 2018</th>
+                      <th>2018-19</th>
+                      <th>2019-20</th>
+                      <th>2020-21 to 2021-22</th>
+                      <th>Beyond</th>
+                    </tr>
+                    <tr>
+                      <th rowspan="1" colspan="4" class="text-center">Funding</th>
+                    </tr>
+                  </tfoot>
+              </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <footer class="footer container-fluid brand-secondary-blue">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <img src="assets/images/footer.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- DataTable -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Adobe Anim -->
+    <script src="assets/js/createjs-2015.11.26.min.js"></script>
+    <script src="assets/js/folder_anim.js"></script>
+    <script src="assets/js/folder_anim_caller.js"></script>
+    <!-- Custom Scripts -->
     <script src="assets/js/scripts.js"></script>
   </body>
 </html>

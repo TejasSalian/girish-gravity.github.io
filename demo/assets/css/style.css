@@ -137,7 +137,7 @@ nav img, .footer img {
           color: white;
           line-height: 1;
           position: relative;
-          z-index: 2;
+          z-index: 1;
           margin: 0; }
       .dilgp-animation-canvas .intractive-portal aside header, .dilgp-animation-canvas .intractive-portal aside .asset-class header, .dilgp-animation-canvas .intractive-portal aside .regions header {
         margin-top: -15px;
@@ -222,6 +222,67 @@ nav img, .footer img {
       transition: all;
       transition-duration: 0.25s;
       transition-timing-function: ease-in-out; }
+      .dilgp-animation-canvas .intractive-portal .intractive-canvas header, .dilgp-animation-canvas .intractive-portal .intractive-canvas aside .asset-class header, .dilgp-animation-canvas .intractive-portal aside .asset-class .intractive-canvas header, .dilgp-animation-canvas .intractive-portal .intractive-canvas aside .regions header, .dilgp-animation-canvas .intractive-portal aside .regions .intractive-canvas header {
+        text-align: center;
+        position: relative;
+        margin-top: -36px;
+        top: 96px; }
+        .dilgp-animation-canvas .intractive-portal .intractive-canvas header h3 {
+          font-size: 154%;
+          position: absolute;
+          width: 100%;
+          top: 5px; }
+        .dilgp-animation-canvas .intractive-portal .intractive-canvas header .actions {
+          width: 100%;
+          position: relative;
+          top: -60px; }
+          .dilgp-animation-canvas .intractive-portal .intractive-canvas header .actions .col-6 {
+            float: left; }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas header .actions .col-6 select {
+              width: 50%;
+              float: right;
+              position: relative;
+              top: 10px; }
+          .dilgp-animation-canvas .intractive-portal .intractive-canvas header .actions .help {
+            float: left;
+            outline: 0;
+            border: 0;
+            padding: 8px 20px;
+            background-color: #009887;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 1px 6px #000000e0;
+            border-radius: 0;
+            cursor: pointer; }
+      .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox {
+        height: 250px;
+        width: 356px;
+        position: relative;
+        margin-top: -260px;
+        top: 440px;
+        float: right;
+        background-color: white;
+        display: block;
+        z-index: 1;
+        border-radius: 2px;
+        box-shadow: 0 0 6px #a5b8b7;
+        padding: 15px; }
+        .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox h5 {
+          color: #6a0032;
+          font-weight: 700;
+          text-align: center;
+          margin-top: 10px;
+          font-size: 106%; }
+        .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox table {
+          font-size: 90%;
+          margin-top: 20px; }
+          .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox table td {
+            padding: 6px; }
+          .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox table td:nth-child(1) {
+            min-width: 205px; }
+          .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox table td:nth-child(3) {
+            color: #6a0032;
+            font-weight: 700; }
       .dilgp-animation-canvas .intractive-portal .intractive-canvas img {
         width: calc( 100% + 30px );
         position: relative;
@@ -234,6 +295,67 @@ nav img, .footer img {
         top: -471px;
         left: 182px;
         transform: scale(0.85); }
+      .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names {
+        position: relative;
+        z-index: 1;
+        top: -800px; }
+        .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul {
+          list-style: none; }
+          .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li {
+            position: relative;
+            text-align: center;
+            font-size: 75%;
+            font-weight: 500;
+            line-height: 1;
+            color: white;
+            text-transform: capitalize; }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(1) {
+              left: -46.8%;
+              top: 36px; }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(2) {
+              left: -36.5%;
+              top: 31px;
+              transform: scale(0.92); }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(3) {
+              left: -26%;
+              top: 19px;
+              transform: scale(0.92); }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(4) {
+              left: -16%;
+              top: 7px;
+              transform: scale(0.92); }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(5) {
+              font-size: 114%;
+              text-transform: uppercase;
+              top: -80px;
+              left: -3.6%;
+              cursor: pointer; }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(6) {
+              font-size: 114%;
+              text-transform: uppercase;
+              top: 156px;
+              left: -38.6%;
+              cursor: pointer; }
+            .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(7) {
+              font-size: 114%;
+              text-transform: uppercase;
+              top: 173px;
+              left: 11.6%;
+              cursor: pointer; }
+      .dilgp-animation-canvas .intractive-portal .intractive-canvas .year-span h6 {
+        position: relative;
+        left: -379px;
+        top: -791px;
+        transform-origin: center;
+        transform: rotateX(51deg) rotateY(0deg) rotateZ(-42deg);
+        float: right;
+        font-family: inherit;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 130%;
+        text-align: center;
+        z-index: 1;
+        color: #009887; }
     .dilgp-animation-canvas .intractive-portal .project-details-btn {
       display: flex;
       flex: 0 0 5%;
@@ -269,16 +391,34 @@ nav img, .footer img {
         background-color: #009887; }
         .dilgp-animation-canvas .intractive-portal .project-details .tablePannel.white {
           background-color: white; }
+        .dilgp-animation-canvas .intractive-portal .project-details .tablePannel.playing {
+          animation-play-state: running !important; }
         .dilgp-animation-canvas .intractive-portal .project-details .tablePannel.animation-forward {
           animation: fillTablePanel;
           animation-duration: 1.2s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
-          animation-play-state: running;
+          animation-play-state: paused;
           animation-delay: 0.1s; }
         .dilgp-animation-canvas .intractive-portal .project-details .tablePannel.animation-backward {
           animation: emptyTablePanel;
+          animation-duration: 0.6s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
+          animation-delay: 0s; }
+        .dilgp-animation-canvas .intractive-portal .project-details .tablePannel.animation-maximize {
+          animation: maximizeTablePanel;
+          animation-duration: 0.6s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
+          animation-delay: 0s; }
+        .dilgp-animation-canvas .intractive-portal .project-details .tablePannel.animation-minimize {
+          animation: minimizeTablePanel;
           animation-duration: 0.6s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: 1;
@@ -307,6 +447,24 @@ nav img, .footer img {
     width: 1600%;
     border-radius: 0% 0% 0% 0%;
     background-color: white; } }
+@keyframes maximizeTablePanel {
+  100% {
+    width: 2000%;
+    border-radius: 100% 0% 0% 100%;
+    background-color: white; }
+  0% {
+    width: 1600%;
+    border-radius: 0% 0% 0% 0%;
+    background-color: white; } }
+@keyframes minimizeTablePanel {
+  0% {
+    width: 2000%;
+    border-radius: 100% 0% 0% 100%;
+    background-color: white; }
+  100% {
+    width: 1600%;
+    border-radius: 0% 0% 0% 0%;
+    background-color: white; } }
       .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent {
         display: block;
         max-width: 100%;
@@ -324,14 +482,19 @@ nav img, .footer img {
             margin: 5px 10px 5px 0px;
             padding-top: 7px;
             font-size: 125%; }
+        .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent #seachProjectDataTable {
+          border: 0;
+          border-radius: 0;
+          border-bottom: 1px solid black;
+          text-align: center;
+          box-shadow: 0 1px 0px #0000000f; }
         .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView {
           background-color: white;
-          padding-top: 15px;
           padding-bottom: 15px;
           overflow: auto;
           scroll-behavior: smooth;
-          max-height: 1003px;
-          min-height: 1003px;
+          max-height: 932px;
+          min-height: 932px;
           font-size: 80%; }
           .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView .dataTables_filter {
             display: none; }
@@ -339,6 +502,19 @@ nav img, .footer img {
             transition: all;
             transition-timing-function: ease-in-out;
             transition-duration: 0.5s; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects.minimized {
+              min-width: 190px;
+              max-width: 190px;
+              width: 190px;
+              float: left; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects tr.slow-change {
+              transition: all;
+              transition-duration: 0.4s;
+              transition-timing-function: ease-in-out;
+              transition-delay: 0.65s; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects tr.active {
+              background-color: #009887;
+              color: white; }
             .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pProjects {
               min-width: 190px;
               max-width: 190px;

@@ -165,7 +165,6 @@ nav, .footer{
           width: 64px;
           position: relative;
           z-index: 1;
-          // box-shadow: -6px 6px 12px #00000040;
         }
         span{
           position: absolute;
@@ -180,7 +179,6 @@ nav, .footer{
           border-radius: 4px;
           transform-origin: center;
           transform: rotateX(48deg) rotateY(0deg) rotateZ(-43deg);
-          // box-shadow: -6px 6px 12px darken($brand-primary-magenta, 8%);
           transition: all;
           transition-duration: 0.25s;
           transition-timing-function: ease-in-out;
@@ -191,7 +189,7 @@ nav, .footer{
           color: white;
           line-height: 1;
           position: relative;
-          z-index: 2;
+          z-index: 1;
           margin: 0;
         }
       }
@@ -300,6 +298,79 @@ nav, .footer{
       transition: all;
       transition-duration: 0.25s;
       transition-timing-function: ease-in-out;
+      header{
+        text-align: center;
+        position: relative;
+        margin-top: -36px;
+        top: 96px;
+        h3{
+          font-size: 154%;
+          position: absolute;
+          width: 100%;
+          top: 5px;
+        }
+        .actions{
+          width: 100%;
+          position: relative;
+          top: -60px;
+          .col-6{
+            float: left;
+            select{
+              width: 50%;
+              float: right;
+              position: relative;
+              top: 10px;
+            }
+          }
+          .help{
+            float: left;
+            outline: 0;
+            border: 0;
+            padding: 8px 20px;
+            background-color: $brand-primary-green;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 1px 6px #000000e0;
+            border-radius: 0;
+            cursor: pointer;
+          }
+        }
+      }
+      .databox{
+        height: 250px;
+        width: 356px;
+        position: relative;
+        margin-top: -260px;
+        top: 440px;
+        float: right;
+        background-color: white;
+        display: block;
+        z-index: 1;
+        border-radius: 2px;
+        box-shadow: 0 0 6px #a5b8b7;
+        padding: 15px;
+        h5 {
+          color: $brand-primary-magenta;
+          font-weight: 700;
+          text-align: center;
+          margin-top: 10px;
+          font-size: 106%;
+        }
+        table{
+          font-size: 90%;
+          margin-top: 20px;
+          td{
+            padding: 6px;
+          }
+          td:nth-child(1){
+            min-width: 205px;
+          }
+          td:nth-child(3){
+            color: $brand-primary-magenta;
+            font-weight: 700;
+          }
+        }
+      }
       img{
         width: calc( 100% + 30px );
         position: relative;
@@ -313,6 +384,80 @@ nav, .footer{
         top: -471px;
         left: 182px;
         transform: scale(0.85);
+      }
+      .tag-names{
+        position: relative;
+        z-index: 1;
+        top: -800px;
+        ul{
+          list-style: none;
+          li{
+            position: relative;
+            text-align: center;
+            font-size: 75%;
+            font-weight: 500;
+            line-height: 1;
+            color: white;
+            text-transform: capitalize;
+            &:nth-child(1) {
+              left: -46.8%;
+              top: 36px;
+            }
+            &:nth-child(2) {
+              left: -36.5%;
+              top: 31px;
+              transform: scale(0.92);
+            }
+            &:nth-child(3) {
+              left: -26%;
+              top: 19px;
+              transform: scale(0.92);
+            }
+            &:nth-child(4) {
+              left: -16%;
+              top: 7px;
+              transform: scale(0.92);
+            }
+            &:nth-child(5) {
+              font-size: 114%;
+              text-transform: uppercase;
+              top: -80px;
+              left: -3.6%;
+              cursor: pointer;
+            }
+            &:nth-child(6) {
+              font-size: 114%;
+              text-transform: uppercase;
+              top: 156px;
+              left: -38.6%;
+              cursor: pointer;
+            }
+            &:nth-child(7) {
+              font-size: 114%;
+              text-transform: uppercase;
+              top: 173px;
+              left: 11.6%;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .year-span{
+        h6{
+          position: relative;
+          left: -379px;
+          top: -791px;
+          transform-origin: center;
+          transform: rotateX(51deg) rotateY(0deg) rotateZ(-42deg);
+          float: right;
+          font-family: inherit;
+          font-weight: 700;
+          font-style: normal;
+          font-size: 130%;
+          text-align: center;
+          z-index: 1;
+          color: $brand-primary-green;
+        }
       }
     }
     .project-details-btn{
@@ -353,17 +498,38 @@ nav, .footer{
         &.white{
           background-color: white;
         }
+        &.playing{
+          animation-play-state: running !important;
+        }
         &.animation-forward{
           animation: fillTablePanel;
           animation-duration: 1.2s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
-          animation-play-state: running;
+          animation-play-state: paused;
           animation-delay: 0.1s;
         }
         &.animation-backward{
           animation: emptyTablePanel;
+          animation-duration: 0.6s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
+          animation-delay: 0s;
+        }
+        &.animation-maximize{
+          animation: maximizeTablePanel;
+          animation-duration: 0.6s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: 1;
+          animation-fill-mode: forwards;
+          animation-play-state: running;
+          animation-delay: 0s;
+        }
+        &.animation-minimize{
+          animation: minimizeTablePanel;
           animation-duration: 0.6s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: 1;
@@ -403,6 +569,30 @@ nav, .footer{
           background-color:white;
         }
       }
+      @keyframes maximizeTablePanel{
+        100%{
+          width: 2000%;
+          border-radius: 100% 0% 0% 100%;
+          background-color:white;
+        }
+        0%{
+          width: 1600%;
+          border-radius: 0% 0% 0% 0%;
+          background-color:white;
+        }
+      }
+      @keyframes minimizeTablePanel{
+        0%{
+          width: 2000%;
+          border-radius: 100% 0% 0% 100%;
+          background-color:white;
+        }
+        100%{
+          width: 1600%;
+          border-radius: 0% 0% 0% 0%;
+          background-color:white;
+        }
+      }
       .tablePannelContent{
         display: block;
         // flex: 0 0 100%;
@@ -425,14 +615,20 @@ nav, .footer{
             // text-align: center;
           }
         }
+        #seachProjectDataTable{
+          border: 0;
+          border-radius: 0;
+          border-bottom: 1px solid black;
+          text-align: center;
+          box-shadow: 0 1px 0px #0000000f;
+        }
         .tableView{
           background-color: white;
-          padding-top: 15px;
           padding-bottom: 15px;
           overflow: auto;
           scroll-behavior: smooth;
-          max-height: 1003px;
-          min-height: 1003px;
+          max-height: 932px;
+          min-height: 932px;
           font-size: 80%;
           .dataTables_filter{
             display: none;
@@ -441,6 +637,22 @@ nav, .footer{
             transition: all;
             transition-timing-function: ease-in-out;
             transition-duration: 0.5s;
+            &.minimized{
+              min-width: 190px;
+              max-width: 190px;
+              width: 190px;
+              float: left;
+            }
+            tr.slow-change{
+              transition: all;
+              transition-duration: 0.4s;
+              transition-timing-function: ease-in-out;
+              transition-delay: 0.65s;
+            }
+            tr.active{
+              background-color: $brand-primary-green;
+              color: white;
+            }
             .pProjects{
               min-width: 190px;
               max-width: 190px;

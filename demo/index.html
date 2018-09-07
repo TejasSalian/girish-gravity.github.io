@@ -26,7 +26,7 @@
     </nav>
 
     <div class="container dilgp-animation-canvas">
-      <div class="row explore d-flex">
+      <div class="row explore d-none">
         <div class="col-12">
           <h1>State Infrastructure Plan</h1>
           <h2>Welcome to the interactive Queensland Infrastructure Pipeline</h2>
@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <div class="row intractive-portal d-none">
+      <div class="row intractive-portal d-flex">
         <aside>
           <div class="col-12 asset-class">
             <div class="row">
@@ -185,19 +185,84 @@
           </div>
         </aside>
         <div class="intractive-canvas">
+          <header>
+            <h3>State Infrastructure Plan Part B<br>State Infrastructure Pipeline</h3>
+            <div class="actions">
+              <div class="col-6">
+                <button class="help" type="button" name="button">Help</button>
+              </div>
+              <div class="col-6">
+                <select class="form-control" id="">
+                  <option value="2018">2018-19</option>
+                  <!-- <option value="2017">2017-18</option> -->
+                </select>
+              </div>
+            </div>
+          </header>
+          <div class="databox">
+            <h5><span>2018-19</span> Highlights</h5>
+            <table class="table table-responsive table-borderless">
+              <tbody>
+                <tr>
+                  <td>Capital Budget</td>
+                  <td>:</td>
+                  <td>$11.56B</td>
+                </tr>
+                <tr>
+                  <td>Proposals in Planning</td>
+                  <td>:</td>
+                  <td>394</td>
+                </tr>
+                <tr>
+                  <td>Jobs supported</td>
+                  <td>:</td>
+                  <td>33,000</td>
+                </tr>
+                <tr>
+                  <td>Total Programs</td>
+                  <td>:</td>
+                  <td>213</td>
+                </tr>
+                <tr>
+                  <td>Total Grants</td>
+                  <td>:</td>
+                  <td>101</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <img src="assets/images/BG2018.old.png" alt="">
           <div class="year-anim" id="animation_container">
             <canvas id="canvas" width="249" height="310" style="position: absolute; display: block; background-color:rgba(153, 153, 153, 0.00);"></canvas>
             <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:249px; height:310px; position: absolute; left: 0px; top: 0px; display: block;">
             </div>
           </div>
-
+          <div class="tag-names">
+            <ul>
+              <li>Concept</li>
+              <li>Strategic<br>Assessment</li>
+              <li>preliminary<br>evaluation</li>
+              <li>Business<br>Case</li>
+              <li class="filter-board" filter-as="planning">
+                <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Infrastructure initiatives go through four planning phases the initial concept, the strategic assessment of service requirement, the preliminary evaluation, and the business case (or equivalent). Some strategic initiatives, such as corridor preservation programs, might proceed straight to an investment decision.">Planning</span>
+              </li>
+              <li class="filter-board">
+                <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Infrastructure initiatives are decided upon using a number of principles (i.e. strategic, economic and financial, deliverability, social and AND environment). Investment decisions are made through existing government decisions and initiatives may be approved to commence in any of the next four years.">Investment<br>Decision</span>
+              </li>
+              <li class="filter-board" filter-as="delivery">
+                <span data-toggle="tooltip" data-placement="top" title="" data-original-title="The delivery phase represents the investment program identified in the State Infrastructure Plan Part B 1-4 year program and the current Budget Paper 3.">Delivery</span>
+              </li>
+            </ul>
+          </div>
+          <div class="year-span">
+            <h6>2018-19</h6>
+          </div>
         </div>
         <div class="project-details-btn">
           <div class="name-slip align-self-center fadeIn animated">all<br><br>initiatives</div>
         </div>
         <div class="project-details d-none">
-          <div class="tablePannel">
+          <div class="tablePannel playing">
             <div class="tablePannelContent d-none">
               <header class="col-12 fadeIn animation-target">
                 <div class="row pt-2 pb-2">
@@ -210,10 +275,12 @@
                   </div>
                 </div>
               </header>
-              <div class="col-12 tableView mt-3 pt-4">
+              <div class="col-12 mt-3 pt-3">
                 <div class="form-group">
-                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" name="" value="">
+                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" placeholder="Search in State Infrastructure Plan Construction Projects">
                 </div>
+              </div>
+              <div class="col-12 tableView">
                 <table id="projects" class="fadeIn animated table table-striped table-bordered">
                   <thead>
                     <tr>

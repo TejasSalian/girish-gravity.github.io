@@ -57,9 +57,9 @@ projectTableOptions             = {
                                   };
 currentUrls                     = {
                                     "year2018": {
-                                      "ProjectDetailedData"		    : "/assets/json/data/ProjectDetailedData.json",
-                                      "ProjectMetaData"			      : "/assets/json/data/ProjectMetaData.json",
-                                      "ProjectYearlyDetailedData"	: "/assets/json/data/ProjectYearlyDetailedData.json"
+                                      "ProjectDetailedData"		    : "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData",
+                                      "ProjectMetaData"			    : "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData",
+                                      "ProjectYearlyDetailedData"	: "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData"
                                     },
                                     "year2017": {
                                       "ProjectDetailedData"		    : "/assets/json/data/ProjectDetailedData.json",

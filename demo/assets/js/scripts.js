@@ -7,14 +7,15 @@ var projectObject, // Project (Table) jQuery Object
   assetFilter, // Array of filters for assets
   regionsFilter, // Array of filters for regions
   yearSelector, // Points to the Select Node
-  currentUrls, // Data Model With CurrentURL
+  isDetailView, // Whether details view is open or not
+  currentUrls, // DataUrls
   dataObject, // An Object with all data fetched
   activeDataObject; // A temparary Object with all data fetched for selected year
 
 // Default Values / DataModel
 yearSelector = $('#year-select');
 projectObject = $('#projects');
-isTableMinimized = false;
+isDetailView = false;
 assetFilter = '';
 regionsFilter = '';
 projectTableOptions = {
@@ -192,24 +193,45 @@ function formatCurrency(value) {
   return '$' + value + valueRange;
 }
 
+// Close table panel and return to Animation
+function closeTablePanel() {
+  $('.tablePannelContent').fadeOut(100).addClass('d-none');
+  $('.tablePannel').toggleClass('white')
+                   .css({ width: '1600%' })
+                   .removeClass('animation-forward')
+                   .addClass('animation-backward');
+  setTimeout(function() {
+    $('.project-details-btn').removeClass('d-none');
+    $('.project-details').addClass('d-none');
+    $('.tablePannelContent').removeAttr('style');
+    $('.tablePannel').removeAttr('style');
+  }, 1300);
+}
+
 // Expand tablePannel for row Details
 function panelMaximize() {
   let tablePannel = $('.tablePannel');
   let tablePannelContent = $('.tablePannelContent');
   let tableView = $('.tableView');
   let projectsHead = $('.projectsHead');
+  let minimizeBtn = $('.tablePannel-minimize');
+  let detailsPanel = $('.detailsPanel');
+  $('#seachProjectDataTable').attr('placeholder', 'Search Projects by Name');
   $.when(
     tablePannel.css({'width' : '1600%', 'z-index' : '20', 'position' : 'relative'})
   ).then(function() {
     tablePannel.removeClass('animation-forward')
                .addClass('animation-maximize');
     tablePannelContent.css({'background-color' : 'white'});
-    tableView.css({'width' : '244px'});
+    tableView.css({'width' : '244px', 'float' : 'left'});
+    detailsPanel.removeClass('d-none');
     projectsHead.css({
                       'height'     : projectsHead.height(),
                       'min-height' : projectsHead.height()
                     });
   });
+  minimizeBtn.removeClass('d-none');
+  isDetailView = !isDetailView;
 }
 
 // Expand tablePannel for row Details
@@ -217,10 +239,19 @@ function panelMinimize() {
   let tablePannel = $('.tablePannel');
   let tablePannelContent = $('.tablePannelContent');
   let tableView = $('.tableView');
-  tablePannel.css({'width' : '2000%', 'z-index' : '20', 'position' : 'relative'})
+  let projectsHead = $('.projectsHead');
+  let minimizeBtn = $('.tablePannel-minimize');
+  let detailsPanel = $('.detailsPanel');
+  $('#seachProjectDataTable').attr('placeholder', 'Search Projects by Name, Contract Type, Region etc.');
+  tablePannel.css({
+              'width'    : '2000%',
+              'z-index'  : '20',
+              'position' : 'relative'
+            })
              .removeClass('animation-maximize')
              .addClass('animation-minimize');
   tableView.removeAttr('style');
+  detailsPanel.addClass('d-none');
   setTimeout(function () {
     tablePannelContent.removeAttr('style');
     tablePannel.css({'width' : '1600%', 'z-index' : '20', 'position' : 'relative'})
@@ -231,9 +262,85 @@ function panelMinimize() {
     tablePannel.removeAttr('style').css({'width' : '1600%', 'background-color': 'white'});
     projectsHead.removeAttr('style');
   }, 700);
-
+  minimizeBtn.addClass('d-none');
+  isDetailView = !isDetailView;
 }
 
+//Return from Detailed view
+function returnDetailedView() {
+  for (var i = 1; i < 11; i++) {
+    projectDataTable.column(i).visible(true);
+  }
+  $('#projects tr.active').removeClass('active');
+  projectObject.removeClass('minimized');
+  panelMinimize();
+}
+
+// Show Detail View of Projects
+function showProjectDetails(projectID) {
+  let targetedProject = activeDataObject.ProjectDetailedData[String(projectID)];
+  switch (targetedProject.CurrentStage) {
+    case 'DELIVERY':
+      loadDelivaryProjectView(targetedProject);
+      $('.planningPanel').addClass('d-none');
+      $('.delivaryPanel').removeClass('d-none');
+      break;
+    case 'PLANNING':
+      loadPlanningProjectView(targetedProject);
+      $('.delivaryPanel').addClass('d-none');
+      $('.planningPanel').removeClass('d-none');
+      break;
+    default:
+      console.warn('Targeted Project is Neither on Planning nor on Delivary Stage');
+  }
+}
+
+// load Delivary View and Flash Project Details
+function loadDelivaryProjectView(projectObject) {
+   let flatArray = '';
+
+   $('.delivaryPanel .poject-metaData > h3').text(projectObject.Header);
+   $('.delivaryPanel .poject-metaData > p').text(projectObject.TagHeader);
+
+   $('.delivaryPanel .statusInfo tr:nth-child(1) > td:nth-child(3)').text(projectObject.CapitalType);
+   $('.delivaryPanel .statusInfo tr:nth-child(2) > td:nth-child(3)').text(projectObject.EstmDate);
+   $('.delivaryPanel .statusInfo tr:nth-child(3) > td:nth-child(3)').text(projectObject.ReportStatusNameProject);
+   $('.delivaryPanel .statusInfo tr:nth-child(4) > td:nth-child(3)').text('Delivary -'+ projectObject.SubStage);
+   $('.delivaryPanel .statusInfo tr:nth-child(5) > td:nth-child(3)').text(projectObject.NextMileStoneName);
+   $('.delivaryPanel .statusInfo tr:nth-child(5) > td:nth-child(3)').text(projectObject.NextMileStoneStartDate);
+
+   $('.delivaryPanel .fundingInfo tr:nth-child(1) > td:nth-child(3)').text(projectObject.Budget);
+   $('.delivaryPanel .fundingInfo tr:nth-child(2) > td:nth-child(3)').text(formatCurrency(projectObject.TotalCost));
+   $('.delivaryPanel .fundingInfo tr:nth-child(3) > td:nth-child(3)').text(formatCurrency(projectObject.PostFunding));
+   $.each(projectObject.FundingContributors, function(key, item) {
+     if (key > 0) {
+       flatArray = flatArray +', '+ item;
+     }else{
+       flatArray = item;
+     }
+   });
+   $('.delivaryPanel .fundingInfo tr:nth-child(4) > td:nth-child(3)').text(flatArray);
+
+   $('.delivaryPanel .regionInfo p').text(projectObject.RegionName);
+   $('.delivaryPanel .infrastructureClass .asset p').text(projectObject.AssetClass);
+   $('.delivaryPanel .infrastructureClass .agency h6').text(projectObject.LeadAgency);
+}
+
+// load Plannning View and Flash Project Details
+function loadPlanningProjectView(projectObject) {
+  let pipelineSource = '<a href="'+ projectObject.PipelinResource[0].Value +'" target="_blank">'+projectObject.PipelinResource[0].Text+'</a>';
+
+  $('.planningPanel .poject-metaData > h5').text(projectObject.OpportunityFlag);
+  $('.planningPanel .poject-metaData > h3').text(projectObject.Header);
+
+  $('.planningPanel .projectStatus .statusInfo tr:nth-child(1) > td:nth-child(3)').text('Plannning - ' + projectObject.SubStage);
+  $('.planningPanel .projectStatus .statusInfo tr:nth-child(2) > td:nth-child(3)').text(projectObject.SIPStatus);
+
+  $('.planningPanel .regionInfo p').text(projectObject.RegionName);
+  $('.planningPanel .infrastructureClass .asset p').text(projectObject.AssetClass);
+  $('.planningPanel .infrastructureClass .pipeline-source h6').html(pipelineSource);
+  $('.planningPanel .infrastructureClass .agency h6').text(projectObject.LeadAgency);
+}
 /***--------------------------------------- Events ----------------------------------------***/
 
 // Click on Explore btn
@@ -265,7 +372,7 @@ $('.go-forward, .skip').on('click', function() {
   $('.intractive-portal').removeClass('d-none').addClass('d-flex');
 });
 
-// Assets filters clik event
+// Assets filters click event
 $('.asset-class .filters').on('click', function() {
   // Clear Button Status
   let clearAssetsBtn = $('#clear-assets-filter');
@@ -309,7 +416,7 @@ $('.asset-class .filters').on('click', function() {
   }
 });
 
-// Regions filters clik event
+// Regions filters click event
 $('.regions .filters').on('click', function() {
   let clearRegionsBtn = $('#clear-regions-filter');
   if (clearRegionsBtn.hasClass('d-none')) {
@@ -352,7 +459,7 @@ $('.regions .filters').on('click', function() {
   }
 });
 
-// Clear Asset filters clik event
+// Clear Asset filters click event
 $('#clear-assets-filter').on('click', function() {
   $('.asset-class .filters').removeClass('active');
   $(this).addClass('d-none');
@@ -360,7 +467,7 @@ $('#clear-assets-filter').on('click', function() {
   projectDataTable.column(2).search('', true, false).draw();
 });
 
-// Clear Region filters clik event
+// Clear Region filters click event
 $('#clear-regions-filter').on('click', function() {
   $('.regions .filters').removeClass('active');
   $(this).addClass('d-none');
@@ -371,11 +478,18 @@ $('#clear-regions-filter').on('click', function() {
 // Search Table dataTables
 $('#seachProjectDataTable').on('keyup', function() {
   if (projectDataTable) {
-    projectDataTable.search(this.value).draw();
+    if (isDetailView) {
+      projectDataTable.columns(0).search(this.value).draw();
+    }else{
+      projectDataTable.search(this.value).draw();
+    }
+    if (this.value == '') {
+      $('#projects tr.active').removeClass('active');
+    }
   }
 });
 
-// All project Button clik event
+// All project Button click event
 $('.project-details-btn').on('click', function() {
   $('.project-details-btn').addClass('d-none');
   $('.project-details').removeClass('d-none');
@@ -396,32 +510,27 @@ $('.project-details-btn').on('click', function() {
   }, 1400);
 });
 
-// Close projectTable Button clik event
+// Close projectTable minimize mode event
+$('.tablePannel-minimize').on('click', function(){
+  returnDetailedView();
+});
+
+// Close projectTable Button click event
 $('.tablePannel-close').on('click', function() {
-  $('.tablePannelContent').fadeOut(100).addClass('d-none');
-  $('.tablePannel')
-    .toggleClass('white')
-    .css({
-      width: '1600%'
-    })
-    .removeClass('animation-forward')
-    .addClass('animation-backward');
-  setTimeout(function() {
-    $('.project-details-btn').removeClass('d-none');
-    $('.project-details').addClass('d-none');
-    $('.tablePannelContent').removeAttr('style');
-    $('.tablePannel').removeAttr('style');
-  }, 1300);
+  if (!isDetailView) {
+    closeTablePanel();
+  }else {
+    returnDetailedView();
+    closeTablePanel();
+  }
 });
 
 // Row Selector
 $('#projects tbody').on('click', 'tr[role=row]', function() {
   // If projectDataTable is Initialized and Table is minimized
   if (projectDataTable) {
-    // let projectID = $(this).find('project-id');
-    // console.log(projectID);
-    // projectsHead
     let rowObject = $(this);
+    let projectID;
     if ( rowObject.hasClass('active') ) {
       for (var i = 1; i < 11; i++) {
         projectDataTable.column(i).visible(true);
@@ -430,6 +539,7 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
       projectObject.removeClass('minimized');
       panelMinimize();
     }else {
+      projectID = rowObject.find('[project-id]').attr('project-id');
       $('#projects tr.active').removeClass('active');
       for (var i = 1; i < 11; i++) {
         projectDataTable.column(i).visible(false);
@@ -440,11 +550,10 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
         rowObject.addClass('slow-change')
       ).then(function () {
         rowObject.addClass('active').removeClass('slow-change');
+        showProjectDetails(projectID);
       });
     }
-
   }
-
 });
 
 /***------------------------------ On Page Ready Preparations ------------------------------***/
@@ -474,8 +583,4 @@ $(document).ready(function() {
   ).then(function() {
     populateTable(2018);
   });
-
-
-  // Prepare
-
 });

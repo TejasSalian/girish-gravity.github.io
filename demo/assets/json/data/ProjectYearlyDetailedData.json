@@ -1,33 +1,25 @@
 [{
-    "Key": "CurrentFY",
-    "Value": "2018-19"
-  },
-  {
-    "Key": "RegionalBudget",
-    "Value": 0
-  },
-  {
-    "Key": "SEQBudget",
-    "Value": 0
-  },
-  {
-    "Key": "CapitalBudget",
-    "Value": 0
-  },
-  {
-    "Key": "JobsSupported",
-    "Value": 0
-  },
-  {
-    "Key": "TotalProjects",
-    "Value": 0
-  },
-  {
-    "Key": "TotalProgram",
-    "Value": 0
-  },
-  {
-    "Key": "TotalGrants",
-    "Value": 0
-  }
-]
+  "Key": "CurrentFY",
+  "Value": "2018-19"
+}, {
+  "Key": "RegionalBudget",
+  "Value": 0
+}, {
+  "Key": "SEQBudget",
+  "Value": 0
+}, {
+  "Key": "CapitalBudget",
+  "Value": 0
+}, {
+  "Key": "JobsSupported",
+  "Value": 0
+}, {
+  "Key": "TotalProjects",
+  "Value": 0
+}, {
+  "Key": "TotalProgram",
+  "Value": 0
+}, {
+  "Key": "TotalGrants",
+  "Value": 0
+}]

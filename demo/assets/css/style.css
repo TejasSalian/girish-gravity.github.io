@@ -308,44 +308,45 @@ nav img, .footer img {
             font-weight: 500;
             line-height: 1;
             color: white;
-            text-transform: capitalize; }
+            text-transform: capitalize;
+            display: inline-block; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(1) {
-              left: -46.8%;
-              top: 36px; }
+              top: 12px;
+              left: 0.3%; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(2) {
-              left: -36.5%;
-              top: 31px;
+              left: 3.3%;
+              top: 30px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(3) {
-              left: -26%;
-              top: 19px;
+              left: 5%;
+              top: 41px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(4) {
-              left: -16%;
-              top: 7px;
+              left: 8%;
+              top: 52px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(5) {
               font-size: 114%;
               text-transform: uppercase;
-              top: -80px;
-              left: -3.6%;
+              top: -14px;
+              left: 10.5%;
               cursor: pointer; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(6) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 156px;
-              left: -38.6%;
+              top: 258px;
+              left: -37.9%;
               cursor: pointer; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(7) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 173px;
-              left: 11.6%;
+              top: 293px;
+              left: -0.4%;
               cursor: pointer; }
       .dilgp-animation-canvas .intractive-portal .intractive-canvas .year-span h6 {
         position: relative;
-        left: -379px;
-        top: -791px;
+        left: -376px;
+        top: -674px;
         transform-origin: center;
         transform: rotateX(51deg) rotateY(0deg) rotateZ(-42deg);
         float: right;
@@ -459,105 +460,217 @@ nav img, .footer img {
 @keyframes minimizeTablePanel {
   0% {
     width: 2000%;
-    border-radius: 100% 0% 0% 100%;
     background-color: white; }
   100% {
     width: 1600%;
-    border-radius: 0% 0% 0% 0%;
     background-color: white; } }
-      .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent {
-        display: block;
-        max-width: 100%;
-        width: 100%;
-        flex-wrap: wrap; }
-        .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent header {
-          background-color: white;
-          max-height: 70px;
-          box-shadow: -3px 0px 6px rgba(0, 0, 0, 0.2784313725); }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent header .btn {
-            margin: 10px 10px 5px 0px;
-            border-radius: 20px;
-            padding: 3px 9px; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent header h4 {
-            margin: 5px 10px 5px 0px;
-            padding-top: 7px;
-            font-size: 125%; }
-        .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent #seachProjectDataTable {
-          border: 0;
-          border-radius: 0;
-          border-bottom: 1px solid black;
-          text-align: center;
-          box-shadow: 0 1px 0px #0000000f; }
-        .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView {
-          background-color: white;
-          padding-bottom: 15px;
-          overflow: auto;
-          scroll-behavior: smooth;
-          max-height: 932px;
-          min-height: 932px;
-          font-size: 80%; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView .dataTables_filter {
-            display: none; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects {
-            transition: all;
-            transition-timing-function: ease-in-out;
-            transition-duration: 0.5s; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects.minimized {
-              min-width: 190px;
-              max-width: 190px;
-              width: 190px;
-              float: left; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects tr.slow-change {
+        .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          flex-wrap: wrap; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header {
+            background-color: white;
+            max-height: 70px;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2784313725); }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header .btn {
+              margin: 10px 10px 5px 0px;
+              border-radius: 20px;
+              padding: 3px 9px; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header h4 {
+              margin: 5px 10px 5px 0px;
+              padding-top: 7px;
+              font-size: 125%; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent #seachProjectDataTable {
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid black;
+            text-align: center;
+            box-shadow: 0 1px 0px #0000000f; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView {
+            background-color: white;
+            padding-bottom: 15px;
+            overflow: auto;
+            scroll-behavior: smooth;
+            max-height: 932px;
+            min-height: 932px;
+            font-size: 80%; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView .dataTables_filter {
+              display: none; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects {
               transition: all;
-              transition-duration: 0.4s;
               transition-timing-function: ease-in-out;
-              transition-delay: 0.65s; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects tr.active {
-              background-color: #009887;
-              color: white; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pProjects {
-              min-width: 190px;
-              max-width: 190px;
-              width: 190px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pStage {
-              min-width: 58px;
-              max-width: 58px;
-              width: 58px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pInfrastructure {
-              min-width: 80px;
-              max-width: 80px;
-              width: 80px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pAgency {
-              min-width: 64px;
-              max-width: 64px;
-              width: 64px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pRegion {
-              min-width: 64px;
-              max-width: 64px;
-              width: 64px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pTCost {
-              min-width: 70px;
-              max-width: 70px;
-              width: 70px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pExpenditure {
-              min-width: 64px;
-              max-width: 64px;
-              width: 64px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pFundingS1 {
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pFundingS2 {
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pFundingS3 {
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannelContent .tableView #projects .pFundingS4 {
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px; }
+              transition-duration: 0.5s; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects.minimized {
+                min-width: 190px;
+                max-width: 190px;
+                width: 190px;
+                float: left; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects tr.slow-change {
+                transition: all;
+                transition-duration: 0.4s;
+                transition-timing-function: ease-in-out;
+                transition-delay: 0.65s; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects tr.active {
+                background-color: #009887;
+                color: white; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pProjects {
+                min-width: 190px;
+                max-width: 190px;
+                width: 190px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pStage {
+                min-width: 58px;
+                max-width: 58px;
+                width: 58px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pInfrastructure {
+                min-width: 80px;
+                max-width: 80px;
+                width: 80px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pAgency {
+                min-width: 64px;
+                max-width: 64px;
+                width: 64px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pRegion {
+                min-width: 64px;
+                max-width: 64px;
+                width: 64px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pTCost {
+                min-width: 70px;
+                max-width: 70px;
+                width: 70px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pExpenditure {
+                min-width: 64px;
+                max-width: 64px;
+                width: 64px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pFundingS1 {
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pFundingS2 {
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pFundingS3 {
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pFundingS4 {
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px; }
+        .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel {
+          width: calc(100% - 244px);
+          float: left; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .poject-metaData h5 {
+            text-align: center;
+            margin-top: 10px;
+            color: #6a0032;
+            font-size: 130%; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .poject-metaData h3 {
+            text-align: center;
+            color: #009887;
+            font-size: 125%;
+            margin-top: 14px; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .poject-metaData p {
+            text-align: center;
+            font-size: 90%;
+            color: #58595b;
+            margin-top: 1rem; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards {
+            display: flex; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card {
+              width: 48%;
+              margin: 1%;
+              float: left;
+              padding: 0.7rem;
+              box-shadow: 0 0 6px rgba(0, 0, 0, 0.231372549); }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card td {
+                font-size: 90%; }
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card td:nth-child(3) {
+                  font-weight: 500; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo td:nth-child(3) {
+                color: #6a0032; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo tr:nth-child(3) td {
+                border-bottom: 1px solid #0d0e0e26;
+                padding-bottom: 1rem; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo tr:nth-child(1) td, .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo tr:nth-child(4) td {
+                padding-top: 1rem; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo td {
+                padding-top: 14px;
+                padding-bottom: 14px; }
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo td:nth-child(1) {
+                  min-width: 186px; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(1), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(2) {
+                font-size: 120%; }
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(1) td:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(2) td:nth-child(3) {
+                  color: #6a0032; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(4) {
+                padding: 10px; }
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(3) td, .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(4) td {
+                  background-color: white;
+                  color: #6a0032; }
+                  .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(3) td:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(4) td:nth-child(3) {
+                    color: black; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .regionInfo .pointer img {
+            width: 34px;
+            margin-left: -20px;
+            margin-top: 4px; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .regionInfo .map img {
+            width: 100%;
+            margin-left: 15px; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .infrastructureClass .asset p {
+            margin-top: 1rem; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .infrastructureClass .asset strong {
+            margin-top: 1rem;
+            display: block; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .infrastructureClass .agency {
+            margin-top: 1.2rem; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .poject-metaData h5 {
+            text-align: center;
+            margin-top: 10px;
+            color: #6a0032;
+            font-size: 130%; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .poject-metaData h3 {
+            text-align: center;
+            color: #009887;
+            font-size: 125%;
+            margin-top: 14px; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .projectStatus {
+            display: flex; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .projectStatus .card {
+              width: 98%;
+              margin: 1%;
+              float: left;
+              padding: 0.7rem;
+              box-shadow: 0 0 6px rgba(0, 0, 0, 0.231372549); }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .projectStatus .card td {
+                font-size: 90%; }
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .projectStatus .card td:nth-child(3) {
+                  font-weight: 500; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .projectStatus .card.statusInfo td:nth-child(3) {
+                color: #6a0032; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .regionInfo .pointer img {
+            width: 34px;
+            margin-left: -20px;
+            margin-top: 4px; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .regionInfo .map img {
+            width: 100%;
+            margin-left: 15px; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .asset p {
+            margin-top: 1rem; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .asset strong {
+            margin-top: 1rem;
+            display: block; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .pipeline-source {
+            margin-top: 1.2rem; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .pipeline-source h6 {
+              font-size: inherit; }
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .pipeline-source h6 a {
+                color: #6a0032; }
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .pipeline-source h6 a:hover {
+                  color: #6a0032;
+                  text-decoration: none; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .infrastructureClass .agency {
+            margin-top: 1.2rem; }
 
 /*# sourceMappingURL=style.css.map */

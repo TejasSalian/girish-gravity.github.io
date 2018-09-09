@@ -399,44 +399,45 @@ nav, .footer{
             line-height: 1;
             color: white;
             text-transform: capitalize;
+            display: inline-block;
             &:nth-child(1) {
-              left: -46.8%;
-              top: 36px;
+              top: 12px;
+              left: 0.3%;
             }
             &:nth-child(2) {
-              left: -36.5%;
-              top: 31px;
+              left: 3.3%;
+              top: 30px;
               transform: scale(0.92);
             }
             &:nth-child(3) {
-              left: -26%;
-              top: 19px;
+              left: 5%;
+              top: 41px;
               transform: scale(0.92);
             }
             &:nth-child(4) {
-              left: -16%;
-              top: 7px;
+              left: 8%;
+              top: 52px;
               transform: scale(0.92);
             }
             &:nth-child(5) {
               font-size: 114%;
               text-transform: uppercase;
-              top: -80px;
-              left: -3.6%;
+              top: -14px;
+              left: 10.5%;
               cursor: pointer;
             }
             &:nth-child(6) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 156px;
-              left: -38.6%;
+              top: 258px;
+              left: -37.9%;
               cursor: pointer;
             }
             &:nth-child(7) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 173px;
-              left: 11.6%;
+              top: 293px;
+              left: -0.4%;
               cursor: pointer;
             }
           }
@@ -445,8 +446,8 @@ nav, .footer{
       .year-span{
         h6{
           position: relative;
-          left: -379px;
-          top: -791px;
+          left: -376px;
+          top: -674px;
           transform-origin: center;
           transform: rotateX(51deg) rotateY(0deg) rotateZ(-42deg);
           float: right;
@@ -537,176 +538,376 @@ nav, .footer{
           animation-play-state: running;
           animation-delay: 0s;
         }
-      }
-      @keyframes fillTablePanel{
-        0%{
-          width: 0px;
-          border-radius: 100% 0% 0% 100%;
-          background-color: $brand-primary-green;
-        }
-        75%{
-          // 5% of parent is 100% in current context, 75% is sibling size therefore 100% * (15 + 1) will be the size to cover
-          width: 1600%;
-          border-radius: 0% 0% 0% 0%;
-          background-color: $brand-primary-green;
-        }
-        100%{
-          width: 1600%;
-          border-radius: 0% 0% 0% 0%;
-          // background-color: hsla(0, 0%, 96%, 1);
-          background-color: white;
-        }
-      }
-      @keyframes emptyTablePanel{
-        100%{
-          width: 0px;
-          border-radius: 100% 0% 0% 100%;
-          background-color: $brand-primary-green;
-        }
-        0%{
-          width: 1600%;
-          border-radius: 0% 0% 0% 0%;
-          background-color:white;
-        }
-      }
-      @keyframes maximizeTablePanel{
-        100%{
-          width: 2000%;
-          border-radius: 100% 0% 0% 100%;
-          background-color:white;
-        }
-        0%{
-          width: 1600%;
-          border-radius: 0% 0% 0% 0%;
-          background-color:white;
-        }
-      }
-      @keyframes minimizeTablePanel{
-        0%{
-          width: 2000%;
-          border-radius: 100% 0% 0% 100%;
-          background-color:white;
-        }
-        100%{
-          width: 1600%;
-          border-radius: 0% 0% 0% 0%;
-          background-color:white;
-        }
-      }
-      .tablePannelContent{
-        display: block;
-        // flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%;
-        flex-wrap: wrap;
-        header{
-          background-color: white;
-          max-height: 70px;
-          box-shadow: -3px 0px 6px rgba(0, 0, 0, 0.2784313725490196);
-          .btn{
-            margin: 10px 10px 5px 0px;
-            border-radius: 20px;
-            padding: 3px 9px;
+        @keyframes fillTablePanel{
+          0%{
+            width: 0px;
+            border-radius: 100% 0% 0% 100%;
+            background-color: $brand-primary-green;
           }
-          h4{
-            margin: 5px 10px 5px 0px;
-            padding-top: 7px;
-            font-size: 125%;
-            // text-align: center;
+          75%{
+            // 5% of parent is 100% in current context, 75% is sibling size therefore 100% * (15 + 1) will be the size to cover
+            width: 1600%;
+            border-radius: 0% 0% 0% 0%;
+            background-color: $brand-primary-green;
+          }
+          100%{
+            width: 1600%;
+            border-radius: 0% 0% 0% 0%;
+            // background-color: hsla(0, 0%, 96%, 1);
+            background-color: white;
           }
         }
-        #seachProjectDataTable{
-          border: 0;
-          border-radius: 0;
-          border-bottom: 1px solid black;
-          text-align: center;
-          box-shadow: 0 1px 0px #0000000f;
-        }
-        .tableView{
-          background-color: white;
-          padding-bottom: 15px;
-          overflow: auto;
-          scroll-behavior: smooth;
-          max-height: 932px;
-          min-height: 932px;
-          font-size: 80%;
-          .dataTables_filter{
-            display: none;
+        @keyframes emptyTablePanel{
+          100%{
+            width: 0px;
+            border-radius: 100% 0% 0% 100%;
+            background-color: $brand-primary-green;
           }
-          #projects{
-            transition: all;
-            transition-timing-function: ease-in-out;
-            transition-duration: 0.5s;
-            &.minimized{
-              min-width: 190px;
-              max-width: 190px;
-              width: 190px;
-              float: left;
+          0%{
+            width: 1600%;
+            border-radius: 0% 0% 0% 0%;
+            background-color:white;
+          }
+        }
+        @keyframes maximizeTablePanel{
+          100%{
+            width: 2000%;
+            border-radius: 100% 0% 0% 100%;
+            background-color:white;
+          }
+          0%{
+            width: 1600%;
+            border-radius: 0% 0% 0% 0%;
+            background-color:white;
+          }
+        }
+        @keyframes minimizeTablePanel{
+          0%{
+            width: 2000%;
+            background-color:white;
+          }
+          100%{
+            width: 1600%;
+            background-color:white;
+          }
+        }
+        .tablePannelContent{
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          flex-wrap: wrap;
+          header{
+            background-color: white;
+            max-height: 70px;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2784313725490196);
+            .btn{
+              margin: 10px 10px 5px 0px;
+              border-radius: 20px;
+              padding: 3px 9px;
             }
-            tr.slow-change{
+            h4{
+              margin: 5px 10px 5px 0px;
+              padding-top: 7px;
+              font-size: 125%;
+              // text-align: center;
+            }
+          }
+          #seachProjectDataTable{
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid black;
+            text-align: center;
+            box-shadow: 0 1px 0px #0000000f;
+          }
+          .tableView{
+            background-color: white;
+            padding-bottom: 15px;
+            overflow: auto;
+            scroll-behavior: smooth;
+            max-height: 932px;
+            min-height: 932px;
+            font-size: 80%;
+            .dataTables_filter{
+              display: none;
+            }
+            #projects{
               transition: all;
-              transition-duration: 0.4s;
               transition-timing-function: ease-in-out;
-              transition-delay: 0.65s;
+              transition-duration: 0.5s;
+              &.minimized{
+                min-width: 190px;
+                max-width: 190px;
+                width: 190px;
+                float: left;
+              }
+              tr.slow-change{
+                transition: all;
+                transition-duration: 0.4s;
+                transition-timing-function: ease-in-out;
+                transition-delay: 0.65s;
+              }
+              tr.active{
+                background-color: $brand-primary-green;
+                color: white;
+              }
+              .pProjects{
+                min-width: 190px;
+                max-width: 190px;
+                width: 190px;
+              }
+              .pStage{
+                min-width: 58px;
+                max-width: 58px;
+                width: 58px;
+              }
+              .pInfrastructure{
+                min-width: 80px;
+                max-width: 80px;
+                width: 80px;
+              }
+              .pAgency{
+                min-width: 64px;
+                max-width: 64px;
+                width: 64px;
+              }
+              .pRegion{
+                min-width: 64px;
+                max-width: 64px;
+                width: 64px;
+              }
+              .pTCost{
+                min-width: 70px;
+                max-width: 70px;
+                width: 70px;
+              }
+              .pExpenditure{
+                min-width: 64px;
+                max-width: 64px;
+                width: 64px;
+              }
+              .pFundingS1{
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px;
+              }
+              .pFundingS2{
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px;
+              }
+              .pFundingS3{
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px;
+              }
+              .pFundingS4{
+                min-width: 50px;
+                max-width: 50px;
+                width: 50px;
+              }
             }
-            tr.active{
-              background-color: $brand-primary-green;
-              color: white;
+          }
+        }
+        .detailsPanel{
+          width: calc(100% - 244px);
+          float: left;
+          .delivaryPanel{
+            .poject-metaData{
+              h5{
+                text-align: center;
+                margin-top: 10px;
+                color: $brand-primary-magenta;
+                font-size: 130%;
+              }
+              h3{
+                text-align: center;
+                color: $brand-primary-green;
+                font-size: 125%;
+                margin-top: 14px;
+              }
+              p{
+                text-align: center;
+                font-size: 90%;
+                color: $brand-primary-text;
+                margin-top: 1rem;
+              }
             }
-            .pProjects{
-              min-width: 190px;
-              max-width: 190px;
-              width: 190px;
+            .cards{
+              display: flex;
+              .card{
+                width: 48%;
+                margin: 1%;
+                float: left;
+                padding: 0.7rem;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.23137254901960785);
+                td{
+                  font-size: 90%;
+                  &:nth-child(3){
+                    font-weight: 500;
+                  }
+                }
+                &.statusInfo{
+                  td{
+                    &:nth-child(3){
+                      color: $brand-primary-magenta;
+                    }
+                  }
+                  tr{
+                    &:nth-child(3){
+                      td{
+                        border-bottom: 1px solid #0d0e0e26;
+                        padding-bottom: 1rem;
+                      }
+                    }
+                    &:nth-child(1), &:nth-child(4){
+                      td{
+                        padding-top: 1rem;
+                      }
+                    }
+                  }
+                }
+                &.fundingInfo{
+                  td{
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    &:nth-child(1){
+                      min-width: 186px;
+                    }
+                  }
+                  tr{
+                    &:nth-child(1),
+                    &:nth-child(2){
+                      font-size: 120%;
+                      td{
+                        &:nth-child(3){
+                          color: $brand-primary-magenta;
+                        }
+                      }
+                    }
+                    &:nth-child(3),
+                    &:nth-child(4){
+                      padding: 10px;
+                      td{
+                        background-color: lighten($brand-primary-magenta, 80%);
+                        color: $brand-primary-magenta;
+                        &:nth-child(3){
+                          color: black;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
-            .pStage{
-              min-width: 58px;
-              max-width: 58px;
-              width: 58px;
+            .regionInfo{
+              .pointer{
+                img{
+                  width: 34px;
+                  margin-left: -20px;
+                  margin-top: 4px;
+                }
+              }
+              .map{
+                img{
+                  width: 100%;
+                  margin-left: 15px;
+                }
+              }
             }
-            .pInfrastructure{
-              min-width: 80px;
-              max-width: 80px;
-              width: 80px;
+            .infrastructureClass{
+              .asset{
+                p{
+                  margin-top: 1rem;
+                }
+                strong{
+                  margin-top: 1rem;
+                  display: block;
+                }
+              }
+              .agency{
+                margin-top: 1.2rem;
+              }
             }
-            .pAgency{
-              min-width: 64px;
-              max-width: 64px;
-              width: 64px;
+          }
+          .planningPanel{
+            .poject-metaData{
+              h5{
+                text-align: center;
+                margin-top: 10px;
+                color: $brand-primary-magenta;
+                font-size: 130%;
+              }
+              h3{
+                text-align: center;
+                color: $brand-primary-green;
+                font-size: 125%;
+                margin-top: 14px;
+              }
             }
-            .pRegion{
-              min-width: 64px;
-              max-width: 64px;
-              width: 64px;
+            .projectStatus{
+              display: flex;
+              .card{
+                width: 98%;
+                margin: 1%;
+                float: left;
+                padding: 0.7rem;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.23137254901960785);
+                td{
+                  font-size: 90%;
+                  &:nth-child(3){
+                    font-weight: 500;
+                  }
+                }
+                &.statusInfo{
+                  td{
+                    &:nth-child(3){
+                      color: $brand-primary-magenta;
+                    }
+                  }
+                }
+              }
             }
-            .pTCost{
-              min-width: 70px;
-              max-width: 70px;
-              width: 70px;
+            .regionInfo{
+              .pointer{
+                img{
+                  width: 34px;
+                  margin-left: -20px;
+                  margin-top: 4px;
+                }
+              }
+              .map{
+                img{
+                  width: 100%;
+                  margin-left: 15px;
+                }
+              }
             }
-            .pExpenditure{
-              min-width: 64px;
-              max-width: 64px;
-              width: 64px;
-            }
-            .pFundingS1{
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px;
-            }
-            .pFundingS2{
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px;
-            }
-            .pFundingS3{
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px;
-            }
-            .pFundingS4{
-              min-width: 50px;
-              max-width: 50px;
-              width: 50px;
+            .infrastructureClass{
+              .asset{
+                p{
+                  margin-top: 1rem;
+                }
+                strong{
+                  margin-top: 1rem;
+                  display: block;
+                }
+              }
+              .pipeline-source{
+                margin-top: 1.2rem;
+                h6{
+                  font-size: inherit;
+                  a{
+                    color: $brand-primary-magenta;
+                    &:hover{
+                      color: $brand-primary-magenta;
+                      text-decoration: none;
+                    }
+                  }
+                }
+              }
+              .agency{
+                margin-top: 1.2rem;
+              }
             }
           }
         }

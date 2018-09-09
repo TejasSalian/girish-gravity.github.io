@@ -26,7 +26,7 @@
     </nav>
 
     <div class="container dilgp-animation-canvas">
-      <div class="row explore d-none">
+      <div class="row explore d-flex">
         <div class="col-12">
           <h1>State Infrastructure Plan</h1>
           <h2>Welcome to the interactive Queensland Infrastructure Pipeline</h2>
@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <div class="row intractive-portal d-flex">
+      <div class="row intractive-portal d-none">
         <aside>
           <div class="col-12 asset-class">
             <div class="row">
@@ -270,14 +270,18 @@
                     <h4 class="fadeIn animated">State Infrastructure Plan Construction Projects</h4>
                   </div>
                   <div class="col-2 text-right fadeIn animated ">
-                    <button type="button" class="btn btn-outline-primary" name=""><i class="fas fa-arrow-right"></i></button>
-                    <button type="button" class="btn btn-outline-danger tablePannel-close" name=""><i class="fas fa-times"></i></button>
+                    <button type="button" class="btn btn-outline-primary fadeIn animated tablePannel-minimize d-none">
+                      <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-danger tablePannel-close">
+                      <i class="fas fa-times"></i>
+                    </button>
                   </div>
                 </div>
               </header>
               <div class="col-12 mt-3 pt-3">
                 <div class="form-group">
-                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" placeholder="Search in State Infrastructure Plan Construction Projects">
+                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" placeholder="Search Projects by Name, Contract Type, Region etc.">
                 </div>
               </div>
               <div class="col-12 tableView">
@@ -319,7 +323,191 @@
                       <th rowspan="1" colspan="4" class="text-center">Funding</th>
                     </tr>
                   </tfoot>
-              </table>
+                </table>
+              </div>
+              <div class="detailsPanel d-none">
+                <div class="col-12 delivaryPanel d-none">
+                  <div class="row">
+                    <div class="col-12 poject-metaData">
+                      <h5>Project Information</h5>
+                      <h3></h3>
+                      <p></p>
+                    </div>
+                    <div class="col-12 cards mt-3 mb-4">
+                      <div class="card statusInfo">
+                        <table class="table table-responsive table-borderless table-sm">
+                          <tbody>
+                            <tr>
+                              <td>Capital type</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Contract type</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Estimated completion date</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Current status</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Current stage</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Next stage</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Next stage(Start date)</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="card fundingInfo">
+                        <table class="table table-responsive table-borderless table-sm">
+                          <tbody>
+                            <tr>
+                              <td>2018-19 budget</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Total estimated cost</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Post 2018-19 funding</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>Funding contributors</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="col-6 regionInfo">
+                      <div class="row">
+                        <div class="col-5 map">
+                          <img src="assets/images/Sunshine Coast_edit.svg" alt="">
+                        </div>
+                        <div class="col-1 pointer">
+                          <img src="assets/images/LocationPointer.svg" alt="">
+                        </div>
+                        <div class="col-6">
+                          <h6>Region:</h6>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 infrastructureClass">
+                      <div class="row asset">
+                        <div class="col-4">
+                          <strong>Asset class:</strong>
+                        </div>
+                        <div class="col-2">
+                          <img src="assets/images/energy.svg" alt="">
+                        </div>
+                        <div class="col-6">
+                          <p>Energy</p>
+                        </div>
+                      </div>
+                      <div class="row agency">
+                        <div class="col-6">
+                          <p>Lead Agency</p>
+                        </div>
+                        <div class="col-6">
+                          <h6></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 planningPanel d-none">
+                  <div class="row">
+                    <div class="col-12 poject-metaData">
+                      <h5></h5>
+                      <h3></h3>
+                    </div>
+                    <div class="col-12 projectStatus mt-5 mb-5">
+                      <div class="card statusInfo">
+                        <table class="table table-responsive table-borderless table-sm">
+                          <tbody>
+                            <tr>
+                              <td>Current stage</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td>SIP status</td>
+                              <td>:</td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="col-6 regionInfo">
+                      <div class="row">
+                        <div class="col-5 map">
+                          <img src="assets/images/Sunshine Coast_edit.svg" alt="">
+                        </div>
+                        <div class="col-1 pointer">
+                          <img src="assets/images/LocationPointer.svg" alt="">
+                        </div>
+                        <div class="col-6">
+                          <h6>Region:</h6>
+                          <p></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 infrastructureClass">
+                      <div class="row asset">
+                        <div class="col-4">
+                          <strong>Asset class:</strong>
+                        </div>
+                        <div class="col-2">
+                          <img src="assets/images/energy.svg" alt="">
+                        </div>
+                        <div class="col-6">
+                          <p>Energy</p>
+                        </div>
+                      </div>
+                      <div class="row pipeline-source">
+                        <div class="col-6">
+                          <p>Pipeline Source</p>
+                        </div>
+                        <div class="col-6">
+                          <h6></h6>
+                        </div>
+                      </div>
+                      <div class="row agency">
+                        <div class="col-6">
+                          <p>Lead Agency</p>
+                        </div>
+                        <div class="col-6">
+                          <h6></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

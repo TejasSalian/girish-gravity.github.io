@@ -242,7 +242,7 @@ function openProjectPanel(bubble) {
       click = false;
       $(".closeProject").show();
       // $("#dummyDiv").show();
-      $(".heading h5").fadeOut();
+      $(".heading").fadeOut();
       $("#projectHeader").fadeIn();
       $("#projectHeader span").hide();
       headerType = 1;
@@ -279,7 +279,7 @@ function openProposalPanel(bubble) {
     click = false;
     $(".closeProject").show();
     // $("#dummyDiv").show();
-    $(".heading h5").fadeOut();
+    $(".heading").fadeOut();
     $("#proposalHeader").fadeIn();
     headerType = 2;
     updateStage();
@@ -315,7 +315,7 @@ $(function() {
       click = false;
       $(".closeProject").show();
       // $("#dummyDiv").show();
-      $(".heading h5").fadeOut();
+      $(".heading").fadeOut();
       $("#projectHeader").fadeIn();
       $("#projectHeader span").hide();
       headerType = 1;
@@ -338,7 +338,7 @@ $(function() {
         // $("#dummyDiv").hide  ();
         $(".innerProjectPanel").hide();
         $(".projectListDiv").hide();
-        $(".heading h5").fadeIn();
+        $(".heading").fadeIn();
         $("#projectHeader").fadeOut();
         $("#proposalHeader").fadeOut();
 

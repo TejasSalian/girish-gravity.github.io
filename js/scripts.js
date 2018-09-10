@@ -1150,12 +1150,9 @@ function loadProjectInfo(id, projectStage) {
       $(".pI_assetImg").attr('src', setImageAsset(jsonData[id].AssetClass));
       $(".pI_assetName").text(jsonData[id].AssetClass);
 
-      // console.log(jsonData[id].SIPStatus);
-      // console.log("PROPOSAL DETAILS");
     }
 
   });
-  // console.log("AAAA");
 }
 
 function showMoreTag(tagToCollpase, tagLength) {
@@ -1164,7 +1161,6 @@ function showMoreTag(tagToCollpase, tagLength) {
   minimized_elements.each(function() {
     var t = $(this).text();
     if (t.length < tagLength) return;
-    // console.log(t.length);
     $(this).html(
       t.slice(0, tagLength) + '<span>... </span><a href="#" class="more">More</a>' +
       '<span style="display:none;">' + t.slice(tagLength, t.length) + ' <a href="#" class="less">Less</a></span>'
@@ -1541,7 +1537,7 @@ function loadScene1() {
   });
   $(".scene1_Text").show();
   // game.state.start('scene1');
-  game.state.start('scene-boot');
+  // game.state.start('scene-boot');
 }
 
 // $("#backToStart").click(function() {
@@ -1642,7 +1638,7 @@ $('#q_year').on('change', function() {
 });
 
 
-$('#skip').click(function () {
+function skip() {
   $('#q_year').val('2018');
   $(".footer").removeAttr('style');
   $('.year-wise').css({
@@ -1663,7 +1659,7 @@ $('#skip').click(function () {
   init();
   summaryLoader(2018);
   g_getData();
-})
+};
 
 function g_getData() {
   $.when(
@@ -1767,11 +1763,12 @@ function summaryLoader(currentYear) {
   if (currentYear === 2018) {
     // $(".seqBudget span").text('$5.986B');
     // $(".regBudget span").text('$5.597B');
-    $(".capitalbudget .floatData").text('$11.56B');
+    $(".capitalbudget .floatData").text('$11.6B');
     $(".jobssupported .floatData").text('38,000');
-    $(".totalprojects .floatData").text('394');
-    $(".programs .floatData").text('213');
-    $(".grants .floatData").text('101');
+
+    $(".totalprojects .floatData").text('125');
+    $(".programs .floatData").text('129');
+    $(".grants .floatData").text('71');
   }else if (currentYear === 2017) {
     // $(".seqBudget span").text('$5.359B');
     // $(".regBudget span").text('$4.811B');
@@ -1842,9 +1839,20 @@ document.getElementById('CubeAnim')
         .addEventListener('ended', CubeAnimFinished,false);
 function CubeAnimFinished() {
   $('.CubeAnim').hide();
-  $(".infoSection").css({'display':'block'});
-  isVisible();
+  skip();
 }
+$('#skip').on('click', function() {
+  $('#mainView').show();
+  $(".infoSection").hide();
+  $(".footer").css({'top':'0px'});
+});
+
+$('.pipeline-overview-btn').on('click', function() {
+  $('#mainView').hide();
+  $(".infoSection").show();
+  $(".footer").css({'top':'1346px'});
+  // $(".footer").removeAttr('style');
+});
 
 $(document).ready(function() {
   $(".infoSection").css({'display':'none'});

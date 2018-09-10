@@ -1034,12 +1034,13 @@ input[type=checkbox]:not(old):checked+label {
     border: none;
     border-radius: 0;
     top: -2px;
-    left: 440px;
+    left: 400px;
     z-index: 100;
     background-color: #009988;
     display: inline-block;
     color: white;
     z-index: 23;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45098039215686275);
 }
 
 .pipeline-overview-btn {
@@ -1047,7 +1048,7 @@ input[type=checkbox]:not(old):checked+label {
     border: none;
     border-radius: 0;
     top: -2px;
-    left: 268px;
+    left: 228px;
     z-index: 100;
     background-color: #009988;
     display: inline-block;
@@ -1055,6 +1056,7 @@ input[type=checkbox]:not(old):checked+label {
     padding-left: 15px;
     padding-right: 15px;
     z-index: 23;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45098039215686275);
 }
 
 .helpbtn:hover, .helpbtn:focus {

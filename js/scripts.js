@@ -1840,6 +1840,7 @@ document.getElementById('CubeAnim')
 function CubeAnimFinished() {
   $('.CubeAnim').hide();
   skip();
+  g_countProposals();
 }
 $('#skip').on('click', function() {
   $('#mainView').show();

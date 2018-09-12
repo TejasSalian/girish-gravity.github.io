@@ -839,6 +839,7 @@ thead, tbody {
 .dataTable {
     width: 1050px;
     border: none;
+    opacity: 0;
 }
 
 .approchcell {
@@ -2538,6 +2539,43 @@ height: 229px; */
 .proposalActive .assetclasslst {
     width: 26%;
     padding-left: 27px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.d-none{
+  display: none;
 }
 
 * {

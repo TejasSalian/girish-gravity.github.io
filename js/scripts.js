@@ -292,6 +292,10 @@ $(function() {
   $(".projects").click(function() {
     // debugger
     if (click) {
+      $('#dataTable').removeClass('d-none');
+      setTimeout(function () {
+        $('#dataTable').addClass('fadeIn');
+      }, 500);
 
       $(".innerProjectPanel").show();
       $(".projectListDiv").show();
@@ -324,6 +328,9 @@ $(function() {
   $(".closeProject").click(function() {
     slideIndex = 1;
     if (!click) {
+
+      $('#dataTable').removeClass('fadeIn').addClass('d-none');
+
 
       $("#projectPanel").css('width', function() {
         return $(this).offset().width;

@@ -220,6 +220,12 @@ function openProjectPanel(bubble) {
   slideIndex = 2;
   click = true;
   if (click) {
+
+    $('#dataTable').removeClass('d-none');
+    setTimeout(function () {
+      $('#dataTable').addClass('fadeIn');
+    }, 500);
+
     $(".innerProjectPanel").show();
       $(".projectListDiv").show();
 
@@ -257,6 +263,7 @@ function openProposalPanel(bubble) {
   // console.log(stageValue);
   click = true;
   if (click) {
+
     $(".innerProjectPanel").show();
     $(".projectListDiv").show();
 

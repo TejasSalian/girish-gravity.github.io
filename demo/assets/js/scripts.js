@@ -411,6 +411,9 @@ $('.asset-class .filters').on('click', function() {
       assetFilter = assetFilter + '|' + filterText;
     }
   }
+  if (assetFilter == '') {
+    clearAssetsBtn.addClass('d-none');
+  }
   if (projectDataTable) {
     projectDataTable.column(2).search(assetFilter, true, false).draw();
   }
@@ -453,6 +456,9 @@ $('.regions .filters').on('click', function() {
     } else {
       regionsFilter = regionsFilter + '|' + filterText;
     }
+  }
+  if (regionsFilter == '') {
+    clearRegionsBtn.addClass('d-none');
   }
   if (projectDataTable) {
     projectDataTable.column(4).search(regionsFilter, true, false).draw();

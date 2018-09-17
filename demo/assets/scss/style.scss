@@ -25,6 +25,27 @@ $intractive-canvas-width: 85%;
 .brand-secondary-blue-light{
   background-color: $brand-secondary-blue-light;
 }
+
+.container{
+  width:100%;
+  padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto;
+  @media (min-width:576px){
+    max-width:540px;
+  }
+  @media (min-width:768px){
+    max-width:720px;
+  }
+  @media (min-width:992px){
+    max-width:960px;
+  }
+  @media (min-width:1200px){
+    max-width:1256px;
+  }
+}
+
 nav, .footer{
   img{
     width: calc(100% + 30px);
@@ -32,7 +53,7 @@ nav, .footer{
   }
 }
 .dilgp-animation-canvas{
-  min-height: 720px;
+  min-height: 746px;
   font-size: 100%;
   .explore{
     h1{
@@ -126,6 +147,21 @@ nav, .footer{
       width: calc(100% + 30px);
       margin-left: -15px;
     }
+    .btn-skip{
+      padding: 5px 15px;
+      width: 120px;
+      border-radius: 2px;
+      text-align: center;
+      font-size: 85%;
+      position: absolute;
+      top: 60px;
+      right: 50px;
+      cursor: pointer;
+      background-color: #009988;
+      display: inline-block;
+      color: white;
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45098039215686275);
+    }
     .footer-control{
       background-color: $brand-green-light;
       margin-top: -5px;
@@ -152,8 +188,8 @@ nav, .footer{
     padding: 0;
     aside{
       display: flex;
-      flex: 0 0 20%;
-      max-width: 20%;
+      flex: 0 0 16%;
+      max-width: 16%;
       flex-wrap: wrap;
       .filters{
         text-align: center;
@@ -173,7 +209,7 @@ nav, .footer{
         span{
           position: absolute;
           top: 38px;
-          left: 41px;
+          left: 30px;
           z-index: 0;
           background-color: $brand-primary-green;
           opacity: 0;
@@ -213,6 +249,13 @@ nav, .footer{
           padding-top: 4px;
           padding-bottom: 0px;
           margin-bottom: 6px;
+          &::after{
+            // position: absolute;
+            // content: '(click to filter)';
+            // right: 0px;
+            // font-size: 80%;
+            // color: #ffffffd2;
+          }
         }
         span{
           position: absolute;
@@ -242,6 +285,12 @@ nav, .footer{
             color: #000;
           }
         }
+        .filters{
+          -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+          max-width: 45%;
+          margin-left: 6px;
+        }
       }
       .regions{
         padding: 15px;
@@ -253,12 +302,18 @@ nav, .footer{
           border-bottom:
           1px solid darken($brand-primary-green, 10%);
           @extend header;
-          & span:hover{
-            background-color:#FFF;
-            color: #000;
+          span{
+            top: 9px;
+            &:hover{
+              background-color:#FFF;
+              color: #000;
+            }
           }
         }
         .filters{
+          -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
           &.active{
             button{
               background-color: darken($brand-primary-green, 6.5%);
@@ -302,9 +357,9 @@ nav, .footer{
       }
     }
     .intractive-canvas{
-      flex: 0 0 75%;
-      max-width: 75%;
-      max-height : 720px;
+      flex: 0 0 79%;
+      max-width: 79%;
+      max-height : 746px;
       padding-left: 15px;
       padding-right: 15px;
       transition: all;
@@ -317,10 +372,13 @@ nav, .footer{
         margin-top: -36px;
         top: 96px;
         h3{
-          font-size: 154%;
+          font-size: 144%;
           position: absolute;
-          width: 100%;
-          top: 5px;
+          width: 52%;
+          top: -54px;
+          left: 20.5%;
+          z-index: 2;
+          color: $brand-secondary-magenta;
         }
         .actions{
           width: 100%;
@@ -333,19 +391,30 @@ nav, .footer{
               float: right;
               position: relative;
               top: 10px;
+              z-index: 2
             }
           }
-          .help{
+          .help, .pipeline-overview{
             float: left;
             outline: 0;
             border: 0;
-            padding: 8px 20px;
-            background-color: $brand-primary-green;
             color: white;
+            background-color: $brand-primary-green;
             font-weight: 500;
-            box-shadow: 0 1px 6px #000000e0;
             border-radius: 0;
             cursor: pointer;
+            top: -2px;
+            display: inline-block;
+            z-index: 23;
+            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45098039215686275);
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 9px;
+            padding-right: 9px;
+            line-height: 2.5;
+            height: auto;
+            font-size: 75%;
+            margin-right: 7px;
           }
         }
       }
@@ -354,7 +423,7 @@ nav, .footer{
         width: 356px;
         position: relative;
         margin-top: -260px;
-        top: 422px;
+        top: 370px;
         float: right;
         background-color: white;
         display: block;
@@ -388,15 +457,14 @@ nav, .footer{
         width: calc( 100% + 30px );
         position: relative;
         left: -15px;
-        top: 224px;
+        top: 148px;
         z-index: 0;
       }
       .year-anim{
         position: relative;
         z-index: 1;
-        top: -471px;
-        left: 182px;
-        transform: scale(0.85);
+        top: -653px;
+        left: 232px;
       }
       .tag-names{
         position: relative;
@@ -414,44 +482,76 @@ nav, .footer{
             text-transform: capitalize;
             display: inline-block;
             &:nth-child(1) {
-              top: -3px;
-              left: 0.3%;
+              top: -190px;
+              left: 1.6%;
             }
             &:nth-child(2) {
-              left: 3.3%;
-              top: 15px;
+              left: 5.5%;
+              top: -171px;
               transform: scale(0.92);
             }
             &:nth-child(3) {
-              left: 5%;
-              top: 26px;
+              left: 8.5%;
+              top: -157px;
               transform: scale(0.92);
             }
             &:nth-child(4) {
-              left: 8%;
-              top: 37px;
+              left: 12.2%;
+              top: -145px;
               transform: scale(0.92);
             }
             &:nth-child(5) {
               font-size: 114%;
               text-transform: uppercase;
-              top: -29px;
-              left: 10.6%;
+              top: -222px;
+              left: 16.3%;
               cursor: pointer;
             }
             &:nth-child(6) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 242px;
-              left: -37.8%;
+              top: 92px;
+              left: -29.5%;
               cursor: pointer;
             }
             &:nth-child(7) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 278px;
-              left: -0.4%;
+              top: 135px;
+              left: 8.8%;
               cursor: pointer;
+            }
+            .board-animator{
+              position: absolute;
+              display: block;
+              width: 110px;
+              left: -9px;
+              top: -6px;
+              z-index: 999995;
+              height: 30px;
+              background-color: $brand-primary-magenta;
+              &.expand{
+                animation: fill-me-planning;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: 1;
+                animation-play-state: running;
+              }
+              @keyframes fill-me-planning{
+                0%{
+                  width: 110px;
+                  left: -9px;
+                  top: -23px;
+                  height: 30px;
+                }
+                100%{
+                  width: 1300%;
+                  left: -600px;
+                  top: -282px;
+                  height: 746px;
+                  z-index: 999995;
+                }
+              }
             }
           }
         }
@@ -459,17 +559,18 @@ nav, .footer{
       .year-span{
         h6{
           position: relative;
-          left: -376px;
-          top: -674px;
+          left: -441px;
+          top: -853px;
           transform-origin: center;
           transform: rotateX(51deg) rotateY(0deg) rotateZ(-42deg);
           float: right;
           font-family: inherit;
           font-weight: 700;
           font-style: normal;
-          font-size: 130%;
+          font-size: 140%;
           text-align: center;
           z-index: 1;
+          color: #009887;
           color: $brand-primary-green;
         }
       }
@@ -504,24 +605,24 @@ nav, .footer{
               transform: scale(1.1) translateY(-5px);
             }
             &:nth-child(1){
-              left: -24px;
-              top: -990px;
+              left: -8px;
+              top: -1182px;
             }
             &:nth-child(2){
-              left: -46px;
-              top: -978px;
+              left: -20px;
+              top: -1172px;
             }
             &:nth-child(3){
-              left: -70px;
-              top: -964px;
+              left: -30px;
+              top: -1156px;
             }
             &:nth-child(4){
-              left: -98px;
-              top: -952px;
+              left: -43px;
+              top: -1145px;
             }
             &:nth-child(5){
-              left: 25px;
-              top: -680px;
+              left: 122px;
+              top: -822px;
             }
           }
         }
@@ -554,7 +655,7 @@ nav, .footer{
       background-color: $brand-primary-green;
       .tablePannel{
         width: 0px;
-        height: 720px;
+        height: 746px;
         top: 0px;
         right: 0px;
         float: right;
@@ -613,12 +714,12 @@ nav, .footer{
           }
           75%{
             // 5% of parent is 100% in current context, 75% is sibling size therefore 100% * (15 + 1) will be the size to cover
-            width: 1600%;
+            width: 1680%;
             border-radius: 0% 0% 0% 0%;
             background-color: $brand-primary-green;
           }
           100%{
-            width: 1600%;
+            width: 1680%;
             border-radius: 0% 0% 0% 0%;
             background-color: white;
           }
@@ -630,7 +731,7 @@ nav, .footer{
             background-color: $brand-primary-green;
           }
           0%{
-            width: 1600%;
+            width: 1680%;
             border-radius: 0% 0% 0% 0%;
             background-color:white;
           }
@@ -641,7 +742,7 @@ nav, .footer{
             background-color:white;
           }
           0%{
-            width: 1600%;
+            width: 1680%;
             background-color:white;
           }
         }
@@ -651,7 +752,7 @@ nav, .footer{
             background-color:white;
           }
           100%{
-            width: 1600%;
+            width: 1680%;
             background-color:white;
           }
         }
@@ -688,8 +789,8 @@ nav, .footer{
             padding-bottom: 15px;
             overflow: auto;
             scroll-behavior: smooth;
-            max-height: 573px;
-            min-height: 573px;
+            max-height: 599px;
+            min-height: 599px;
             font-size: 80%;
             .dataTables_filter{
               display: none;
@@ -720,9 +821,9 @@ nav, .footer{
                 width: 190px;
               }
               .pStage{
-                min-width: 58px;
-                max-width: 58px;
-                width: 58px;
+                min-width: 74px;
+                max-width: 74px;
+                width: 74px;
               }
               .pInfrastructure{
                 min-width: 80px;
@@ -978,4 +1079,9 @@ nav, .footer{
       }
     }
   }
+}
+
+table.dataTable tbody tr:hover td{
+  background-color: #e5f5f3;
+  color: #2f9887;
 }

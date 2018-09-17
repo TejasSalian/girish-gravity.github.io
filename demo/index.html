@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>new DilGP</title>
+    <title>Infrastructure Pipeline</title>
   </head>
   <body>
 
@@ -26,7 +26,7 @@
     </nav>
 
     <div class="container dilgp-animation-canvas">
-      <div class="row explore d-none">
+      <div class="row explore d-flex">
         <div class="col-12">
           <h1>State Infrastructure Plan</h1>
           <h2>Welcome to the interactive Queensland Infrastructure Pipeline</h2>
@@ -46,7 +46,7 @@
       </div>
       <div class="row intro d-none">
         <header class="col-12 text-right">
-          <button type="button" class="btn btn-outline-info skip">Skip <i class="fas fa-angle-double-right"></i></button>
+          <button type="button" class="btn btn-info btn-skip skip">View Dashboard <i class="fas fa-angle-double-right"></i></button>
         </header>
         <div class="col-12">
           <object type="image/svg+xml" data="assets/images/introduction-infographics.svg"></object>
@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <div class="row intractive-portal d-flex">
+      <div class="row intractive-portal d-none">
         <aside>
           <div class="col-12 asset-class">
             <div class="row">
@@ -135,7 +135,7 @@
           <div class="col-12 regions">
             <div class="row">
               <header class="col-12">
-                <h5>Regions</h5>
+                <h5>Regions <br><small>(As per SIP Part B Regions)</small></h5>
                 <span id="clear-regions-filter" class="d-none"><i class="far fa-trash-alt"></i></span>
               </header>
               <div class="col-12">
@@ -189,6 +189,7 @@
             <h3>State Infrastructure Plan Part B<br>State Infrastructure Pipeline</h3>
             <div class="actions">
               <div class="col-6">
+                <button class="pipeline-overview" type="button" name="button">Pipeline Overview</button>
                 <button class="help" type="button" name="button">Help</button>
               </div>
               <div class="col-6">
@@ -245,8 +246,9 @@
               <li>Business<br>Case</li>
               <li class="filter-board" filter-as="planning">
                 <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Infrastructure initiatives go through four planning phases the initial concept, the strategic assessment of service requirement, the preliminary evaluation, and the business case (or equivalent). Some strategic initiatives, such as corridor preservation programs, might proceed straight to an investment decision.">Planning</span>
+                <!-- <div class="board-animator"></div> -->
               </li>
-              <li class="filter-board">
+              <li class="filter-board inactive">
                 <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Infrastructure initiatives are decided upon using a number of principles (i.e. strategic, economic and financial, deliverability, social and AND environment). Investment decisions are made through existing government decisions and initiatives may be approved to commence in any of the next four years.">Investment<br>Decision</span>
               </li>
               <li class="filter-board" filter-as="delivery">
@@ -259,11 +261,11 @@
           </div>
           <div class="baloons">
             <ul>
-              <li> <strong>60</strong><div>proposals</div> </li>
-              <li> <strong>51</strong><div>proposals</div> </li>
-              <li> <strong>79</strong><div>proposals</div> </li>
-              <li> <strong>12</strong><div>proposals</div> </li>
-              <li> <strong>36</strong><div>proposals</div> </li>
+              <li> <strong>...</strong><div>proposals</div> </li>
+              <li> <strong>...</strong><div>proposals</div> </li>
+              <li> <strong>...</strong><div>proposals</div> </li>
+              <li> <strong>...</strong><div>proposals</div> </li>
+              <li> <strong>...</strong><div>proposals</div> </li>
             </ul>
           </div>
         </div>
@@ -294,7 +296,7 @@
                 </div>
               </div>
               <div class="col-12 tableView">
-                <table id="projects" class="fadeIn animated table table-striped table-bordered">
+                <table id="projects" class="fadeIn animated table table-borderless">
                   <thead>
                     <tr>
                       <th rowspan="2" colspan="1">Project</th>
@@ -526,7 +528,7 @@
 
     <footer class="footer container-fluid brand-secondary-blue-light">
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <div class="col-12">
               <img src="assets/images/footer.png" alt="">

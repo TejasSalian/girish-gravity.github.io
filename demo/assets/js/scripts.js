@@ -6,6 +6,7 @@ var projectObject, // Project (Table) jQuery Object
   projectTableOptions, // Project DataTable Default Settings
   assetFilter, // Array of filters for assets
   regionsFilter, // Array of filters for regions
+  boardFilter, // String represent board filter
   yearSelector, // Points to the Select Node
   isDetailView, // Whether details view is open or not
   currentUrls, // DataUrls
@@ -18,6 +19,7 @@ projectObject = $('#projects');
 isDetailView = false;
 assetFilter = '';
 regionsFilter = '';
+boardFilter != '';
 projectTableOptions = {
   "paging": false,
   "autoWidth": false,
@@ -119,7 +121,8 @@ activeDataObject = {
 var populateTable = function(targetedYear) {
   $.when(
     refreshDataObject(targetedYear),
-    flashRows()
+    flashRows(),
+    flashBaloons()
   ).then(function () {
       buildTable();
   });
@@ -136,7 +139,7 @@ function flashRows() {
     // Project
     htmlRowTemplate += '<td class="pProjects" project-id="' + project.ProjectId + '">' + project.Project + '</td>';
     // Stage
-    htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '">' + project.SubStage + '</td>';
+    htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '" data-search="' + project.Stage + ' ' + project.SubStage + '">' + project.SubStage + '</td>';
     // Infrastructure Class
     htmlRowTemplate += '<td class="pInfrastructure">' + project.AssetClass + '</td>';
     // Agency
@@ -197,7 +200,7 @@ function formatCurrency(value) {
 function closeTablePanel() {
   $('.tablePannelContent').fadeOut(100).addClass('d-none');
   $('.tablePannel').toggleClass('white')
-                   .css({ width: '1600%' })
+                   .css({ width: '1680%' })
                    .removeClass('animation-forward')
                    .addClass('animation-backward');
   setTimeout(function() {
@@ -218,7 +221,7 @@ function panelMaximize() {
   let detailsPanel = $('.detailsPanel');
   $('#seachProjectDataTable').attr('placeholder', 'Search Projects by Name');
   $.when(
-    tablePannel.css({'width' : '1600%', 'z-index' : '20', 'position' : 'relative'})
+    tablePannel.css({'width' : '1680%', 'z-index' : '20', 'position' : 'relative'})
   ).then(function() {
     tablePannel.removeClass('animation-forward')
                .addClass('animation-maximize');
@@ -254,12 +257,12 @@ function panelMinimize() {
   detailsPanel.addClass('d-none');
   setTimeout(function () {
     tablePannelContent.removeAttr('style');
-    tablePannel.css({'width' : '1600%', 'z-index' : '20', 'position' : 'relative'})
+    tablePannel.css({'width' : '1680%', 'z-index' : '20', 'position' : 'relative'})
                .removeClass('animation-minimize playing')
                .addClass('animation-forward');
   }, 650);
   setTimeout(function () {
-    tablePannel.removeAttr('style').css({'width' : '1600%', 'background-color': 'white'});
+    tablePannel.removeAttr('style').css({'width' : '1680%', 'background-color': 'white'});
     projectsHead.removeAttr('style');
   }, 700);
   minimizeBtn.addClass('d-none');
@@ -341,6 +344,120 @@ function loadPlanningProjectView(projectObject) {
   $('.planningPanel .infrastructureClass .pipeline-source h6').html(pipelineSource);
   $('.planningPanel .infrastructureClass .agency h6').text(projectObject.LeadAgency);
 }
+
+// Load project count on ballons
+function flashBaloons() {
+  // Select Planning Stage Project and Make them Object
+  let planning = activeDataObject.ProjectMetaData.filter(function(p){
+    return p.Stage.toLowerCase() === String('PLANNING').toLowerCase();
+  });
+  planning = JSON.stringify(planning);
+  planning = JSON.parse(planning);
+
+  // Select Delivary Stage Project and Make them Object
+  let delivery = activeDataObject.ProjectMetaData.filter(function(p){
+    return p.Stage.toLowerCase() === String('DELIVERY').toLowerCase();
+  });
+  delivery = JSON.stringify(delivery);
+  delivery = JSON.parse(delivery);
+
+  // Split up each filters
+  let filterAssetArray = assetFilter.split('|');
+  let filterRegionsArray = regionsFilter.split('|');
+
+  let fiteredItemsPlanning = [];
+  let fiteredItemsDelivery = [];
+
+  // if either of the filter is active
+  if (assetFilter.length != 0 || regionsFilter.length != 0) {
+
+    // Non empty Asset Filter then Apply both or skip region filter on empty
+    if (assetFilter.length != 0) {
+      fiteredItemsPlanning = [];
+      fiteredItemsDelivery = [];
+      $.each(filterAssetArray, function(key, item) {
+        // Find Selected items from Planning
+        Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
+          return p.AssetClass.toLowerCase() === item.toLowerCase(); })
+        );
+        // Find Selected items from Delivery
+        Array.prototype.push.apply(fiteredItemsDelivery, delivery.filter(function(p){
+          return p.AssetClass.toLowerCase() === item.toLowerCase(); })
+        );
+
+      });
+
+      // Non empty region filter -> apply region filter on top of Asset filter result
+      if (regionsFilter.length != 0) {
+        //  Convert to Object for filtering
+        let fiteredItemsPlanningObj = JSON.stringify(fiteredItemsPlanning);
+        fiteredItemsPlanningObj = JSON.parse(fiteredItemsPlanningObj);
+
+        let fiteredItemsDeliveryObj = JSON.stringify(fiteredItemsDelivery);
+        fiteredItemsDeliveryObj = JSON.parse(fiteredItemsDeliveryObj);
+
+        let regionFilterPlanningItems = [];
+        let regionFilterDeliveryItems = [];
+        $.each(filterRegionsArray, function(key, item) {
+          Array.prototype.push.apply(regionFilterPlanningItems, fiteredItemsPlanningObj.filter(function(p){
+            return p.Region.toLowerCase() === item.toLowerCase(); })
+          );
+          Array.prototype.push.apply(regionFilterDeliveryItems, fiteredItemsPlanningObj.filter(function(p){
+            return p.Region.toLowerCase() === item.toLowerCase(); })
+          );
+
+        });
+        fiteredItemsPlanning = regionFilterPlanningItems;
+        fiteredItemsDelivery = regionFilterDeliveryItems;
+      }
+
+    }else if (regionsFilter.length != 0) {
+      // we have an empty Asset filter and on empty Region Filter
+      fiteredItemsPlanning = [];
+      fiteredItemsDelivery = [];
+      $.each(filterRegionsArray, function(key, item) {
+        Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
+          return p.Region.toLowerCase() === item.toLowerCase(); })
+        );
+        Array.prototype.push.apply(fiteredItemsDelivery, planning.filter(function(p){
+          return p.Region.toLowerCase() === item.toLowerCase(); })
+        );
+      });
+    }
+
+    // filtering is done prepare for Counting -> Make them objects
+    fiteredItemsPlanning = JSON.stringify(fiteredItemsPlanning);
+    fiteredItemsPlanning = JSON.parse(fiteredItemsPlanning);
+    fiteredItemsDelivery = JSON.stringify(fiteredItemsDelivery);
+    fiteredItemsDelivery = JSON.parse(fiteredItemsDelivery);
+
+  }else{
+    fiteredItemsPlanning = planning;
+    fiteredItemsDelivery = delivery;
+  }
+
+  // Let Counting Begin
+  let concept     = fiteredItemsPlanning.filter(function(p){
+    return p.SubStage.toLowerCase() === String('Concept').toLowerCase();
+  });
+  let strategic   = fiteredItemsPlanning.filter(function(p){
+    return p.SubStage.toLowerCase() === String('Strategic Assessment').toLowerCase();
+  });
+  let preliminary = fiteredItemsPlanning.filter(function(p){
+    return p.SubStage.toLowerCase() === String('Preliminary Evaluation').toLowerCase();
+  });
+  let business    = fiteredItemsPlanning.filter(function(p){
+    return p.SubStage.toLowerCase() === String('Business Case').toLowerCase();
+  });
+
+  // flash count to ballons
+  $('.baloons > ul > li:nth-child(1) > strong').text(concept.length);
+  $('.baloons > ul > li:nth-child(2) > strong').text(strategic.length);
+  $('.baloons > ul > li:nth-child(3) > strong').text(preliminary.length);
+  $('.baloons > ul > li:nth-child(4) > strong').text(business.length);
+  $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
+}
+
 /***--------------------------------------- Events ----------------------------------------***/
 
 // Click on Explore btn
@@ -356,7 +473,7 @@ document.getElementById('CubeAnim')
   .addEventListener('ended', CubeAnimFinished, false);
 function CubeAnimFinished() {
   $('.video').removeClass('d-flex').addClass('d-none');
-  $('.intro').removeClass('d-none').addClass('d-flex');
+  $('.intractive-portal').removeClass('d-none').addClass('d-flex');
 }
 
 // go-back from intro
@@ -370,6 +487,12 @@ $('.go-back').on('click', function() {
 $('.go-forward, .skip').on('click', function() {
   $('.intro').removeClass('d-flex').addClass('d-none');
   $('.intractive-portal').removeClass('d-none').addClass('d-flex');
+});
+
+// go overview from intractive view
+$('.pipeline-overview').on('click', function() {
+  $('.intractive-portal').removeClass('d-flex').addClass('d-none');
+  $('.intro').removeClass('d-none').addClass('d-flex');
 });
 
 // Assets filters click event
@@ -416,6 +539,7 @@ $('.asset-class .filters').on('click', function() {
   }
   if (projectDataTable) {
     projectDataTable.column(2).search(assetFilter, true, false).draw();
+    flashBaloons();
   }
 });
 
@@ -462,6 +586,7 @@ $('.regions .filters').on('click', function() {
   }
   if (projectDataTable) {
     projectDataTable.column(4).search(regionsFilter, true, false).draw();
+    flashBaloons();
   }
 });
 
@@ -471,6 +596,7 @@ $('#clear-assets-filter').on('click', function() {
   $(this).addClass('d-none');
   assetFilter = '';
   projectDataTable.column(2).search('', true, false).draw();
+  flashBaloons();
 });
 
 // Clear Region filters click event
@@ -479,6 +605,7 @@ $('#clear-regions-filter').on('click', function() {
   $(this).addClass('d-none');
   regionsFilter = '';
   projectDataTable.column(4).search('', true, false).draw();
+  flashBaloons();
 });
 
 // Search Table dataTables
@@ -512,6 +639,11 @@ $('.project-details-btn').on('click', function() {
       if (regionsFilter != '') {
         projectDataTable.column(4).search(regionsFilter, true, false).draw();
       }
+      if (boardFilter != '') {
+        projectDataTable.columns(1).search(boardFilter, true, false).draw();
+      }else{
+        projectDataTable.columns(1).search('', true, false).draw();
+      }
     }
   }, 1400);
 });
@@ -523,6 +655,7 @@ $('.tablePannel-minimize').on('click', function(){
 
 // Close projectTable Button click event
 $('.tablePannel-close').on('click', function() {
+  boardFilter = '';
   if (!isDetailView) {
     closeTablePanel();
   }else {
@@ -559,6 +692,16 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
         showProjectDetails(projectID);
       });
     }
+  }
+});
+
+// Filter Board Click events
+$('.filter-board').not('.inactive').on('click', function() {
+  $('.project-details-btn').trigger('click');
+  if ($(this).attr('filter-as') == 'planning') {
+    boardFilter = 'planning';
+  }else if($(this).attr('filter-as') == 'delivery'){
+    boardFilter = 'delivery';
   }
 });
 

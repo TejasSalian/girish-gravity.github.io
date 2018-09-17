@@ -5,6 +5,9 @@
 .brand-secondary-blue {
   background-color: #072e4c; }
 
+.brand-secondary-blue-light {
+  background-color: #0e5fcb; }
+
 nav img, .footer img {
   width: calc(100% + 30px);
   margin-left: -15px; }
@@ -268,11 +271,11 @@ nav img, .footer img {
         width: 356px;
         position: relative;
         margin-top: -260px;
-        top: 440px;
+        top: 422px;
         float: right;
         background-color: white;
         display: block;
-        z-index: 1;
+        z-index: 2;
         border-radius: 2px;
         box-shadow: 0 0 6px #a5b8b7;
         padding: 15px; }
@@ -296,7 +299,7 @@ nav img, .footer img {
         width: calc( 100% + 30px );
         position: relative;
         left: -15px;
-        top: 240px;
+        top: 224px;
         z-index: 0; }
       .dilgp-animation-canvas .intractive-portal .intractive-canvas .year-anim {
         position: relative;
@@ -320,36 +323,36 @@ nav img, .footer img {
             text-transform: capitalize;
             display: inline-block; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(1) {
-              top: 12px;
+              top: -3px;
               left: 0.3%; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(2) {
               left: 3.3%;
-              top: 30px;
+              top: 15px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(3) {
               left: 5%;
-              top: 41px;
+              top: 26px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(4) {
               left: 8%;
-              top: 52px;
+              top: 37px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(5) {
               font-size: 114%;
               text-transform: uppercase;
-              top: -14px;
-              left: 10.5%;
+              top: -29px;
+              left: 10.6%;
               cursor: pointer; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(6) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 258px;
-              left: -37.9%;
+              top: 242px;
+              left: -37.8%;
               cursor: pointer; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(7) {
               font-size: 114%;
               text-transform: uppercase;
-              top: 293px;
+              top: 278px;
               left: -0.4%;
               cursor: pointer; }
       .dilgp-animation-canvas .intractive-portal .intractive-canvas .year-span h6 {
@@ -394,19 +397,19 @@ nav img, .footer img {
             transform: scale(1.1) translateY(-5px); }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:nth-child(1) {
             left: -24px;
-            top: -970px; }
+            top: -990px; }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:nth-child(2) {
             left: -46px;
-            top: -956px; }
+            top: -978px; }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:nth-child(3) {
             left: -70px;
-            top: -944px; }
+            top: -964px; }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:nth-child(4) {
             left: -98px;
-            top: -934px; }
+            top: -952px; }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:nth-child(5) {
             left: 25px;
-            top: -658px; }
+            top: -680px; }
     .dilgp-animation-canvas .intractive-portal .project-details-btn {
       display: flex;
       flex: 0 0 5%;
@@ -437,7 +440,7 @@ nav img, .footer img {
         right: 0px;
         float: right;
         position: relative;
-        z-index: 1;
+        z-index: 3;
         display: flex;
         overflow: hidden;
         background-color: #009887; }
@@ -502,11 +505,9 @@ nav img, .footer img {
 @keyframes maximizeTablePanel {
   100% {
     width: 2000%;
-    border-radius: 100% 0% 0% 100%;
     background-color: white; }
   0% {
     width: 1600%;
-    border-radius: 0% 0% 0% 0%;
     background-color: white; } }
 @keyframes minimizeTablePanel {
   0% {

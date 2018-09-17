@@ -220,12 +220,6 @@ function openProjectPanel(bubble) {
   slideIndex = 2;
   click = true;
   if (click) {
-
-    $('#dataTable').removeClass('d-none');
-    setTimeout(function () {
-      $('#dataTable').addClass('fadeIn');
-    }, 500);
-
     $(".innerProjectPanel").show();
       $(".projectListDiv").show();
 
@@ -263,7 +257,6 @@ function openProposalPanel(bubble) {
   // console.log(stageValue);
   click = true;
   if (click) {
-
     $(".innerProjectPanel").show();
     $(".projectListDiv").show();
 
@@ -299,10 +292,6 @@ $(function() {
   $(".projects").click(function() {
     // debugger
     if (click) {
-      $('#dataTable').removeClass('d-none');
-      setTimeout(function () {
-        $('#dataTable').addClass('fadeIn');
-      }, 500);
 
       $(".innerProjectPanel").show();
       $(".projectListDiv").show();
@@ -335,9 +324,6 @@ $(function() {
   $(".closeProject").click(function() {
     slideIndex = 1;
     if (!click) {
-
-      $('#dataTable').removeClass('fadeIn').addClass('d-none');
-
 
       $("#projectPanel").css('width', function() {
         return $(this).offset().width;
@@ -452,27 +438,6 @@ function getStageCount(currentTag) {
       }
     }
   }
-  // switch(currentTag.children(".stagelst").text().toUpperCase()){
-  //     case 'Concept'.toUpperCase():
-  //         conceptCount +=1;
-  //         break;
-  //     case 'Strategic Assessment'.toUpperCase():
-  //         strategicCount +=1;
-  //         break;
-  //     case 'Preliminary Evaluation'.toUpperCase():
-  //         preliminaryCount +=1;
-  //         break;
-  //     case 'Business Case'.toUpperCase():
-  //         businessCount +=1;
-  //         break;
-  //     case 'Investment Decision'.toUpperCase():
-  //         investmentCount +=1;
-  //         break;
-  //     case 'Delivery'.toUpperCase():
-  //         deliveryCount +=1;
-  //         break;
-  // }// switch
-  // }
 }
 
 //////////////////////////// FILTER TEXT ///////////////////////////////

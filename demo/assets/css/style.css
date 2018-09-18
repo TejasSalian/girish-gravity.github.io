@@ -28,8 +28,9 @@
       max-width: 1256px; } }
 
 nav img, .footer img {
-  width: calc(100% + 30px);
-  margin-left: -15px; }
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  margin-bottom: -2px; }
 
 .dilgp-animation-canvas {
   min-height: 746px;

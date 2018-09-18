@@ -23,6 +23,8 @@ boardFilter != '';
 projectTableOptions = {
   "paging": false,
   "autoWidth": false,
+  "dom": 'Bfrtip',
+  "buttons": ['copy', 'csv', 'excel', 'pdf', 'print'],
   "search": {
     regex: true
   },

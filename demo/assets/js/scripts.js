@@ -7,6 +7,7 @@ var projectObject, // Project (Table) jQuery Object
   assetFilter, // Array of filters for assets
   regionsFilter, // Array of filters for regions
   boardFilter, // String represent board filter
+  stageSelection, // ProjectStage filtered Indicator
   yearSelector, // Points to the Select Node
   isDetailView, // Whether details view is open or not
   currentUrls, // DataUrls
@@ -20,11 +21,21 @@ isDetailView = false;
 assetFilter = '';
 regionsFilter = '';
 boardFilter != '';
+stageSelection = 0;
 projectTableOptions = {
   "paging": false,
   "autoWidth": false,
-  "dom": 'Bfrtip',
-  "buttons": ['copy', 'csv', 'excel', 'pdf', 'print'],
+  "info": true,
+  "scrollY" : "475px",
+  "scrollX" : true,
+  "scrollCollapse" : true,
+  "dom": '<"d-none"i>rt<"clear">',
+  "drawCallback": function( settings ) {
+    $('#summary_info').text($.fn.DataTable.settings[0].aanFeatures.i[0].outerText);
+  },
+  // "fixedHeader": true,
+  // "dom": 'Bfrtip',
+  // "buttons": ['copy', 'csv', 'excel', 'pdf', 'print'],
   "search": {
     regex: true
   },
@@ -629,6 +640,21 @@ $('.project-details-btn').on('click', function() {
   $('.project-details-btn').addClass('d-none');
   $('.project-details').removeClass('d-none');
   $('.tablePannel').removeClass('animation-backward').addClass('animation-forward playing');
+  let projectsHead = 'Projects / Proposals';
+  switch (stageSelection) {
+    case 1:
+      projectsHead = 'Projects';
+      $('#planHead span').text('Projects');
+      break;
+    case -1:
+      projectsHead = 'Proposals';
+      $('#planHead span').text('Proposals');
+      break;
+    default:
+      projectsHead = 'Projects / Proposals';
+      $('#planHead span').text('Projects & Proposals');
+  }
+  $('th.projectsHead').text(projectsHead);
   setTimeout(function() {
     $('.tablePannelContent').removeClass('d-none');
   }, 1300);
@@ -657,19 +683,23 @@ $('.tablePannel-minimize').on('click', function(){
 
 // Close projectTable Button click event
 $('.tablePannel-close').on('click', function() {
-  boardFilter = '';
   if (!isDetailView) {
     closeTablePanel();
   }else {
     returnDetailedView();
     closeTablePanel();
   }
+  boardFilter = '';
+  stageSelection = 0;
+  $('#seachProjectDataTable').val('');
+  projectDataTable.search('').draw();
 });
 
 // Row Selector
 $('#projects tbody').on('click', 'tr[role=row]', function() {
   // If projectDataTable is Initialized and Table is minimized
-  if (projectDataTable) {
+  // Click event need to be disbaled for now
+  if (projectDataTable && false) {
     let rowObject = $(this);
     let projectID;
     if ( rowObject.hasClass('active') ) {
@@ -699,12 +729,21 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
 
 // Filter Board Click events
 $('.filter-board').not('.inactive').on('click', function() {
-  $('.project-details-btn').trigger('click');
   if ($(this).attr('filter-as') == 'planning') {
     boardFilter = 'planning';
+    stageSelection = -1;
   }else if($(this).attr('filter-as') == 'delivery'){
     boardFilter = 'delivery';
+    stageSelection = 1;
   }
+  $('.project-details-btn').trigger('click');
+});
+
+// Baloon filter Events
+$('.baloons li').on('click', function () {
+  stageSelection = -1;
+  $('.project-details-btn').trigger('click');
+  boardFilter = $(this).attr('filter-as');
 });
 
 /***------------------------------ On Page Ready Preparations ------------------------------***/

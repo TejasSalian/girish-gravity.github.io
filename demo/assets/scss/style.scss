@@ -3,6 +3,9 @@ $brand-primary-blue: #064ca2;
 $brand-secondary-blue: #072e4c;
 $brand-secondary-blue-light: #0e5fcb;
 
+$dsdmip-primary: #79ba00;
+$dsdmip-secondary: #222222;
+
 $brand-primary-green: #009887;
 $brand-secondary-green: #009d8c;
 $brand-green-light: #f4fbfb;
@@ -19,11 +22,33 @@ $intractive-canvas-width: 85%;
   background-color: $brand-primary-blue;
 }
 
+.dsdmip-primary{
+  background-color: $dsdmip-primary;
+}
+.dsdmip-footer{
+  background-color: $dsdmip-primary;
+  background-size: 100% 100%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAGWCAIAAAA2Y36RAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAF+mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDE4LTA5LTE3VDExOjA4OjM5KzA1OjMwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxOC0wOS0xOFQxMDo1NjowNSswNTozMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxOC0wOS0xOFQxMDo1NjowNSswNTozMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDplZDQ4OTUxZS05ZTU2LTgyNDYtOWI2Yy1kMWYxM2Q0YWRiNWQiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpkZjllNDdjYi0yM2MwLTA5NDAtYjQ2ZS0yNmZmMWY1ZjNiNjIiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDY3MDU4My00MGFhLThmNDgtYmZlZi04ZWZmZWIwNTY5MGYiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjFkNjcwNTgzLTQwYWEtOGY0OC1iZmVmLThlZmZlYjA1NjkwZiIgc3RFdnQ6d2hlbj0iMjAxOC0wOS0xN1QxMTowODozOSswNTozMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDplZDQ4OTUxZS05ZTU2LTgyNDYtOWI2Yy1kMWYxM2Q0YWRiNWQiIHN0RXZ0OndoZW49IjIwMTgtMDktMThUMTA6NTY6MDUrMDU6MzAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz69245eAAAAHElEQVQ4jWOo3MXAMIpH8SimL1ZSUhrFo3i4YgBDuVOabOyjtAAAAABJRU5ErkJggg==);
+}
+
 .brand-secondary-blue{
   background-color: $brand-secondary-blue;
 }
+
 .brand-secondary-blue-light{
   background-color: $brand-secondary-blue-light;
+}
+
+@font-face {
+	font-family: 'helvetica_alt';
+	src: url('../webfonts/helvetica.eot');
+	src: local('☺'), url('../webfonts/helvetica.woff') format('woff'), url('../webfonts/helvetica.ttf') format('truetype'), url('../webfonts/helvetica.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+  // font-family: 'helvetica_alt', Arial, Helvetica, sans-serif;
 }
 
 .container{
@@ -48,9 +73,8 @@ $intractive-canvas-width: 85%;
 
 nav, .footer{
   img{
-    width: calc(100% + 60px);
-    margin-left: -30px;
-    margin-bottom: -2px;
+    width: calc(100% + 30px);
+    margin-left: -15px;
   }
 }
 .dilgp-animation-canvas{
@@ -59,7 +83,7 @@ nav, .footer{
   .explore{
     h1{
       color: $brand-primary-magenta;
-      margin-top: 15vh;
+      margin-top: 8vh;
       font-size: 300%;
       font-weight: 500;
       text-align: center;
@@ -70,7 +94,7 @@ nav, .footer{
       margin-top: 5vh;
       margin-left: auto;
       margin-right: auto;
-      font-size: 200%;
+      font-size: 220%;
       font-weight: bold;
       text-align: center;
     }
@@ -150,7 +174,7 @@ nav, .footer{
     }
     .btn-skip{
       padding: 5px 15px;
-      width: 120px;
+      width: 144px;
       border-radius: 2px;
       text-align: center;
       font-size: 85%;
@@ -162,6 +186,7 @@ nav, .footer{
       display: inline-block;
       color: white;
       box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.45098039215686275);
+      z-index: 3;
     }
     .footer-control{
       background-color: $brand-green-light;
@@ -513,7 +538,7 @@ nav, .footer{
               text-transform: uppercase;
               top: 92px;
               left: -29.5%;
-              cursor: pointer;
+              cursor: help;
             }
             &:nth-child(7) {
               font-size: 114%;
@@ -589,6 +614,8 @@ nav, .footer{
             transition: transform;
             transition-timing-function: ease-in-out;
             transition-duration: 0.25s;
+            border-radius: 100%;
+            cursor: pointer;
             strong{
               text-align: center;
               display: block;
@@ -764,10 +791,10 @@ nav, .footer{
           flex-wrap: wrap;
           header{
             background-color: white;
-            max-height: 70px;
+            max-height: 86px;
             box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2784313725490196);
             .btn{
-              margin: 10px 10px 5px 0px;
+              margin: 16px 10px 5px 0px;
               border-radius: 20px;
               padding: 3px 9px;
             }
@@ -775,23 +802,28 @@ nav, .footer{
               margin: 5px 10px 5px 0px;
               padding-top: 7px;
               font-size: 125%;
-              // text-align: center;
+              color: $brand-primary-magenta;
+              #summary_info{
+                font-size: 85%;
+                color: #00000096;
+                margin-top: 8px;
+              }
             }
           }
           #seachProjectDataTable{
             border: 0;
             border-radius: 0;
-            border-bottom: 1px solid black;
-            text-align: center;
+            border-bottom: 1px solid #d4d2d2;
+            text-align: left;
             box-shadow: 0 1px 0px #0000000f;
           }
           .tableView{
             background-color: white;
             padding-bottom: 15px;
-            overflow: auto;
-            scroll-behavior: smooth;
-            max-height: 599px;
-            min-height: 599px;
+            // overflow: auto;
+            // scroll-behavior: smooth;
+            // max-height: 599px;
+            // min-height: 599px;
             font-size: 80%;
             .dataTables_filter{
               display: none;
@@ -822,49 +854,49 @@ nav, .footer{
                 width: 190px;
               }
               .pStage{
-                min-width: 74px;
-                max-width: 74px;
-                width: 74px;
+                min-width: 126px;
+                max-width: 126px;
+                width: 126px;
               }
               .pInfrastructure{
+                min-width: 126px;
+                max-width: 126px;
+                width: 126px;
+              }
+              .pAgency{
                 min-width: 80px;
                 max-width: 80px;
                 width: 80px;
               }
-              .pAgency{
-                min-width: 64px;
-                max-width: 64px;
-                width: 64px;
-              }
               .pRegion{
-                min-width: 64px;
-                max-width: 64px;
-                width: 64px;
+                min-width: 80px;
+                max-width: 80px;
+                width: 80px;
               }
               .pTCost{
-                min-width: 70px;
-                max-width: 70px;
-                width: 70px;
+                min-width: 120px;
+                max-width: 120px;
+                width: 120px;
               }
               .pExpenditure{
-                min-width: 64px;
-                max-width: 64px;
-                width: 64px;
+                min-width: 120px;
+                max-width: 120px;
+                width: 120px;
               }
               .pFundingS1{
-                min-width: 50px;
-                max-width: 50px;
-                width: 50px;
+                min-width: 80px;
+                max-width: 80px;
+                width: 80px;
               }
               .pFundingS2{
-                min-width: 50px;
-                max-width: 50px;
-                width: 50px;
+                min-width: 80px;
+                max-width: 80px;
+                width: 80px;
               }
               .pFundingS3{
-                min-width: 50px;
-                max-width: 50px;
-                width: 50px;
+                min-width: 90px;
+                max-width: 90px;
+                width: 90px;
               }
               .pFundingS4{
                 min-width: 50px;
@@ -1085,4 +1117,12 @@ nav, .footer{
 table.dataTable tbody tr:hover td{
   background-color: #e5f5f3;
   color: #2f9887;
+}
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 1px solid #111;
+    text-align: left;
+    padding-left: 10px;
+}
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 1px solid #d7d8d8;
 }

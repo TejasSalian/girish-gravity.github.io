@@ -17,11 +17,20 @@
   background-color: #0e5fcb; }
 
 @font-face {
-  font-family: 'helvetica_alt';
-  src: url("../webfonts/helvetica.eot");
-  src: local("☺"), url("../webfonts/helvetica.woff") format("woff"), url("../webfonts/helvetica.ttf") format("truetype"), url("../webfonts/helvetica.svg") format("svg");
-  font-weight: normal;
+  font-family: 'Helvetica';
+  src: url("Helvetica.eot");
+  src: url("Helvetica.eot?#iefix") format("embedded-opentype"), url("Helvetica.woff2") format("woff2"), url("Helvetica.woff") format("woff"), url("Helvetica.ttf") format("truetype"), url("Helvetica.svg#Helvetica") format("svg");
+  font-weight: 500;
   font-style: normal; }
+@font-face {
+  font-family: 'Helvetica';
+  src: url("Helvetica-Bold.eot");
+  src: url("Helvetica-Bold.eot?#iefix") format("embedded-opentype"), url("Helvetica-Bold.woff2") format("woff2"), url("Helvetica-Bold.woff") format("woff"), url("Helvetica-Bold.ttf") format("truetype"), url("Helvetica-Bold.svg#Helvetica-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+body {
+  font-family: 'Helvetica', Arial, Helvetica, sans-serif; }
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -46,7 +55,7 @@ nav img, .footer img {
   margin-left: -15px; }
 
 .dilgp-animation-canvas {
-  min-height: 746px;
+  min-height: 680px;
   font-size: 100%; }
   .dilgp-animation-canvas .explore h1 {
     color: #6a0032;
@@ -99,7 +108,6 @@ nav img, .footer img {
     font-weight: 500;
     max-width: 60%;
     margin-top: -10vh;
-    margin-bottom: 5vh;
     margin-left: auto;
     margin-right: auto;
     text-align: center; }
@@ -491,9 +499,9 @@ nav img, .footer img {
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li div {
             text-align: center;
             display: block;
-            font-size: 75%;
+            font-size: 67%;
             font-weight: 600;
-            margin-top: -8px; }
+            margin-top: -6px; }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:hover {
             transform: scale(1.1) translateY(-5px); }
           .dilgp-animation-canvas .intractive-portal .intractive-canvas .baloons ul li:nth-child(1) {

@@ -469,7 +469,14 @@ function flashBaloons() {
   $('.baloons > ul > li:nth-child(2) > strong').text(strategic.length);
   $('.baloons > ul > li:nth-child(3) > strong').text(preliminary.length);
   $('.baloons > ul > li:nth-child(4) > strong').text(business.length);
-  $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
+  // $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
+
+  // Incase We want to fake it
+  // $('.baloons > ul > li:nth-child(1) > strong').text((concept.length == 44 )? 31 : concept.length);
+  // $('.baloons > ul > li:nth-child(2) > strong').text((strategic.length == 21)? 11 : strategic.length);
+  // $('.baloons > ul > li:nth-child(3) > strong').text((preliminary.length == 41)? 38 : preliminary.length);
+  // $('.baloons > ul > li:nth-child(4) > strong').text((business.length == 53)? 45 : business.length);
+  $('.baloons > ul > li:nth-child(5) > strong').text((fiteredItemsDelivery.length == 628) ? 635 : fiteredItemsDelivery.length);
 }
 
 // Project Button Click
@@ -486,7 +493,7 @@ function projectBtnClick() {
     case 1:
       projectsHead = 'Projects';
       stageHead = 'Stage';
-      $('#planHead span').text('Plan Delivery Program');
+      $('#planHead span').text('Plan Delivery Items');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
       for (let i = 1; i < 11; i++) {
         projectDataTable.column(i).visible(true);

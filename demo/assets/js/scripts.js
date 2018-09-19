@@ -26,7 +26,7 @@ projectTableOptions = {
   "paging": false,
   "autoWidth": false,
   "info": true,
-  "scrollY" : "475px",
+  "scrollY" : "487px",
   "scrollX" : true,
   "scrollCollapse" : true,
   "dom": '<"d-none"i>rt<"clear">',
@@ -39,10 +39,10 @@ projectTableOptions = {
   "search": {
     regex: true
   },
-  "columnDefs": [{
-    className: "projectsHead",
-    "targets": [0]
-  }],
+  "columnDefs": [
+    { className: "projectsHead", "targets": [0] },
+    { className: "stageHead", "targets": [1] },
+  ],
   "columns": [{
       className: "pProjects"
     },
@@ -156,7 +156,7 @@ function flashRows() {
     // Infrastructure Class
     htmlRowTemplate += '<td class="pInfrastructure">' + project.AssetClass + '</td>';
     // Agency
-    htmlRowTemplate += '<td class="pAgency">' + 'N/A' + '</td>';
+    htmlRowTemplate += '<td class="pAgency">' + project.LeadAgency + '</td>';
     // Region
     htmlRowTemplate += '<td class="pRegion">' + project.Region + '</td>';
     // Total estimated cost
@@ -297,37 +297,37 @@ function showProjectDetails(projectID) {
   let targetedProject = activeDataObject.ProjectDetailedData[String(projectID)];
   switch (targetedProject.CurrentStage) {
     case 'DELIVERY':
-      loadDelivaryProjectView(targetedProject);
+      loadDeliveryProjectView(targetedProject);
       $('.planningPanel').addClass('d-none');
-      $('.delivaryPanel').removeClass('d-none');
+      $('.deliveryPanel').removeClass('d-none');
       break;
     case 'PLANNING':
       loadPlanningProjectView(targetedProject);
-      $('.delivaryPanel').addClass('d-none');
+      $('.deliveryPanel').addClass('d-none');
       $('.planningPanel').removeClass('d-none');
       break;
     default:
-      console.warn('Targeted Project is Neither on Planning nor on Delivary Stage');
+      console.warn('Targeted Project is Neither on Planning nor on Delivery Stage');
   }
 }
 
-// load Delivary View and Flash Project Details
-function loadDelivaryProjectView(projectObject) {
+// load Delivery View and Flash Project Details
+function loadDeliveryProjectView(projectObject) {
    let flatArray = '';
 
-   $('.delivaryPanel .poject-metaData > h3').text(projectObject.Header);
-   $('.delivaryPanel .poject-metaData > p').text(projectObject.TagHeader);
+   $('.deliveryPanel .poject-metaData > h3').text(projectObject.Header);
+   $('.deliveryPanel .poject-metaData > p').text(projectObject.TagHeader);
 
-   $('.delivaryPanel .statusInfo tr:nth-child(1) > td:nth-child(3)').text(projectObject.CapitalType);
-   $('.delivaryPanel .statusInfo tr:nth-child(2) > td:nth-child(3)').text(projectObject.EstmDate);
-   $('.delivaryPanel .statusInfo tr:nth-child(3) > td:nth-child(3)').text(projectObject.ReportStatusNameProject);
-   $('.delivaryPanel .statusInfo tr:nth-child(4) > td:nth-child(3)').text('Delivary -'+ projectObject.SubStage);
-   $('.delivaryPanel .statusInfo tr:nth-child(5) > td:nth-child(3)').text(projectObject.NextMileStoneName);
-   $('.delivaryPanel .statusInfo tr:nth-child(5) > td:nth-child(3)').text(projectObject.NextMileStoneStartDate);
+   $('.deliveryPanel .statusInfo tr:nth-child(1) > td:nth-child(3)').text(projectObject.CapitalType);
+   $('.deliveryPanel .statusInfo tr:nth-child(2) > td:nth-child(3)').text(projectObject.EstmDate);
+   $('.deliveryPanel .statusInfo tr:nth-child(3) > td:nth-child(3)').text(projectObject.ReportStatusNameProject);
+   $('.deliveryPanel .statusInfo tr:nth-child(4) > td:nth-child(3)').text('Delivery -'+ projectObject.SubStage);
+   $('.deliveryPanel .statusInfo tr:nth-child(5) > td:nth-child(3)').text(projectObject.NextMileStoneName);
+   $('.deliveryPanel .statusInfo tr:nth-child(5) > td:nth-child(3)').text(projectObject.NextMileStoneStartDate);
 
-   $('.delivaryPanel .fundingInfo tr:nth-child(1) > td:nth-child(3)').text(projectObject.Budget);
-   $('.delivaryPanel .fundingInfo tr:nth-child(2) > td:nth-child(3)').text(formatCurrency(projectObject.TotalCost));
-   $('.delivaryPanel .fundingInfo tr:nth-child(3) > td:nth-child(3)').text(formatCurrency(projectObject.PostFunding));
+   $('.deliveryPanel .fundingInfo tr:nth-child(1) > td:nth-child(3)').text(projectObject.Budget);
+   $('.deliveryPanel .fundingInfo tr:nth-child(2) > td:nth-child(3)').text(formatCurrency(projectObject.TotalCost));
+   $('.deliveryPanel .fundingInfo tr:nth-child(3) > td:nth-child(3)').text(formatCurrency(projectObject.PostFunding));
    $.each(projectObject.FundingContributors, function(key, item) {
      if (key > 0) {
        flatArray = flatArray +', '+ item;
@@ -335,11 +335,11 @@ function loadDelivaryProjectView(projectObject) {
        flatArray = item;
      }
    });
-   $('.delivaryPanel .fundingInfo tr:nth-child(4) > td:nth-child(3)').text(flatArray);
+   $('.deliveryPanel .fundingInfo tr:nth-child(4) > td:nth-child(3)').text(flatArray);
 
-   $('.delivaryPanel .regionInfo p').text(projectObject.RegionName);
-   $('.delivaryPanel .infrastructureClass .asset p').text(projectObject.AssetClass);
-   $('.delivaryPanel .infrastructureClass .agency h6').text(projectObject.LeadAgency);
+   $('.deliveryPanel .regionInfo p').text(projectObject.RegionName);
+   $('.deliveryPanel .infrastructureClass .asset p').text(projectObject.AssetClass);
+   $('.deliveryPanel .infrastructureClass .agency h6').text(projectObject.LeadAgency);
 }
 
 // load Plannning View and Flash Project Details
@@ -367,7 +367,7 @@ function flashBaloons() {
   planning = JSON.stringify(planning);
   planning = JSON.parse(planning);
 
-  // Select Delivary Stage Project and Make them Object
+  // Select Delivery Stage Project and Make them Object
   let delivery = activeDataObject.ProjectMetaData.filter(function(p){
     return p.Stage.toLowerCase() === String('DELIVERY').toLowerCase();
   });
@@ -432,7 +432,7 @@ function flashBaloons() {
         Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
           return p.Region.toLowerCase() === item.toLowerCase(); })
         );
-        Array.prototype.push.apply(fiteredItemsDelivery, planning.filter(function(p){
+        Array.prototype.push.apply(fiteredItemsDelivery, delivery.filter(function(p){
           return p.Region.toLowerCase() === item.toLowerCase(); })
         );
       });
@@ -441,6 +441,7 @@ function flashBaloons() {
     // filtering is done prepare for Counting -> Make them objects
     fiteredItemsPlanning = JSON.stringify(fiteredItemsPlanning);
     fiteredItemsPlanning = JSON.parse(fiteredItemsPlanning);
+
     fiteredItemsDelivery = JSON.stringify(fiteredItemsDelivery);
     fiteredItemsDelivery = JSON.parse(fiteredItemsDelivery);
 
@@ -640,21 +641,41 @@ $('.project-details-btn').on('click', function() {
   $('.project-details-btn').addClass('d-none');
   $('.project-details').removeClass('d-none');
   $('.tablePannel').removeClass('animation-backward').addClass('animation-forward playing');
+
+  // fixing Context - planning or projects or both
   let projectsHead = 'Projects / Proposals';
+  let stageHead = 'Stage';
   switch (stageSelection) {
     case 1:
       projectsHead = 'Projects';
-      $('#planHead span').text('Projects');
+      stageHead = 'Stage';
+      $('#planHead span').text('Delivery Projects');
+      $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
+      for (let i = 1; i < 11; i++) {
+        projectDataTable.column(i).visible(true);
+      }
       break;
     case -1:
       projectsHead = 'Proposals';
-      $('#planHead span').text('Proposals');
+      stageHead = 'Planning Stage';
+      $('#seachProjectDataTable').attr('placeholder', 'Search Proposals by Name, Infrastructure Class, Region etc');
+      $('#planHead span').text('Plan Proposals');
+      for (let i = 5; i < 11; i++) {
+        projectDataTable.column(i).visible(false);
+      }
       break;
     default:
       projectsHead = 'Projects / Proposals';
+      stageHead = 'Stage';
       $('#planHead span').text('Projects & Proposals');
+      $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
+      for (let i = 1; i < 11; i++) {
+        projectDataTable.column(i).visible(true);
+      }
   }
   $('th.projectsHead').text(projectsHead);
+  $('th.stageHead').text(stageHead);
+
   setTimeout(function() {
     $('.tablePannelContent').removeClass('d-none');
   }, 1300);
@@ -703,7 +724,7 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
     let rowObject = $(this);
     let projectID;
     if ( rowObject.hasClass('active') ) {
-      for (var i = 1; i < 11; i++) {
+      for (let i = 1; i < 11; i++) {
         projectDataTable.column(i).visible(true);
       }
       rowObject.removeClass('active');
@@ -712,7 +733,7 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
     }else {
       projectID = rowObject.find('[project-id]').attr('project-id');
       $('#projects tr.active').removeClass('active');
-      for (var i = 1; i < 11; i++) {
+      for (let i = 1; i < 11; i++) {
         projectDataTable.column(i).visible(false);
       }
       projectObject.addClass('minimized');
@@ -741,9 +762,10 @@ $('.filter-board').not('.inactive').on('click', function() {
 
 // Baloon filter Events
 $('.baloons li').on('click', function () {
-  stageSelection = -1;
-  $('.project-details-btn').trigger('click');
   boardFilter = $(this).attr('filter-as');
+  // Last Baloon is project, so handle that as well
+  stageSelection = (boardFilter === String('delivery'))? 1 : -1;
+  $('.project-details-btn').trigger('click');
 });
 
 /***------------------------------ On Page Ready Preparations ------------------------------***/

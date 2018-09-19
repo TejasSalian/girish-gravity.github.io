@@ -1,0 +1,67 @@
+
+$brand-primary-blue: #064ca2;
+$brand-secondary-blue: #072e4c;
+$brand-secondary-blue-light: #0e5fcb;
+
+$dsdmip-primary: #79ba00;
+$dsdmip-secondary: #222222;
+
+$brand-primary-green: #009887;
+$brand-secondary-green: #009d8c;
+$brand-green-light: #f4fbfb;
+
+$brand-primary-magenta: #6a0032;
+$brand-secondary-magenta: #6a0032;
+
+$brand-primary-text: #58595b;
+$brand-secondary-text: #58595b;
+
+$intractive-canvas-width: 85%;
+
+
+.tag-names{
+  ul{
+    li{
+      &:nth-child(1) {
+        top: -190px;
+        left: 1.6%;
+      }
+      &:nth-child(2) {
+        left: 5.5%;
+        top: -171px;
+        transform: scale(0.92);
+      }
+      &:nth-child(3) {
+        left: 8.5%;
+        top: -157px;
+        transform: scale(0.92);
+      }
+      &:nth-child(4) {
+        left: 10.2%;
+        top: -145px;
+        transform: scale(0.92), rotateY(90deg);
+      }
+      &:nth-child(5) {
+        font-size: 114%;
+        text-transform: uppercase;
+        top: -222px;
+        left: 15.3%;
+        cursor: pointer;
+      }
+      &:nth-child(6) {
+        font-size: 114%;
+        text-transform: uppercase;
+        top: 92px;
+        left: -31.2%;
+        cursor: help;
+      }
+      &:nth-child(7) {
+        font-size: 114%;
+        text-transform: uppercase;
+        top: 135px;
+        left: 7.1%;
+        cursor: pointer;
+      }
+    }
+  }
+}

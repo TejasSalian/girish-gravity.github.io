@@ -110,8 +110,7 @@ nav img, .footer img {
     min-width: 100%; }
   .dilgp-animation-canvas .intro header, .dilgp-animation-canvas .intro .intractive-portal aside .asset-class header, .dilgp-animation-canvas .intractive-portal aside .asset-class .intro header, .dilgp-animation-canvas .intro .intractive-portal aside .regions header, .dilgp-animation-canvas .intractive-portal aside .regions .intro header {
     width: 100%;
-    padding-top: 3vh;
-    padding-bottom: 3vh; }
+    padding-top: 3vh; }
   .dilgp-animation-canvas .intro img, .dilgp-animation-canvas .intro object {
     width: calc(100% + 30px);
     margin-left: -15px; }
@@ -122,7 +121,7 @@ nav img, .footer img {
     text-align: center;
     font-size: 85%;
     position: absolute;
-    top: 60px;
+    top: 20px;
     right: 50px;
     cursor: pointer;
     background-color: #009988;
@@ -340,11 +339,11 @@ nav img, .footer img {
             font-size: 75%;
             margin-right: 7px; }
       .dilgp-animation-canvas .intractive-portal .intractive-canvas .databox {
-        height: 250px;
+        height: 280px;
         width: 356px;
         position: relative;
-        margin-top: -260px;
-        top: 370px;
+        margin-top: -288px;
+        top: 384px;
         float: right;
         background-color: white;
         display: block;
@@ -389,7 +388,7 @@ nav img, .footer img {
             position: relative;
             text-align: center;
             font-size: 75%;
-            font-weight: 500;
+            font-weight: 700;
             line-height: 1;
             color: white;
             text-transform: capitalize;
@@ -406,26 +405,26 @@ nav img, .footer img {
               top: -157px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(4) {
-              left: 12.2%;
+              left: 11.3%;
               top: -145px;
               transform: scale(0.92); }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(5) {
               font-size: 114%;
               text-transform: uppercase;
               top: -222px;
-              left: 16.3%;
+              left: 15.3%;
               cursor: pointer; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(6) {
               font-size: 114%;
               text-transform: uppercase;
               top: 92px;
-              left: -29.5%;
+              left: -31.2%;
               cursor: help; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li:nth-child(7) {
               font-size: 114%;
               text-transform: uppercase;
               top: 135px;
-              left: 8.8%;
+              left: 7.1%;
               cursor: pointer; }
             .dilgp-animation-canvas .intractive-portal .intractive-canvas .tag-names ul li .board-animator {
               position: absolute;
@@ -678,13 +677,13 @@ nav img, .footer img {
                 max-width: 126px;
                 width: 126px; }
               .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pInfrastructure {
-                min-width: 126px;
-                max-width: 126px;
-                width: 126px; }
+                min-width: 100px;
+                max-width: 100px;
+                width: 100px; }
               .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pAgency {
-                min-width: 80px;
-                max-width: 80px;
-                width: 80px; }
+                min-width: 150px;
+                max-width: 150px;
+                width: 150px; }
               .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView #projects .pRegion {
                 min-width: 80px;
                 max-width: 80px;
@@ -716,69 +715,69 @@ nav img, .footer img {
         .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel {
           width: calc(100% - 244px);
           float: left; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .poject-metaData h5 {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .poject-metaData h5 {
             text-align: center;
             margin-top: 10px;
             color: #6a0032;
             font-size: 130%; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .poject-metaData h3 {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .poject-metaData h3 {
             text-align: center;
             color: #009887;
             font-size: 125%;
             margin-top: 14px; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .poject-metaData p {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .poject-metaData p {
             text-align: center;
             font-size: 90%;
             color: #58595b;
             margin-top: 1rem; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards {
             display: flex; }
-            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card {
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card {
               width: 48%;
               margin: 1%;
               float: left;
               padding: 0.7rem;
               box-shadow: 0 0 6px rgba(0, 0, 0, 0.231372549); }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card td {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card td {
                 font-size: 90%; }
-                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card td:nth-child(3) {
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card td:nth-child(3) {
                   font-weight: 500; }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo td:nth-child(3) {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.statusInfo td:nth-child(3) {
                 color: #6a0032; }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo tr:nth-child(3) td {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.statusInfo tr:nth-child(3) td {
                 border-bottom: 1px solid #0d0e0e26;
                 padding-bottom: 1rem; }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo tr:nth-child(1) td, .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.statusInfo tr:nth-child(4) td {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.statusInfo tr:nth-child(1) td, .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.statusInfo tr:nth-child(4) td {
                 padding-top: 1rem; }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo td {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo td {
                 padding-top: 14px;
                 padding-bottom: 14px; }
-                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo td:nth-child(1) {
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo td:nth-child(1) {
                   min-width: 186px; }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(1), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(2) {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(1), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(2) {
                 font-size: 120%; }
-                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(1) td:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(2) td:nth-child(3) {
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(1) td:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(2) td:nth-child(3) {
                   color: #6a0032; }
-              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(4) {
+              .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(4) {
                 padding: 10px; }
-                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(3) td, .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(4) td {
+                .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(3) td, .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(4) td {
                   background-color: white;
                   color: #6a0032; }
-                  .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(3) td:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .cards .card.fundingInfo tr:nth-child(4) td:nth-child(3) {
+                  .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(3) td:nth-child(3), .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .cards .card.fundingInfo tr:nth-child(4) td:nth-child(3) {
                     color: black; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .regionInfo .pointer img {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .regionInfo .pointer img {
             width: 34px;
             margin-left: -20px;
             margin-top: 4px; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .regionInfo .map img {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .regionInfo .map img {
             width: 100%;
             margin-left: 15px; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .infrastructureClass .asset p {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .infrastructureClass .asset p {
             margin-top: 1rem; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .infrastructureClass .asset strong {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .infrastructureClass .asset strong {
             margin-top: 1rem;
             display: block; }
-          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .delivaryPanel .infrastructureClass .agency {
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .deliveryPanel .infrastructureClass .agency {
             margin-top: 1.2rem; }
           .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .detailsPanel .planningPanel .poject-metaData h5 {
             text-align: center;
@@ -839,5 +838,43 @@ table.dataTable thead th, table.dataTable thead td {
 
 table.dataTable thead th, table.dataTable thead td {
   border-bottom: 1px solid #d7d8d8; }
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 700px; } }
+.modal-backdrop {
+  background-color: #cacaca; }
+
+.modal-content {
+  background-color: #009887;
+  border: none;
+  border-radius: 0rem;
+  box-shadow: 0 0 4px #00000059; }
+  .modal-content .modal-body {
+    color: white;
+    min-height: 450px; }
+    .modal-content .modal-body .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 44px;
+      height: 44px;
+      background-color: white;
+      color: #6a0032; }
+    .modal-content .modal-body h5 {
+      font-size: 100%;
+      line-height: 1.2; }
+    .modal-content .modal-body p {
+      font-size: 80%;
+      min-height: 57px; }
+    .modal-content .modal-body .align-image-center {
+      margin: 0 auto; }
+    .modal-content .modal-body .carousel-control-next-icon, .modal-content .modal-body .carousel-control-prev-icon {
+      margin-top: 100px; }
+
+.svg-ms-fix {
+  min-height: 1622px; }
+  .svg-ms-fix svg {
+    transform: scale(1.024); }
 
 /*# sourceMappingURL=style.css.map */

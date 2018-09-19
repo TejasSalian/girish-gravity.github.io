@@ -166,7 +166,7 @@ nav, .footer{
     header{
       width: 100%;
       padding-top: 3vh;
-      padding-bottom: 3vh;
+      // padding-bottom: 3vh;
     }
     img, object{
       width: calc(100% + 30px);
@@ -179,7 +179,7 @@ nav, .footer{
       text-align: center;
       font-size: 85%;
       position: absolute;
-      top: 60px;
+      top: 20px;
       right: 50px;
       cursor: pointer;
       background-color: #009988;
@@ -445,11 +445,11 @@ nav, .footer{
         }
       }
       .databox{
-        height: 250px;
+        height: 280px;
         width: 356px;
         position: relative;
-        margin-top: -260px;
-        top: 370px;
+        margin-top: -288px;
+        top: 384px;
         float: right;
         background-color: white;
         display: block;
@@ -502,7 +502,7 @@ nav, .footer{
             position: relative;
             text-align: center;
             font-size: 75%;
-            font-weight: 500;
+            font-weight: 700;
             line-height: 1;
             color: white;
             text-transform: capitalize;
@@ -522,7 +522,7 @@ nav, .footer{
               transform: scale(0.92);
             }
             &:nth-child(4) {
-              left: 12.2%;
+              left: 11.3%;
               top: -145px;
               transform: scale(0.92);
             }
@@ -530,21 +530,21 @@ nav, .footer{
               font-size: 114%;
               text-transform: uppercase;
               top: -222px;
-              left: 16.3%;
+              left: 15.3%;
               cursor: pointer;
             }
             &:nth-child(6) {
               font-size: 114%;
               text-transform: uppercase;
               top: 92px;
-              left: -29.5%;
+              left: -31.2%;
               cursor: help;
             }
             &:nth-child(7) {
               font-size: 114%;
               text-transform: uppercase;
               top: 135px;
-              left: 8.8%;
+              left: 7.1%;
               cursor: pointer;
             }
             .board-animator{
@@ -859,14 +859,14 @@ nav, .footer{
                 width: 126px;
               }
               .pInfrastructure{
-                min-width: 126px;
-                max-width: 126px;
-                width: 126px;
+                min-width: 100px;
+                max-width: 100px;
+                width: 100px;
               }
               .pAgency{
-                min-width: 80px;
-                max-width: 80px;
-                width: 80px;
+                min-width: 150px;
+                max-width: 150px;
+                width: 150px;
               }
               .pRegion{
                 min-width: 80px;
@@ -909,7 +909,7 @@ nav, .footer{
         .detailsPanel{
           width: calc(100% - 244px);
           float: left;
-          .delivaryPanel{
+          .deliveryPanel{
             .poject-metaData{
               h5{
                 text-align: center;
@@ -1125,4 +1125,52 @@ table.dataTable thead th, table.dataTable thead td {
 }
 table.dataTable thead th, table.dataTable thead td {
     border-bottom: 1px solid #d7d8d8;
+}
+
+@media (min-width: 576px){
+  .modal-dialog {
+      max-width: 700px;
+  }
+}
+.modal-backdrop {
+    background-color: #cacaca;
+}
+.modal-content {
+    background-color: $brand-primary-green;
+    border: none;
+    border-radius: 0rem;
+    box-shadow: 0 0 4px #00000059;
+    .modal-body{
+      color: white;
+      min-height: 450px;
+      .close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 44px;
+        height: 44px;
+        background-color: white;
+        color: $brand-primary-magenta;
+      }
+      h5 {
+        font-size: 100%;
+        line-height: 1.2;
+      }
+      p{
+        font-size: 80%;
+        min-height: 57px;
+      }
+      .align-image-center{
+        margin: 0 auto;
+      }
+      .carousel-control-next-icon, .carousel-control-prev-icon {
+        margin-top: 100px;
+      }
+    }
+}
+.svg-ms-fix{
+  min-height: 1622px;
+  svg{
+    transform: scale(1.024);
+  }
 }

@@ -4,6 +4,12 @@
 var projectObject, // Project (Table) jQuery Object
   projectDataTable, // Project DataTable Object
   projectTableOptions, // Project DataTable Default Settings
+  projectColumnNum, // Indicates column number of Project Column in table
+  boardColumnNum, // Indicates column number of board Column in table
+  capitalColumnNum, // Indicates column number of Capital Type Column in table
+  assetColumnNum, // Indicates column number of asset Column in table
+  regionsColumnNum, // Indicates column number of Region Column in table
+  totalColumnCount, // total columns table has
   assetFilter, // Array of filters for assets
   regionsFilter, // Array of filters for regions
   boardFilter, // String represent board filter
@@ -18,6 +24,12 @@ var projectObject, // Project (Table) jQuery Object
 yearSelector = $('#year-select');
 projectObject = $('#projects');
 isDetailView = false;
+projectColumnNum = 0;
+boardColumnNum = 1;
+capitalColumnNum = 2;
+assetColumnNum = 3;
+regionsColumnNum = 5;
+totalColumnCount = 12;
 assetFilter = '';
 regionsFilter = '';
 boardFilter != '';
@@ -40,14 +52,17 @@ projectTableOptions = {
     regex: true
   },
   "columnDefs": [
-    { className: "projectsHead", "targets": [0] },
-    { className: "stageHead", "targets": [1] },
+    { className: "projectsHead", "targets": [projectColumnNum] },
+    { className: "stageHead", "targets": [boardColumnNum] },
   ],
   "columns": [{
       className: "pProjects"
     },
     {
       className: "pStage"
+    },
+    {
+      className: "pCapital"
     },
     {
       className: "pInfrastructure"
@@ -84,6 +99,9 @@ projectTableOptions = {
       "sName": "Stage"
     },
     {
+      "sName": "pCapital"
+    },
+    {
       "sName": "Infrastructure"
     },
     {
@@ -115,13 +133,13 @@ projectTableOptions = {
 currentUrls = {
   "year2018": {
     "ProjectDetailedData": "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData",
-    "ProjectMetaData": "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData",
+    "ProjectMetaData": "assets/json/newData/ProjectMetaData.json",
     "ProjectYearlyDetailedData": "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData"
   },
-  "year2017": {
-    "ProjectDetailedData": "/assets/json/data/ProjectDetailedData.json",
-    "ProjectMetaData": "/assets/json/data/ProjectMetaData.json",
-    "ProjectYearlyDetailedData": "/assets/json/data/ProjectYearlyDetailedData.json"
+  "year2018Old": {
+    "ProjectDetailedData": "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData",
+    "ProjectMetaData": "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData",
+    "ProjectYearlyDetailedData": "https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData"
   }
 };
 activeDataObject = {
@@ -153,6 +171,8 @@ function flashRows() {
     htmlRowTemplate += '<td class="pProjects" project-id="' + project.ProjectId + '">' + project.Project + '</td>';
     // Stage
     htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '" data-search="' + project.Stage + ' ' + project.SubStage + '">' + project.SubStage + '</td>';
+    // Capital Type
+    htmlRowTemplate += '<td class="pCapital">' + project.CapitalType + '</td>';
     // Infrastructure Class
     htmlRowTemplate += '<td class="pInfrastructure">' + project.AssetClass + '</td>';
     // Agency
@@ -162,16 +182,16 @@ function flashRows() {
     // Total estimated cost
     htmlRowTemplate += '<td class="pTCost" data-order="' + project.Value + '">' + formatCurrency(project.Value) + '</td>';
     // Expenditure to June 2018
-    htmlRowTemplate += '<td class="pExpenditure">' + 'N/A' + '</td>';
+    htmlRowTemplate += '<td class="pExpenditure" data-order="' + project.TotalExpenseTillJune + '">' + millionfy(project.TotalExpenseTillJune) + '</td>';
     // Funding
     // 2018 - 19
-    htmlRowTemplate += '<td class="pFundingS1">' + 'N/A' + '</td>';
+    htmlRowTemplate += '<td class="pFundingS1" data-order="' + project.Budget1819 + '">' + millionfy(project.Budget1819) + '</td>';
     // 2019 - 20
-    htmlRowTemplate += '<td class="pFundingS2">' + 'N/A' + '</td>';
+    htmlRowTemplate += '<td class="pFundingS2" data-order="' + project.Budget1920 + '">' + millionfy(project.Budget1920) + '</td>';
     // 2020 - 21 to 2021 - 22
-    htmlRowTemplate += '<td class="pFundingS3">' + 'N/A' + '</td>';
+    htmlRowTemplate += '<td class="pFundingS3" data-order="' + project.Budget2021 + project.Budget2122 + '">' + millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) + '</td>';
     // Beyond
-    htmlRowTemplate += '<td class="pFundingS4">' + 'N/A' + '</td>';
+    htmlRowTemplate += '<td class="pFundingS4" data-order="' + project.Beyond + '">' + millionfy(project.Beyond) + '</td>';
     // End of Row
     htmlRowTemplate += '</tr>';
     // append Data
@@ -188,25 +208,46 @@ function buildTable() {
 
 // Roundoff Value to one decimal point and Format to Currency
 function formatCurrency(value) {
+  if (value) {
+    let valueRange;
+    value = Number(value);
 
-  let valueRange;
-  value = Number(value);
+    if (value >= 1000000000) {
+      value = value / 1000000000;
+      valueRange = 'B';
+    } else if (value >= 1000000) {
+      value = value / 1000000;
+      valueRange = 'M';
+    } else if (value >= 1000) {
+      value = value / 1000;
+      valueRange = 'K';
+    } else {
+      valueRange = '';
+    }
 
-  if (value >= 1000000000) {
-    value = value / 1000000000;
-    valueRange = 'B';
-  } else if (value >= 1000000) {
-    value = value / 1000000;
-    valueRange = 'M';
-  } else if (value >= 1000) {
-    value = value / 1000;
-    valueRange = 'K';
-  } else {
-    valueRange = '';
+    value = value.toFixed(2);
+    return '$' + value + valueRange;
+  }else {
+    return 'N/A';
   }
 
-  value = value.toFixed(2);
-  return '$' + value + valueRange;
+}
+
+// Just Make it Million Dollar
+function millionfy(value) {
+  if (value != '') {
+    return '$' + value + 'M';
+  }else {
+    return 'N/A';
+  }
+}
+
+function fyYearExpenseSum(fy1, fy2){
+  if (fy1 && fy2) {
+    return String( Number(fy1) + Number(fy2) );
+  }else {
+    return '';
+  }
 }
 
 // Close table panel and return to Animation
@@ -221,7 +262,8 @@ function closeTablePanel() {
     $('.project-details').addClass('d-none');
     $('.tablePannelContent').removeAttr('style');
     $('.tablePannel').removeAttr('style');
-  }, 1300);
+  }, 800);
+  // previously it was 1300
 }
 
 // Expand tablePannel for row Details
@@ -284,7 +326,7 @@ function panelMinimize() {
 
 //Return from Detailed view
 function returnDetailedView() {
-  for (var i = 1; i < 11; i++) {
+  for (let i = 1; i < totalColumnCount; i++) {
     projectDataTable.column(i).visible(true);
   }
   $('#projects tr.active').removeClass('active');
@@ -469,14 +511,14 @@ function flashBaloons() {
   $('.baloons > ul > li:nth-child(2) > strong').text(strategic.length);
   $('.baloons > ul > li:nth-child(3) > strong').text(preliminary.length);
   $('.baloons > ul > li:nth-child(4) > strong').text(business.length);
-  // $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
+  $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
 
   // Incase We want to fake it
   // $('.baloons > ul > li:nth-child(1) > strong').text((concept.length == 44 )? 31 : concept.length);
   // $('.baloons > ul > li:nth-child(2) > strong').text((strategic.length == 21)? 11 : strategic.length);
   // $('.baloons > ul > li:nth-child(3) > strong').text((preliminary.length == 41)? 38 : preliminary.length);
   // $('.baloons > ul > li:nth-child(4) > strong').text((business.length == 53)? 45 : business.length);
-  $('.baloons > ul > li:nth-child(5) > strong').text((fiteredItemsDelivery.length == 628) ? 635 : fiteredItemsDelivery.length);
+  // $('.baloons > ul > li:nth-child(5) > strong').text((fiteredItemsDelivery.length == 628) ? 635 : fiteredItemsDelivery.length);
 }
 
 // Project Button Click
@@ -495,27 +537,33 @@ function projectBtnClick() {
       stageHead = 'Stage';
       $('#planHead span').text('Plan Delivery Items');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
-      for (let i = 1; i < 11; i++) {
+      for (let i = 0; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);
       }
+      projectDataTable.column(boardColumnNum).visible(false);
+      $('.dataTables_scrollBody').css('max-height', '487px');
       break;
     case -1:
       projectsHead = 'Proposals';
       stageHead = 'Planning Stage';
       $('#seachProjectDataTable').attr('placeholder', 'Search Proposals by Name, Infrastructure Class, Region etc');
       $('#planHead span').text('Plan Proposals');
-      for (let i = 5; i < 11; i++) {
+      for (let i = regionsColumnNum + 1; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(false);
       }
+      projectDataTable.column(boardColumnNum).visible(true);
+      projectDataTable.column(capitalColumnNum).visible(false);
+      $('.dataTables_scrollBody').css('max-height', '533px');
       break;
     default:
       projectsHead = 'Projects / Proposals';
       stageHead = 'Stage';
       $('#planHead span').text('Projects & Proposals');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
-      for (let i = 1; i < 11; i++) {
+      for (let i = 1; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);
       }
+      $('.dataTables_scrollBody').css('max-height', '487px');
   }
   $('th.projectsHead').text(projectsHead);
   $('th.stageHead').text(stageHead);
@@ -527,15 +575,15 @@ function projectBtnClick() {
     buildTable();
     if (projectDataTable) {
       if (assetFilter != '') {
-        projectDataTable.column(2).search(assetFilter, true, false).draw();
+        projectDataTable.column(assetColumnNum).search(assetFilter, true, false).draw();
       }
       if (regionsFilter != '') {
-        projectDataTable.column(4).search(regionsFilter, true, false).draw();
+        projectDataTable.column(regionsColumnNum).search(regionsFilter, true, false).draw();
       }
       if (boardFilter != '') {
-        projectDataTable.columns(1).search(boardFilter, true, false).draw();
+        projectDataTable.column(boardColumnNum).search(boardFilter, true, false).draw();
       }else{
-        projectDataTable.columns(1).search('', true, false).draw();
+        projectDataTable.column(boardColumnNum).search('', true, false).draw();
       }
     }
   }, 1400);
@@ -622,7 +670,7 @@ $('.asset-class .filters').on('click', function() {
     clearAssetsBtn.addClass('d-none');
   }
   if (projectDataTable) {
-    projectDataTable.column(2).search(assetFilter, true, false).draw();
+    projectDataTable.column(assetColumnNum).search(assetFilter, true, false).draw();
     flashBaloons();
   }
 });
@@ -669,7 +717,7 @@ $('.regions .filters').on('click', function() {
     clearRegionsBtn.addClass('d-none');
   }
   if (projectDataTable) {
-    projectDataTable.column(4).search(regionsFilter, true, false).draw();
+    projectDataTable.column(regionsColumnNum).search(regionsFilter, true, false).draw();
     flashBaloons();
   }
 });
@@ -679,7 +727,7 @@ $('#clear-assets-filter').on('click', function() {
   $('.asset-class .filters').removeClass('active');
   $(this).addClass('d-none');
   assetFilter = '';
-  projectDataTable.column(2).search('', true, false).draw();
+  projectDataTable.column(assetColumnNum).search('', true, false).draw();
   flashBaloons();
 });
 
@@ -688,7 +736,7 @@ $('#clear-regions-filter').on('click', function() {
   $('.regions .filters').removeClass('active');
   $(this).addClass('d-none');
   regionsFilter = '';
-  projectDataTable.column(4).search('', true, false).draw();
+  projectDataTable.column(regionsColumnNum).search('', true, false).draw();
   flashBaloons();
 });
 
@@ -696,7 +744,7 @@ $('#clear-regions-filter').on('click', function() {
 $('#seachProjectDataTable').on('keyup', function() {
   if (projectDataTable) {
     if (isDetailView) {
-      projectDataTable.columns(0).search(this.value).draw();
+      projectDataTable.column(projectColumnNum).search(this.value).draw();
     }else{
       projectDataTable.search(this.value).draw();
     }
@@ -738,7 +786,7 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
     let rowObject = $(this);
     let projectID;
     if ( rowObject.hasClass('active') ) {
-      for (let i = 1; i < 11; i++) {
+      for (let i = 1; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);
       }
       rowObject.removeClass('active');
@@ -747,7 +795,7 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
     }else {
       projectID = rowObject.find('[project-id]').attr('project-id');
       $('#projects tr.active').removeClass('active');
-      for (let i = 1; i < 11; i++) {
+      for (let i = 1; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(false);
       }
       projectObject.addClass('minimized');

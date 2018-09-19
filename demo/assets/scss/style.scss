@@ -874,6 +874,11 @@ nav, .footer{
                 max-width: 126px;
                 width: 126px;
               }
+              .pCapital{
+                min-width: 126px;
+                max-width: 126px;
+                width: 126px;
+              }
               .pInfrastructure{
                 min-width: 100px;
                 max-width: 100px;
@@ -1141,6 +1146,9 @@ table.dataTable thead th, table.dataTable thead td {
 }
 table.dataTable thead th, table.dataTable thead td {
     border-bottom: 1px solid #d7d8d8;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody{
+  border-bottom: 0px;
 }
 
 @media (min-width: 576px){

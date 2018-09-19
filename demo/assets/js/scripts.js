@@ -472,6 +472,69 @@ function flashBaloons() {
   $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
 }
 
+// Project Button Click
+function projectBtnClick() {
+
+  $('.project-details-btn').addClass('d-none');
+  $('.project-details').removeClass('d-none');
+  $('.tablePannel').removeClass('animation-backward').addClass('animation-forward playing');
+
+  // fixing Context - planning or projects or both
+  let projectsHead = 'Projects / Proposals';
+  let stageHead = 'Stage';
+  switch (stageSelection) {
+    case 1:
+      projectsHead = 'Projects';
+      stageHead = 'Stage';
+      $('#planHead span').text('Delivery Projects');
+      $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
+      for (let i = 1; i < 11; i++) {
+        projectDataTable.column(i).visible(true);
+      }
+      break;
+    case -1:
+      projectsHead = 'Proposals';
+      stageHead = 'Planning Stage';
+      $('#seachProjectDataTable').attr('placeholder', 'Search Proposals by Name, Infrastructure Class, Region etc');
+      $('#planHead span').text('Plan Proposals');
+      for (let i = 5; i < 11; i++) {
+        projectDataTable.column(i).visible(false);
+      }
+      break;
+    default:
+      projectsHead = 'Projects / Proposals';
+      stageHead = 'Stage';
+      $('#planHead span').text('Projects & Proposals');
+      $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
+      for (let i = 1; i < 11; i++) {
+        projectDataTable.column(i).visible(true);
+      }
+  }
+  $('th.projectsHead').text(projectsHead);
+  $('th.stageHead').text(stageHead);
+
+  setTimeout(function() {
+    $('.tablePannelContent').removeClass('d-none');
+  }, 1300);
+  setTimeout(function() {
+    buildTable();
+    if (projectDataTable) {
+      if (assetFilter != '') {
+        projectDataTable.column(2).search(assetFilter, true, false).draw();
+      }
+      if (regionsFilter != '') {
+        projectDataTable.column(4).search(regionsFilter, true, false).draw();
+      }
+      if (boardFilter != '') {
+        projectDataTable.columns(1).search(boardFilter, true, false).draw();
+      }else{
+        projectDataTable.columns(1).search('', true, false).draw();
+      }
+    }
+  }, 1400);
+
+}
+
 /***--------------------------------------- Events ----------------------------------------***/
 
 // Click on Explore btn
@@ -638,63 +701,7 @@ $('#seachProjectDataTable').on('keyup', function() {
 
 // All project Button click event
 $('.project-details-btn').on('click', function() {
-  $('.project-details-btn').addClass('d-none');
-  $('.project-details').removeClass('d-none');
-  $('.tablePannel').removeClass('animation-backward').addClass('animation-forward playing');
-
-  // fixing Context - planning or projects or both
-  let projectsHead = 'Projects / Proposals';
-  let stageHead = 'Stage';
-  switch (stageSelection) {
-    case 1:
-      projectsHead = 'Projects';
-      stageHead = 'Stage';
-      $('#planHead span').text('Delivery Projects');
-      $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
-      for (let i = 1; i < 11; i++) {
-        projectDataTable.column(i).visible(true);
-      }
-      break;
-    case -1:
-      projectsHead = 'Proposals';
-      stageHead = 'Planning Stage';
-      $('#seachProjectDataTable').attr('placeholder', 'Search Proposals by Name, Infrastructure Class, Region etc');
-      $('#planHead span').text('Plan Proposals');
-      for (let i = 5; i < 11; i++) {
-        projectDataTable.column(i).visible(false);
-      }
-      break;
-    default:
-      projectsHead = 'Projects / Proposals';
-      stageHead = 'Stage';
-      $('#planHead span').text('Projects & Proposals');
-      $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
-      for (let i = 1; i < 11; i++) {
-        projectDataTable.column(i).visible(true);
-      }
-  }
-  $('th.projectsHead').text(projectsHead);
-  $('th.stageHead').text(stageHead);
-
-  setTimeout(function() {
-    $('.tablePannelContent').removeClass('d-none');
-  }, 1300);
-  setTimeout(function() {
-    buildTable();
-    if (projectDataTable) {
-      if (assetFilter != '') {
-        projectDataTable.column(2).search(assetFilter, true, false).draw();
-      }
-      if (regionsFilter != '') {
-        projectDataTable.column(4).search(regionsFilter, true, false).draw();
-      }
-      if (boardFilter != '') {
-        projectDataTable.columns(1).search(boardFilter, true, false).draw();
-      }else{
-        projectDataTable.columns(1).search('', true, false).draw();
-      }
-    }
-  }, 1400);
+  // projectBtnClick();
 });
 
 // Close projectTable minimize mode event
@@ -757,7 +764,7 @@ $('.filter-board').not('.inactive').on('click', function() {
     boardFilter = 'delivery';
     stageSelection = 1;
   }
-  $('.project-details-btn').trigger('click');
+  projectBtnClick();
 });
 
 // Baloon filter Events
@@ -765,7 +772,7 @@ $('.baloons li').on('click', function () {
   boardFilter = $(this).attr('filter-as');
   // Last Baloon is project, so handle that as well
   stageSelection = (boardFilter === String('delivery'))? 1 : -1;
-  $('.project-details-btn').trigger('click');
+  projectBtnClick();
 });
 
 /***------------------------------ On Page Ready Preparations ------------------------------***/

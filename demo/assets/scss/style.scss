@@ -42,24 +42,24 @@ $intractive-canvas-width: 85%;
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('Helvetica.eot');
-    src: url('Helvetica.eot?#iefix') format('embedded-opentype'),
-        url('Helvetica.woff2') format('woff2'),
-        url('Helvetica.woff') format('woff'),
-        url('Helvetica.ttf') format('truetype'),
-        url('Helvetica.svg#Helvetica') format('svg');
+    src: url('../webfonts/Helvetica.eot');
+    src: url('../webfonts/Helvetica.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/Helvetica.woff2') format('woff2'),
+        url('../webfonts/Helvetica.woff') format('woff'),
+        url('../webfonts/Helvetica.ttf') format('truetype'),
+        url('../webfonts/Helvetica.svg#Helvetica') format('svg');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica';
-    src: url('Helvetica-Bold.eot');
-    src: url('Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
-        url('Helvetica-Bold.woff2') format('woff2'),
-        url('Helvetica-Bold.woff') format('woff'),
-        url('Helvetica-Bold.ttf') format('truetype'),
-        url('Helvetica-Bold.svg#Helvetica-Bold') format('svg');
+    src: url('../webfonts/Helvetica-Bold.eot');
+    src: url('../webfonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../webfonts/Helvetica-Bold.woff2') format('woff2'),
+        url('../webfonts/Helvetica-Bold.woff') format('woff'),
+        url('../webfonts/Helvetica-Bold.ttf') format('truetype'),
+        url('../webfonts/Helvetica-Bold.svg#Helvetica-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -345,7 +345,6 @@ nav, .footer{
           1px solid darken($brand-primary-green, 10%);
           @extend header;
           span{
-            top: 9px;
             &:hover{
               background-color:#FFF;
               color: #000;

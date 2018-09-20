@@ -228,7 +228,7 @@ function formatCurrency(value) {
     value = value.toFixed(2);
     return '$' + value + valueRange;
   }else {
-    return 'N/A';
+    return '--';
   }
 
 }
@@ -238,7 +238,7 @@ function millionfy(value) {
   if (value != '') {
     return '$' + value + 'M';
   }else {
-    return 'N/A';
+    return '--';
   }
 }
 
@@ -535,7 +535,7 @@ function projectBtnClick() {
     case 1:
       projectsHead = 'Projects';
       stageHead = 'Stage';
-      $('#planHead span').text('Plan Delivery Items');
+      $('#planHead span').text('Plan Delivery Programs');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
       for (let i = 0; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);

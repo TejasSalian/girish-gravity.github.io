@@ -423,70 +423,78 @@ function flashBaloons() {
   let fiteredItemsPlanning = [];
   let fiteredItemsDelivery = [];
 
-  // if either of the filter is active
-  if (assetFilter.length != 0 || regionsFilter.length != 0) {
+  let allFilterSkipCounting = filterAssetArray.length == $('.asset-class .filters').length && filterRegionsArray.length == $('.regions .filters').length;
 
-    // Non empty Asset Filter then Apply both or skip region filter on empty
-    if (assetFilter.length != 0) {
-      fiteredItemsPlanning = [];
-      fiteredItemsDelivery = [];
-      $.each(filterAssetArray, function(key, item) {
-        // Find Selected items from Planning
-        Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
-          return p.AssetClass.toLowerCase() === item.toLowerCase(); })
-        );
-        // Find Selected items from Delivery
-        Array.prototype.push.apply(fiteredItemsDelivery, delivery.filter(function(p){
-          return p.AssetClass.toLowerCase() === item.toLowerCase(); })
-        );
+  if (!allFilterSkipCounting) {
 
-      });
+      // if either of the filter is active
+      if (assetFilter.length != 0 || regionsFilter.length != 0) {
 
-      // Non empty region filter -> apply region filter on top of Asset filter result
-      if (regionsFilter.length != 0) {
-        //  Convert to Object for filtering
-        let fiteredItemsPlanningObj = JSON.stringify(fiteredItemsPlanning);
-        fiteredItemsPlanningObj = JSON.parse(fiteredItemsPlanningObj);
+        // Non empty Asset Filter then Apply both or skip region filter on empty
+        if (assetFilter.length != 0) {
+          fiteredItemsPlanning = [];
+          fiteredItemsDelivery = [];
+          $.each(filterAssetArray, function(key, item) {
+            // Find Selected items from Planning
+            Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
+              return p.AssetClass.toLowerCase() === item.toLowerCase(); })
+            );
+            // Find Selected items from Delivery
+            Array.prototype.push.apply(fiteredItemsDelivery, delivery.filter(function(p){
+              return p.AssetClass.toLowerCase() === item.toLowerCase(); })
+            );
 
-        let fiteredItemsDeliveryObj = JSON.stringify(fiteredItemsDelivery);
-        fiteredItemsDeliveryObj = JSON.parse(fiteredItemsDeliveryObj);
+          });
 
-        let regionFilterPlanningItems = [];
-        let regionFilterDeliveryItems = [];
-        $.each(filterRegionsArray, function(key, item) {
-          Array.prototype.push.apply(regionFilterPlanningItems, fiteredItemsPlanningObj.filter(function(p){
-            return p.Region.toLowerCase() === item.toLowerCase(); })
-          );
-          Array.prototype.push.apply(regionFilterDeliveryItems, fiteredItemsPlanningObj.filter(function(p){
-            return p.Region.toLowerCase() === item.toLowerCase(); })
-          );
+          // Non empty region filter -> apply region filter on top of Asset filter result
+          if (regionsFilter.length != 0) {
+            //  Convert to Object for filtering
+            let fiteredItemsPlanningObj = JSON.stringify(fiteredItemsPlanning);
+            fiteredItemsPlanningObj = JSON.parse(fiteredItemsPlanningObj);
 
-        });
-        fiteredItemsPlanning = regionFilterPlanningItems;
-        fiteredItemsDelivery = regionFilterDeliveryItems;
+            let fiteredItemsDeliveryObj = JSON.stringify(fiteredItemsDelivery);
+            fiteredItemsDeliveryObj = JSON.parse(fiteredItemsDeliveryObj);
+
+            let regionFilterPlanningItems = [];
+            let regionFilterDeliveryItems = [];
+            $.each(filterRegionsArray, function(key, item) {
+              Array.prototype.push.apply(regionFilterPlanningItems, fiteredItemsPlanningObj.filter(function(p){
+                return p.Region.toLowerCase() === item.toLowerCase(); })
+              );
+              Array.prototype.push.apply(regionFilterDeliveryItems, fiteredItemsPlanningObj.filter(function(p){
+                return p.Region.toLowerCase() === item.toLowerCase(); })
+              );
+
+            });
+            fiteredItemsPlanning = regionFilterPlanningItems;
+            fiteredItemsDelivery = regionFilterDeliveryItems;
+          }
+
+        }else if (regionsFilter.length != 0) {
+          // we have an empty Asset filter and on empty Region Filter
+          fiteredItemsPlanning = [];
+          fiteredItemsDelivery = [];
+          $.each(filterRegionsArray, function(key, item) {
+            Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
+              return p.Region.toLowerCase() === item.toLowerCase(); })
+            );
+            Array.prototype.push.apply(fiteredItemsDelivery, delivery.filter(function(p){
+              return p.Region.toLowerCase() === item.toLowerCase(); })
+            );
+          });
+        }
+
+        // filtering is done prepare for Counting -> Make them objects
+        fiteredItemsPlanning = JSON.stringify(fiteredItemsPlanning);
+        fiteredItemsPlanning = JSON.parse(fiteredItemsPlanning);
+
+        fiteredItemsDelivery = JSON.stringify(fiteredItemsDelivery);
+        fiteredItemsDelivery = JSON.parse(fiteredItemsDelivery);
+
+      }else{
+        fiteredItemsPlanning = planning;
+        fiteredItemsDelivery = delivery;
       }
-
-    }else if (regionsFilter.length != 0) {
-      // we have an empty Asset filter and on empty Region Filter
-      fiteredItemsPlanning = [];
-      fiteredItemsDelivery = [];
-      $.each(filterRegionsArray, function(key, item) {
-        Array.prototype.push.apply(fiteredItemsPlanning, planning.filter(function(p){
-          return p.Region.toLowerCase() === item.toLowerCase(); })
-        );
-        Array.prototype.push.apply(fiteredItemsDelivery, delivery.filter(function(p){
-          return p.Region.toLowerCase() === item.toLowerCase(); })
-        );
-      });
-    }
-
-    // filtering is done prepare for Counting -> Make them objects
-    fiteredItemsPlanning = JSON.stringify(fiteredItemsPlanning);
-    fiteredItemsPlanning = JSON.parse(fiteredItemsPlanning);
-
-    fiteredItemsDelivery = JSON.stringify(fiteredItemsDelivery);
-    fiteredItemsDelivery = JSON.parse(fiteredItemsDelivery);
-
   }else{
     fiteredItemsPlanning = planning;
     fiteredItemsDelivery = delivery;

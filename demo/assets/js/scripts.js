@@ -457,11 +457,12 @@ function flashBaloons() {
 
             let regionFilterPlanningItems = [];
             let regionFilterDeliveryItems = [];
+
             $.each(filterRegionsArray, function(key, item) {
               Array.prototype.push.apply(regionFilterPlanningItems, fiteredItemsPlanningObj.filter(function(p){
                 return p.Region.toLowerCase() === item.toLowerCase(); })
               );
-              Array.prototype.push.apply(regionFilterDeliveryItems, fiteredItemsPlanningObj.filter(function(p){
+              Array.prototype.push.apply(regionFilterDeliveryItems, fiteredItemsDeliveryObj.filter(function(p){
                 return p.Region.toLowerCase() === item.toLowerCase(); })
               );
 

@@ -535,7 +535,7 @@ function projectBtnClick() {
     case 1:
       projectsHead = 'Projects';
       stageHead = 'Stage';
-      $('#planHead span').text('Plan Delivery Programs');
+      $('#planHead span').text('Plan Delivery Program');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
       for (let i = 0; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);

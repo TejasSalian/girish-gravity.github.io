@@ -642,9 +642,11 @@ nav img, .footer img {
               font-size: 125%;
               color: #6a0032; }
               .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header h4 #summary_info {
-                font-size: 85%;
+                font-size: 74%;
                 color: #00000096;
-                margin-top: 8px; }
+                margin-top: 8px;
+                display: block;
+                width: 100%; }
           .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent #seachProjectDataTable {
             border: 0;
             border-radius: 0;

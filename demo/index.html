@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script type="text/javascript">
+    <script>
       if (screen.width <= 699) {
       document.location = "https://girish-gravity.github.io/mobile/";
       }
@@ -5465,7 +5465,7 @@
                   <div class="col-6 filters">
                     <img src="assets/images/asset-class/cross_e.svg" alt="">
                     <span></span>
-                    <h6>Cross Government</h6>
+                    <h6>Cross-Government</h6>
                   </div>
                   <div class="col-6 filters">
                     <img src="assets/images/asset-class/transport_e.svg" alt="">
@@ -5527,43 +5527,46 @@
               <div class="col-12">
                 <div class="row">
                   <div class="col-12 filters">
-                    <button type="button" name="">Cairns</button>
+                    <button type="button" name="Cairns">Cairns</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Townsville</button>
+                    <button type="button" name="Townsville">Townsville</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Mackay</button>
+                    <button type="button" name="Mackay">Mackay</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Fitzroy</button>
+                    <button type="button" name="Fitzroy">Fitzroy</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Wide Bay</button>
+                    <button type="button" name="Wide Bay">Wide Bay</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Sunshine Coast</button>
+                    <button type="button" name="Sunshine Coast">Sunshine Coast</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Greater Brisbane</button>
+                    <button type="button" name="Greater Brisbane">Greater Brisbane</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Gold Coast</button>
+                    <button type="button" name="Gold Coast">Gold Coast</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Toowoomba</button>
+                    <button type="button" name="Toowoomba">Toowoomba</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Darling Downs</button>
+                    <button type="button" name="Darling Downs">Darling Downs</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Remote Queensland</button>
+                    <button type="button" name="Remote Queensland">Remote Queensland</button>
+                  </div>
+                  <!-- <div class="col-12 filters">
+                    <button type="button" name="Darling Downs/Maranoa">Darling Downs/Maranoa</button>
+                  </div> -->
+                  <div class="col-12 filters">
+                    <button type="button" name="Multi-Region">Multi-Region</button>
                   </div>
                   <div class="col-12 filters">
-                    <button type="button" name="">Multi-region</button>
-                  </div>
-                  <div class="col-12 filters">
-                    <button type="button" name="">Statewide</button>
+                    <button type="button" name="Statewide">Statewide</button>
                   </div>
                 </div>
               </div>
@@ -5579,7 +5582,7 @@
                 <button class="help" type="button" name="button" data-toggle="modal" data-target="#helpModal">Help</button>
               </div>
               <div class="col-6">
-                <select class="form-control" id="">
+                <select class="form-control">
                   <option value="2018">2018-19</option>
                   <!-- <option value="2017">2017-18</option> -->
                 </select>
@@ -5635,14 +5638,14 @@
               <li>Strategic<br>Assessment</li>
               <li>preliminary<br>evaluation</li>
               <li>Business<br>Case</li>
-              <li class="filter-board" filter-as="planning">
+              <li class="filter-board" data-filter="planning">
                 <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Infrastructure initiatives go through four planning phases the initial concept, the strategic assessment of service requirement, the preliminary evaluation, and the business case (or equivalent). Some strategic initiatives, such as corridor preservation programs, might proceed straight to an investment decision.">Planning</span>
                 <!-- <div class="board-animator"></div> -->
               </li>
               <li class="filter-board inactive">
                 <span data-toggle="tooltip" data-placement="top" title="" data-original-title="Infrastructure initiatives are decided upon using a number of principles (i.e. strategic, economic and financial, deliverability, social and environment). Investment decisions are made through existing government decisions and initiatives may be approved to commence in any of the next four years.">Investment<br>Decision</span>
               </li>
-              <li class="filter-board" filter-as="delivery">
+              <li class="filter-board" data-filter="delivery">
                 <span data-toggle="tooltip" data-placement="top" title="" data-original-title="The delivery phase represents the investment program identified in the State Infrastructure Plan Part B 1-4 year program and the current Budget Paper 3.">Delivery</span>
               </li>
             </ul>
@@ -5652,19 +5655,19 @@
           </div>
           <div class="baloons">
             <ul>
-              <li filter-as="concept">
+              <li data-filter="concept">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li filter-as="strategic assessment">
+              <li data-filter="strategic assessment">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li filter-as="preliminary evaluation">
+              <li data-filter="preliminary evaluation">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li filter-as="business case">
+              <li data-filter="business case">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li filter-as="delivery">
+              <li data-filter="delivery">
                 <strong>...</strong><div>Projects</div>
               </li>
             </ul>
@@ -5680,10 +5683,8 @@
                 <div class="row pt-2 pb-2">
                   <div class="col-10">
                     <h4 class="fadeIn animated" id="planHead">
-                      State Infrastructure <span>Plan Projects</span>
-                      <small>
-                        <div id="summary_info"></div>
-                      </small>
+                      State Infrastructure <span class="title">Plan Projects</span>
+                      <small id="summary_info"></small>
                     </h4>
                   </div>
                   <div class="col-2 text-right fadeIn animated ">
@@ -5806,7 +5807,7 @@
                     <div class="col-6 regionInfo">
                       <div class="row">
                         <div class="col-5 map">
-                          <img src="assets/images/Sunshine Coast_edit.svg" alt="">
+                          <img src="assets/images/sunshine-coast.svg" alt="">
                         </div>
                         <div class="col-1 pointer">
                           <img src="assets/images/LocationPointer.svg" alt="">
@@ -5867,10 +5868,10 @@
                     <div class="col-6 regionInfo">
                       <div class="row">
                         <div class="col-5 map">
-                          <img src="assets/images/Sunshine Coast_edit.svg" alt="">
+                          <img src="assets/images/sunshine-coast.svg" alt="sunshine coast">
                         </div>
                         <div class="col-1 pointer">
-                          <img src="assets/images/LocationPointer.svg" alt="">
+                          <img src="assets/images/LocationPointer.svg" alt="Location Pointer">
                         </div>
                         <div class="col-6">
                           <h6>SIP Region:</h6>
@@ -5929,7 +5930,7 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalTitle" aria-hidden="true">
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">

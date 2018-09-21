@@ -1,6 +1,6 @@
 /***----------------------------------- Gobal Variables -----------------------------------***/
 
-// Initialization
+// Global Variables
 var projectObject, // Project (Table) jQuery Object
   projectDataTable, // Project DataTable Object
   projectTableOptions, // Project DataTable Default Settings
@@ -535,7 +535,7 @@ function projectBtnClick() {
     case 1:
       projectsHead = 'Projects';
       stageHead = 'Stage';
-      $('#planHead span').text('Plan Delivery Program');
+      $('#planHead span.title').text('Plan Delivery Program');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
       for (let i = 0; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);
@@ -547,7 +547,7 @@ function projectBtnClick() {
       projectsHead = 'Proposals';
       stageHead = 'Planning Stage';
       $('#seachProjectDataTable').attr('placeholder', 'Search Proposals by Name, Infrastructure Class, Region etc');
-      $('#planHead span').text('Plan Proposals');
+      $('#planHead span.title').text('Plan Proposals');
       for (let i = regionsColumnNum + 1; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(false);
       }
@@ -558,7 +558,7 @@ function projectBtnClick() {
     default:
       projectsHead = 'Projects / Proposals';
       stageHead = 'Stage';
-      $('#planHead span').text('Projects & Proposals');
+      $('#planHead span.title').text('Projects & Proposals');
       $('#seachProjectDataTable').attr('placeholder', 'Search by Name, Infrastructure Class, Region etc');
       for (let i = 1; i < totalColumnCount; i++) {
         projectDataTable.column(i).visible(true);
@@ -812,10 +812,10 @@ $('#projects tbody').on('click', 'tr[role=row]', function() {
 
 // Filter Board Click events
 $('.filter-board').not('.inactive').on('click', function() {
-  if ($(this).attr('filter-as') == 'planning') {
+  if ($(this).attr('data-filter') == 'planning') {
     boardFilter = 'planning';
     stageSelection = -1;
-  }else if($(this).attr('filter-as') == 'delivery'){
+  }else if($(this).attr('data-filter') == 'delivery'){
     boardFilter = 'delivery';
     stageSelection = 1;
   }
@@ -824,14 +824,13 @@ $('.filter-board').not('.inactive').on('click', function() {
 
 // Baloon filter Events
 $('.baloons li').on('click', function () {
-  boardFilter = $(this).attr('filter-as');
+  boardFilter = $(this).attr('data-filter');
   // Last Baloon is project, so handle that as well
   stageSelection = (boardFilter === String('delivery'))? 1 : -1;
   projectBtnClick();
 });
 
 /***------------------------------ On Page Ready Preparations ------------------------------***/
-
 $(document).ready(function() {
   init();
   $('[data-toggle="tooltip"]').tooltip();

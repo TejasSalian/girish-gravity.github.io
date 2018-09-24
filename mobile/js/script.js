@@ -4,7 +4,8 @@ var url2017_1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/Project
 var url2017_2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_12_2017.Json';
 var url2017_3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_12_2017.Json';
 
-var url2018_1 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
+// var url2018_1 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
+var url2018_1 = 'https://girish-gravity.github.io/demo/assets/json/newData/ProjectMetaData.json';
 var url2018_2 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
 var url2018_3 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
 
@@ -42,10 +43,11 @@ function tableUpdater() {
     }),
     $.getJSON(url1_temp, function(res) {
       data = res;
+      console.log(res);
     })
   ).then(function () {
     $.each(data, function(key, item){
-      tableHtml +='<tr data-value="' +item.ProjectId + ',' + item.Stage + '" role="row">'+
+      tableHtml +='<tr data-value="' + key + ',' + item.Stage + '" role="row">'+
                     '<td class="folderClass sorting_1"></td>' +
                     '<td class=" projectlst">' + item.Project + '</td>'+
                     '<td class=" miniHeader">'+
@@ -64,6 +66,43 @@ function tableUpdater() {
     $('#dataTable tbody').html(tableHtml);
   });
 }
+//
+// function tableUpdater() {
+//   var data, tableHtml = '';
+//   $('#dataTable tbody').html(tableHtml);
+//   $.when(
+//     $.ajaxSetup({
+//       crossDomain: true,
+//       beforeSend: function(xhr) {
+//         if (xhr.overrideMimeType) {
+//           xhr.overrideMimeType("application/json");
+//         }
+//       }
+//     }),
+//     $.getJSON(url1_temp, function(res) {
+//       data = res;
+//     })
+//   ).then(function () {
+//     $.each(data, function(key, item){
+//       tableHtml +='<tr data-value="' +item.ProjectId + ',' + item.Stage + '" role="row">'+
+//                     '<td class="folderClass sorting_1"></td>' +
+//                     '<td class=" projectlst">' + item.Project + '</td>'+
+//                     '<td class=" miniHeader">'+
+//                       '<span>' + valueTypeFn(item) + '</span>'+
+//                       '<span>STAGE</span>'+
+//                       '<span>ASSET CLASS</span>'+
+//                       '<span>REGION</span>'+
+//                     '</td>'+
+//                     '<td class=" valuelst">'+ valuelstFn(item) +'</td>'+
+//                     '<td class=" stagelst">'+ stagelstFn(item) +'</td>'+
+//                     '<td class=" assetclasslst">' + item.AssetClass + '</td>'+
+//                     '<td class=" regionlst">' + item.Region + '</td>'+
+//                     '<td class=" hr_line"><hr></td>'+
+//                    '</tr>';
+//     });
+//     $('#dataTable tbody').html(tableHtml);
+//   });
+// }
 
 function valueTypeFn(data) {
   if (data.Stage.toUpperCase() == "PLANNING".toUpperCase()) {
@@ -682,7 +721,8 @@ function formatValue(value) {
         // }
         // else {
         //     if(value > 999999 && value <= 999999999) {
-                return '$'+(value/1000000).toFixed(4) + 'M';
+                // return '$'+(value/1000000).toFixed(4) + 'M';
+                return '$'+ value + 'M';
         //     }
         //     else {
         //         if(value > 999999999){
@@ -893,16 +933,17 @@ function insertSortButton(){
 
     $(".dataTable").on('click', "tbody tr", function () {
         'use strict';
-        goTo($(".mb_projectPage"), $(".mb_projectInfoPage"), false);
-        var arrayData = $(this).data('value');
-        var arr = arrayData.split(',');
+        // disabled click event
+        if (false) {
+          goTo($(".mb_projectPage"), $(".mb_projectInfoPage"), false);
+          var arrayData = $(this).data('value');
+          var arr = arrayData.split(',');
 
-        loadProjectInfo(arr[0],arr[1]);
-        // loadProjectInfo($(this).data('value'));
-        // console.log($(this).data('value'));
-        $(".application").css({
-            "height": "110vh"
-        });
+          loadProjectInfo(arr[0],arr[1]);
+          $(".application").css({
+              "height": "110vh"
+          });
+        }
     });
 
     $(".dataTables_filter").on('keypress keyup','input',function() {
@@ -1495,26 +1536,26 @@ function loadAnnualInfo(){
         // MAIN STUFF
         // console.log(jsonData);
         $.each(jsonData, function(index, value) {
-            switch(jsonData[index].Key){
-                case "CurrentFY":
-                    $(".hlPanelHeader span").text(jsonData[index].Value);
-                    break;
-                case "CapitalBudget":
-                    $(".capitalbudget").text(jsonData[index].Value);
-                    break;
-                case "JobsSupported":
-                    $(".jobssupported").text(jsonData[index].Value);
-                    break;
-                case "TotalProjects":
-                    $(".totalprojects").text(jsonData[index].Value);
-                    break;
-                case "TotalProgram":
-                    $(".programs").text(jsonData[index].Value);
-                    break;
-                case "TotalGrants":
-                    $(".grantss").text(jsonData[index].Value);
-                    break;
-            }
+            // switch(jsonData[index].Key){
+            //     case "CurrentFY":
+            //         $(".hlPanelHeader span").text(jsonData[index].Value);
+            //         break;
+            //     case "CapitalBudget":
+            //         $(".capitalbudget").text(jsonData[index].Value);
+            //         break;
+            //     case "JobsSupported":
+            //         $(".jobssupported").text(jsonData[index].Value);
+            //         break;
+            //     case "TotalProjects":
+            //         $(".totalprojects").text(jsonData[index].Value);
+            //         break;
+            //     case "TotalProgram":
+            //         $(".programs").text(jsonData[index].Value);
+            //         break;
+            //     case "TotalGrants":
+            //         $(".grantss").text(jsonData[index].Value);
+            //         break;
+            // }
         });
     });
 }

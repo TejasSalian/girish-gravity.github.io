@@ -1,0 +1,7 @@
+{
+  "year2018": {
+    "ProjectDetailedData"		    : "/assets/json/data/ProjectDetailedData.json",
+    "ProjectMetaData"			      : "/assets/json/data/ProjectMetaData.json",
+    "ProjectYearlyDetailedData"	: "/assets/json/data/ProjectYearlyDetailedData.json"
+  }
+}

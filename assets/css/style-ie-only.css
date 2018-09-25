@@ -1,0 +1,35 @@
+.tag-names ul li:nth-child(1) {
+  top: -190px;
+  left: 1.6%; }
+.tag-names ul li:nth-child(2) {
+  left: 5.5%;
+  top: -171px;
+  transform: scale(0.92); }
+.tag-names ul li:nth-child(3) {
+  left: 8.5%;
+  top: -157px;
+  transform: scale(0.92); }
+.tag-names ul li:nth-child(4) {
+  left: 10.2%;
+  top: -145px;
+  transform: scale(0.92), rotateY(90deg); }
+.tag-names ul li:nth-child(5) {
+  font-size: 114%;
+  text-transform: uppercase;
+  top: -222px;
+  left: 15.3%;
+  cursor: pointer; }
+.tag-names ul li:nth-child(6) {
+  font-size: 114%;
+  text-transform: uppercase;
+  top: 92px;
+  left: -31.2%;
+  cursor: help; }
+.tag-names ul li:nth-child(7) {
+  font-size: 114%;
+  text-transform: uppercase;
+  top: 135px;
+  left: 7.1%;
+  cursor: pointer; }
+
+/*# sourceMappingURL=style-ie-only.css.map */

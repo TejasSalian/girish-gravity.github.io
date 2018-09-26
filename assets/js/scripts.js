@@ -166,32 +166,32 @@ function refreshDataObject() {}
 function flashRows() {
   let htmlRowTemplate;
   $.each(activeDataObject.ProjectMetaData, function(i, project) {
-    htmlRowTemplate = '<tr>';
+    htmlRowTemplate = '<tr tabindex="100' + i + '">';
     // Project
-    htmlRowTemplate += '<td class="pProjects" project-id="' + project.ProjectId + '">' + project.Project + '</td>';
+    htmlRowTemplate += '<td class="pProjects" project-id="' + project.ProjectId + '" aria-label="Project name is,'+ project.Project +'.">' + project.Project + '</td>';
     // Stage
-    htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '" data-search="' + project.Stage + ' ' + project.SubStage + '">' + project.SubStage + '</td>';
+    htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '" data-search="' + project.Stage + ' ' + project.SubStage + '" aria-label="Project stage is,'+ project.SubStage +' in '+ project.Stage +' stage.">' + project.SubStage + '</td>';
     // Capital Type
-    htmlRowTemplate += '<td class="pCapital">' + project.CapitalType + '</td>';
+    htmlRowTemplate += '<td class="pCapital" aria-label="Capital Type is,'+ project.CapitalType +'.">' + project.CapitalType + '</td>';
     // Infrastructure Class
-    htmlRowTemplate += '<td class="pInfrastructure">' + project.AssetClass + '</td>';
+    htmlRowTemplate += '<td class="pInfrastructure" aria-label="Infrastructure Class name is,'+ project.AssetClass +',.">' + project.AssetClass + '</td>';
     // Agency
-    htmlRowTemplate += '<td class="pAgency">' + project.LeadAgency + '</td>';
+    htmlRowTemplate += '<td class="pAgency" aria-label="Lead Agency name is,'+ project.LeadAgency +'.">' + project.LeadAgency + '</td>';
     // Region
-    htmlRowTemplate += '<td class="pRegion">' + project.Region + '</td>';
+    htmlRowTemplate += '<td class="pRegion" aria-label="Region name is,'+ project.Region +'.">' + project.Region + '</td>';
     // Total estimated cost
-    htmlRowTemplate += '<td class="pTCost" data-order="' + project.Value + '">' + formatCurrency(project.Value) + '</td>';
+    htmlRowTemplate += '<td class="pTCost" data-order="' + project.Value + '" aria-label="Total Estimated cost is,'+ formatCurrency(project.Value) +'.">' + formatCurrency(project.Value) + '</td>';
     // Expenditure to June 2018
-    htmlRowTemplate += '<td class="pExpenditure" data-order="' + project.TotalExpenseTillJune + '">' + millionfy(project.TotalExpenseTillJune) + '</td>';
+    htmlRowTemplate += '<td class="pExpenditure" data-order="' + project.TotalExpenseTillJune + '" aria-label="Total Expense Till June is,'+ millionfy(project.TotalExpenseTillJune) +'.">' + millionfy(project.TotalExpenseTillJune) + '</td>';
     // Funding
     // 2018 - 19
-    htmlRowTemplate += '<td class="pFundingS1" data-order="' + project.Budget1819 + '">' + millionfy(project.Budget1819) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS1" data-order="' + project.Budget1819 + '" aria-label="Funding for 2018 to 2019 is,'+ millionfy(project.Budget1819) +'.">' + millionfy(project.Budget1819) + '</td>';
     // 2019 - 20
-    htmlRowTemplate += '<td class="pFundingS2" data-order="' + project.Budget1920 + '">' + millionfy(project.Budget1920) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS2" data-order="' + project.Budget1920 + '" aria-label="Funding for 2019 to 2020 is,'+ millionfy(project.Budget1920) +'.">' + millionfy(project.Budget1920) + '</td>';
     // 2020 - 21 to 2021 - 22
-    htmlRowTemplate += '<td class="pFundingS3" data-order="' + project.Budget2021 + project.Budget2122 + '">' + millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS3" data-order="' + project.Budget2021 + project.Budget2122 + '" aria-label=" Total Funding for 2020 to 2021 and 2021 to 2022 is,'+ millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) +'.">' + millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) + '</td>';
     // Beyond
-    htmlRowTemplate += '<td class="pFundingS4" data-order="' + project.Beyond + '">' + millionfy(project.Beyond) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS4" data-order="' + project.Beyond + '" aria-label="Funding beyond 2022 is,'+ millionfy(project.Beyond) +'.">' + millionfy(project.Beyond) + '</td>';
     // End of Row
     htmlRowTemplate += '</tr>';
     // append Data
@@ -595,9 +595,9 @@ function projectBtnClick() {
       }else{
         projectDataTable.column(boardColumnNum).search('', true, false).draw();
       }
+      $('#planHead').focus();
     }
   }, 1400);
-
 }
 
 // Keep Focus on portal

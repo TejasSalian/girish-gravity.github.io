@@ -641,23 +641,47 @@ nav img, .footer img {
               margin: 16px 10px 5px 0px;
               border-radius: 20px;
               padding: 3px 9px; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header .content-control {
+              position: relative;
+              z-index: 27; }
             .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header h4 {
               margin: 5px 10px 5px 0px;
               padding-top: 7px;
               font-size: 125%;
-              color: #6a0032; }
+              color: #6a0032;
+              margin-top: -56px;
+              position: relative;
+              z-index: 26;
+              text-align: center; }
               .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent header h4 #summary_info {
                 font-size: 74%;
                 color: #00000096;
                 margin-top: 8px;
                 display: block;
                 width: 100%; }
+          .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .input-group-text {
+            background: transparent;
+            border-left: 0;
+            border-top: 0;
+            border-radius: 0;
+            box-shadow: 0 1px 0px #0000000f; }
           .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent #seachProjectDataTable {
             border: 0;
             border-radius: 0;
             border-bottom: 1px solid #d4d2d2;
             text-align: left;
             box-shadow: 0 1px 0px #0000000f; }
+            .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent #seachProjectDataTable::before {
+              content: '';
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              font-size: 70%;
+              position: absolute;
+              left: 0px;
+              top: 0px;
+              border-radius: 2px;
+              padding: 2px 5px;
+              background-color: #00655a; }
           .dilgp-animation-canvas .intractive-portal .project-details .tablePannel .tablePannelContent .tableView {
             background-color: white;
             padding-bottom: 15px;

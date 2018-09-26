@@ -5579,7 +5579,7 @@
                 <button class="help" type="button" name="button" data-toggle="modal" data-target="#helpModal" tabindex="102">Help</button>
               </div>
               <div class="col-6">
-                <select class="form-control">
+                <select class="form-control" tabindex="-1">
                   <option value="2018">2018-19</option>
                   <!-- <option value="2017">2017-18</option> -->
                 </select>
@@ -5652,19 +5652,19 @@
           </div>
           <div class="baloons">
             <ul tabindex="100">
-              <li data-filter="concept" tabindex="21" aria-label="">
+              <li data-filter="concept" tabindex="21" aria-label="" data-reader="true">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li data-filter="strategic assessment" tabindex="22" aria-label="">
+              <li data-filter="strategic assessment" tabindex="22" aria-label="" data-reader="true">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li data-filter="preliminary evaluation" tabindex="23" aria-label="">
+              <li data-filter="preliminary evaluation" tabindex="23" aria-label="" data-reader="true">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li data-filter="business case" tabindex="24" aria-label="">
+              <li data-filter="business case" tabindex="24" aria-label="" data-reader="true">
                 <strong>...</strong><div>proposals</div>
               </li>
-              <li data-filter="delivery" tabindex="25" aria-label="">
+              <li data-filter="delivery" tabindex="25" aria-label="" data-reader="true">
                 <strong>...</strong><div>Projects</div>
               </li>
             </ul>
@@ -5678,25 +5678,30 @@
             <div class="tablePannelContent d-none">
               <header class="col-12 fadeIn animation-target">
                 <div class="row pt-2 pb-2">
-                  <div class="col-10">
-                    <h4 class="fadeIn animated" id="planHead">
-                      State Infrastructure <span class="title">Plan Projects</span>
-                      <small id="summary_info"></small>
-                    </h4>
-                  </div>
-                  <div class="col-2 text-right fadeIn animated ">
-                    <button type="button" class="btn btn-outline-primary fadeIn animated tablePannel-minimize d-none">
+                  <div class="col-2 text-left fadeIn animated content-control">
+                    <button type="button" class="btn btn-outline-primary fadeIn animated tablePannel-minimize d-none" aria-label="Close Projects List View">
                       <i class="fas fa-arrow-right"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-danger tablePannel-close">
+                    <button type="button" class="btn btn-outline-danger tablePannel-close" aria-label="Close Projects View">
                       <i class="fas fa-times"></i>
                     </button>
+                  </div>
+                  <div class="col-12">
+                    <h4 class="fadeIn animated" id="planHead" tabindex="300">
+                      State Infrastructure <span class="title">Plan Projects</span><i class="invisible-narrator-pause">.</i>
+                      <small id="summary_info"></small>
+                    </h4>
                   </div>
                 </div>
               </header>
               <div class="col-12 mt-3 pt-3">
                 <div class="form-group">
-                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" placeholder="">
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon"><i class="fas fa-search"></i></div>
+                  </div>
+                  <input type="text" id="seachProjectDataTable" class="fadeIn animated form-control" placeholder="" tabindex="301">
                 </div>
               </div>
               <div class="col-12 tableView">

@@ -1235,3 +1235,13 @@ table.dataTable thead th, table.dataTable thead td {
    opacity: 0;
    display: inline;
  }
+body{
+  :focus {
+    outline: 0px;
+  }
+  &.keyboard-mode{
+    *:focus {
+      outline: 2px solid #2196f3;
+    }
+  }
+}

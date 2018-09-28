@@ -626,6 +626,14 @@ function CubeAnimFinished() {
   $('.video').removeClass('d-flex').addClass('d-none');
   $('.intractive-portal').removeClass('d-none').addClass('d-flex');
   $('#intractive-canvas-heading').focus();
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.getItem('haveVisitedDILGPBefore') != 'Yes') {
+      $('#helpModal').modal({
+        'show' : true
+      });
+      sessionStorage.setItem("haveVisitedDILGPBefore", "Yes");
+    }
+  }
 }
 
 // go-back from intro
@@ -899,6 +907,10 @@ $('.baloons li').on('click', function () {
 /***------------------------------ On Page Ready Preparations ------------------------------***/
 $(document).ready(function() {
   init();
+  $('#helpCarousel').carousel({
+    'interval' : false,
+    'keyboard' : false,
+  });
   $('[data-toggle="tooltip"]').tooltip();
   // Prefetch
   $.when(
@@ -927,11 +939,18 @@ $(document).ready(function() {
 /***------------------------------ screen reader support ------------------------------***/
 
 $('[data-reader="true"]').on('keydown', function(event) {
-  var code = event.which;
+  let code = event.keyCode || event.which;
   if((code == 32 || code == 13) && event.target == this){
     event.preventDefault();
     $(this).trigger('click');
     return false;
+  }
+});
+
+$('body').on('keydown', function(event) {
+  let code = event.keyCode || event.which;
+  if (code == 9) {
+    $('body').addClass('keyboard-mode');
   }
 });
 

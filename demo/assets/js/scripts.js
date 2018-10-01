@@ -166,32 +166,32 @@ function refreshDataObject() {}
 function flashRows() {
   let htmlRowTemplate;
   $.each(activeDataObject.ProjectMetaData, function(i, project) {
-    htmlRowTemplate = '<tr>';
+    htmlRowTemplate = '<tr tabindex="100' + i + '">';
     // Project
-    htmlRowTemplate += '<td class="pProjects" project-id="' + project.ProjectId + '">' + project.Project + '</td>';
+    htmlRowTemplate += '<td class="pProjects" project-id="' + project.ProjectId + '" aria-label="Project name is,'+ project.Project +'.">' + project.Project + '</td>';
     // Stage
-    htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '" data-search="' + project.Stage + ' ' + project.SubStage + '">' + project.SubStage + '</td>';
+    htmlRowTemplate += '<td class="pStage" status="' + project.Stage + '" data-search="' + project.Stage + ' ' + project.SubStage + '" aria-label="Project stage is,'+ project.SubStage +' in '+ project.Stage +' stage.">' + project.SubStage + '</td>';
     // Capital Type
-    htmlRowTemplate += '<td class="pCapital">' + project.CapitalType + '</td>';
+    htmlRowTemplate += '<td class="pCapital" aria-label="Capital Type is,'+ project.CapitalType +'.">' + project.CapitalType + '</td>';
     // Infrastructure Class
-    htmlRowTemplate += '<td class="pInfrastructure">' + project.AssetClass + '</td>';
+    htmlRowTemplate += '<td class="pInfrastructure" aria-label="Infrastructure Class name is,'+ project.AssetClass +',.">' + project.AssetClass + '</td>';
     // Agency
-    htmlRowTemplate += '<td class="pAgency">' + project.LeadAgency + '</td>';
+    htmlRowTemplate += '<td class="pAgency" aria-label="Lead Agency name is,'+ project.LeadAgency +'.">' + project.LeadAgency + '</td>';
     // Region
-    htmlRowTemplate += '<td class="pRegion">' + project.Region + '</td>';
+    htmlRowTemplate += '<td class="pRegion" aria-label="Region name is,'+ project.Region +'.">' + project.Region + '</td>';
     // Total estimated cost
-    htmlRowTemplate += '<td class="pTCost" data-order="' + project.Value + '">' + formatCurrency(project.Value) + '</td>';
+    htmlRowTemplate += '<td class="pTCost" data-order="' + project.Value + '" aria-label="Total Estimated cost is,'+ formatCurrency(project.Value) +'.">' + formatCurrency(project.Value) + '</td>';
     // Expenditure to June 2018
-    htmlRowTemplate += '<td class="pExpenditure" data-order="' + project.TotalExpenseTillJune + '">' + millionfy(project.TotalExpenseTillJune) + '</td>';
+    htmlRowTemplate += '<td class="pExpenditure" data-order="' + project.TotalExpenseTillJune + '" aria-label="Total Expense Till June is,'+ millionfy(project.TotalExpenseTillJune) +'.">' + millionfy(project.TotalExpenseTillJune) + '</td>';
     // Funding
     // 2018 - 19
-    htmlRowTemplate += '<td class="pFundingS1" data-order="' + project.Budget1819 + '">' + millionfy(project.Budget1819) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS1" data-order="' + project.Budget1819 + '" aria-label="Funding for 2018 to 2019 is,'+ millionfy(project.Budget1819) +'.">' + millionfy(project.Budget1819) + '</td>';
     // 2019 - 20
-    htmlRowTemplate += '<td class="pFundingS2" data-order="' + project.Budget1920 + '">' + millionfy(project.Budget1920) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS2" data-order="' + project.Budget1920 + '" aria-label="Funding for 2019 to 2020 is,'+ millionfy(project.Budget1920) +'.">' + millionfy(project.Budget1920) + '</td>';
     // 2020 - 21 to 2021 - 22
-    htmlRowTemplate += '<td class="pFundingS3" data-order="' + project.Budget2021 + project.Budget2122 + '">' + millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS3" data-order="' + project.Budget2021 + project.Budget2122 + '" aria-label=" Total Funding for 2020 to 2021 and 2021 to 2022 is,'+ millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) +'.">' + millionfy( fyYearExpenseSum(project.Budget2021, project.Budget2122) ) + '</td>';
     // Beyond
-    htmlRowTemplate += '<td class="pFundingS4" data-order="' + project.Beyond + '">' + millionfy(project.Beyond) + '</td>';
+    htmlRowTemplate += '<td class="pFundingS4" data-order="' + project.Beyond + '" aria-label="Funding beyond 2022 is,'+ millionfy(project.Beyond) +'.">' + millionfy(project.Beyond) + '</td>';
     // End of Row
     htmlRowTemplate += '</tr>';
     // append Data
@@ -522,12 +522,13 @@ function flashBaloons() {
   $('.baloons > ul > li:nth-child(4) > strong').text(business.length);
   $('.baloons > ul > li:nth-child(5) > strong').text(fiteredItemsDelivery.length);
 
-  // Incase We want to fake it
-  // $('.baloons > ul > li:nth-child(1) > strong').text((concept.length == 44 )? 31 : concept.length);
-  // $('.baloons > ul > li:nth-child(2) > strong').text((strategic.length == 21)? 11 : strategic.length);
-  // $('.baloons > ul > li:nth-child(3) > strong').text((preliminary.length == 41)? 38 : preliminary.length);
-  // $('.baloons > ul > li:nth-child(4) > strong').text((business.length == 53)? 45 : business.length);
-  // $('.baloons > ul > li:nth-child(5) > strong').text((fiteredItemsDelivery.length == 628) ? 635 : fiteredItemsDelivery.length);
+  // flash count for Accessibility
+  $('.baloons > ul > li:nth-child(1)').attr('aria-label', concept.length + ' Proposals are in concept stage.');
+  $('.baloons > ul > li:nth-child(2)').attr('aria-label', strategic.length + ' Proposals are in strategic assessment stage.');
+  $('.baloons > ul > li:nth-child(3)').attr('aria-label', preliminary.length + ' Proposals are in preliminary evaluation stage.');
+  $('.baloons > ul > li:nth-child(4)').attr('aria-label', business.length + ' Proposals are in business case stage.');
+  $('.baloons > ul > li:nth-child(5)').attr('aria-label', fiteredItemsDelivery.length + ' Projects are in delivery stage.');
+
 }
 
 // Project Button Click
@@ -594,9 +595,47 @@ function projectBtnClick() {
       }else{
         projectDataTable.column(boardColumnNum).search('', true, false).draw();
       }
+      $('#planHead').focus();
     }
   }, 1400);
+}
 
+// Keep Focus on portal
+function focusOnCanvas() {
+  $('html, body').animate({
+    scrollTop: $(".dilgp-animation-canvas").offset().top
+  }, 300);
+}
+
+// Cookie Management
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function haveVisitedBefore() {
+    var user = getCookie("haveVisitedDILGPBefore");
+    if (user != "Yes") {
+      $('#helpModal').modal({ 'show' : true });
+      setCookie('haveVisitedDILGPBefore', 'Yes', 365)
+    }
 }
 
 /***--------------------------------------- Events ----------------------------------------***/
@@ -606,7 +645,9 @@ $('.explore-btn').on('click', function() {
   $('.explore').removeClass('d-flex').addClass('d-none');
   $('.video').removeClass('d-none').addClass('d-flex');
   $('#CubeAnim').currentTime = 0;
+  focusOnCanvas();
   $('#CubeAnim').get(0).play();
+  $('#CubeAnim').focus();
 });
 
 // Animation Finished
@@ -615,6 +656,8 @@ document.getElementById('CubeAnim')
 function CubeAnimFinished() {
   $('.video').removeClass('d-flex').addClass('d-none');
   $('.intractive-portal').removeClass('d-none').addClass('d-flex');
+  $('#intractive-canvas-heading').focus();
+  haveVisitedBefore();
 }
 
 // go-back from intro
@@ -644,6 +687,7 @@ $('.asset-class .filters').on('click', function() {
     clearAssetsBtn.removeClass('d-none');
   }
   let filterText = $(this).find('h6').text();
+
   // check wheather filter is ON or OFF
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
@@ -675,12 +719,35 @@ $('.asset-class .filters').on('click', function() {
       assetFilter = assetFilter + '|' + filterText;
     }
   }
+  // Accessibility support - screen reader
+  let thisName = $(this).attr('aria-label').split('-');
+  if ($(this).hasClass('active')) {
+    $(this).attr('aria-label', thisName[0] + '- filter is activated.');
+  }else {
+    $(this).attr('aria-label', thisName[0] + '- filter status is inactive.');
+  }
+  // Remove ClearFilter if that was last filter.
   if (assetFilter == '') {
     clearAssetsBtn.addClass('d-none');
+    // Reset to Accessibility default
+    $('#clear-assets-filter').attr('aria-label', 'Press Enter to Clear all Infrastructure Class filters Button.');
+  }else {
+    // Accessibility Improvement - screen reader support
+    let activeFilterText = '';
+    let assetFilterArray = assetFilter.split('|');
+    $.each(assetFilterArray, function(key, item) {
+      if ( (key == assetFilterArray.length - 1) && assetFilterArray.length > 1) {
+        activeFilterText = activeFilterText + ' and ' + item;
+      }else {
+        activeFilterText = activeFilterText + ', ' + item;
+      }
+    });
+    $('#clear-assets-filter').attr('aria-label', 'Press Enter to Clear all Infrastructure Class filters Button. And current active asset filters are '+ activeFilterText);
   }
   if (projectDataTable) {
     projectDataTable.column(assetColumnNum).search(assetFilter, true, false).draw();
     flashBaloons();
+    // Accessibility info flashing
   }
 });
 
@@ -722,8 +789,28 @@ $('.regions .filters').on('click', function() {
       regionsFilter = regionsFilter + '|' + filterText;
     }
   }
+  // Accessibility support - screen reader
+  let thisName = $(this).attr('aria-label').split('-');
+  if ($(this).hasClass('active')) {
+    $(this).attr('aria-label', thisName[0] + '- filter is activated.');
+  }else {
+    $(this).attr('aria-label', thisName[0] + '- filter status is inactive.');
+  }
+  // Remove ClearFilter if that was last filter.
   if (regionsFilter == '') {
     clearRegionsBtn.addClass('d-none');
+    $('#clear-regions-filter').attr('aria-label', 'Press Enter to Clear all SIP regions filters Button.');
+  }else {
+    let activeFilterText = '';
+    let regionsFilterArray = regionsFilter.split('|');
+    $.each(regionsFilterArray, function(key, item) {
+      if ( (key == regionsFilterArray.length - 1) && regionsFilterArray.length > 1) {
+        activeFilterText = activeFilterText + ' and ' + item;
+      }else {
+        activeFilterText = activeFilterText + ', ' + item;
+      }
+    });
+    $('#clear-regions-filter').attr('aria-label', 'Press Enter to Clear all SIP regions filters Button. And current active regions filters are '+ activeFilterText);
   }
   if (projectDataTable) {
     projectDataTable.column(regionsColumnNum).search(regionsFilter, true, false).draw();
@@ -738,6 +825,7 @@ $('#clear-assets-filter').on('click', function() {
   assetFilter = '';
   projectDataTable.column(assetColumnNum).search('', true, false).draw();
   flashBaloons();
+  $(this).parent().find('h5').focus();
 });
 
 // Clear Region filters click event
@@ -747,6 +835,7 @@ $('#clear-regions-filter').on('click', function() {
   regionsFilter = '';
   projectDataTable.column(regionsColumnNum).search('', true, false).draw();
   flashBaloons();
+  $(this).parent().find('h5').focus();
 });
 
 // Search Table dataTables
@@ -842,6 +931,10 @@ $('.baloons li').on('click', function () {
 /***------------------------------ On Page Ready Preparations ------------------------------***/
 $(document).ready(function() {
   init();
+  $('#helpCarousel').carousel({
+    'interval' : false,
+    'keyboard' : false,
+  });
   $('[data-toggle="tooltip"]').tooltip();
   // Prefetch
   $.when(
@@ -866,3 +959,23 @@ $(document).ready(function() {
     populateTable(2018);
   });
 });
+
+/***------------------------------ screen reader support ------------------------------***/
+
+$('[data-reader="true"]').on('keydown', function(event) {
+  let code = event.keyCode || event.which;
+  if((code == 32 || code == 13) && event.target == this){
+    event.preventDefault();
+    $(this).trigger('click');
+    return false;
+  }
+});
+
+$('body').on('keydown', function(event) {
+  let code = event.keyCode || event.which;
+  if (code == 9) {
+    $('body').addClass('keyboard-mode');
+  }
+});
+
+/***------------------------------ Accessibility Gliches ------------------------------***/

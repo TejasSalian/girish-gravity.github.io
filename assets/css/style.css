@@ -905,9 +905,6 @@ table.dataTable thead th, table.dataTable thead td {
       height: 44px;
       background-color: white;
       color: #6a0032; }
-    .modal-content .modal-body h5 {
-      font-size: 100%;
-      line-height: 1.2; }
     .modal-content .modal-body p {
       font-size: 80%;
       min-height: 57px; }
@@ -915,6 +912,12 @@ table.dataTable thead th, table.dataTable thead td {
       margin: 0 auto; }
     .modal-content .modal-body .carousel-control-next-icon, .modal-content .modal-body .carousel-control-prev-icon {
       margin-top: 100px; }
+  .modal-content .carousel-item h4 span {
+    float: right;
+    font-size: 80%;
+    letter-spacing: 1px;
+    margin-right: 28px;
+    margin-top: 3px; }
 
 .svg-ms-fix {
   min-height: 1622px; }

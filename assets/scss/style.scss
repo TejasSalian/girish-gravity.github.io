@@ -1209,10 +1209,6 @@ table.dataTable thead th, table.dataTable thead td {
         background-color: white;
         color: $brand-primary-magenta;
       }
-      h5 {
-        font-size: 100%;
-        line-height: 1.2;
-      }
       p{
         font-size: 80%;
         min-height: 57px;
@@ -1222,6 +1218,17 @@ table.dataTable thead th, table.dataTable thead td {
       }
       .carousel-control-next-icon, .carousel-control-prev-icon {
         margin-top: 100px;
+      }
+    }
+    .carousel-item{
+      h4{
+        span{
+          float: right;
+          font-size: 80%;
+          letter-spacing: 1px;
+          margin-right: 28px;
+          margin-top: 3px;
+        }
       }
     }
 }

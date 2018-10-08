@@ -5,13 +5,94 @@
     <title></title>
     <style type="text/css">
     	@keyframes updown {
-    		0% {
+    		50% {
+		    	background-color: red;
 		    	background-size: 100% 100%;
 		    }
-		    50% {
+		    40% {
+		    	background-color: orange;
+		    	background-size: 100% 122.6%;
+		    }
+		    30% {
+		    	background-color: yellow;
+		    	background-size: 100% 145.2%;
+		    }
+		    20% {
+		    	background-color: blue;
+		    	background-size: 100% 167.8%;
+		    }
+		    10% {
+		    	background-color: green;
+		    	background-size: 100% 190.4%;
+		    }
+		    0% {
+		    	background-color: green;
 		    	background-size: 100% 213%;
 		    }
 		    100% {
+		    	background-color: green;
+		    	background-size: 100% 190.4%;
+		    }
+		    90% {
+		    	background-color: blue;
+		    	background-size: 100% 167.8%;
+		    }
+		    80% {
+		    	background-color: yellow;
+		    	background-size: 100% 145.2%;
+		    }
+		    70% {
+		    	background-color: orange;
+		    	background-size: 100% 122.6%;
+		    }
+		    60% {
+		    	background-color: red;
+		    	background-size: 100% 100%;
+		    }
+		}
+		@keyframes updown2 {
+    		50% {
+		    	background-color: #ff00000d;
+		    	background-size: 100% 100%;
+		    }
+		    40% {
+		    	background-color: #ffa5000d;
+		    	background-size: 100% 122.6%;
+		    }
+		    30% {
+		    	background-color: #ffff000d;
+		    	background-size: 100% 145.2%;
+		    }
+		    20% {
+		    	background-color: #0000ff0d;
+		    	background-size: 100% 167.8%;
+		    }
+		    10% {
+		    	background-color: #0080000d;
+		    	background-size: 100% 190.4%;
+		    }
+		    0% {
+		    	background-color: #0080000d;
+		    	background-size: 100% 213%;
+		    }
+		    100% {
+		    	background-color: #0080000d;
+		    	background-size: 100% 190.4%;
+		    }
+		    90% {
+		    	background-color: #0000ff0d;
+		    	background-size: 100% 167.8%;
+		    }
+		    80% {
+		    	background-color: #ffff000d;
+		    	background-size: 100% 145.2%;
+		    }
+		    70% {
+		    	background-color: #ffa5000d;
+		    	background-size: 100% 122.6%;
+		    }
+		    60% {
+		    	background-color: #ff00000d;
 		    	background-size: 100% 100%;
 		    }
 		}
@@ -20,7 +101,7 @@
   <body style="
       padding: 10%;
   ">
-      <div style="width: 200px;height: 200px;border: 1px solid black;transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg);background-color: #e3fff9;"></div>
+      <div style="width: 200px;height: 200px;border: 1px solid black;transform: rotateX(66deg) rotateY(0deg) rotateZ(45deg);background-color: #e3fff9; animation-name: updown2;animation-duration: 2.5s;animation-timing-function: ease-in-out;animation-play-state: running;animation-iteration-count: infinite;background-color: #00ffc4;background-blend-mode: luminosity;"></div>
       <div style="width: 197px;height: 184px;border: 1px solid black;transform: rotateX(22deg) rotateY(45deg) rotateZ(1deg);position: relative;top: -80px;left: -72px;background-image: url(https://png.pngtree.com/element_origin_min_pic/16/07/09/205780eb228a834.jpg);background-size: 100% 100%;background-repeat: no-repeat;background-position: 0px 0px;background-repeat: no-repeat;background-position: 0px 0px;animation-name: updown;animation-duration: 2.5s;animation-timing-function: ease-in-out;animation-play-state: running;animation-iteration-count: infinite;background-color: #00ffc4;background-blend-mode: luminosity;"></div>
       <div style="
       width: 184px;

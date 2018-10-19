@@ -4,10 +4,9 @@ var url2017_1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/Project
 var url2017_2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData_12_2017.Json';
 var url2017_3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData_12_2017.Json';
 
-// var url2018_1 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectMetaData';
-var url2018_1 = 'https://girish-gravity.github.io/demo/assets/json/newData/ProjectMetaData.json';
-var url2018_2 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectDetailedData';
-var url2018_3 = 'https://strategydotzero.blob.core.windows.net/dilgp2018test/ProjectYearlyDetailedData';
+var url2018_1 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectMetaData';
+var url2018_2 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectDetailedData';
+var url2018_3 = 'https://strategydotzero.blob.core.windows.net/dilgpjson/ProjectYearlyDetailedData';
 
 var url1_temp = url2018_1;
 var url2_temp = url2018_2;
